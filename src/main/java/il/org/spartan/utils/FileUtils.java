@@ -36,7 +36,7 @@ import org.jetbrains.annotations.*;
     return $ + "";
   }
 
-  @NotNull public static String readFromFile(final @NotNull String fileName) throws IOException {
+  @NotNull public static String read(final @NotNull String fileName) throws IOException {
     return read(Paths.get(fileName));
   }
 
