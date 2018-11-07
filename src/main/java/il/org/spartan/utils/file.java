@@ -1,6 +1,7 @@
 package il.org.spartan.utils;
 
 import java.io.*;
+import java.nio.charset.*;
 import java.nio.file.*;
 
 import org.jetbrains.annotations.*;
@@ -34,5 +35,24 @@ public enum file {
 
   public static void renameToCSV(final @NotNull String old) {
     file.rename(old, old + ".csv");
+  }
+  
+  @NotNull public static String read(final @NotNull File f) throws IOException {
+    @SuppressWarnings("null") final @NotNull String ls = System.getProperty("line.separator");
+    System.err.println(ls.compareTo("\n"));
+    final @NotNull StringBuilder $ = new StringBuilder();
+    try (@NotNull BufferedReader reader = new BufferedReader(new FileReader(f))) {
+      for (String line = reader.readLine(); line != null; line = reader.readLine())
+        $.append(line).append(ls);
+    }
+    return $ + "";
+  }
+
+  @SuppressWarnings("null") @NotNull public static String read(final @NotNull String fileName) throws IOException {
+    return read(Paths.get(fileName));
+  }
+  
+  @NotNull private static String read(final @NotNull Path ¢) throws IOException {
+    return new String(Files.readAllBytes(¢), StandardCharsets.UTF_8);
   }
 }
