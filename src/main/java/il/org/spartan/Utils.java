@@ -184,17 +184,7 @@ import il.org.spartan.Utils.FoundHandleForT.*;
     return false;
   }
 
-  /** Determine if an item can be found in a list of values
-   * @param           <T> JD
-   * @param candidate what to search for
-   * @param ts        where to search
-   * @return true if the the item is found in the list */
-  @SafeVarargs static <T> boolean in(final T candidate, final @NotNull T... ts) {
-    for (final T ¢ : ts)
-      if (¢ != null && ¢.equals(candidate))
-        return true;
-    return false;
-  }
+
 
   /** Determine whether an integer is a valid list index
    * @param    <T> JD
