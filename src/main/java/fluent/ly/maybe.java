@@ -59,7 +59,7 @@ public class maybe<@Nullable T> {
     }
 
     @Test public void usecase2() {
-      assert maybe.yes(new Object()).get() != null;
+      azzert.notNull(maybe.yes(new Object()).get());
     }
   }
 }

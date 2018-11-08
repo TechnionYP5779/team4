@@ -5,12 +5,15 @@ import org.jetbrains.annotations.Nullable;
 import static il.org.spartan.Utils.*;
 import static org.junit.Assert.*;
 
+import static fluent.ly.azzert.*;
+
 import java.util.*;
 
 import org.junit.*;
 
 import an.*;
 import fluent.ly.*;
+import il.org.spartan.utils.*;
 
 /** No values in an 'enum' used as name space for a collection of 'static'
  * functions.
@@ -80,19 +83,20 @@ public enum iterables {
     }
 
     @Test public void countDoesNotIncludeNull() {
-      assertEquals(3, count(iterable.over(null, "One", null, "Two", null, "Three")));
+      azzert.that(count(iterable.over(null, "One", null, "Two", null, "Three")), is(3));
     }
 
     @Test public void countEmpty() {
-      assertEquals(0, count(iterables.<String> empty()));
+      azzert.that(count(iterables.<String> empty()), is(0));
     }
 
     @Test public void countSingleton() {
-      assertEquals(1, count(iterable.singleton(new Object())));
+      azzert.that(count(iterable.singleton(new Object())), is(1));
     }
 
     @Test public void countThree() {
-      assertEquals(3, count(iterable.over("One", "Two", "Three")));
+      azzert.that(count(iterable.over("One", "Two", "Three")), is(3));
+
     }
   }
 }

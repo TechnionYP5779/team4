@@ -2,6 +2,7 @@ package fluent.ly;
 
 import static org.junit.Assert.*;
 
+import static fluent.ly.azzert.*;
 import static fluent.ly.box.*;
 import static fluent.ly.string.*;
 
@@ -958,17 +959,17 @@ import fluent.ly.___.Bug.Contract.*;
       try {
         ___.ensure(false);
       } catch (final Postcondition e) {
-        assertEquals("", e.getMessage());
+        azzert.that(e.getMessage(), is(""));
       }
       try {
         ___.ensure(false, "ensure");
       } catch (final Postcondition e) {
-        assertEquals("ensure", e.getMessage());
+        azzert.that(e.getMessage(), is("ensure"));
       }
       try {
         ___.ensure(false, "ensure %s message %s", "this", "now");
       } catch (final Postcondition e) {
-        assertEquals("ensure this message now", e.getMessage());
+        azzert.that(e.getMessage(), is("ensure this message now"));
       }
     }
 
@@ -979,22 +980,22 @@ import fluent.ly.___.Bug.Contract.*;
       try {
         ___.negative(0);
       } catch (final Negative ¢) {
-        assertEquals("Found 0 while expecting a negative integer.", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("Found 0 while expecting a negative integer."));
       }
       try {
         ___.negative(0.0);
       } catch (final Negative ¢) {
-        assertEquals("Found 0.00000 while expecting a negative number.", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("Found 0.00000 while expecting a negative number."));
       }
       try {
         ___.negative(-1);
       } catch (final Negative ¢) {
-        assertEquals("Found -1 while expecting a negative integer.", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("Found -1 while expecting a negative integer."));
       }
       try {
         ___.negative(-1.0);
       } catch (final Negative ¢) {
-        assertEquals("Found -1.00000 while expecting a negative number.", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("Found -1.00000 while expecting a negative number."));
       }
     }
 
@@ -1007,12 +1008,12 @@ import fluent.ly.___.Bug.Contract.*;
       try {
         ___.nonnegative(1);
       } catch (final NonNegative ¢) {
-        assertEquals("Found -1 while expecting a negative integer.", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("Found -1 while expecting a negative integer."));
       }
       try {
         ___.nonnegative(1.0);
       } catch (final NonNegative ¢) {
-        assertEquals("Found -1.00000 while expecting a negative number.", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("Found -1.00000 while expecting a negative number."));
       }
     }
 
@@ -1021,17 +1022,17 @@ import fluent.ly.___.Bug.Contract.*;
       try {
         ___.nonnull(null);
       } catch (final Exception ¢) {
-        assertEquals("", ¢.getMessage());
+        azzert.that(¢.getMessage(), is(""));
       }
       try {
         ___.nonnull(null, "nonnull");
       } catch (final Exception ¢) {
-        assertEquals("nonnull", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("nonnull"));
       }
       try {
         ___.nonnull(null, "nonnull %s message %s", "this", "now");
       } catch (final Exception ¢) {
-        assertEquals("nonnull this message now", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("nonnull this message now"));
       }
     }
 
@@ -1044,12 +1045,12 @@ import fluent.ly.___.Bug.Contract.*;
       try {
         ___.nonpositive(-1);
       } catch (final NonPositive ¢) {
-        assertEquals("Found -1 while expecting a nonpositive integer.", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("Found -1 while expecting a nonpositive integer."));
       }
       try {
         ___.nonpositive(-1.0);
       } catch (final NonPositive ¢) {
-        assertEquals("Found -1.00000 while expecting a nonpositive number.", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("Found -1.00000 while expecting a nonpositive number."));
       }
     }
 
@@ -1060,41 +1061,42 @@ import fluent.ly.___.Bug.Contract.*;
       try {
         ___.positive(0);
       } catch (final Positive ¢) {
-        assertEquals("Found 0 while expecting a positive integer.", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("Found 0 while expecting a positive integer."));
       }
       try {
         ___.positive(0.0);
       } catch (final Positive ¢) {
-        assertEquals("Found 0.00000 while expecting a positive number.", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("Found 0.00000 while expecting a positive number."));
       }
       try {
         ___.positive(-1);
       } catch (final Positive ¢) {
-        assertEquals("Found -1 while expecting a positive integer.", ¢.getMessage());
-      }
+        azzert.that(¢.getMessage(), is("Found -1 while expecting a positive integer."));
+        }
       try {
         ___.positive(-1.0);
       } catch (final Positive ¢) {
-        assertEquals("Found -1.00000 while expecting a positive number.", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("Found -1.00000 while expecting a positive number."));
       }
     }
+
 
     @Test public void require() {
       ___.require(true);
       try {
         ___.require(false);
       } catch (final Precondition ¢) {
-        assertEquals("", ¢.getMessage());
+        azzert.that(¢.getMessage(), is(""));
       }
       try {
         ___.require(false, "requireMessage");
       } catch (final Precondition ¢) {
-        assertEquals("requireMessage", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("requireMessage"));
       }
       try {
         ___.require(false, "require %s message %s", "this", "now");
       } catch (final Precondition ¢) {
-        assertEquals("require this message now", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("require this message now"));
       }
     }
 
@@ -1111,17 +1113,17 @@ import fluent.ly.___.Bug.Contract.*;
       try {
         ___.sure(false);
       } catch (final Invariant e) {
-        assertEquals("", e.getMessage());
+        azzert.that(e.getMessage(), is(""));
       }
       try {
         ___.sure(false, "sure");
       } catch (final Invariant e) {
-        assertEquals("sure", e.getMessage());
+        azzert.that(e.getMessage(), is("sure"));
       }
       try {
         ___.sure(false, "sure %s message %s", "this", "now");
       } catch (final Invariant e) {
-        assertEquals("sure this message now", e.getMessage());
+        azzert.that(e.getMessage(), is("sure this message now"));
       }
     }
 
@@ -1134,12 +1136,12 @@ import fluent.ly.___.Bug.Contract.*;
       try {
         ___.unreachable("unreachable message");
       } catch (final Reachability ¢) {
-        assertEquals("unreachable message", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("unreachable message"));
       }
       try {
         ___.unreachable("unreachable %s message %s", "this", "now");
       } catch (final Reachability ¢) {
-        assertEquals("unreachable this message now", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("unreachable this message now"));
       }
     }
 
@@ -1153,26 +1155,26 @@ import fluent.ly.___.Bug.Contract.*;
         v.check(2);
         v.check(1);
         v.check(0);
-        assertEquals(0, v.value());
+        azzert.that(v.value(), is(0));
       }
       try {
         unused(new Variant(-1));
       } catch (final Initial e) {
-        assertEquals("Initial variant value (-1) is negative", e.getMessage());
+        azzert.that(e.getMessage(), is("Initial variant value (-1) is negative"));
       }
       try {
         final Variant v = new Variant(10);
         v.check(8);
         v.check(9);
       } catch (final Nondecreasing ¢) {
-        assertEquals("New variant value (9) should be less than previous value (8)", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("New variant value (9) should be less than previous value (8)"));
       }
       try {
         final Variant v = new Variant(10);
         v.check(8);
         v.check(-2);
       } catch (final Underflow ¢) {
-        assertEquals("New variant value (-2) is negative", ¢.getMessage());
+        azzert.that(¢.getMessage(), is("New variant value (-2) is negative"));
       }
     }
   }
