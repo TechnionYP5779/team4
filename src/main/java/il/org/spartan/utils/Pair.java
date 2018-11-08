@@ -2,6 +2,8 @@ package il.org.spartan.utils;
 
 import org.jetbrains.annotations.*;
 
+import il.org.spartan.*;
+
 public class Pair<First, Second> {
   @SuppressWarnings("unchecked") //
   public static <First, Second> Pair<First, Second> @NotNull [] makePairs(final int ¢) {
@@ -33,12 +35,9 @@ public class Pair<First, Second> {
   }
 
   @Override public int hashCode() {
-    return hash(second) ^ hash(first) >>> 1;
+    return Utils.hash(second) ^ Utils.hash(first) >>> 1;
   }
 
-  private static int hash(Object ¢) {
-    return ¢ == null ? 0 : ¢.hashCode();
-  }
 
   @Override @NotNull public String toString() {
     return "<" + first + "," + second + ">";
