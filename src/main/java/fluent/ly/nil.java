@@ -1,6 +1,12 @@
 package fluent.ly;
 
+import static fluent.ly.azzert.*;
+
 import java.util.function.*;
+
+import org.junit.*;
+
+import il.org.spartan.utils.*;
 
 /** TODO Yossi Gil: document class
  * @author Yossi Gil
@@ -29,4 +35,22 @@ import java.util.function.*;
   static <T> T ignoring(final long __) {
     return null;
   }
+  
+  @SuppressWarnings("static-method") public static class TEST {
+    @Test public void testIgnoring() {
+      Object o = null;
+      azzert.that(ignoring(true), is(o));
+      azzert.that(ignoring(false), is(o));
+      azzert.that(ignoring(1), is(o));
+      azzert.that(ignoring(0), is(o));
+      azzert.that(ignoring(1.0), is(o));
+      azzert.that(ignoring(-1), is(o));
+    }
+    
+    @SuppressWarnings("boxing") @Test public void testForgetting() {
+      Object o = null;
+      azzert.that(forgetting(0, true, false, -1, 1.0), is(o));
+    }
+  }
+    
 }
