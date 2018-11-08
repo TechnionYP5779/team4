@@ -87,51 +87,54 @@ import org.junit.*;
     }
 
     @Test public void nullsNullArrayItems() {
-      assertEquals("1", nulls(nonNullArray)[0]);
-      assertEquals("2", nulls(nonNullArray)[1]);
-      assertEquals("4", nulls(nonNullArray)[2]);
+      azzert.that(nulls(nonNullArray)[0], is("1"));
+      azzert.that(nulls(nonNullArray)[1], is("2"));
+      azzert.that(nulls(nonNullArray)[2], is("4"));
     }
 
     @Test public void nullsPruneArrayAltenatingItems() {
-      assertEquals("A", nulls(alternatingArray)[0]);
-      assertEquals("B", nulls(alternatingArray)[1]);
-      assertEquals("C", nulls(alternatingArray)[2]);
+      azzert.that(nulls(alternatingArray)[0], is("A"));
+      azzert.that(nulls(alternatingArray)[1], is("B"));
+      azzert.that(nulls(alternatingArray)[2], is("C"));
     }
 
     @Test public void nullsPruneArrayAltenatingLength() {
-      assertEquals(3, nulls(alternatingArray).length);
+      azzert.that(nulls(alternatingArray).length, is(3));
+
     }
 
     @Test public void nullsPruneSparseCollectionContents() {
       final String[] a = nulls(sparseCollection).toArray(new String[3]);
-      assertEquals("A", a[0]);
-      assertEquals("B", a[1]);
-      assertEquals("C", a[2]);
-      assertEquals(3, a.length);
+      azzert.that(a[0], is("A"));
+      azzert.that(a[1], is("B"));
+      azzert.that(a[2], is("C"));
+      azzert.that(a.length, is(3));
+
     }
 
     @Test public void nullsPruneSparseCollectionLength() {
-      assertEquals(3, nulls(sparseCollection).size());
+      azzert.that(nulls(sparseCollection).size(), is(3));
     }
 
     @Test public void nullsPrunNotNull() {
-      assert prune.nulls(sparseCollection) != null;
+      azzert.notNull(prune.nulls(sparseCollection));
     }
 
     @Test public void shrinkArray() {
-      assertEquals(0, shrink(new Object[10]).length);
+      azzert.that(shrink(new Object[10]).length, is(0));
     }
 
     @Test public void shrinkEmptyArray() {
-      assertEquals(0, shrink(new Object[0]).length);
+      azzert.that(shrink(new Object[10]).length, is(0));
+     
     }
 
     @Test public void whitesEmptyArray() {
-      assertEquals(0, prune.whites().length);
+      azzert.that(prune.whites().length, is(0));
     }
 
     @Test public void whitesEmptyList() {
-      assertEquals(0, prune.whites().length);
+      azzert.that(prune.whites().length, is(0));
     }
   }
 
@@ -219,7 +222,7 @@ import org.junit.*;
     }
 
     @Test public void testPrunNotNull() {
-      assert nulls(sparseCollection) != null;
+      azzert.notNull(nulls(sparseCollection));
     }
 
     @Test public void testShrink() {

@@ -120,11 +120,11 @@ import fluent.ly.*;
     @Test public void emptyFalse() {
       final @NotNull Tab t = new Tab("abc");
       t.more();
-      assert !t.isEmpty();
+      assertFalse(t.isEmpty());
     }
 
     @Test public void emtpyTrue() {
-      assert new Tab().isEmpty();
+      assertTrue(new Tab().isEmpty());
     }
 
     @Test public void testBeginAtLevelOne() {
@@ -144,7 +144,7 @@ import fluent.ly.*;
     }
 
     @Test public void testDone() {
-      assert new Tab().isEmpty();
+      assertTrue(new Tab().isEmpty());
     }
 
     @Test public void testEndAtLevelOne() {
