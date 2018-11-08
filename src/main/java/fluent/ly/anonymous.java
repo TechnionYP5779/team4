@@ -5,7 +5,6 @@ import java.util.function.*;
 import org.junit.*;
 
 import static fluent.ly.azzert.*;
-import static org.mockito.Mockito.*; 
 
 
 /** TODO Yossi Gil: document class
@@ -34,33 +33,58 @@ public interface anonymous {
   
   @SuppressWarnings("static-method") public static class TEST {
     @Test public void boolSupplier() {
-      BooleanSupplier mock = mock(BooleanSupplier.class);
-      when(mock.getAsBoolean()).thenReturn(true);
+      BooleanSupplier mock = new BooleanSupplier() {
+        @Override
+        public boolean getAsBoolean() {
+          return true;
+        }
+      };
+      
       azzert.that(ly(mock), is(true));
     }
     
     @Test public void doubleSupplier() {
-      DoubleSupplier mock = mock(DoubleSupplier.class);
-      when(mock.getAsDouble()).thenReturn(5.2);
+      DoubleSupplier mock = new DoubleSupplier() {
+        @Override
+        public double getAsDouble() {
+          return 5.2;
+        }
+      };
+      
       azzert.that(ly(mock), is(5.2));
     }
     
     @Test public void intSupplier() {
-      IntSupplier mock = mock(IntSupplier.class);
-      when(mock.getAsInt()).thenReturn(2);
+      IntSupplier mock = new IntSupplier() {
+        @Override
+        public int getAsInt() {
+          return 2;
+        }
+      };
+      
       azzert.that(ly(mock), is(2));
     }
     
     @Test public void longSupplier() {
-      LongSupplier mock = mock(LongSupplier.class);
-      when(mock.getAsLong()).thenReturn(20L);
+      LongSupplier mock = new LongSupplier() {
+        @Override
+        public long getAsLong() {
+          return 20L;
+        }
+      };
+      
       azzert.that(ly(mock), is(20L));
     }
     
-    @Test public void anySupplier() {
-      Supplier<Boolean> mock = mock(Supplier.class);
-      when(mock.get()).thenReturn(true);
-      azzert.that(ly(mock), is(true));
+    @Test public void anySupplierNull() {
+      Supplier<Boolean> mock = new Supplier<Boolean>() {
+        @Override
+        public Boolean get() {
+          return null;
+        }
+      };
+      
+      azzert.isNull(ly(mock));
     }
   }
 }
