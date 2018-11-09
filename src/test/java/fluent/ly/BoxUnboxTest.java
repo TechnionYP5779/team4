@@ -2,6 +2,7 @@ package fluent.ly;
 
 import java.util.*;
 import org.junit.*;
+import static fluent.ly.azzert.*;
 
 @SuppressWarnings("static-method") public class BoxUnboxTest {
   public static final double DOUBLE_DELTA = 0.0001;
@@ -10,7 +11,7 @@ import org.junit.*;
 
   @Test public void testBoolean() {
     boolean b = new Random().nextBoolean();
-    azzert.assertEquals(b, unbox.unbox(box.box(b)));
+    azzert.that(unbox.unbox(box.box(b)), is(b));
     azzert.assertEquals(b, unbox.unbox(box.it(b)));
   }
 
@@ -22,20 +23,24 @@ import org.junit.*;
 
   @Test public void testLong() {
     long l = new Random().nextLong();
-    azzert.assertEquals(l, unbox.unbox(box.box(l)));
-    azzert.assertEquals(l, unbox.unbox(box.it(l)));
+    azzert.that(unbox.unbox(box.box(l)), is(l));
+    azzert.that(unbox.unbox(box.it(l)), is(l));
   }
 
   @Test public void testFloat() {
     float f = new Random().nextFloat();
-    azzert.assertEquals(f, unbox.unbox(box.box(f)), FLOAT_DELTA);
-    azzert.assertEquals(f, unbox.unbox(box.it(f)), FLOAT_DELTA);
+    azzert.aye(unbox.unbox(box.box(f)) - f > -1 * FLOAT_DELTA 
+        && unbox.unbox(box.box(f)) - f < FLOAT_DELTA);
+    azzert.aye(unbox.unbox(box.it(f)) - f > -1 * FLOAT_DELTA 
+        && unbox.unbox(box.it(f)) - f < FLOAT_DELTA );
   }
 
   @Test public void testDouble() {
     double d = new Random().nextDouble();
-    azzert.assertEquals(d, unbox.unbox(box.box(d)), DOUBLE_DELTA);
-    azzert.assertEquals(d, unbox.unbox(box.it(d)), DOUBLE_DELTA);
+    azzert.aye(unbox.unbox(box.box(d)) - d > -1 * DOUBLE_DELTA
+        && unbox.unbox(box.box(d)) - d < DOUBLE_DELTA);
+    azzert.aye(unbox.unbox(box.it(d)) - d > -1 * DOUBLE_DELTA
+        && unbox.unbox(box.it(d)) - d < DOUBLE_DELTA);
   }
 
   @Test public void testChar() {
