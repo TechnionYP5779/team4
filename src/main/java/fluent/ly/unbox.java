@@ -43,7 +43,7 @@ import org.jetbrains.annotations.*;
     return unboxIntegerArray(¢);
   }
 
-  public static int @NotNull [] it(final @NotNull List<Integer> ¢) {
+  public static int @NotNull [] it(final List<@NotNull Integer> ¢) {
     return it(¢.toArray(new Integer[¢.size()]));
   }
 
@@ -95,7 +95,7 @@ import org.jetbrains.annotations.*;
    * <code><b>short</b></code>s.
    * @param ss a {@link Collection} of {@link Integer}s
    * @return an equivalent array of <code><b>short</b></code>s. */
-  public static short @NotNull [] unboxShortCollection(final @NotNull Collection<Short> ss) {
+  public static short @NotNull [] unboxShortCollection(final Collection<@NotNull Short> ss) {
     final short @NotNull [] $ = new short[ss.size()];
     int i = 0;
     for (final @NotNull Short v : ss)
