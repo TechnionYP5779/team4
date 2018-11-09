@@ -1,10 +1,6 @@
 package il.org.spartan.utils;
 
-import static org.mockito.Mockito.*;
-
 import static fluent.ly.azzert.*;
-
-import java.util.function.*;
 
 import org.junit.*;
 

@@ -109,7 +109,7 @@ import il.org.spartan.Utils.FoundHandleForT.*;
    * @return its parameter, after verifying that it is not
    *         <code><b>null</b></code>
    * @see #mustBeNull(Object) */
-  @NotNull static <T> @NotNull T cantBeNull(final @Nullable T $) {
+  @NotNull static <T> T cantBeNull(final @Nullable T $) {
     assert $ != null;
     return $;
   }

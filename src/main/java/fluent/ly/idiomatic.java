@@ -36,7 +36,7 @@ public interface idiomatic {
     return () -> $.get();
   }
 
-  @Nullable static <@Nullable T> @Nullable T incase(final boolean condition, final T t) {
+  @Nullable static <@Nullable T> T incase(final boolean condition, final T t) {
     return condition ? t : null;
   }
 
