@@ -172,7 +172,7 @@ public interface idiomatic {
     }
   }
 
-  @SuppressWarnings("static-method") public static class TEST {
+  @SuppressWarnings("static-method") class TEST {
     @Test public void evalAndIgnoreTrigger() {
       Supplier<@Nullable Integer> supp = new Supplier<@Nullable Integer>() {
         @Override public Integer get() {
@@ -181,8 +181,8 @@ public interface idiomatic {
       };
       azzert.that(eval.eval(supp), is(Integer.valueOf(10)));
       azzert.isNull(ignore.eval(supp));
-      azzert.that(eval.eval(new Integer(10)), is(Integer.valueOf(10)));
-      azzert.isNull(ignore.eval(new Integer(10)));
+      azzert.that(eval.eval(Integer.valueOf(10)), is(Integer.valueOf(10)));
+      azzert.isNull(ignore.eval(Integer.valueOf(10)));
     }
 
     @Test public void evalOfSupplier() {
@@ -203,34 +203,31 @@ public interface idiomatic {
 
     @Test public void katchingNoException() {
       azzert.that(katching(new Producer<@Nullable Integer>() {
-        @Override public @NotNull Integer λ() throws Exception {
-          @NotNull Integer i = new Integer(10);
-          return i;
+        @Override @NotNull public Integer λ() throws Exception {
+          return Integer.valueOf(10);
         }
       }), is(Integer.valueOf(10)));
     }
 
     @Test public void katchingException() {
       azzert.isNull(katching(new Producer<@Nullable Integer>() {
-        @Override public @NotNull Integer λ() throws Exception {
+        @Override @NotNull public Integer λ() throws Exception {
           throw new Exception();
         }
       }));
     }
 
     @Test public void quoteNotNull() {
-      azzert.that(quote(new String("Hello")), is(new String("'Hello'")));
+      azzert.that(quote(String.valueOf("Hello")), is(String.valueOf("'Hello'")));
     }
 
     @Test public void quoteNull() {
-      azzert.that(quote(null), is(new String("<null reference>")));
+      azzert.that(quote(null), is(String.valueOf("<null reference>")));
     }
 
     @Test public void runner() {
       Runner r = run(new Runnable() {
-        @Override public void run() {
-          return;
-        }
+        @Override public void run() { /**/ }
       });
       r.unless(5 < 3);
       r.unless(5 > 3);
@@ -245,13 +242,13 @@ public interface idiomatic {
     }
 
     @Test public void takeInteger() {
-      azzert.that(take(new Integer(10)).get(), is(Integer.valueOf(10)));
+      azzert.that(take(Integer.valueOf(10)).get(), is(Integer.valueOf(10)));
     }
 
     @Test public void unlessTrigger() {
       Supplier<@Nullable Integer> supp = new Supplier<@Nullable Integer>() {
         @Override public Integer get() {
-          return new Integer(10);
+          return Integer.valueOf(10);
         }
       };
       azzert.isNull(unless(5 > 3).eval(supp));
@@ -261,7 +258,7 @@ public interface idiomatic {
     @Test public void holderUnless() {
       Holder<Integer> holder = new Holder<Integer>() {
         @Override public Integer get() {
-          return new Integer(10);
+          return Integer.valueOf(10);
         }
       };
       azzert.that(holder.unless(5 < 3), is(Integer.valueOf(10)));

@@ -61,8 +61,8 @@ import static fluent.ly.range.*;
       try {
         it.next();
         azzert.fail();
-      } catch(NoSuchElementException e) {
-        e.getMessage();
+      } catch(NoSuchElementException ¢) {
+        ¢.getMessage();
         return;
       }
     }
@@ -80,14 +80,13 @@ import static fluent.ly.range.*;
       try {
         it.next();
         azzert.fail();
-      } catch(NoSuchElementException e) {
-        e.getMessage();
+      } catch(NoSuchElementException ¢) {
+        ¢.getMessage();
         return;
       }
     }
   
     @Test public void streamOfAfter() {
-      Stream<Integer> s = to(10).from(0).step(1).stream();
-      azzert.that(s.findFirst().get(), is(0));
+      azzert.that(to(10).from(0).step(1).stream().findFirst().get(), is(0));
     }
   }

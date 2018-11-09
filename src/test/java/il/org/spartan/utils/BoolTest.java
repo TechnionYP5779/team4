@@ -8,8 +8,7 @@ import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class BoolTest {
   @Test public void test_clear() {
-    Bool b = new Bool(true);
-    azzert.that(b.clear().inner(), is(false));
+    azzert.not((new Bool(true)).clear().inner());
   }
 
   @Test public void test_get() {
@@ -24,10 +23,10 @@ import fluent.ly.*;
 
   @Test public void test_set() {
     Bool b = new Bool(true);
-    azzert.that(b.inner(), is(true));
+    azzert.aye(b.inner());
     b.set(false);
-    azzert.that(b.inner(), is(false));
+    azzert.not(b.inner());
     b.set();
-    azzert.that(b.inner(), is(true));
+    azzert.aye(b.inner());
   }
 }

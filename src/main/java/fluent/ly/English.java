@@ -77,7 +77,7 @@ import il.org.spartan.utils.*;
   }
 
   @NotNull static String name(final @Nullable Object ¢) {
-    return ¢ == null ? English.name("null") : English.name(¢.getClass());
+    return English.name(¢ == null ? "null" : ¢.getClass());
   }
 
   /** Get the plural form of the word if needed, by adding an 'es' to its end.

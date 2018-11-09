@@ -8,11 +8,10 @@ import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class EmptyTest {
   @Test public void testList() {
-    List<?> list = empty.list();
-    azzert.assertEquals(0, list.size());
+    azzert.assertEquals(0, empty.list().size());
   }
 
-  @SuppressWarnings("static-access") @Test public void testIterable() {
+  @Test @SuppressWarnings("static-access") public void testIterable() {
     Iterable<?> iterable = empty.iterable();
     Iterator<?> iterator = iterable.iterator();
     azzert.assertEquals(false, iterator.hasNext());

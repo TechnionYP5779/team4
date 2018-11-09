@@ -40,9 +40,8 @@ public class Range {
   @Nullable public Range findIncludedIn(final @Nullable Iterable<? extends Range> ¢) {
     if (¢ != null)
       for (final @Nullable Range $ : ¢)
-        if ($ != null)
-          if (includedIn($))
-            return $;
+        if ($ != null && includedIn($))
+          return $;
     return null;
   }
 

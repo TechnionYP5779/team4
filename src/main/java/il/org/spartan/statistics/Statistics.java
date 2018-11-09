@@ -18,8 +18,7 @@ public abstract class Statistics {
 
   public static double mad(final double @NotNull [] ds) {
     final int n = ds.length;
-    final double median = median(ds);
-    final double $[] = new double[n];
+    final double median = median(ds), $[] = new double[n];
     for (int ¢ = 0; ¢ < n; ++¢)
       $[¢] = Math.abs(ds[¢] - median);
     return median($);

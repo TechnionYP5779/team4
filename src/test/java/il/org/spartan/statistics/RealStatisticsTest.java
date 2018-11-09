@@ -20,9 +20,9 @@ import org.junit.*;
     s11_20_5.mad();
     final double @NotNull [] vs = s11_20_5.all();
     that(vs.length, is(3));
-    aye(11 - vs[0] < 1E-20 && 11 - vs[0] > -1 * 1E-20);
-    aye(20 - vs[1] < 1E-20 && 20 - vs[1] > -1 * 1E-20);
-    aye(5 - vs[2] < 1E-20 && 5 - vs[2] > -1 * 1E-20);
+    aye(11 - vs[0] < 1E-20 && 11 - vs[0] > -1E-20);
+    aye(20 - vs[1] < 1E-20 && 20 - vs[1] > -1E-20);
+    aye(5 - vs[2] < 1E-20 && 5 - vs[2] > -1E-20);
   }
 
   @Test public void all0() {
@@ -38,28 +38,28 @@ import org.junit.*;
   }
 
   @Test public void max() {
-    aye(20 - s11_20_5.max() < 1E-6 && 20 - s11_20_5.max() > -1 * 1E-6);
-    aye(5 - s15.max() < 1E-6 && 5 - s15.max() > -1 * 1E-6);
-    aye(7 - s07.max() < 1E-6 && 7 - s07.max() > -1 * 1E-6);
-    aye(1 - s_4x0_5x1.max() < 1E-6 && 1 - s_4x0_5x1.max() > -1 * 1E-6);
+    aye(20 - s11_20_5.max() < 1E-6 && 20 - s11_20_5.max() > -1E-6);
+    aye(5 - s15.max() < 1E-6 && 5 - s15.max() > -1E-6);
+    aye(7 - s07.max() < 1E-6 && 7 - s07.max() > -1E-6);
+    aye(1 - s_4x0_5x1.max() < 1E-6 && 1 - s_4x0_5x1.max() > -1E-6);
   }
 
   @Test public void mean() {
-    aye(12 - s11_20_5.mean() < 1E-6 && 12 - s11_20_5.mean() > -1 * 1E-6);
-    aye(3 - s15.mean() < 1E-6 && 3 - s15.mean() > -1 * 1E-6);
-    aye(3.5 - s07.mean() < 1E-6 && 3.5 - s07.mean() > -1 * 1E-6);
-    aye(5 / 9.0 - s_4x0_5x1.mean() < 1E-6 && 5 / 9.0 - s_4x0_5x1.mean() > -1 * 1E-6);
+    aye(12 - s11_20_5.mean() < 1E-6 && 12 - s11_20_5.mean() > -1E-6);
+    aye(3 - s15.mean() < 1E-6 && 3 - s15.mean() > -1E-6);
+    aye(3.5 - s07.mean() < 1E-6 && 3.5 - s07.mean() > -1E-6);
+    aye(5 / 9.0 - s_4x0_5x1.mean() < 1E-6 && 5 / 9.0 - s_4x0_5x1.mean() > -1E-6);
   }
 
   @Test(expected = ArithmeticException.class) public void meanEmpty() {
     final @NotNull RealStatistics x = new RealStatistics();
-    aye(x.mean() < 1E-20 && x.mean() > -1 * 1E-20);
+    aye(x.mean() < 1E-20 && x.mean() > -1E-20);
     x.relativeError();
   }
 
   @Test public void meanZero() {
     final @NotNull RealStatistics x = new RealStatistics().record(1).record(-1);
-    aye(x.mean() < 1E-20 && x.mean() > -1 * 1E-20);
+    aye(x.mean() < 1E-20 && x.mean() > -1E-20);
     x.relativeError();
   }
 

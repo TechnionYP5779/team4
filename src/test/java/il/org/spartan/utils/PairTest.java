@@ -14,17 +14,13 @@ import il.org.spartan.*;
     Pair<Object, Object>[] pairs = Pair.makePairs(N);
     azzert.assertEquals(N, pairs.length);
     pairs = Pair.makePairs(N, M);
-    azzert.assertEquals(N * M, pairs.length);
+    azzert.assertEquals(M * N, pairs.length);
   }
   
   @Test public void testEquals() {
-    Pair<String, Integer> hello1 = Pair.newPair("Hello", Integer.valueOf(1));
-    Pair<String, Integer> hello2 = Pair.newPair("Hello", Integer.valueOf(2));
-    Pair<String, Integer> shalom1 = Pair.newPair("Shalom", Integer.valueOf(2));
-    Pair<String, Integer> nullPair = new Pair<>(null, null);
-    Pair<String, Integer> firstNull = new Pair<>(null, Integer.valueOf(1));
-    Pair<String, Integer> ident = Pair.newPair("Hello", Integer.valueOf(1));
-    
+    Pair<String, Integer> hello1 = Pair.newPair("Hello", Integer.valueOf(1)), hello2 = Pair.newPair("Hello", Integer.valueOf(2)),
+        shalom1 = Pair.newPair("Shalom", Integer.valueOf(2)), nullPair = new Pair<>(null, null), firstNull = new Pair<>(null, Integer.valueOf(1)),
+        ident = Pair.newPair("Hello", Integer.valueOf(1));
     azzert.assertEquals(true, hello1.equals(hello1));
     azzert.assertEquals(false, hello1.equals(null));
     azzert.assertEquals(false, hello1.equals(new Object()));
@@ -36,17 +32,14 @@ import il.org.spartan.*;
     azzert.assertEquals(false, nullPair.equals(firstNull));
   }
   
-  @SuppressWarnings("static-access") @Test public void testToString() {
-    String pairString = Pair.newPair("Hello", Integer.valueOf(1)).toString();
-    azzert.assertEquals("<Hello,1>", pairString);
-    
+  @Test @SuppressWarnings("static-access") public void testToString() {
+    azzert.assertEquals("<Hello,1>", Pair.newPair("Hello", Integer.valueOf(1)) + "");
   }
   
   @Test public void testHashCode() {
     String first = "Hello";
     Integer second = Integer.valueOf(2);
-    Pair<String, Integer> p = Pair.newPair(first, second);
-    azzert.assertEquals(Utils.hash(second) ^ Utils.hash(first) >>> 1, p.hashCode());
+    azzert.assertEquals(Utils.hash(second) ^ Utils.hash(first) >>> 1, Pair.newPair(first, second).hashCode());
     
   }
 }

@@ -37,7 +37,7 @@ public class RealStatistics extends ImmutableStatistics {
     return this;
   }
 
-  @SuppressWarnings("null") @NotNull protected RealStatistics recordValue(final double v) {
+  @NotNull @SuppressWarnings("null") protected RealStatistics recordValue(final double v) {
     if (n() == 0) {
       min = max = v;
       flips = 2;

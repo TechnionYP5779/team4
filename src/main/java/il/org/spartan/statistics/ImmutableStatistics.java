@@ -131,7 +131,7 @@ public abstract class ImmutableStatistics extends Statistics implements java.io.
     return unit;
   }
 
-  @SuppressWarnings("null") @NotNull private StringBuilder appendError(final @NotNull StringBuilder b, final double d) {
+  @NotNull @SuppressWarnings("null") private StringBuilder appendError(final @NotNull StringBuilder b, final double d) {
     return n() <= 1 ? b : b.append('±' + RELATIVE.format(d));
   }
 }

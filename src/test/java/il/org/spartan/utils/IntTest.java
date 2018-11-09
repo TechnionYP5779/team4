@@ -8,8 +8,7 @@ import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class IntTest {
   @Test public void testGet() {
-    Int i = new Int(3);
-    azzert.that(i.get(), is(3));
+    azzert.that((new Int(3)).get(), is(3));
   }
 
   @Test public void testStep() {
@@ -49,8 +48,7 @@ import fluent.ly.*;
   }
 
   @Test public void testAddOther() {
-    Int i1 = new Int(3);
-    Int i2 = new Int(4);
+    Int i1 = new Int(3), i2 = new Int(4);
     i1.add(i2);
     azzert.that(i1.get(), is(7));
     azzert.that(i2.get(), is(4));

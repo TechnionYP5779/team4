@@ -15,8 +15,7 @@ import org.junit.*;
     azzert.that(nil.ignoring(-1), is(o));
   }
   
-  @SuppressWarnings("boxing") @Test public void testForgetting() {
-    Object o = null;
-    azzert.that(nil.forgetting(0, true, false, -1, 1.0), is(o));
+  @Test @SuppressWarnings("boxing") public void testForgetting() {
+    azzert.that(nil.forgetting(0, true, false, -1, 1.0), is(null));
   }
 }

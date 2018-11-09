@@ -59,9 +59,8 @@ import org.junit.*;
   @Test public void testBooleanArray() {
     Random r = new Random();
     boolean[] arr = new boolean[TEST_ARRAY_SIZE];
-    for (int i = 1; i < arr.length; i++) {
-      arr[i] = r.nextBoolean();
-    }
+    for (int ¢ = 1; ¢ < arr.length; ++¢)
+      arr[¢] = r.nextBoolean();
     azzert.assertArrayEquals(arr, unbox.unbox(box.box(arr)));
     azzert.assertArrayEquals(arr, unbox.unbox(box.it(arr)));
     
@@ -70,9 +69,8 @@ import org.junit.*;
   @Test public void testIntegerArray() {
     Random r = new Random();
     int[] arr = new int[TEST_ARRAY_SIZE];
-    for (int i = 1; i < arr.length; i++) {
-      arr[i] = r.nextInt();
-    }
+    for (int ¢ = 1; ¢ < arr.length; ++¢)
+      arr[¢] = r.nextInt();
     azzert.assertArrayEquals(arr, unbox.unbox(box.box(arr)));
     azzert.assertArrayEquals(arr, unbox.it(box.it(arr)));
   }
@@ -80,18 +78,16 @@ import org.junit.*;
   @Test public void testIntegerList() {
     Random r = new Random();
     int[] arr = new int[TEST_ARRAY_SIZE];
-    for (int i = 1; i < arr.length; i++) {
-      arr[i] = r.nextInt();
-    }
+    for (int ¢ = 1; ¢ < arr.length; ++¢)
+      arr[¢] = r.nextInt();
     azzert.assertArrayEquals(arr, unbox.it(Arrays.asList(box.box(arr))));
   }  
   
   @Test public void testLongArray() {
     Random r = new Random();
     long[] arr = new long[TEST_ARRAY_SIZE];
-    for (int i = 1; i < arr.length; i++) {
-      arr[i] = r.nextLong();
-    }
+    for (int ¢ = 1; ¢ < arr.length; ++¢)
+      arr[¢] = r.nextLong();
     azzert.assertArrayEquals(arr, unbox.unbox(box.box(arr)));
     azzert.assertArrayEquals(arr, unbox.unbox(box.it(arr)));
   }
@@ -99,9 +95,8 @@ import org.junit.*;
   @Test public void testFloatArray() {
     Random r = new Random();
     float[] arr = new float[TEST_ARRAY_SIZE];
-    for (int i = 1; i < arr.length; i++) {
-      arr[i] = r.nextFloat();
-    }
+    for (int ¢ = 1; ¢ < arr.length; ++¢)
+      arr[¢] = r.nextFloat();
     azzert.assertArrayEquals(arr, unbox.unbox(box.box(arr)), FLOAT_DELTA);
     azzert.assertArrayEquals(arr, unbox.it(box.it(arr)), FLOAT_DELTA);
   }
@@ -109,9 +104,8 @@ import org.junit.*;
   @Test public void testDoubleArray() {
     Random r = new Random();
     double[] arr = new double[TEST_ARRAY_SIZE];
-    for (int i = 1; i < arr.length; i++) {
-      arr[i] = r.nextDouble();
-    }
+    for (int ¢ = 1; ¢ < arr.length; ++¢)
+      arr[¢] = r.nextDouble();
     azzert.assertArrayEquals(arr, unbox.unbox(box.box(arr)), DOUBLE_DELTA);
     azzert.assertArrayEquals(arr, unbox.it(box.it(arr)), DOUBLE_DELTA);
   }
@@ -119,9 +113,8 @@ import org.junit.*;
   @Test public void testCharArray() {
     Random r = new Random();
     char[] arr = new char[TEST_ARRAY_SIZE];
-    for (int i = 1; i < arr.length; i++) {
-      arr[i] = (char) r.nextInt(Character.MAX_VALUE);
-    }
+    for (int ¢ = 1; ¢ < arr.length; ++¢)
+      arr[¢] = (char) r.nextInt(Character.MAX_VALUE);
     azzert.assertArrayEquals(arr, unbox.unbox(box.box(arr)));
     azzert.assertArrayEquals(arr, unbox.unbox(box.it(arr)));
   }
@@ -129,9 +122,8 @@ import org.junit.*;
   @Test public void testShortCollection() {
     Random r = new Random();
     short[] arr = new short[TEST_ARRAY_SIZE];
-    for (int i = 1; i < arr.length; i++) {
-      arr[i] = (short) r.nextInt(Short.MAX_VALUE);
-    }
+    for (int ¢ = 1; ¢ < arr.length; ++¢)
+      arr[¢] = (short) r.nextInt(Short.MAX_VALUE);
     azzert.assertArrayEquals(arr, unbox.unbox(Arrays.asList(box.box(arr))));
     azzert.assertArrayEquals(arr, unbox.unbox(box.it(arr)));
   }
@@ -139,9 +131,8 @@ import org.junit.*;
   @Test public void testShortArray() {
     Random r = new Random();
     short[] arr = new short[TEST_ARRAY_SIZE];
-    for (int i = 1; i < arr.length; i++) {
-      arr[i] = (short) r.nextInt(Short.MAX_VALUE);
-    }
+    for (int ¢ = 1; ¢ < arr.length; ++¢)
+      arr[¢] = (short) r.nextInt(Short.MAX_VALUE);
     azzert.assertArrayEquals(arr, unbox.unbox(box.box(arr)));
     azzert.assertArrayEquals(arr, unbox.unbox(box.it(arr)));
   }
@@ -149,9 +140,8 @@ import org.junit.*;
   @Test public void testByteArray() {
     Random r = new Random();
     byte[] arr = new byte[TEST_ARRAY_SIZE];
-    for (int i = 1; i < arr.length; i++) {
-      arr[i] = (byte) r.nextInt(Byte.MAX_VALUE);
-    }
+    for (int ¢ = 1; ¢ < arr.length; ++¢)
+      arr[¢] = (byte) r.nextInt(Byte.MAX_VALUE);
     azzert.assertArrayEquals(arr, unbox.unbox(box.box(arr)));
     azzert.assertArrayEquals(arr, unbox.unbox(box.it(arr)));
   }
