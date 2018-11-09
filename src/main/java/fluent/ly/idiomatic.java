@@ -50,7 +50,8 @@ public interface idiomatic {
     try {
       return $.λ();
     } catch (final Exception ¢) {
-      ¢.printStackTrace();
+      // ¢.printStackTrace();
+      ¢.getMessage();
       return null;
     }
   }
@@ -171,57 +172,151 @@ public interface idiomatic {
     }
   }
 
-  @SuppressWarnings("static-method") class TEST {
-    @Test public void use0() {
-      assert new Storer<>(this) != null;
+  @SuppressWarnings("static-method") public static class TEST {
+    // @Test public void use0() {
+    // assert new Storer<>(this) != null;
+    // }
+    //
+    // @Test public void use08() {
+    // azzert.isNull(unless(true).eval(() -> new Object()));
+    // }
+    //
+    // @Test public void use09() {
+    // assert unless(false).eval(() -> new Object()) != null;
+    // }
+    //
+    // @Test public void use1() {
+    // assert new Storer<>(this) != null;
+    // new Storer<>(this).when(true);
+    // }
+    //
+    // @Test public void use10() {
+    // assert when(true).eval(() -> new Object()) != null;
+    // }
+    //
+    // @Test public void use11() {
+    // azzert.isNull(when(false).eval(() -> new Object()));
+    // }
+    //
+    // @Test public void use2() {
+    // assert take(this) != null;
+    // azzert.isNull(take(this).when(false));
+    // }
+    //
+    // @Test public void use3() {
+    // azzert.that(take(this).when(true), is(this));
+    // }
+    //
+    // @Test public void use4() {
+    // azzert.isNull(take(this).when(false));
+    // }
+    //
+    // @Test public void use5() {
+    // azzert.that(take(this).unless(false), is(this));
+    // }
+    //
+    // @Test public void use6() {
+    // azzert.isNull(take(this).unless(true));
+    // }
+    //
+    // @Test public void use7() {
+    // azzert.isNull(take(this).unless(true));
+    // azzert.isNull(take(null).unless(true));
+    // azzert.isNull(take(null).unless(false));
+    // }
+    @Test public void evalAndIgnoreTrigger() {
+      Supplier<@Nullable Integer> supp = new Supplier<@Nullable Integer>() {
+        @Override public Integer get() {
+          return Integer.valueOf(10);
+        }
+      };
+      azzert.that(eval.eval(supp), is(Integer.valueOf(10)));
+      azzert.isNull(ignore.eval(supp));
+      azzert.that(eval.eval(new Integer(10)), is(Integer.valueOf(10)));
+      azzert.isNull(ignore.eval(new Integer(10)));
     }
 
-    @Test public void use08() {
-      azzert.isNull(unless(true).eval(() -> new Object()));
+    @Test public void evalOfSupplier() {
+      azzert.that(eval(new Supplier<@Nullable Integer>() {
+        @Override public Integer get() {
+          return Integer.valueOf(10);
+        }
+      }).get(), is(Integer.valueOf(10)));
     }
 
-    @Test public void use09() {
-      assert unless(false).eval(() -> new Object()) != null;
+    @Test public void incaseTrue() {
+      azzert.that(incase(5 > 3, Integer.valueOf(10)), is(Integer.valueOf(10)));
     }
 
-    @Test public void use1() {
-      assert new Storer<>(this) != null;
-      new Storer<>(this).when(true);
+    @Test public void incaseFalse() {
+      azzert.isNull(incase(5 > 7, Integer.valueOf(10)));
     }
 
-    @Test public void use10() {
-      assert when(true).eval(() -> new Object()) != null;
+    @Test public void katchingNoException() {
+      azzert.that(katching(new Producer<@Nullable Integer>() {
+        @Override public @NotNull Integer λ() throws Exception {
+          @NotNull Integer i = new Integer(10);
+          return i;
+        }
+      }), is(Integer.valueOf(10)));
     }
 
-    @Test public void use11() {
-      azzert.isNull(when(false).eval(() -> new Object()));
+    @Test public void katchingException() {
+      azzert.isNull(katching(new Producer<@Nullable Integer>() {
+        @Override public @NotNull Integer λ() throws Exception {
+          throw new Exception();
+        }
+      }));
     }
 
-    @Test public void use2() {
-      assert take(this) != null;
-      azzert.isNull(take(this).when(false));
+    @Test public void quoteNotNull() {
+      azzert.that(quote(new String("Hello")), is(new String("'Hello'")));
     }
 
-    @Test public void use3() {
-      azzert.that(take(this).when(true), is(this));
+    @Test public void quoteNull() {
+      azzert.that(quote(null), is(new String("<null reference>")));
     }
 
-    @Test public void use4() {
-      azzert.isNull(take(this).when(false));
+    @Test public void runner() {
+      Runner r = run(new Runnable() {
+        @Override public void run() {
+          return;
+        }
+      });
+      r.unless(5 < 3);
+      r.unless(5 > 3);
     }
 
-    @Test public void use5() {
-      azzert.that(take(this).unless(false), is(this));
+    @Test public void unlessFalse() {
+      azzert.that(unless(5 < 3, Integer.valueOf(10)), is(Integer.valueOf(10)));
     }
 
-    @Test public void use6() {
-      azzert.isNull(take(this).unless(true));
+    @Test public void unlessTrue() {
+      azzert.isNull(unless(5 > 3, Integer.valueOf(10)));
     }
 
-    @Test public void use7() {
-      azzert.isNull(take(this).unless(true));
-      azzert.isNull(take(null).unless(true));
-      azzert.isNull(take(null).unless(false));
+    @Test public void takeInteger() {
+      azzert.that(take(new Integer(10)).get(), is(Integer.valueOf(10)));
+    }
+
+    @Test public void unlessTrigger() {
+      Supplier<@Nullable Integer> supp = new Supplier<@Nullable Integer>() {
+        @Override public Integer get() {
+          return new Integer(10);
+        }
+      };
+      azzert.isNull(unless(5 > 3).eval(supp));
+      azzert.that(unless(5 < 3).eval(supp), is(Integer.valueOf(10)));
+    }
+
+    @Test public void holderUnless() {
+      Holder<Integer> holder = new Holder<Integer>() {
+        @Override public Integer get() {
+          return new Integer(10);
+        }
+      };
+      azzert.that(holder.unless(5 < 3), is(Integer.valueOf(10)));
+      azzert.isNull(holder.unless(5 > 3));
     }
   }
 
