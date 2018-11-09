@@ -51,7 +51,7 @@ public class Dotter implements java.io.Serializable {
 
   private void lineStart() {
     lineStartTime = System.nanoTime();
-    System.err.printf("%3d", box(++line));
+    System.err.printf("%3d", boxInteger(++line));
   }
 
   private void nl() {
