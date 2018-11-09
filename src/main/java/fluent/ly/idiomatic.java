@@ -204,7 +204,7 @@ public interface idiomatic {
     @Test public void katchingNoException() {
       azzert.that(katching(new Producer<@Nullable Integer>() {
         @Override @NotNull public Integer λ() throws Exception {
-          return Integer.valueOf(10);
+          return new Integer(10);
         }
       }), is(Integer.valueOf(10)));
     }
