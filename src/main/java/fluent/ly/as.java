@@ -185,15 +185,7 @@ import il.org.spartan.*;
       }
     };
   }
-
-  // No values in an 'enum' which serves as a name space for a collection of
-  // 'static' functions.
-  /** A static nested class hosting unit tests for the nesting class Unit test for
-   * the containing class. Note the naming convention: a) names of test methods do
-   * not use are not prefixed by "test". This prefix is redundant. b) test methods
-   * begin with the name of the method they check.
-   * @author Yossi Gil
-   * @since 2014-05-31 */
+  
   @SuppressWarnings("static-method") public static class TEST {
     @Test public void asBitOfFalse() {
       azzert.that(as.bit(false), is(0));
@@ -228,6 +220,54 @@ import il.org.spartan.*;
         }
       }), is("null"));
     }
+    
+    @Test public void asIterableOddTillTen() {
+      Iterator<Integer> it = as.asIterable(Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9))
+          .iterator();
+      assert it.hasNext();
+      azzert.that(it.next(), is(1));
+      assert it.hasNext();
+      azzert.that(it.next(), is(3));
+      Iterator<Integer> it2 = as.asIterableLambda(Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9))
+          .iterator();
+      assert it2.hasNext();
+      azzert.that(it2.next(), is(1));
+      assert it2.hasNext();
+      azzert.that(it2.next(), is(3));
+      Iterator<Integer> it3 = as.asIterableEssence(Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9))
+          .iterator();
+      assert it3.hasNext();
+      azzert.that(it3.next(), is(1));
+      assert it3.hasNext();
+      azzert.that(it3.next(), is(3));
+      List<Integer> list = as.list(as.asIterable(Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9)));
+      Integer odds[] = { Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9) };
+      for (int ¢ = 0; ¢ < odds.length; ++¢)
+        azzert.that(list.get(¢), is(odds[¢]));
+    }
+    
+    @Test public void bit0() {
+      azzert.that(as.bit(new Object()), is(1));
+      azzert.that(as.bit(null), is(0));
+    }
+    
+    @Test public void iteratorOfObjs() {
+      @NotNull Object o1 = new Object(), o2 = new Object(), o3 = new Object();
+      Iterator<Object> it = as.iterator(o1, o2, o3);
+      azzert.that(it.next(), is(o1));
+      azzert.that(it.next(), is(o2));
+      azzert.that(it.next(), is(o3));
+    }
+    
+    @Test public void setOfObjs() {
+      @NotNull Object o2 = new Object(), o3 = new Object();
+      azzert.that(as.set(new Object(), o2, o3, o3).size(), is(3));
+    }
+    
+    @Test public void charToString() {
+      azzert.that(as.string('a'), is("a"));
+    }
+    
   }
 
   /** Converts a sequence of values into an array.
