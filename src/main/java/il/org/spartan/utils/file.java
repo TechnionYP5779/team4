@@ -11,8 +11,8 @@ import fluent.ly.*;
 /** File utils
  * @author Ori Marcovitch
  * @since Dec 4, 2016 */
-public enum file {
-  ;
+public class file {
+
   private static void delete(final @NotNull String path) {
     if (file.exists(path))
       new File(path).delete();
