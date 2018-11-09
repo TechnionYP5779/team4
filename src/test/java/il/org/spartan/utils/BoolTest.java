@@ -23,10 +23,10 @@ import fluent.ly.*;
 
   @Test public void test_set() {
     Bool b = new Bool(true);
-    azzert.aye(b.inner());
+    azzert.aye(b.get());
     b.set(false);
-    azzert.not(b.inner());
+    azzert.not(b.get());
     b.set();
-    azzert.aye(b.inner());
+    azzert.aye(b.get());
   }
 }
