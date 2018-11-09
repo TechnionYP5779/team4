@@ -21,7 +21,7 @@ import il.org.spartan.*;
    * @param ¢ some <code><b>boolean</b></code> value
    * @return a non-<code><b>null</b></code> {@link Boolean} with the value of
    *         <code>c</code> */
-  public static @NotNull Boolean boxBoolean(final boolean ¢) {
+  @NotNull public static Boolean boxBoolean(final boolean ¢) {
     return Boolean.valueOf(¢);
   }
 
@@ -47,7 +47,7 @@ import il.org.spartan.*;
    * @param ¢ some <code><b>char</b></code> value
    * @return a non-<code><b>null</b></code> {@link Character} with the value of
    *         <code>c</code> */
-  public static @NotNull Character boxCharacter(final char ¢) {
+  @NotNull public static Character boxCharacter(final char ¢) {
     return Character.valueOf(¢);
   }
 
@@ -62,7 +62,7 @@ import il.org.spartan.*;
    * @param ¢ some <code><b>double</b></code> value
    * @return a non-<code><b>null</b></code> {@link Double} with the value of
    *         <code>d</code> */
-  public static @NotNull Double boxDouble(final double ¢) {
+  @NotNull public static Double boxDouble(final double ¢) {
     return Double.valueOf(¢);
   }
 
@@ -92,7 +92,7 @@ import il.org.spartan.*;
    * @param ¢ some <code><b>int</b></code> value
    * @return a non-<code><b>null</b></code> {@link Integer} with the value of
    *         <code>n</code> */
-  public static @NotNull Integer boxInteger(final int ¢) {
+  @NotNull public static Integer boxInteger(final int ¢) {
     return Integer.valueOf(¢);
   }
 
@@ -103,7 +103,7 @@ import il.org.spartan.*;
     return $;
   }
 
-  public static @NotNull Long boxLong(final long ¢) {
+  @NotNull public static Long boxLong(final long ¢) {
     return Long.valueOf(¢);
   }
 
@@ -118,7 +118,7 @@ import il.org.spartan.*;
    * @param ¢ some <code><b>short</b></code> value
    * @return a non-<code><b>null</b></code> {@link Short} with the value of
    *         <code>s</code> */
-  public static @NotNull Short boxShort(final short ¢) {
+  @NotNull public static Short boxShort(final short ¢) {
     return Short.valueOf(¢);
   }
 
@@ -133,7 +133,7 @@ import il.org.spartan.*;
    * @param ¢ some <code><b>boolean</b></code> value
    * @return a non-<code><b>null</b></code> {@link Boolean} with the value of
    *         <code>c</code> */
-  public static @NotNull Boolean it(final boolean ¢) {
+  @NotNull public static Boolean it(final boolean ¢) {
     return cantBeNull(Boolean.valueOf(¢));
   }
 
@@ -148,7 +148,7 @@ import il.org.spartan.*;
    * @param ¢ some <code><b>long</b></code> value
    * @return a non-<code><b>null</b></code> {@link Long} with the value of
    *         <code>l</code> */
-  public static @NotNull Byte it(final byte ¢) {
+  @NotNull public static Byte it(final byte ¢) {
     return cantBeNull(Byte.valueOf(¢));
   }
 
@@ -174,7 +174,7 @@ import il.org.spartan.*;
    * @param ¢ some <code><b>double</b></code> value
    * @return a non-<code><b>null</b></code> {@link Double} with the value of
    *         <code>d</code> */
-  public static @ NotNull Double it(final double ¢) {
+  @NotNull public static Double it(final double ¢) {
     return cantBeNull(Double.valueOf(¢));
   }
 
@@ -205,7 +205,7 @@ import il.org.spartan.*;
    * @return a non-<code><b>null</b></code> {@link Integer} with the value of
    *         <code>n</code>
    * @see #box(int) */
-  public static @NotNull Integer it(final int ¢) {
+  @NotNull public static Integer it(final int ¢) {
     return boxInteger(¢);
   }
 
