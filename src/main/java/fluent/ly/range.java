@@ -1,12 +1,7 @@
 package fluent.ly;
 
-import static fluent.ly.azzert.*;
-
 import java.util.*;
 import java.util.stream.*;
-
-import org.junit.*;
-
 /** A fluent API implementation for range
  * @author Dor Ma'ayan
  * @since 26-11-2016 */
