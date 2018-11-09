@@ -8,15 +8,15 @@ public class out {
   static final int MAX_FIRST = 20;
   static final int MAX_LAST = 10;
 
-  public static void out(final @NotNull String ¢) {
+  public static void out_message(final @NotNull String ¢) {
     System.out.print(¢);
   }
 
-  public static void out(final @NotNull String name, final boolean b) {
+  public static void out_message(final @NotNull String name, final boolean b) {
     System.out.printf("%s = %b\n", name, Boolean.valueOf(b));
   }
 
-  public static void out(final @NotNull String name, final @Nullable Collection<Object> os) {
+  public static void out_collection(final @NotNull String name, final @Nullable Collection<Object> os) {
     assert name != null;
     if (os == null || os.isEmpty()) {
       System.out.printf("No %s\n", name);
@@ -37,15 +37,15 @@ public class out {
     }
   }
 
-  public static void out(final @NotNull String name, final int i) {
+  public static void out_integer(final @NotNull String name, final int i) {
     System.out.printf("%s = %d\n", name, Integer.valueOf(i));
   }
 
-  public static void out(final @NotNull String name, final @Nullable Object a) {
+  public static void out_object(final @NotNull String name, final @Nullable Object a) {
     System.out.printf((a == null ? "No" : "%s =") + " %s\n", name, a);
   }
 
-  public static void out(final @NotNull String name, final Object[] os) {
+  public static void out_object_array(final @NotNull String name, final Object[] os) {
     assert name != null;
     if (os == null || os.length <= 0)
       System.out.printf("No %s\n", name);
