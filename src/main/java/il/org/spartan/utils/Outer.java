@@ -44,8 +44,8 @@ public class Outer<Inner> {
   }
   
   /** set current value */
-  public void set(final Inner inner) {
-    this.inner = inner;
+  public void set(final Inner ¢) {
+    this.inner = ¢;
   }
   
   @Override @NotNull public String toString() {
