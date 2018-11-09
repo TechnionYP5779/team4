@@ -1,6 +1,8 @@
-package il.org.spartan.bench;
+package il.org.spartan.utils;
 
 import static fluent.ly.box.*;
+
+import il.org.spartan.bench.*;
 
 /** @author Yossi Gil
  * @since 01/05/2011 */
