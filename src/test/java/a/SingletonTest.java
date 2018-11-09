@@ -9,7 +9,7 @@ import fluent.ly.*;
 @SuppressWarnings("static-method") public class SingletonTest {
   
   @Test public void intListSingelton() {
-    azzert.that(singleton.list(new Integer(5)).size(), is(1));
+    azzert.that(singleton.list(Integer.valueOf(5)).size(), is(1));
   }
   
   @Test public void intArraySingelton() {
