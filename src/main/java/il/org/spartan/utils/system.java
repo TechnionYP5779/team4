@@ -109,6 +109,9 @@ public interface system {
           if ($.isEmpty() || $.pop() != '{')
             return false;
           continue;
+        default:
+          continue;
+            
       }
     return $.isEmpty();
   }
