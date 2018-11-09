@@ -3,6 +3,11 @@ package an;
 import java.util.*;
 
 import org.jetbrains.annotations.*;
+import org.junit.*;
+
+import fluent.ly.*;
+import il.org.spartan.*;
+import il.org.spartan.utils.*;
 
 /** TODO Yossi Gil: document class
  * @author Yossi Gil
@@ -27,5 +32,12 @@ public enum empty {
         };
       }
     };
+  }
+
+  @SuppressWarnings("static-method") public static class TEST {
+    @Test public void testList() {
+      List<String> list = empty.list();
+      azzert.assertEquals(0, list.size());
+    }
   }
 }
