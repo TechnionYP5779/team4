@@ -1,12 +1,10 @@
-package il.org.spartan.utils;
+package fluent.ly;
 
 import java.io.*;
 import java.nio.charset.*;
 import java.nio.file.*;
 
 import org.jetbrains.annotations.*;
-
-import fluent.ly.*;
 
 /** File utils
  * @author Ori Marcovitch
