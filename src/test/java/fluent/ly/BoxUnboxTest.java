@@ -11,54 +11,54 @@ import static fluent.ly.azzert.*;
 
   @Test public void testBoolean() {
     boolean b = new Random().nextBoolean();
-    azzert.that(unbox.unbox(box.boxBoolean(b)), is(b));
-    azzert.assertEquals(b, unbox.unbox(box.it(b)));
+    azzert.that(unbox.unboxBoolean(box.boxBoolean(b)), is(b));
+    azzert.assertEquals(b, unbox.unboxBoolean(box.it(b)));
   }
 
   @Test public void testInteger() {
     int i = new Random().nextInt();
-    azzert.assertEquals(i, unbox.unbox(box.boxInteger(i)));
+    azzert.assertEquals(i, unbox.unboxInteger(box.boxInteger(i)));
     azzert.assertEquals(i, unbox.it(box.it(i)));
   }
 
   @Test public void testLong() {
     long l = new Random().nextLong();
-    azzert.that(unbox.unbox(box.boxLong(l)), is(l));
-    azzert.that(unbox.unbox(box.it(l)), is(l));
+    azzert.that(unbox.unboxLong(box.boxLong(l)), is(l));
+    azzert.that(unbox.unboxLong(box.it(l)), is(l));
   }
 
   @Test public void testFloat() {
     float f = new Random().nextFloat();
-    azzert.aye(unbox.unbox(box.boxFloat(f)) - f > -1 * FLOAT_DELTA 
-        && unbox.unbox(box.boxFloat(f)) - f < FLOAT_DELTA);
-    azzert.aye(unbox.unbox(box.it(f)) - f > -1 * FLOAT_DELTA 
-        && unbox.unbox(box.it(f)) - f < FLOAT_DELTA );
+    azzert.aye(unbox.unboxFloat(box.boxFloat(f)) - f > -1 * FLOAT_DELTA 
+        && unbox.unboxFloat(box.boxFloat(f)) - f < FLOAT_DELTA);
+    azzert.aye(unbox.unboxFloat(box.it(f)) - f > -1 * FLOAT_DELTA 
+        && unbox.unboxFloat(box.it(f)) - f < FLOAT_DELTA );
   }
 
   @Test public void testDouble() {
     double d = new Random().nextDouble();
-    azzert.aye(unbox.unbox(box.boxDouble(d)) - d > -1 * DOUBLE_DELTA
-        && unbox.unbox(box.boxDouble(d)) - d < DOUBLE_DELTA);
-    azzert.aye(unbox.unbox(box.it(d)) - d > -1 * DOUBLE_DELTA
-        && unbox.unbox(box.it(d)) - d < DOUBLE_DELTA);
+    azzert.aye(unbox.unboxDouble(box.boxDouble(d)) - d > -1 * DOUBLE_DELTA
+        && unbox.unboxDouble(box.boxDouble(d)) - d < DOUBLE_DELTA);
+    azzert.aye(unbox.unboxDouble(box.it(d)) - d > -1 * DOUBLE_DELTA
+        && unbox.unboxDouble(box.it(d)) - d < DOUBLE_DELTA);
   }
 
   @Test public void testChar() {
     char c = (char) new Random().nextInt(Character.MAX_VALUE);
-    azzert.assertEquals(c, unbox.unbox(box.boxCharacter(c)));
-    azzert.assertEquals(c, unbox.unbox(box.it(c)));
+    azzert.assertEquals(c, unbox.unboxChar(box.boxCharacter(c)));
+    azzert.assertEquals(c, unbox.unboxChar(box.it(c)));
   }
 
   @Test public void testShort() {
     short s = (short) new Random().nextInt(Short.MAX_VALUE);
-    azzert.assertEquals(s, unbox.unbox(box.boxShort(s)));
-    azzert.assertEquals(s, unbox.unbox(box.it(s)));
+    azzert.assertEquals(s, unbox.unboxShort(box.boxShort(s)));
+    azzert.assertEquals(s, unbox.unboxShort(box.it(s)));
   }
 
   @Test public void testByte() {
     byte b = (byte) new Random().nextInt(Byte.MAX_VALUE);
-    azzert.assertEquals(b, unbox.unbox(box.boxByte(b)));
-    azzert.assertEquals(b, unbox.unbox(box.it(b)));
+    azzert.assertEquals(b, unbox.unboxByte(box.boxByte(b)));
+    azzert.assertEquals(b, unbox.unboxByte(box.it(b)));
   }
 
   @Test public void testBooleanArray() {
@@ -66,11 +66,11 @@ import static fluent.ly.azzert.*;
     boolean[] arr = new boolean[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = r.nextBoolean();
-    boolean[] arr_res = unbox.unbox(box.boxBooleanArray(arr));
+    boolean[] arr_res = unbox.unboxBooleanArray(box.boxBooleanArray(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res[¢], is(arr[¢]));
     
-    boolean[] arr_res_2 = unbox.unbox(box.it(arr));
+    boolean[] arr_res_2 = unbox.unboxBooleanArray(box.it(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res_2[¢], is(arr[¢]));
   }
@@ -81,11 +81,11 @@ import static fluent.ly.azzert.*;
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = r.nextInt();
     
-    int[] arr_res = unbox.unbox(box.boxIntegerArray(arr));
+    int[] arr_res = unbox.unboxIntegerArray(box.boxIntegerArray(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res[¢], is(arr[¢]));
     
-    int[] arr_res_2 = unbox.unbox(box.it(arr));
+    int[] arr_res_2 = unbox.unboxIntegerArray(box.it(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res_2[¢], is(arr[¢]));
   }
@@ -107,11 +107,11 @@ import static fluent.ly.azzert.*;
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = r.nextLong();
     
-    long[] arr_res = unbox.unbox(box.boxLongArray(arr));
+    long[] arr_res = unbox.unboxLongArray(box.boxLongArray(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res[¢], is(arr[¢]));
     
-    long[] arr_res_2 = unbox.unbox(box.it(arr));
+    long[] arr_res_2 = unbox.unboxLongArray(box.it(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res_2[¢], is(arr[¢]));
   }
@@ -122,11 +122,11 @@ import static fluent.ly.azzert.*;
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = r.nextFloat();
     
-    float[] arr_res = unbox.unbox(box.boxFloatArray(arr));
+    float[] arr_res = unbox.unboxFloatArray(box.boxFloatArray(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.aye(arr_res[¢] - arr[¢] > -1 * FLOAT_DELTA && arr_res[¢] - arr[¢] < FLOAT_DELTA);
     
-    float[] arr_res_2 = unbox.unbox(box.it(arr));
+    float[] arr_res_2 = unbox.unboxFloatArray(box.it(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.aye(arr_res_2[¢] - arr[¢] > -1 * FLOAT_DELTA &&  arr_res_2[¢] - arr[¢]< FLOAT_DELTA);
 
@@ -138,11 +138,11 @@ import static fluent.ly.azzert.*;
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = r.nextDouble();
     
-    double[] arr_res = unbox.unbox(box.boxDoubleArray(arr));
+    double[] arr_res = unbox.unboxDoubleArray(box.boxDoubleArray(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.aye(arr_res[¢] - arr[¢] > -1 * DOUBLE_DELTA && arr_res[¢] - arr[¢] < DOUBLE_DELTA);
     
-    double[] arr_res_2 = unbox.unbox(box.it(arr));
+    double[] arr_res_2 = unbox.unboxDoubleArray(box.it(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.aye(arr_res_2[¢] - arr[¢] > -1 * DOUBLE_DELTA &&  arr_res_2[¢] - arr[¢]< DOUBLE_DELTA);
     
@@ -154,11 +154,11 @@ import static fluent.ly.azzert.*;
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = (char) r.nextInt(Character.MAX_VALUE);
    
-    char[] arr_res = unbox.unbox(box.boxCharacterArray(arr));
+    char[] arr_res = unbox.unboxCharArray(box.boxCharacterArray(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res[¢], is(arr[¢]));
     
-    char[] arr_res_2 = unbox.unbox(box.it(arr));
+    char[] arr_res_2 = unbox.unboxCharArray(box.it(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res_2[¢], is(arr[¢]));
   }
@@ -169,11 +169,11 @@ import static fluent.ly.azzert.*;
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = (short) r.nextInt(Short.MAX_VALUE);
     
-    short[] arr_res = unbox.unbox(Arrays.asList(box.boxShortArray(arr)));
+    short[] arr_res = unbox.unboxShortCollection(Arrays.asList(box.boxShortArray(arr)));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res[¢], is(arr[¢]));
     
-    short[] arr_res_2 = unbox.unbox(box.it(arr));
+    short[] arr_res_2 = unbox.unboxShortArray(box.it(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res_2[¢], is(arr[¢]));
   }
@@ -184,11 +184,11 @@ import static fluent.ly.azzert.*;
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = (short) r.nextInt(Short.MAX_VALUE);
     
-    short[] arr_res = unbox.unbox(box.boxShortArray(arr));
+    short[] arr_res = unbox.unboxShortArray(box.boxShortArray(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res[¢], is(arr[¢]));
     
-    short[] arr_res_2 = unbox.unbox(box.it(arr));
+    short[] arr_res_2 = unbox.unboxShortArray(box.it(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res_2[¢], is(arr[¢]));
 
@@ -199,11 +199,11 @@ import static fluent.ly.azzert.*;
     byte[] arr = new byte[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = (byte) r.nextInt(Byte.MAX_VALUE);
-    byte[] arr_res = unbox.unbox(box.boxByteArray(arr));
+    byte[] arr_res = unbox.unboxByteArray(box.boxByteArray(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res[¢], is(arr[¢]));
     
-    byte[] arr_res_2 = unbox.unbox(box.it(arr));
+    byte[] arr_res_2 = unbox.unboxByteArray(box.it(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res_2[¢], is(arr[¢]));
   }
