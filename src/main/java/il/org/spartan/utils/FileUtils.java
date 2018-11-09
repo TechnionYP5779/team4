@@ -1,8 +1,6 @@
 package il.org.spartan.utils;
 
 import java.io.*;
-import java.nio.charset.*;
-import java.nio.file.*;
 import java.util.*;
 
 import org.jetbrains.annotations.*;

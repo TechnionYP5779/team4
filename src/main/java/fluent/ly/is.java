@@ -2,7 +2,6 @@
 package fluent.ly;
 
 import java.util.*;
-import java.util.stream.*;
 
 import org.jetbrains.annotations.*;
 
