@@ -66,9 +66,13 @@ import static fluent.ly.azzert.*;
     boolean[] arr = new boolean[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = r.nextBoolean();
-    azzert.assertArrayEquals(arr, unbox.unbox(box.box(arr)));
-    azzert.assertArrayEquals(arr, unbox.unbox(box.it(arr)));
+    boolean[] arr_res = unbox.unbox(box.box(arr));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.that(arr_res[¢], is(arr[¢]));
     
+    boolean[] arr_res_2 = unbox.unbox(box.it(arr));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.that(arr_res_2[¢], is(arr[¢]));
   }
 
   @Test public void testIntegerArray() {
@@ -76,8 +80,14 @@ import static fluent.ly.azzert.*;
     int[] arr = new int[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = r.nextInt();
-    azzert.assertArrayEquals(arr, unbox.unbox(box.box(arr)));
-    azzert.assertArrayEquals(arr, unbox.it(box.it(arr)));
+    
+    int[] arr_res = unbox.unbox(box.box(arr));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.that(arr_res[¢], is(arr[¢]));
+    
+    int[] arr_res_2 = unbox.unbox(box.it(arr));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.that(arr_res_2[¢], is(arr[¢]));
   }
 
   @Test public void testIntegerList() {
@@ -85,7 +95,10 @@ import static fluent.ly.azzert.*;
     int[] arr = new int[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = r.nextInt();
-    azzert.assertArrayEquals(arr, unbox.it(Arrays.asList(box.box(arr))));
+    
+    int[] arr_res = unbox.it(Arrays.asList(box.box(arr)));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.that(arr_res[¢], is(arr[¢]));
   }  
   
   @Test public void testLongArray() {
@@ -93,8 +106,14 @@ import static fluent.ly.azzert.*;
     long[] arr = new long[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = r.nextLong();
-    azzert.assertArrayEquals(arr, unbox.unbox(box.box(arr)));
-    azzert.assertArrayEquals(arr, unbox.unbox(box.it(arr)));
+    
+    long[] arr_res = unbox.unbox(box.box(arr));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.that(arr_res[¢], is(arr[¢]));
+    
+    long[] arr_res_2 = unbox.unbox(box.it(arr));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.that(arr_res_2[¢], is(arr[¢]));
   }
 
   @Test public void testFloatArray() {
@@ -102,8 +121,15 @@ import static fluent.ly.azzert.*;
     float[] arr = new float[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = r.nextFloat();
-    azzert.assertArrayEquals(arr, unbox.unbox(box.box(arr)), FLOAT_DELTA);
-    azzert.assertArrayEquals(arr, unbox.it(box.it(arr)), FLOAT_DELTA);
+    
+    float[] arr_res = unbox.unbox(box.box(arr));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.aye(arr_res[¢] - arr[¢] > -1 * FLOAT_DELTA && arr_res[¢] - arr[¢] < FLOAT_DELTA);
+    
+    float[] arr_res_2 = unbox.unbox(box.it(arr));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.aye(arr_res_2[¢] - arr[¢] > -1 * FLOAT_DELTA &&  arr_res_2[¢] - arr[¢]< FLOAT_DELTA);
+
   }
 
   @Test public void testDoubleArray() {
@@ -111,8 +137,15 @@ import static fluent.ly.azzert.*;
     double[] arr = new double[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = r.nextDouble();
-    azzert.assertArrayEquals(arr, unbox.unbox(box.box(arr)), DOUBLE_DELTA);
-    azzert.assertArrayEquals(arr, unbox.it(box.it(arr)), DOUBLE_DELTA);
+    
+    double[] arr_res = unbox.unbox(box.box(arr));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.aye(arr_res[¢] - arr[¢] > -1 * DOUBLE_DELTA && arr_res[¢] - arr[¢] < DOUBLE_DELTA);
+    
+    double[] arr_res_2 = unbox.unbox(box.it(arr));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.aye(arr_res_2[¢] - arr[¢] > -1 * DOUBLE_DELTA &&  arr_res_2[¢] - arr[¢]< DOUBLE_DELTA);
+    
   }
 
   @Test public void testCharArray() {
@@ -120,8 +153,14 @@ import static fluent.ly.azzert.*;
     char[] arr = new char[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = (char) r.nextInt(Character.MAX_VALUE);
-    azzert.assertArrayEquals(arr, unbox.unbox(box.box(arr)));
-    azzert.assertArrayEquals(arr, unbox.unbox(box.it(arr)));
+   
+    char[] arr_res = unbox.unbox(box.box(arr));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.that(arr_res[¢], is(arr[¢]));
+    
+    char[] arr_res_2 = unbox.unbox(box.it(arr));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.that(arr_res_2[¢], is(arr[¢]));
   }
   
   @Test public void testShortCollection() {
@@ -129,8 +168,14 @@ import static fluent.ly.azzert.*;
     short[] arr = new short[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = (short) r.nextInt(Short.MAX_VALUE);
-    azzert.assertArrayEquals(arr, unbox.unbox(Arrays.asList(box.box(arr))));
-    azzert.assertArrayEquals(arr, unbox.unbox(box.it(arr)));
+    
+    short[] arr_res = unbox.unbox(Arrays.asList(box.box(arr)));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.that(arr_res[¢], is(arr[¢]));
+    
+    short[] arr_res_2 = unbox.unbox(box.it(arr));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.that(arr_res_2[¢], is(arr[¢]));
   }
 
   @Test public void testShortArray() {
@@ -138,8 +183,15 @@ import static fluent.ly.azzert.*;
     short[] arr = new short[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = (short) r.nextInt(Short.MAX_VALUE);
-    azzert.assertArrayEquals(arr, unbox.unbox(box.box(arr)));
-    azzert.assertArrayEquals(arr, unbox.unbox(box.it(arr)));
+    
+    short[] arr_res = unbox.unbox(box.box(arr));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.that(arr_res[¢], is(arr[¢]));
+    
+    short[] arr_res_2 = unbox.unbox(box.it(arr));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.that(arr_res_2[¢], is(arr[¢]));
+
   }
 
   @Test public void testByteArray() {
@@ -147,7 +199,12 @@ import static fluent.ly.azzert.*;
     byte[] arr = new byte[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = (byte) r.nextInt(Byte.MAX_VALUE);
-    azzert.assertArrayEquals(arr, unbox.unbox(box.box(arr)));
-    azzert.assertArrayEquals(arr, unbox.unbox(box.it(arr)));
+    byte[] arr_res = unbox.unbox(box.box(arr));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.that(arr_res[¢], is(arr[¢]));
+    
+    byte[] arr_res_2 = unbox.unbox(box.it(arr));
+    for (int ¢ = 0; ¢ < arr.length; ++¢)
+      azzert.that(arr_res_2[¢], is(arr[¢]));
   }
 }
