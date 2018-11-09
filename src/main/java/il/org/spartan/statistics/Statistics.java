@@ -56,7 +56,7 @@ public abstract class Statistics {
       $ += ¢;
       sum2 += ¢ * ¢;
     }
-    return sum2 / (ds.length) - $ * $ / (ds.length * ds.length);
+    return sum2 / ds.length - $ * $ / (ds.length * ds.length);
   }
 
   protected int n;
