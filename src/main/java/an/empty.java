@@ -6,8 +6,6 @@ import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.*;
-import il.org.spartan.*;
-import il.org.spartan.utils.*;
 
 /** TODO Yossi Gil: document class
  * @author Yossi Gil
@@ -36,8 +34,16 @@ public enum empty {
 
   @SuppressWarnings("static-method") public static class TEST {
     @Test public void testList() {
-      List<String> list = empty.list();
+      List<?> list = empty.list();
       azzert.assertEquals(0, list.size());
+    }
+    
+    @SuppressWarnings("static-access") @Test public void testIterable() {
+      Iterable<?> iterable = empty.iterable();
+      Iterator<?> iterator = iterable.iterator();
+      azzert.assertEquals(false, iterator.hasNext());
+      azzert.assertEquals(null, iterator.next());
+      azzert.assertNotEquals(iterator, iterable.iterator());
     }
   }
 }
