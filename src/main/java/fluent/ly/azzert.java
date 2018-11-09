@@ -10,7 +10,7 @@ import org.hamcrest.number.*;
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
-import il.org.spartan.*;
+import il.org.spartan.utils.*;
 
 /** Extends {@link org.junit.Assert} with more assertion for equality
  * comparisons. If the comparison yields a "not-equal" result, a JUnit assertion
@@ -485,8 +485,8 @@ public class azzert extends org.junit.Assert {
     azzert.assertNull(message, o);
   }
 
-  @NotNull public static Wrapper<String> iz(final @NotNull String ¢) {
-    return new Wrapper<>(¢);
+  @NotNull public static Outer<String> iz(final @NotNull String ¢) {
+    return new Outer<>(¢);
   }
 
   @Factory @NotNull public static Matcher<@Nullable Boolean> lessThan(final boolean ¢) {
@@ -679,7 +679,7 @@ public class azzert extends org.junit.Assert {
     assertThat("", Long.valueOf(l), m);
   }
 
-  public static void that(final Object actual, final @NotNull Wrapper<@Nullable String> expected) {
+  public static void that(final Object actual, final @NotNull Outer<@Nullable String> expected) {
     assertThat("", compressSpaces(actual + ""), is(compressSpaces(expected.get())));
   }
 
