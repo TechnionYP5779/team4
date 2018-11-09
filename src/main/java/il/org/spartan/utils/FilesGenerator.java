@@ -1,4 +1,4 @@
-package il.org.spartan.collections;
+package il.org.spartan.utils;
 
 import java.io.*;
 import java.util.*;
