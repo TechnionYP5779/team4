@@ -2,6 +2,10 @@ package fluent.ly;
 
 import org.junit.*;
 import static fluent.ly.azzert.*;
+
+import java.io.*;
+import java.util.*;
+
 import fluent.ly.forget;
 
 @SuppressWarnings("static-method") public class StringTest {
@@ -117,6 +121,86 @@ import fluent.ly.forget;
     } catch (Exception ¢) {
       forget.it(¢);
     }
+  }
+  
+  @Test public void lowCounter() {
+    azzert.that(string.lowCounter(-1), is(""));
+    azzert.that(string.lowCounter(0), is("a"));
+    azzert.that(string.lowCounter(1), is("b"));
+  }
+  
+  @Test public void ltoa() {
+    azzert.that(string.ltoa(314L), is("314"));
+  }
+
+  @Test public void ordinal() {
+    azzert.that(string.ordinal(0), is("0th"));
+    azzert.that(string.ordinal(1), is("1st"));
+    azzert.that(string.ordinal(11), is("11th"));
+    azzert.that(string.ordinal(2), is("2nd"));
+    azzert.that(string.ordinal(12), is("12th"));
+    azzert.that(string.ordinal(3), is("3th"));
+  }  
+  
+  @Test public void paren() {
+    azzert.that(string.paren("abc"), is("(abc)"));
+  }
+  
+  @Test public void pluralize() {
+    azzert.that(string.pluralize(0, "chair"), is("no chairs"));
+    azzert.that(string.pluralize(1, "chair"), is("chair"));
+    azzert.that(string.pluralize(2, "chair"), is("two chairs"));
+    azzert.that(string.pluralize(3, "chair"), is("three chairs"));
+    azzert.that(string.pluralize(4, "chair"), is("four chairs"));
+    azzert.that(string.pluralize(5, "chair"), is("five chairs"));
+    azzert.that(string.pluralize(6, "chair"), is("six chairs"));
+    azzert.that(string.pluralize(7, "chair"), is("seven chairs"));
+    azzert.that(string.pluralize(8, "chair"), is("eight chairs"));
+    azzert.that(string.pluralize(9, "chair"), is("nine chairs"));
+    azzert.that(string.pluralize(10, "chair"), is("10 chairs"));
+  }
+
+  @Test public void quote() {
+    azzert.that(string.quote("abc"), is("'abc'"));
+  }
+  
+  @Test public void repeat() {
+    azzert.that(string.repeat(3, 'c'), is("ccc"));
+  }
+  
+  @Test public void signum() {
+    azzert.that(string.signum(0.0), is(0));
+    azzert.that(string.signum(5.0), is(1));
+    azzert.that(string.signum(-5.0), is(-1));
+  }
+  
+  @Test public void strip() {
+    azzert.that(string.strip("abc"), is("b"));
+  }
+  
+  @Test public void toLines() {    
+    try {
+      List<String> a = string.toLines("ab\ncd");
+      azzert.that(a.get(0), is("ab"));
+      azzert.that(a.get(1), is("cd"));
+    } catch (IOException ¢) {
+      forget.it(¢);
+      azzert.fail();
+    }
+  }
+  
+  @Test public void upCounter() {
+    azzert.that(string.upCounter(-1), is(""));
+    azzert.that(string.upCounter(0), is("A"));
+    azzert.that(string.upCounter(1), is("B"));
+  }
+  
+  @Test public void visualize() {
+    azzert.that(string.visualize("ab \ncd"), is("abs\\ncd"));
+  }
+  
+  @Test public void wrap() {
+    azzert.that(string.wrap("*", "abc"), is("*abc*"));
   }
   
 }
