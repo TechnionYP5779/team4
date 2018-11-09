@@ -37,14 +37,6 @@ import static fluent.ly.idiomatic.*;
       azzert.isNull(incase(5 > 7, Integer.valueOf(10)));
     }
 
-    @Test public void katchingNoException() {
-      azzert.that(katching(new Producer<@Nullable Integer>() {
-        @Override @NotNull public Integer λ() throws Exception {
-          return Integer.valueOf(10);
-        }
-      }), is(Integer.valueOf(10)));
-    }
-
     @Test public void katchingException() {
       azzert.isNull(katching(new Producer<@Nullable Integer>() {
         @Override @NotNull public Integer λ() throws Exception {
