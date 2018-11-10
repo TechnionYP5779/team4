@@ -159,7 +159,7 @@ import org.junit.*;
       azzert.that(the.secondOf(l), is(Integer.valueOf(3)));
     }
     
-    @Test public void secondOfNullList() {
+    @Test public void secondOfnullList() {
       @Nullable List<@Nullable Integer> l = new ArrayList<>();
       l.add(Integer.valueOf(1));
       l = null;
