@@ -47,7 +47,7 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
      * @see java.lang.Object#equals(java.lang.Object)
      */
     @Override public boolean equals(Object obj) {
-      if (obj.hashCode() == this.hashCode() && obj == this)
+      if (obj == this)
         return true;
       if (obj == null || !(obj instanceof PairsList.Pair))
         return false;
