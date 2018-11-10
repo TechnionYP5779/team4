@@ -149,6 +149,20 @@ import org.junit.*;
       @Nullable List<@Nullable Integer> l = new ArrayList<>();
       l.add(Integer.valueOf(4));
       l.add(Integer.valueOf(3));
-      azzert.that(the.lastOf(l), is(Integer.valueOf(3)));
+      azzert.that(the.penultimateOf(l), is(Integer.valueOf(4)));
+    }
+    
+    @Test public void secondOfList() {
+      @Nullable List<@Nullable Integer> l = new ArrayList<>();
+      l.add(Integer.valueOf(4));
+      l.add(Integer.valueOf(3));
+      azzert.that(the.secondOf(l), is(Integer.valueOf(3)));
+    }
+    
+    @Test public void secondOfNullList() {
+      @Nullable List<@Nullable Integer> l = new ArrayList<>();
+      l.add(Integer.valueOf(1));
+      l = null;
+      azzert.isNull(the.secondOf(l));
     }
   }
