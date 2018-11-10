@@ -231,4 +231,61 @@ import static il.org.spartan.Utils.*;
     for(int ¢ = 0; ¢ < 9; ++¢)
       azzert.that(((List<Integer>) res).get(¢), is(¢ + 1));
   }
+  
+  @Test public void addAllElementsToCollection() {
+    @NotNull Collection<Integer> list2 = new ArrayList<>();
+    list2.add(Integer.valueOf(1));
+    list2.add(Integer.valueOf(2));
+    list2.add(Integer.valueOf(3));
+    
+    Collection<Integer> res = Utils.addAll(list2, Integer.valueOf(4), Integer.valueOf(5),Integer.valueOf(6));
+    for(int ¢ = 0; ¢ < 6; ++¢)
+      azzert.that(((List<Integer>) res).get(¢), is(¢ + 1));
+  }
+  
+  @Test public void appendToArray() {
+    @SuppressWarnings("null")
+    @NotNull Integer a [] = { Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3) }, res[] = Utils.append(a, Integer.valueOf(4));
+    for(int ¢ = 0; ¢ < 4; ++¢)
+      azzert.that(res[¢], is(¢ + 1));
+  }
+  
+  @Test public void compressingSpaces() {
+    azzert.that(Utils.compressSpaces("a        :  (   %   ,   {   }   =   ==   <   <=   -   *   |   &   %   (   )   [^]"), is("a:(%,{}===<<=-*|&%()[^]"));
+  }
+  
+  @Test public void deleteFromArray() {
+    @SuppressWarnings("null")
+    @NotNull Integer a [] = { Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3) }, res[] = Utils.delete(a, 1);
+    azzert.that(res[0], is(1));
+    azzert.that(res[1], is(3));
+  }
+  
+  @Test public void HasNullTrue() {
+    azzert.aye(Utils.hasNull(new Object(), null));
+  }
+  
+  @Test public void HasNullFalse() {
+    azzert.not(Utils.hasNull(new Object(), new Object()));
+  }
+  
+  @Test public void intIsInTrue() {
+    azzert.aye(Utils.intIsIn(1, 1, 2, 3));
+  }
+  
+  @Test public void intIsInFalse() {
+    azzert.not(Utils.intIsIn(5, 1, 2, 3));
+  }
+  
+  @Test @SuppressWarnings("null") public void foundHandler() {
+    FoundHandleForT<Integer> fh = new Utils.FoundHandleForT<>(Integer.valueOf(1));
+    azzert.aye(fh.in(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3)));
+    azzert.not(fh.in(Integer.valueOf(2), Integer.valueOf(3)));
+  }
+  
+  @Test public void foundHandlerInt() {
+    FoundHandleForT.FoundHandleForInt fh = new Utils.FoundHandleForT.FoundHandleForInt(1);
+    azzert.aye(fh.in(1, 2, 3));
+    azzert.not(fh.in(2, 3));
+  }
 }
