@@ -1,8 +1,10 @@
-package fluent.ly;
+package il.org.spartan.etc;
 
 import java.util.*;
 
 import org.jetbrains.annotations.*;
+
+import fluent.ly.*;
 
 public class out {
   static final int MAX_FIRST = 20;

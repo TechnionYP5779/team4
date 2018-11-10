@@ -7,6 +7,7 @@ import java.util.*;
 import org.jetbrains.annotations.*;
 
 import il.org.spartan.*;
+import il.org.spartan.etc.*;
 
 /** A class to print all properties of an arbitrary object which can be
  * retrieved by getters methods (i.e., getXXX()) methods and boolean inspection

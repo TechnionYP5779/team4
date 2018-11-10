@@ -1,9 +1,8 @@
 package fluent.ly;
 
+import static il.org.spartan.etc.English.*;
 import static java.lang.String.*;
 import static java.util.stream.Collectors.*;
-
-import static fluent.ly.English.*;
 
 import java.io.*;
 import java.util.*;
@@ -12,6 +11,7 @@ import java.util.stream.*;
 
 import org.jetbrains.annotations.*;
 
+import il.org.spartan.etc.*;
 import il.org.spartan.utils.*;
 
 /** Our way of dealing with logs, exceptions, NPE, Eclipse bugs, and other
