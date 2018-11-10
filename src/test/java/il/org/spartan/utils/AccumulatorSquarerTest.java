@@ -8,8 +8,8 @@ import org.junit.*;
 import fluent.ly.*;
 import il.org.spartan.utils.Accumulator.*;
 
-@SuppressWarnings("static-method") public class AccumulatorSquarer {
-  @Test public void booleanAdds() {
+@SuppressWarnings("static-method") public class AccumulatorSquarerTest {
+  @Test public void testCase() {
     final @NotNull Squarer s = new Squarer();
     azzert.that(s.transform(3), is(9));
     azzert.that(s.transform(0), is(0));
