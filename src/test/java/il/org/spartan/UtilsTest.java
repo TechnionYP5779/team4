@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import static fluent.ly.azzert.*;
 
+import java.io.*;
 import java.util.*;
 
 import org.jetbrains.annotations.*;
@@ -75,7 +76,7 @@ import static il.org.spartan.Utils.*;
   @Test public void mustBeNullOfNotNull() {
     try {
       mustBeNull(new Object());
-      azzert.fail("AssertionError expected prior to this line.");
+      azzert.fail();
     } catch (final AssertionError ¢) {
       forget.it(¢);
       azzert.aye("", true);
@@ -111,4 +112,55 @@ import static il.org.spartan.Utils.*;
     swap($, 0, 1);
     assertArrayEquals(intToIntegers(1, 29, 60), $);
   }
+  
+  @Test public void prepend() {
+    StringBuilder s = Utils.prepend(new StringBuilder(), 'c');
+    azzert.that(s.charAt(0), azzert.is('c'));
+    s = Utils.prepend(s, "str");
+    azzert.that(s.charAt(0), azzert.is('s'));
+  }
+  
+  @Test public void quoteTest() {
+    azzert.that(Utils.quote("abc"),azzert.is("'abc'"));
+    azzert.that(Utils.quote(null),azzert.is("<null reference>"));
+  }
+  
+  @Test public void remove() {
+    ArrayList<Integer> a = new ArrayList<>();
+    Integer x3 = Integer.valueOf(2);
+    a.add(Integer.valueOf(2));
+    a.add(x3);
+    Utils.removeDuplicates(a);
+    azzert.that(a.size(),azzert.is(1));
+    azzert.that(Utils.removePrefix("abc", "ab"),azzert.is("c"));
+    azzert.that(Utils.removeSuffix("abc", "c"),azzert.is("ab"));
+    azzert.that(Utils.removeWhites("abc def "),azzert.is("abcdef"));
+  }
+  
+  @Test public void sort() {
+    int[] arr = Utils.sort(new int[] { 15, 2, 6 });
+    azzert.that(arr[0], is(2));
+    azzert.that(arr[1],is(6));
+    azzert.that(arr[2],is(15));
+  }
+  
+  @Test public void sqr() {
+    azzert.that(Utils.sqr(4.0),azzert.is(16.0));
+  }
+  
+  @Test public void suffixedBy() {
+    File f = new File("file1"), g = new File("file2");
+    ArrayList<String> slist = new ArrayList<>();
+    slist.add("suf1");
+    slist.add("e1");
+    azzert.aye(Utils.suffixedBy(f, slist));
+    azzert.nay(Utils.suffixedBy(g, slist));
+    azzert.aye(Utils.suffixedBy(g, "e2"));
+    azzert.nay(Utils.suffixedBy("file1", "e2"));
+  }
+  
+  @Test public void nameTest() {
+    azzert.that(Utils.name(new File("abc")) ,azzert.is("abc"));
+  }
+ 
 }
