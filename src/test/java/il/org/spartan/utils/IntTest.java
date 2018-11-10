@@ -73,12 +73,10 @@ import fluent.ly.*;
   }
   
   @Test public void testValueOf() {
-    Int i = Int.valueOf(4);
-    azzert.that(i.inner(), is(4));
+    azzert.that(Int.valueOf(4).inner(), is(4));
   }
   
   @Test public void testToString() {
-    Int i = new Int(4);
-    azzert.that(i.toString(), is("4"));
+    azzert.that(new Int(4) + "", is("4"));
   }
 }

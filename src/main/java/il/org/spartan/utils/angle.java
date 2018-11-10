@@ -25,7 +25,7 @@ import fluent.ly.forget;
 
   public static angle radians(double __) {
     forget.it(__);
-    return new angle(1*rad2deg);
+    return new angle(rad2deg);
   }
   
   public angle add(final angle __) {

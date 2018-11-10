@@ -20,8 +20,7 @@ import fluent.ly.*;
   }
   
   @Test public void testSet() {
-    Str s = new Str();
-    s.set("set");
+    new Str().set("set");
     azzert.not((new Str()).isEmptyx());
   }
 }
