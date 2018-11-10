@@ -11,8 +11,4 @@ import java.util.logging.*;
     note.unset();
     note.unset();
   }
-  
-  @Test public void testInfo() {
-    azzert.isNull(note.info("message"));
-  }
 }
