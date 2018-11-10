@@ -17,7 +17,7 @@ import static fluent.ly.azzert.*;
     PairsList<Double>.Pair expected = pl.new Pair(x, y);
     azzert.aye(it.hasNext());
     azzert.that(it.next(), is(expected));
-    azzert.aye(!it.hasNext());
+    azzert.nay(it.hasNext());
   }
   
   @Test public void iterationSorted() {
@@ -42,6 +42,7 @@ import static fluent.ly.azzert.*;
   @Test public void statisticsMean() {
     Double x1 = Double.valueOf(5.0), y1 = Double.valueOf(3.0), x2 = Double.valueOf(7.0), y2 = Double.valueOf(1.0); 
     PairsList<Double> pl = new PairsList<>();
+    azzert.isNull(pl.mean());
     pl.record(x1,y1);
     pl.record(x2,y2);
     azzert.that(pl.mean(), is(pl.new Pair(Double.valueOf(6.0), Double.valueOf(2.0))));
@@ -50,6 +51,7 @@ import static fluent.ly.azzert.*;
   @Test public void statisticsVariance() {
     Double x1 = Double.valueOf(5.0), y1 = Double.valueOf(3.0), x2 = Double.valueOf(7.0), y2 = Double.valueOf(1.0); 
     PairsList<Double> pl = new PairsList<>();
+    azzert.isNull(pl.variance());
     pl.record(x1,y1);
     pl.record(x2,y2);
     azzert.that(pl.variance(), is(pl.new Pair(Double.valueOf(2.0), Double.valueOf(2.0))));
@@ -58,6 +60,7 @@ import static fluent.ly.azzert.*;
   @Test public void statisticsCoVariance() {
     Double x1 = Double.valueOf(5.0), y1 = Double.valueOf(3.0), x2 = Double.valueOf(7.0), y2 = Double.valueOf(1.0); 
     PairsList<Double> pl = new PairsList<>();
+    azzert.that(pl.co_variance(), is(0.0));
     pl.record(x1,y1);
     pl.record(x2,y2);
     azzert.that(pl.co_variance(), is(-2.0));
@@ -66,6 +69,7 @@ import static fluent.ly.azzert.*;
   @Test public void linearRegression() {
     Double x1 = Double.valueOf(5.0), y1 = Double.valueOf(3.0), x2 = Double.valueOf(7.0), y2 = Double.valueOf(1.0); 
     PairsList<Double> pl = new PairsList<>();
+    azzert.isNull(pl.linear_regression());
     pl.record(x1,y1);
     pl.record(x2,y2);
     azzert.that(pl.linear_regression(), is(pl.new Pair(Double.valueOf(8.0), Double.valueOf(-1.0))));

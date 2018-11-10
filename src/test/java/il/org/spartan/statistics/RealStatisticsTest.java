@@ -189,4 +189,20 @@ import fluent.ly.*;
     equalFloats(28, s07.sum(), 1E-6);
     equalFloats(5.0, s_4x0_5x1.sum(), 1E-6);
   }
+  
+  @Test public void record() {
+    Double d = null;
+    RealStatistics r = new RealStatistics();
+    azzert.that(r.record(d).missing(), is(1));
+    azzert.that(r.record(d).missing(), is(2));
+  }
+  
+  @Test public void variance() {
+    RealStatistics r = new RealStatistics();
+    r.record(4.2);
+    r.record(15.4);
+    r.record(42.2);
+    r.record(14.7);
+    azzert.that(r.variance(), is(197.166875));
+  }
 }

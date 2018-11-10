@@ -6,19 +6,6 @@ import org.jetbrains.annotations.*;
 
 public class PairsList<T extends Number & Comparable<T>> implements Iterable<PairsList<T>.Pair> {
 
-  
-  @Override public int hashCode() {
-    return Objects.hash(list_of_pairs);
-  }
-
-  @Override public boolean equals(Object obj) {
-    if (obj == this)
-      return true;
-    if (obj == null || !(obj instanceof PairsList))
-      return false;
-    @SuppressWarnings("unchecked") PairsList<T> other = (PairsList<T>) obj;
-    return Objects.equals(list_of_pairs, other.list_of_pairs);
-  }
 
   public class PairComparator implements Comparator<Pair>{
     @Override public int compare(PairsList<T>.Pair o1, PairsList<T>.Pair o2) {
@@ -91,7 +78,7 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
 
   @SuppressWarnings("null") public PairsList<Double>.Pair mean() {
     // TODO Auto-generated method stub
-    if(list_of_pairs == null || list_of_pairs.isEmpty())
+    if(list_of_pairs.isEmpty())
       return null;
     
     Double sum_x = Double.valueOf(0.0), sum_y = Double.valueOf(0.0);
@@ -107,7 +94,7 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
 
   @SuppressWarnings("null") public PairsList<Double>.Pair variance() {
     // TODO Auto-generated method stub
-    if(list_of_pairs == null || list_of_pairs.isEmpty())
+    if(list_of_pairs.isEmpty())
       return null;
     
     Double $ = Double.valueOf(0.0), sum_y = Double.valueOf(0.0);
@@ -124,7 +111,7 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
   }
 
   public double co_variance() {
-    if(list_of_pairs == null || list_of_pairs.isEmpty())
+    if(list_of_pairs.isEmpty())
       return 0.0;
     
     double $ = 0.0;
@@ -137,7 +124,7 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
 
   @SuppressWarnings("null") public PairsList<Double>.Pair linear_regression() {
     // TODO Auto-generated method stub
-    if(list_of_pairs == null || list_of_pairs.isEmpty())
+    if(list_of_pairs.isEmpty())
       return null;
     
     PairsList<Double>.Pair mean_ = mean();
