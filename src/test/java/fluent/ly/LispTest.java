@@ -2,12 +2,10 @@ package fluent.ly;
 
 import java.util.*;
 
-import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import static fluent.ly.azzert.*;
 
-import il.org.spartan.utils.*;
 
 @SuppressWarnings("static-method") public class LispTest {
   @Test public void next() {
