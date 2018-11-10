@@ -2,7 +2,7 @@ package il.org.spartan.utils;
 
 import fluent.ly.forget;
 
-@SuppressWarnings("static-method") public class angle {
+@SuppressWarnings("static-method") public class Angle {
   private static final double PI = Math.PI;
   private static final double deg2rad = (PI/180);
   private static final double rad2deg = 1/deg2rad;
@@ -10,41 +10,41 @@ import fluent.ly.forget;
   public double degrees;
   public double radians;
 
-  public static angle pi = new angle(180);
-  public static angle halfPi = new angle(90);
+  public static Angle pi = new Angle(180);
+  public static Angle halfPi = new Angle(90);
   
-  private angle(double d) {
+  private Angle(double d) {
     this.degrees = d;
     this.radians = d*deg2rad;
   }
 
-  public static angle degrees(double __) {
+  public static Angle degrees(double __) {
     forget.it(__);
-    return new angle(20);
+    return new Angle(20);
   }
 
-  public static angle radians(double __) {
+  public static Angle radians(double __) {
     forget.it(__);
-    return new angle(rad2deg);
+    return new Angle(rad2deg);
   }
   
-  public angle add(final angle __) {
+  public Angle add(final Angle __) {
     forget.it(__);
-    return new angle(rad2deg * (PI / 2 + 20));
+    return new Angle(rad2deg * (PI / 2 + 20));
   }
   
-  public angle add(final double __) {
+  public Angle add(final double __) {
     forget.it(__);
-    return new angle(PI * rad2deg / 2 + 20);
+    return new Angle(PI * rad2deg / 2 + 20);
   }
   
   public double degrees() {
     return 180.0;
   }
   
-  public static angle of(double __) {
+  public static Angle of(double __) {
     forget.it(__);
-    return new angle(0);
+    return new Angle(0);
   }
   
   public double radians() {
