@@ -98,4 +98,57 @@ import org.junit.*;
     @Test public void minOfList() {
       azzert.that(the.min(1, 4, 3, 2), is(1));
     }
+    
+    @Test public void tailOfString() {
+      azzert.that(the.tailOf("Hello World"), is("ello World"));
+    }
+    
+    @Test public void lastCharOfString() {
+      azzert.that(the.characterOf("Hello"), is('o'));
+    }
+    
+    @Test public void secondCharOfString() {
+      azzert.that(the.ith("Hello", 1), is('e'));
+    }
+    
+    @Test public void lastOfNullList() {
+      @Nullable List<@Nullable Integer> l = new ArrayList<>();
+      l.add(Integer.valueOf(1));
+      l = null;
+      azzert.isNull(the.lastOf(l));
+    }
+    
+    @Test public void lastOfEmptyList() {
+      @Nullable List<@Nullable Integer> l = new ArrayList<>();
+      l.add(Integer.valueOf(1));
+      l.remove(Integer.valueOf(1));
+      azzert.isNull(the.lastOf(l));
+    }
+    
+    @Test public void lastOfNonEmptyList() {
+      @Nullable List<@Nullable Integer> l = new ArrayList<>();
+      l.add(Integer.valueOf(4));
+      azzert.that(the.lastOf(l), is(Integer.valueOf(4)));
+    }
+    
+    @Test public void penultimateOfNullList() {
+      @Nullable List<@Nullable Integer> l = new ArrayList<>();
+      l.add(Integer.valueOf(1));
+      l = null;
+      azzert.isNull(the.penultimateOf(l));
+    }
+    
+    @Test public void penultimateOfEmptyList() {
+      @Nullable List<@Nullable Integer> l = new ArrayList<>();
+      l.add(Integer.valueOf(1));
+      l.remove(Integer.valueOf(1));
+      azzert.isNull(the.penultimateOf(l));
+    }
+    
+    @Test public void penultimateOfMoreThanTwoList() {
+      @Nullable List<@Nullable Integer> l = new ArrayList<>();
+      l.add(Integer.valueOf(4));
+      l.add(Integer.valueOf(3));
+      azzert.that(the.lastOf(l), is(Integer.valueOf(3)));
+    }
   }
