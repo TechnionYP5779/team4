@@ -59,4 +59,26 @@ import fluent.ly.*;
     i.clear();
     azzert.that(i.get(), is(0));
   }
+  
+  @Test public void testContsrtuctor() {
+    Int i = new Int();
+    i.clear();
+    azzert.that(i.get(), is(0));
+  }
+  
+  @Test public void testInner() {
+    Int i = new Int();
+    i.clear();
+    azzert.that(i.inner(), is(0));
+  }
+  
+  @Test public void testValueOf() {
+    Int i = Int.valueOf(4);
+    azzert.that(i.inner(), is(4));
+  }
+  
+  @Test public void testToString() {
+    Int i = new Int(4);
+    azzert.that(i.toString(), is("4"));
+  }
 }
