@@ -163,4 +163,72 @@ import static il.org.spartan.Utils.*;
     azzert.that(Utils.name(new File("abc")) ,azzert.is("abc"));
   }
  
+  @Test public void addIterableToCollection() {
+    List<Integer> list1 = new ArrayList<>();
+    list1.add(Integer.valueOf(4));
+    list1.add(Integer.valueOf(5));
+    list1.add(Integer.valueOf(6));
+    
+    @NotNull Collection<Integer> list2 = new ArrayList<>();
+    list2.add(Integer.valueOf(1));
+    list2.add(Integer.valueOf(2));
+    list2.add(Integer.valueOf(3));
+    
+    Collection<Integer> res = Utils.add(list2, list1);
+    for(int ¢ = 0; ¢ < 6; ++¢)
+      azzert.that(((List<Integer>) res).get(¢), is(¢ + 1));
+  }
+  
+  @Test public void addValuesToCollection() {
+    @NotNull Collection<Integer> list2 = new ArrayList<>();
+    list2.add(Integer.valueOf(1));
+    list2.add(Integer.valueOf(2));
+    list2.add(Integer.valueOf(3));
+    
+    Collection<Integer> res = Utils.add(list2, Integer.valueOf(4), Integer.valueOf(5),Integer.valueOf(6));
+    for(int ¢ = 0; ¢ < 6; ++¢)
+      azzert.that(((List<Integer>) res).get(¢), is(¢ + 1));
+  }
+  
+  @Test public void addCollectionsToCollection() {
+    List<Integer> list1 = new ArrayList<>();
+    list1.add(Integer.valueOf(4));
+    list1.add(Integer.valueOf(5));
+    list1.add(Integer.valueOf(6));
+    
+    List<Integer> list3 = new ArrayList<>();
+    list3.add(Integer.valueOf(7));
+    list3.add(Integer.valueOf(8));
+    list3.add(Integer.valueOf(9));
+    
+    @NotNull Collection<Integer> list2 = new ArrayList<>();
+    list2.add(Integer.valueOf(1));
+    list2.add(Integer.valueOf(2));
+    list2.add(Integer.valueOf(3));
+    
+    Collection<Integer> res = Utils.addAll(list2, list1, list3);
+    for(int ¢ = 0; ¢ < 9; ++¢)
+      azzert.that(((List<Integer>) res).get(¢), is(¢ + 1));
+  }
+  
+  @Test public void addIterablesToCollection() {
+    List<Integer> list1 = new ArrayList<>();
+    list1.add(Integer.valueOf(4));
+    list1.add(Integer.valueOf(5));
+    list1.add(Integer.valueOf(6));
+    
+    List<Integer> list3 = new ArrayList<>();
+    list3.add(Integer.valueOf(7));
+    list3.add(Integer.valueOf(8));
+    list3.add(Integer.valueOf(9));
+    
+    @NotNull Collection<Integer> list2 = new ArrayList<>();
+    list2.add(Integer.valueOf(1));
+    list2.add(Integer.valueOf(2));
+    list2.add(Integer.valueOf(3));
+    
+    Collection<Integer> res = Utils.addAll(list2, (Iterable<Integer>)list1, (Iterable<Integer>)list3);
+    for(int ¢ = 0; ¢ < 9; ++¢)
+      azzert.that(((List<Integer>) res).get(¢), is(¢ + 1));
+  }
 }
