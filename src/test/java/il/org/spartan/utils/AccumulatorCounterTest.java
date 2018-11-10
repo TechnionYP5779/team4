@@ -9,6 +9,13 @@ import fluent.ly.*;
 import il.org.spartan.utils.Accumulator.Counter;
 
 @SuppressWarnings("static-method") public class AccumulatorCounterTest {
+  @Test public void emptyAdds() {
+    final @NotNull Counter c = new Counter();
+    for (int ¢ = 0; ¢ < 19; ++¢)
+      c.add();
+    azzert.that(c.value(), is(19));
+  }
+  
   @Test public void booleanAdds() {
     final @NotNull Counter c = new Counter();
     azzert.that(c.value(), is(0));
@@ -22,12 +29,20 @@ import il.org.spartan.utils.Accumulator.Counter;
     azzert.that(c.value(), is(2));
     c.add(true);
     azzert.that(c.value(), is(3));
-  }
-
-  @Test public void emptyAdds() {
-    final @NotNull Counter c = new Counter();
-    for (int ¢ = 0; ¢ < 19; ++¢)
-      c.add();
-    azzert.that(c.value(), is(19));
+    
+    final @NotNull Counter cWithName = new Counter("counter!");
+    azzert.that(cWithName.value(), is(0));
+    cWithName.add(true);
+    azzert.that(cWithName.value(), is(1));
+    cWithName.add(false);
+    azzert.that(cWithName.value(), is(1));
+    cWithName.add(false);
+    azzert.that(cWithName.value(), is(1));
+    cWithName.next();
+    azzert.that(cWithName.value(), is(2));
+    cWithName.next();
+    azzert.that(cWithName.value(), is(3));
+    azzert.that(cWithName.name(), is("counter!"));
+    azzert.that(cWithName + "", is("3"));
   }
 }
