@@ -56,4 +56,19 @@ import fluent.ly.*;
     azzert.isNull(r.from());
   }
   
+  @Test public void testIntersection() {
+    BigIntegerRange range = (new BigIntegerRange()).from(BigInteger.valueOf(3));
+    Iterator<BigInteger> it = (new BigIntegerRange()).to(BigInteger.valueOf(10)).interset(range).numbers();
+    for (int ¢ = 0; ¢ < 8; ++¢)
+      azzert.that(it.next(), is(BigInteger.valueOf(¢ + 3)));
+  }
+  
+  @Test public void testIncludes() {
+    BigIntegerRange range = new BigIntegerRange();
+    range.from(BigInteger.valueOf(3)).to(BigInteger.valueOf(7));
+    azzert.not(range.includes(BigInteger.valueOf(2)));
+  }
+  
+  
+  
 }
