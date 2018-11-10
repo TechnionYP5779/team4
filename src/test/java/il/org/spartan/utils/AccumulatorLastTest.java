@@ -33,4 +33,8 @@ import il.org.spartan.utils.Accumulator.*;
     c.add(11);
     azzert.that(c.value(), is(11));
   }
+  
+  @Test public void testTransform() {
+    azzert.that(new Last("last").transform(1), is(1));
+  }
 }
