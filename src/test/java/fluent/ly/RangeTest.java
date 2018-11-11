@@ -13,27 +13,33 @@ import static fluent.ly.range.*;
       Iterator<Integer> it = naturals().iterator();
       azzert.that(it.next(), is(0));
       azzert.that(it.next(), is(1));
-      
+    }
+    @Test public void firstTwoNaturals2() {  
       Iterator<Integer> it2 = to(-1).from(0).step(1).infiniteRange().iterator();
       azzert.that(it2.next(), is(0));
       azzert.that(it2.next(), is(1));
-      
+    }
+    @Test public void firstTwoNaturals3() {
       Iterator<Integer> it3 = infinite().iterator();
       azzert.that(it3.next(), is(0));
       azzert.that(it3.next(), is(1));
-      
+    }
+    @Test public void firstTwoNaturals4() {
       Iterator<Integer> it4 = to(-1).from(0).infinite().iterator();
       azzert.that(it4.next(), is(0));
       azzert.that(it4.next(), is(1));
-      
+    }
+    @Test public void firstTwoNaturals5() {
       Iterator<Integer> it5 = from(0).self().step(1).infinite().iterator();
       azzert.that(it5.next(), is(0));
       azzert.that(it5.next(), is(1));
-      
+    }
+    @Test public void firstTwoNaturals6() { 
       Iterator<Integer> it6 = from(0).infinite().iterator();
       azzert.that(it6.next(), is(0));
       azzert.that(it6.next(), is(1));
-      
+    }
+    @Test public void firstTwoNaturals7() { 
       Iterator<Integer> it7 = infiniteFrom(0,4).from(2).iterator();
       azzert.that(it7.next(), is(2));
       azzert.that(it7.next(), is(3));
