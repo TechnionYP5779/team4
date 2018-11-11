@@ -7,6 +7,13 @@ import org.jetbrains.annotations.*;
 import org.junit.*;
 
 @SuppressWarnings("static-method") public class TheTest {
+  final List<@NotNull Integer> l = new ArrayList<>();
+  @Before @SuppressWarnings("null") public void setUp() {
+    l.add(Integer.valueOf(1));
+    l.add(Integer.valueOf(2));
+    l.add(Integer.valueOf(3));
+    l.add(Integer.valueOf(4));
+  }
     @Test public void indexFound() {
       azzert.that(the.index(4, 1,2,3,4), is(3));
     }
@@ -20,48 +27,27 @@ import org.junit.*;
     }
     
     @Test public void nthOfCollection() {
-      List<Object> l = new ArrayList<>();
-      l.add(new Object());
-      l.add(new Object());
-      l.add(new Object());
+      List<Object> l1 = new ArrayList<>();
+      l1.add(new Object());
+      l1.add(new Object());
+      l1.add(new Object());
       
-      azzert.that(the.nth(2, l), is(" #2/3"));
+      azzert.that(the.nth(2, l1), is(" #2/3"));
     }
     
     @Test @SuppressWarnings("null") public void previousOfFound() {
-      List<@NotNull Integer> l = new ArrayList<>();
-      l.add(Integer.valueOf(1));
-      l.add(Integer.valueOf(2));
-      l.add(Integer.valueOf(3));
-      l.add(Integer.valueOf(4));
       azzert.that(the.previous(Integer.valueOf(4), l), is(Integer.valueOf(3)));
     }
     
     @Test @SuppressWarnings("null") public void previousOfFirst() {
-      List<@NotNull Integer> l = new ArrayList<>();
-      l.add(Integer.valueOf(1));
-      l.add(Integer.valueOf(2));
-      l.add(Integer.valueOf(3));
-      l.add(Integer.valueOf(4));
       azzert.isNull(the.previous(Integer.valueOf(1), l));
     }
     
     @Test @SuppressWarnings("null") public void previousOfNotFound() {
-      List<@NotNull Integer> l = new ArrayList<>();
-      l.add(Integer.valueOf(1));
-      l.add(Integer.valueOf(2));
-      l.add(Integer.valueOf(3));
-      l.add(Integer.valueOf(4));
       azzert.isNull(the.previous(Integer.valueOf(0), l));
     }
     
-    @Test @SuppressWarnings("null") public void tailOfList() {
-      List<@NotNull Integer> l = new ArrayList<>();
-      l.add(Integer.valueOf(1));
-      l.add(Integer.valueOf(2));
-      l.add(Integer.valueOf(3));
-      l.add(Integer.valueOf(4));
-      
+    @Test @SuppressWarnings("null") public void tailOfList() {      
       List<@NotNull Integer> l2 = new ArrayList<>();
       l2.add(Integer.valueOf(2));
       l2.add(Integer.valueOf(3));
@@ -74,12 +60,6 @@ import org.junit.*;
     }
     
     @Test @SuppressWarnings("null") public void restOfList() {
-      List<@NotNull Integer> l = new ArrayList<>();
-      l.add(Integer.valueOf(1));
-      l.add(Integer.valueOf(2));
-      l.add(Integer.valueOf(3));
-      l.add(Integer.valueOf(4));
-      
       List<@NotNull Integer> l2 = new ArrayList<>();
       l2.add(Integer.valueOf(2));
       l2.add(Integer.valueOf(3));
@@ -112,57 +92,57 @@ import org.junit.*;
     }
     
     @Test public void lastOfNullList() {
-      @Nullable List<@Nullable Integer> l = new ArrayList<>();
-      l.add(Integer.valueOf(1));
-      l = null;
-      azzert.isNull(the.lastOf(l));
+      @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
+      l1.add(Integer.valueOf(1));
+      l1 = null;
+      azzert.isNull(the.lastOf(l1));
     }
     
     @Test public void lastOfEmptyList() {
-      @Nullable List<@Nullable Integer> l = new ArrayList<>();
-      l.add(Integer.valueOf(1));
-      l.remove(Integer.valueOf(1));
-      azzert.isNull(the.lastOf(l));
+      @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
+      l1.add(Integer.valueOf(1));
+      l1.remove(Integer.valueOf(1));
+      azzert.isNull(the.lastOf(l1));
     }
     
     @Test public void lastOfNonEmptyList() {
-      @Nullable List<@Nullable Integer> l = new ArrayList<>();
-      l.add(Integer.valueOf(4));
-      azzert.that(the.lastOf(l), is(Integer.valueOf(4)));
+      @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
+      l1.add(Integer.valueOf(4));
+      azzert.that(the.lastOf(l1), is(Integer.valueOf(4)));
     }
     
     @Test public void penultimateOfNullList() {
-      @Nullable List<@Nullable Integer> l = new ArrayList<>();
-      l.add(Integer.valueOf(1));
-      l = null;
-      azzert.isNull(the.penultimateOf(l));
+      @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
+      l1.add(Integer.valueOf(1));
+      l1 = null;
+      azzert.isNull(the.penultimateOf(l1));
     }
     
     @Test public void penultimateOfEmptyList() {
-      @Nullable List<@Nullable Integer> l = new ArrayList<>();
-      l.add(Integer.valueOf(1));
-      l.remove(Integer.valueOf(1));
-      azzert.isNull(the.penultimateOf(l));
+      @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
+      l1.add(Integer.valueOf(1));
+      l1.remove(Integer.valueOf(1));
+      azzert.isNull(the.penultimateOf(l1));
     }
     
     @Test public void penultimateOfMoreThanTwoList() {
-      @Nullable List<@Nullable Integer> l = new ArrayList<>();
-      l.add(Integer.valueOf(4));
-      l.add(Integer.valueOf(3));
-      azzert.that(the.penultimateOf(l), is(Integer.valueOf(4)));
+      @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
+      l1.add(Integer.valueOf(4));
+      l1.add(Integer.valueOf(3));
+      azzert.that(the.penultimateOf(l1), is(Integer.valueOf(4)));
     }
     
     @Test public void secondOfList() {
-      @Nullable List<@Nullable Integer> l = new ArrayList<>();
-      l.add(Integer.valueOf(4));
-      l.add(Integer.valueOf(3));
-      azzert.that(the.secondOf(l), is(Integer.valueOf(3)));
+      @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
+      l1.add(Integer.valueOf(4));
+      l1.add(Integer.valueOf(3));
+      azzert.that(the.secondOf(l1), is(Integer.valueOf(3)));
     }
     
     @Test public void secondOfnullList() {
-      @Nullable List<@Nullable Integer> l = new ArrayList<>();
-      l.add(Integer.valueOf(1));
-      l = null;
-      azzert.isNull(the.secondOf(l));
+      @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
+      l1.add(Integer.valueOf(1));
+      l1 = null;
+      azzert.isNull(the.secondOf(l1));
     }
   }
