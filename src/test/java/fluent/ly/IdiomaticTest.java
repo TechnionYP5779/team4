@@ -47,7 +47,8 @@ import static fluent.ly.idiomatic.*;
   }
 
   @Test public void runner() {
-    Runner r = run(()->{/**/});
+    Runner r = run(() -> {
+      /**/});
     r.unless(5 < 3);
     r.unless(5 > 3);
   }
