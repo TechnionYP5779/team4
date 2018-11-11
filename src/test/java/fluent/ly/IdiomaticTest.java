@@ -11,11 +11,7 @@ import static fluent.ly.idiomatic.*;
 
 @SuppressWarnings("static-method") public class IdiomaticTest {
   @Test public void evalAndIgnoreTrigger() {
-    Supplier<@Nullable Integer> supp = new Supplier<@Nullable Integer>() {
-      @Override public Integer get() {
-        return Integer.valueOf(10);
-      }
-    };
+    Supplier<@Nullable Integer> supp = () -> Integer.valueOf(10);
     azzert.that(eval.eval(supp), is(Integer.valueOf(10)));
     azzert.isNull(ignore.eval(supp));
     azzert.that(eval.eval(Integer.valueOf(10)), is(Integer.valueOf(10)));
@@ -23,11 +19,7 @@ import static fluent.ly.idiomatic.*;
   }
 
   @Test public void evalOfSupplier() {
-    azzert.that(eval(new Supplier<@Nullable Integer>() {
-      @Override public Integer get() {
-        return Integer.valueOf(10);
-      }
-    }).get(), is(Integer.valueOf(10)));
+    azzert.that(eval(() -> Integer.valueOf(10)).get(), is(Integer.valueOf(10)));
   }
 
   @Test public void incaseTrue() {
@@ -55,10 +47,7 @@ import static fluent.ly.idiomatic.*;
   }
 
   @Test public void runner() {
-    Runner r = run(new Runnable() {
-      @Override public void run() {
-        /* */ }
-    });
+    Runner r = run(()->{/**/});
     r.unless(5 < 3);
     r.unless(5 > 3);
   }
@@ -76,21 +65,13 @@ import static fluent.ly.idiomatic.*;
   }
 
   @Test public void unlessTrigger() {
-    Supplier<@Nullable Integer> supp = new Supplier<@Nullable Integer>() {
-      @Override public Integer get() {
-        return Integer.valueOf(10);
-      }
-    };
+    Supplier<@Nullable Integer> supp = () -> Integer.valueOf(10);
     azzert.isNull(unless(5 > 3).eval(supp));
     azzert.that(unless(5 < 3).eval(supp), is(Integer.valueOf(10)));
   }
 
   @Test public void holderUnless() {
-    Holder<Integer> holder = new Holder<Integer>() {
-      @Override public Integer get() {
-        return Integer.valueOf(10);
-      }
-    };
+    Holder<Integer> holder = () -> Integer.valueOf(10);
     azzert.that(holder.unless(5 < 3), is(Integer.valueOf(10)));
     azzert.isNull(holder.unless(5 > 3));
   }
