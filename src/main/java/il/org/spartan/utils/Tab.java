@@ -100,6 +100,4 @@ import org.jetbrains.annotations.*;
   @Override public String toString() {
     return indentation;
   }
-
-
 }

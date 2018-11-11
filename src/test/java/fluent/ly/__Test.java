@@ -132,14 +132,13 @@ import fluent.ly.___.Bug.Contract.*;
       ___.positive(-1);
     } catch (final Positive ¢) {
       azzert.that(¢.getMessage(), is("Found -1 while expecting a positive integer."));
-      }
+    }
     try {
       ___.positive(-1.0);
     } catch (final Positive ¢) {
       azzert.that(¢.getMessage(), is("Found -1.00000 while expecting a positive number."));
     }
   }
-
 
   @Test public void require() {
     ___.require(true);

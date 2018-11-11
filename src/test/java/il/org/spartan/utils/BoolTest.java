@@ -30,7 +30,7 @@ import fluent.ly.*;
     b.set();
     azzert.aye(b.get());
   }
-  
+
   @Test public void testValueOf() {
     Bool b = Bool.valueOf(true);
     azzert.aye(b.get());

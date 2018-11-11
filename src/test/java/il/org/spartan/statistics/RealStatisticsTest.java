@@ -20,7 +20,7 @@ import fluent.ly.*;
   public static void equalFloats(final double a, final double b, final double d) {
     azzert.aye(a - b > -d && a - b < d);
   }
-  
+
   @Test public void all() {
     s11_20_5.median();
     s11_20_5.mad();
@@ -70,7 +70,6 @@ import fluent.ly.*;
   }
 
   @Test public void median() {
-
     equalFloats(11, s11_20_5.median(), 1E-6);
     equalFloats(3, s15.median(), 1E-6);
     equalFloats(3.5, s07.median(), 1E-6);
@@ -141,7 +140,7 @@ import fluent.ly.*;
     equalFloats(1, s_4x0_5x1.max(), 1E-6);
   }
 
-  @Test public void teequalFloats() {  
+  @Test public void teequalFloats() {
     equalFloats(12, s.mean(), 1E-6);
     equalFloats(3, s15.mean(), 1E-6);
     equalFloats(3.5, s07.mean(), 1E-6);
@@ -189,14 +188,14 @@ import fluent.ly.*;
     equalFloats(28, s07.sum(), 1E-6);
     equalFloats(5.0, s_4x0_5x1.sum(), 1E-6);
   }
-  
+
   @Test public void record() {
     Double d = null;
     RealStatistics r = new RealStatistics();
     azzert.that(r.record(d).missing(), is(1));
     azzert.that(r.record(d).missing(), is(2));
   }
-  
+
   @Test public void variance() {
     RealStatistics r = new RealStatistics();
     r.record(4.2);

@@ -15,7 +15,7 @@ import il.org.spartan.utils.Accumulator.Counter;
       c.add();
     azzert.that(c.value(), is(19));
   }
-  
+
   @Test public void booleanAdds() {
     final @NotNull Counter c = new Counter();
     azzert.that(c.value(), is(0));
@@ -29,7 +29,6 @@ import il.org.spartan.utils.Accumulator.Counter;
     azzert.that(c.value(), is(2));
     c.add(true);
     azzert.that(c.value(), is(3));
-    
     final @NotNull Counter cWithName = new Counter("counter!");
     azzert.that(cWithName.value(), is(0));
     cWithName.add(true);

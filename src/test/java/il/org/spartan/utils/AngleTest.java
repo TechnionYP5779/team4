@@ -34,6 +34,6 @@ import fluent.ly.*;
   }
 
   @Test public void radians() {
-    azzert.that(Angle.pi.radians(), is(Math.PI/2));
+    azzert.that(Angle.pi.radians(), is(Math.PI / 2));
   }
 }

@@ -59,23 +59,23 @@ import fluent.ly.*;
     i.clear();
     azzert.that(i.get(), is(0));
   }
-  
+
   @Test public void testContsrtuctor() {
     Int i = new Int();
     i.clear();
     azzert.that(i.get(), is(0));
   }
-  
+
   @Test public void testInner() {
     Int i = new Int();
     i.clear();
     azzert.that(i.inner(), is(0));
   }
-  
+
   @Test public void testValueOf() {
     azzert.that(Int.valueOf(4).inner(), is(4));
   }
-  
+
   @Test public void testToString() {
     azzert.that(new Int(4) + "", is("4"));
   }

@@ -1,4 +1,5 @@
 package fluent.ly;
+
 import org.junit.*;
 import java.util.logging.*;
 

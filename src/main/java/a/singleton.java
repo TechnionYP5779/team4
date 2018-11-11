@@ -19,5 +19,4 @@ public interface singleton {
   static <T> T[] array(final T ¢) {
     return as.array(¢);
   }
-
 }

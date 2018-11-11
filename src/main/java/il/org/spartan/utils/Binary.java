@@ -37,7 +37,7 @@ public class Binary {
     /**/}
 
   @Override public boolean equals(final Object ¢) {
-    throw new IllegalArgumentException(¢ + ""); 
+    throw new IllegalArgumentException(¢ + "");
   }
 
   @Override public int hashCode() {

@@ -100,7 +100,6 @@ import org.junit.*;
 
     @Test public void nullsPruneArrayAltenatingLength() {
       azzert.that(nulls(alternatingArray).length, is(3));
-
     }
 
     @Test public void nullsPruneSparseCollectionContents() {
@@ -109,7 +108,6 @@ import org.junit.*;
       azzert.that(a[1], is("B"));
       azzert.that(a[2], is("C"));
       azzert.that(a.length, is(3));
-
     }
 
     @Test public void nullsPruneSparseCollectionLength() {
@@ -126,7 +124,6 @@ import org.junit.*;
 
     @Test public void shrinkEmptyArray() {
       azzert.that(shrink(new Object[10]).length, is(0));
-     
     }
 
     @Test public void whitesEmptyArray() {

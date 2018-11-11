@@ -14,7 +14,7 @@ import org.junit.*;
       }
     }));
   }
-  
+
   @Test public void doubleSupplier() {
     azzert.that(anonymous.ly(new DoubleSupplier() {
       @Override public double getAsDouble() {
@@ -22,7 +22,7 @@ import org.junit.*;
       }
     }), is(5.2));
   }
-  
+
   @Test public void intSupplier() {
     azzert.that(anonymous.ly(new IntSupplier() {
       @Override public int getAsInt() {
@@ -30,7 +30,7 @@ import org.junit.*;
       }
     }), is(2));
   }
-  
+
   @Test public void longSupplier() {
     azzert.that(anonymous.ly(new LongSupplier() {
       @Override public long getAsLong() {
@@ -38,7 +38,7 @@ import org.junit.*;
       }
     }), is(20L));
   }
-  
+
   @Test public void anySupplierNull() {
     azzert.isNull(anonymous.ly(new Supplier<Boolean>() {
       @Override public Boolean get() {

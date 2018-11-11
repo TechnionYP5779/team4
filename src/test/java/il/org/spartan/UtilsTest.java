@@ -27,8 +27,7 @@ import static il.org.spartan.Utils.*;
     return $;
   }
 
-
-  @Test @SuppressWarnings({"unchecked", "null"}) public void addAllTypical() {
+  @Test @SuppressWarnings({ "unchecked", "null" }) public void addAllTypical() {
     final Set<String> ss = new HashSet<>();
     accumulate.to(ss).addAll(as.set("A", "B"), null, as.set("B", "C", "D"));
     azzert.nay(ss.contains("E"));
@@ -112,42 +111,42 @@ import static il.org.spartan.Utils.*;
     swap($, 0, 1);
     assertArrayEquals(intToIntegers(1, 29, 60), $);
   }
-  
+
   @Test public void prepend() {
     StringBuilder s = Utils.prepend(new StringBuilder(), 'c');
     azzert.that(s.charAt(0), azzert.is('c'));
     s = Utils.prepend(s, "str");
     azzert.that(s.charAt(0), azzert.is('s'));
   }
-  
+
   @Test public void quoteTest() {
-    azzert.that(Utils.quote("abc"),azzert.is("'abc'"));
-    azzert.that(Utils.quote(null),azzert.is("<null reference>"));
+    azzert.that(Utils.quote("abc"), azzert.is("'abc'"));
+    azzert.that(Utils.quote(null), azzert.is("<null reference>"));
   }
-  
+
   @Test public void remove() {
     ArrayList<Integer> a = new ArrayList<>();
     Integer x3 = Integer.valueOf(2);
     a.add(Integer.valueOf(2));
     a.add(x3);
     Utils.removeDuplicates(a);
-    azzert.that(a.size(),azzert.is(1));
-    azzert.that(Utils.removePrefix("abc", "ab"),azzert.is("c"));
-    azzert.that(Utils.removeSuffix("abc", "c"),azzert.is("ab"));
-    azzert.that(Utils.removeWhites("abc def "),azzert.is("abcdef"));
+    azzert.that(a.size(), azzert.is(1));
+    azzert.that(Utils.removePrefix("abc", "ab"), azzert.is("c"));
+    azzert.that(Utils.removeSuffix("abc", "c"), azzert.is("ab"));
+    azzert.that(Utils.removeWhites("abc def "), azzert.is("abcdef"));
   }
-  
+
   @Test public void sort() {
     int[] arr = Utils.sort(new int[] { 15, 2, 6 });
     azzert.that(arr[0], is(2));
-    azzert.that(arr[1],is(6));
-    azzert.that(arr[2],is(15));
+    azzert.that(arr[1], is(6));
+    azzert.that(arr[2], is(15));
   }
-  
+
   @Test public void sqr() {
-    azzert.that(Utils.sqr(4.0),azzert.is(16.0));
+    azzert.that(Utils.sqr(4.0), azzert.is(16.0));
   }
-  
+
   @Test public void suffixedBy() {
     File f = new File("file1"), g = new File("file2");
     ArrayList<String> slist = new ArrayList<>();
@@ -158,131 +157,121 @@ import static il.org.spartan.Utils.*;
     azzert.aye(Utils.suffixedBy(g, "e2"));
     azzert.nay(Utils.suffixedBy("file1", "e2"));
   }
-  
+
   @Test public void nameTest() {
-    azzert.that(Utils.name(new File("abc")) ,azzert.is("abc"));
+    azzert.that(Utils.name(new File("abc")), azzert.is("abc"));
   }
- 
+
   @Test public void addIterableToCollection() {
     List<Integer> list1 = new ArrayList<>();
     list1.add(Integer.valueOf(4));
     list1.add(Integer.valueOf(5));
     list1.add(Integer.valueOf(6));
-    
     @NotNull Collection<Integer> list2 = new ArrayList<>();
     list2.add(Integer.valueOf(1));
     list2.add(Integer.valueOf(2));
     list2.add(Integer.valueOf(3));
-    
     Collection<Integer> res = Utils.add(list2, list1);
-    for(int ¢ = 0; ¢ < 6; ++¢)
+    for (int ¢ = 0; ¢ < 6; ++¢)
       azzert.that(((List<Integer>) res).get(¢), is(¢ + 1));
   }
-  
+
   @Test public void addValuesToCollection() {
     @NotNull Collection<Integer> list2 = new ArrayList<>();
     list2.add(Integer.valueOf(1));
     list2.add(Integer.valueOf(2));
     list2.add(Integer.valueOf(3));
-    
-    Collection<Integer> res = Utils.add(list2, Integer.valueOf(4), Integer.valueOf(5),Integer.valueOf(6));
-    for(int ¢ = 0; ¢ < 6; ++¢)
+    Collection<Integer> res = Utils.add(list2, Integer.valueOf(4), Integer.valueOf(5), Integer.valueOf(6));
+    for (int ¢ = 0; ¢ < 6; ++¢)
       azzert.that(((List<Integer>) res).get(¢), is(¢ + 1));
   }
-  
+
   @Test public void addCollectionsToCollection() {
     List<Integer> list1 = new ArrayList<>();
     list1.add(Integer.valueOf(4));
     list1.add(Integer.valueOf(5));
     list1.add(Integer.valueOf(6));
-    
     List<Integer> list3 = new ArrayList<>();
     list3.add(Integer.valueOf(7));
     list3.add(Integer.valueOf(8));
     list3.add(Integer.valueOf(9));
-    
     @NotNull Collection<Integer> list2 = new ArrayList<>();
     list2.add(Integer.valueOf(1));
     list2.add(Integer.valueOf(2));
     list2.add(Integer.valueOf(3));
-    
     Collection<Integer> res = Utils.addAll(list2, list1, list3);
-    for(int ¢ = 0; ¢ < 9; ++¢)
+    for (int ¢ = 0; ¢ < 9; ++¢)
       azzert.that(((List<Integer>) res).get(¢), is(¢ + 1));
   }
-  
+
   @Test public void addIterablesToCollection() {
     List<Integer> list1 = new ArrayList<>();
     list1.add(Integer.valueOf(4));
     list1.add(Integer.valueOf(5));
     list1.add(Integer.valueOf(6));
-    
     List<Integer> list3 = new ArrayList<>();
     list3.add(Integer.valueOf(7));
     list3.add(Integer.valueOf(8));
     list3.add(Integer.valueOf(9));
-    
     @NotNull Collection<Integer> list2 = new ArrayList<>();
     list2.add(Integer.valueOf(1));
     list2.add(Integer.valueOf(2));
     list2.add(Integer.valueOf(3));
-    
-    Collection<Integer> res = Utils.addAll(list2, (Iterable<Integer>)list1, (Iterable<Integer>)list3);
-    for(int ¢ = 0; ¢ < 9; ++¢)
+    Collection<Integer> res = Utils.addAll(list2, (Iterable<Integer>) list1, (Iterable<Integer>) list3);
+    for (int ¢ = 0; ¢ < 9; ++¢)
       azzert.that(((List<Integer>) res).get(¢), is(¢ + 1));
   }
-  
+
   @Test public void addAllElementsToCollection() {
     @NotNull Collection<Integer> list2 = new ArrayList<>();
     list2.add(Integer.valueOf(1));
     list2.add(Integer.valueOf(2));
     list2.add(Integer.valueOf(3));
-    
-    Collection<Integer> res = Utils.addAll(list2, Integer.valueOf(4), Integer.valueOf(5),Integer.valueOf(6));
-    for(int ¢ = 0; ¢ < 6; ++¢)
+    Collection<Integer> res = Utils.addAll(list2, Integer.valueOf(4), Integer.valueOf(5), Integer.valueOf(6));
+    for (int ¢ = 0; ¢ < 6; ++¢)
       azzert.that(((List<Integer>) res).get(¢), is(¢ + 1));
   }
-  
+
   @Test public void appendToArray() {
-    @SuppressWarnings("null")
-    @NotNull Integer a [] = { Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3) }, res[] = Utils.append(a, Integer.valueOf(4));
-    for(int ¢ = 0; ¢ < 4; ++¢)
+    @SuppressWarnings("null") @NotNull Integer a[] = { Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3) },
+        res[] = Utils.append(a, Integer.valueOf(4));
+    for (int ¢ = 0; ¢ < 4; ++¢)
       azzert.that(res[¢], is(¢ + 1));
   }
-  
+
   @Test public void compressingSpaces() {
-    azzert.that(Utils.compressSpaces("a        :  (   %   ,   {   }   =   ==   <   <=   -   *   |   &   %   (   )   [^]"), is("a:(%,{}===<<=-*|&%()[^]"));
+    azzert.that(Utils.compressSpaces("a        :  (   %   ,   {   }   =   ==   <   <=   -   *   |   &   %   (   )   [^]"),
+        is("a:(%,{}===<<=-*|&%()[^]"));
   }
-  
+
   @Test public void deleteFromArray() {
-    @SuppressWarnings("null")
-    @NotNull Integer a [] = { Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3) }, res[] = Utils.delete(a, 1);
+    @SuppressWarnings("null") @NotNull Integer a[] = { Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3) }, res[] = Utils.delete(a, 1);
     azzert.that(res[0], is(1));
     azzert.that(res[1], is(3));
   }
-  
+
   @Test public void HasNullTrue() {
     azzert.aye(Utils.hasNull(new Object(), null));
   }
-  
+
   @Test public void HasNullFalse() {
     azzert.not(Utils.hasNull(new Object(), new Object()));
   }
-  
+
   @Test public void intIsInTrue() {
     azzert.aye(Utils.intIsIn(1, 1, 2, 3));
   }
-  
+
   @Test public void intIsInFalse() {
     azzert.not(Utils.intIsIn(5, 1, 2, 3));
   }
-  
+
   @Test @SuppressWarnings("null") public void foundHandler() {
     FoundHandleForT<Integer> fh = new Utils.FoundHandleForT<>(Integer.valueOf(1));
     azzert.aye(fh.in(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3)));
     azzert.not(fh.in(Integer.valueOf(2), Integer.valueOf(3)));
   }
-  
+
   @Test public void foundHandlerInt() {
     FoundHandleForT.FoundHandleForInt fh = new Utils.FoundHandleForT.FoundHandleForInt(1);
     azzert.aye(fh.in(1, 2, 3));

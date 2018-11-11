@@ -35,23 +35,23 @@ public class Outer<Inner> {
   }
 
   @Override public int hashCode() {
-    return inner == null ? 0: 31 + Utils.hash(inner);
+    return inner == null ? 0 : 31 + Utils.hash(inner);
   }
-  
+
   /** @return value wrapped in this object. */
   public Inner get() {
     return inner;
   }
-  
+
   /** set current value */
   public void set(final Inner ¢) {
     this.inner = ¢;
   }
-  
+
   @Override @NotNull public String toString() {
     return inner == null ? "null" : Utils.cantBeNull(inner + "");
   }
-  
+
   @Override @NotNull @SuppressWarnings("unchecked") public Outer<Inner> clone() throws CloneNotSupportedException {
     return (Outer<Inner>) Utils.cantBeNull(super.clone());
   }

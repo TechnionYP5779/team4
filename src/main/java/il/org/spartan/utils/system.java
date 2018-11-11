@@ -112,7 +112,6 @@ public interface system {
           continue;
         default:
           continue;
-            
       }
     return $.isEmpty();
   }

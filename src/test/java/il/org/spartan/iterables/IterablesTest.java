@@ -16,7 +16,7 @@ import fluent.ly.*;
  * begin with the name of the method they check.
  * @author Yossi Gil
  * @since 2014-05-31 */
-@SuppressWarnings("static-method") public  class IterablesTest {
+@SuppressWarnings("static-method") public class IterablesTest {
   @Test public void containsDegenerate() {
     azzert.nay(contains("Hello"));
   }
@@ -51,6 +51,5 @@ import fluent.ly.*;
 
   @Test public void countThree() {
     azzert.that(iterables.count(iterable.over("One", "Two", "Three")), is(3));
-
   }
 }

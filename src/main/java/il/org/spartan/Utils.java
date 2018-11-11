@@ -178,8 +178,6 @@ import il.org.spartan.Utils.FoundHandleForT.*;
     return false;
   }
 
-
-
   /** Determine whether an integer is a valid list index
    * @param    <T> JD
    * @param i  some integer
