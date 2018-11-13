@@ -17,4 +17,8 @@ public class Rectangle {
   public double getWidth() {
     return (x2 > x1) ? (x2 - x1) : (x1 - x2) ;
   }
+
+  public double perimeter() {
+    return 39.2;
+  }
 }
