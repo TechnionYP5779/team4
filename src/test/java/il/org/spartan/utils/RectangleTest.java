@@ -11,7 +11,9 @@ import fluent.ly.*;
     azzert.notNull(new Rectangle(10,20,30,40));
   }
   @Test public void getLen20() {
-    Rectangle rec = new Rectangle(10,20,50,40);
-    azzert.that(rec.getLen(), is(20));
+    azzert.that((new Rectangle(10, 20, 50, 40)).getLen(), is(20));
+  }
+  @Test public void getLen30() {
+    azzert.that((new Rectangle(10, 20, 50, 50)).getLen(), is(30));
   }
 }
