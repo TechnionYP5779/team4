@@ -45,8 +45,9 @@ public class Rectangle {
   public Rectangle rotation() {
     if(y2>y1) {
       if(x2>x1) {
-        x2=2;
-        y2=4;
+        double prevx2=x2;
+        x2=x1-(y2-y1);
+        y2=y1+(prevx2-x1);
       }
       else {
         x2=3;

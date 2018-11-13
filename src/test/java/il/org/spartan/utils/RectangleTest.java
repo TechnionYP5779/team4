@@ -88,44 +88,60 @@ import fluent.ly.*;
     compareDelta(new Rectangle(-4.5, 23, 245.5 , -25.1).area(), 12025);
   }
   
-  @Test public void rotation() {
+  @Test public void rotation52X1() {
     compareDelta(new Rectangle(5, 2, 7 , 5).rotation().getX1(), 5);
   }
   
-  @Test public void rotation2() {
+  @Test public void rotation52Y1() {
     compareDelta(new Rectangle(5, 2, 7 , 5).rotation().getY1(), 2);
   }
   
-  @Test public void rotation3() {
+  @Test public void rotation52X2() {
     compareDelta(new Rectangle(5, 2, 7 , 5).rotation().getX2(), 2);
   }
   
-  @Test public void rotation4() {
+  @Test public void rotation52Y2() {
     compareDelta(new Rectangle(5, 2, 7 , 5).rotation().getY2(), 4);
   }
   
-  @Test public void rotation5() {
+  @Test public void twoRotations52X2() {
     compareDelta(new Rectangle(5, 2, 7 , 5).rotation().rotation().getX2(), 3);
   }
   
-  @Test public void rotation6() {
+  @Test public void twoRotations52Y2() {
     compareDelta(new Rectangle(5, 2, 7 , 5).rotation().rotation().getY2(), -1);
   }
   
-  @Test public void rotation7() {
+  @Test public void threeRotations52X2() {
     compareDelta(new Rectangle(5, 2, 7 , 5).rotation().rotation().rotation().getX2(), 8);
   }
   
-  @Test public void rotation8() {
+  @Test public void threeRotations52Y2() {
     compareDelta(new Rectangle(5, 2, 7 , 5).rotation().rotation().rotation().getY2(), 0);
   }
   
-  @Test public void rotation9() {
+  @Test public void fourRotations52X2() {
     compareDelta(new Rectangle(5, 2, 7 , 5).rotation().rotation().rotation().rotation().getX2(), 7);
   }
   
-  @Test public void rotation10() {
+  @Test public void fourRotations52Y2() {
     compareDelta(new Rectangle(5, 2, 7 , 5).rotation().rotation().rotation().rotation().getY2(), 5);
+  }
+  
+  @Test public void rotation34X1() {
+    compareDelta(new Rectangle(3, 4, 9 , 7).rotation().getX1(), 3);
+  }
+  
+  @Test public void rotation34Y1() {
+    compareDelta(new Rectangle(3, 4, 9 , 7).rotation().getY1(), 4);
+  }
+  
+  @Test public void rotation34X2() {
+    compareDelta(new Rectangle(3, 4, 9 , 7).rotation().getX2(), 0);
+  }
+  
+  @Test public void rotation34Y2() {
+    compareDelta(new Rectangle(3, 4, 9 , 7).rotation().getY2(), 10);
   }
   
 }
