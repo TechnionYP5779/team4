@@ -55,6 +55,7 @@ public class Rectangle {
     }
     else {
       x2=8;
+      y2=0;
     }
     return this;
   }
