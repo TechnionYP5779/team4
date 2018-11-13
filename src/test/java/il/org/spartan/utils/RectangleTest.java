@@ -34,8 +34,12 @@ import fluent.ly.*;
     Rectangle rec = new Rectangle(10.2, 20.6, 5.7, -5.5);
     azzert.aye(rec.getWidth() < delta + 4.5 && rec.getWidth() > 4.5 - delta);
   }
-  @Test public void perimeter() {
+  @Test public void perimeter61dot2() {
     Rectangle rec = new Rectangle(10.2, 20.6, 5.7, -5.5);
-    azzert.aye(rec.perimeter() < delta + 39.2 && rec.perimeter() > 39.2 - delta);
+    azzert.aye(rec.perimeter() < delta + 61.2 && rec.perimeter() > 61.2 - delta);
+  }
+  @Test public void perimeter179dot4() {
+    Rectangle rec = new Rectangle(13.5, -55.3, -12.4, 8.5);
+    azzert.aye(rec.perimeter() < delta + 179.4 && rec.perimeter() > 179.4 - delta);
   }
 }

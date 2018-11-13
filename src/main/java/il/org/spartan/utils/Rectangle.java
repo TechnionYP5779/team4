@@ -19,6 +19,6 @@ public class Rectangle {
   }
 
   public double perimeter() {
-    return 39.2;
+    return 2*(getLen()+getWidth());
   }
 }
