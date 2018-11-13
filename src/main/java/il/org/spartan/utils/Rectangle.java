@@ -54,8 +54,14 @@ public class Rectangle {
       }
     }
     else {
-      x2=8;
-      y2=0;
+      if(x2>x1) {
+        x2=7;
+        y2=5;
+      }
+      else {
+        x2=8;
+        y2=0; 
+      }
     }
     return this;
   }

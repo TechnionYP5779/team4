@@ -120,4 +120,12 @@ import fluent.ly.*;
     compareDelta(new Rectangle(5, 2, 7 , 5).rotation().rotation().rotation().getY2(), 0);
   }
   
+  @Test public void rotation9() {
+    compareDelta(new Rectangle(5, 2, 7 , 5).rotation().rotation().rotation().rotation().getX2(), 7);
+  }
+  
+  @Test public void rotation10() {
+    compareDelta(new Rectangle(5, 2, 7 , 5).rotation().rotation().rotation().rotation().getY2(), 5);
+  }
+  
 }
