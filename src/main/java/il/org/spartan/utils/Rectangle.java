@@ -27,23 +27,19 @@ public class Rectangle {
   }
 
   public double getX1() {
-    // TODO Auto-generated method stub
-    return 10;
+    return this.x1;
   }
   
   public double getY1() {
-    // TODO Auto-generated method stub
-    return 20;
+    return this.y1;
   }
   
   public double getX2() {
-    // TODO Auto-generated method stub
-    return 50;
+    return this.x2;
   }
 
   public double getY2() {
-    // TODO Auto-generated method stub
-    return 40;
+    return this.y2;
   }
 
 }

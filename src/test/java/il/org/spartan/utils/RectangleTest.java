@@ -16,20 +16,36 @@ import fluent.ly.*;
     azzert.notNull(new Rectangle(10,20,30,40));
   }
   
-  @Test public void getX1() {
+  @Test public void getX1_10() {
     compareDelta(new Rectangle(10, 20, 50, 40).getX1(), 10);
   }
   
-  @Test public void getY1() {
+  @Test public void getY1_20() {
     compareDelta(new Rectangle(10, 20, 50, 40).getY1(), 20);
   }
   
-  @Test public void getX2() {
+  @Test public void getX2_50() {
     compareDelta(new Rectangle(10, 20, 50, 40).getX2(), 50);
   }
   
-  @Test public void getY2() {
+  @Test public void getY2_40() {
     compareDelta(new Rectangle(10, 20, 50, 40).getY2(), 40);
+  }
+  
+  @Test public void getX1_432dot2() {
+    compareDelta(new Rectangle(432.2, -14.5, 53256.2, 0).getX1(), 432.2);
+  }
+  
+  @Test public void getY1_minus14dot5() {
+    compareDelta(new Rectangle(432.2, -14.5, 53256.2, 0).getY1(), -14.5);
+  }
+  
+  @Test public void getX2_53256dot2() {
+    compareDelta(new Rectangle(432.2, -14.5, 53256.2, 0).getX2(), 53256.2);
+  }
+  
+  @Test public void getY2_0() {
+    compareDelta(new Rectangle(432.2, -14.5, 53256.2, 0).getY2(), 0);
   }
   
   @Test public void getLen20() {
