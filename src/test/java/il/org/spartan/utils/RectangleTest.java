@@ -89,27 +89,19 @@ import fluent.ly.*;
   }
   
   @Test public void rotation() {
-    Rectangle rec = new Rectangle(5, 2, 7 , 5);
-    rec.rotation();
-    compareDelta(rec.getX1(), 5);
+    compareDelta(new Rectangle(5, 2, 7 , 5).rotation().getX1(), 5);
   }
   
   @Test public void rotation2() {
-    Rectangle rec = new Rectangle(5, 2, 7 , 5);
-    rec.rotation();
-    compareDelta(rec.getY1(), 2);
+    compareDelta(new Rectangle(5, 2, 7 , 5).rotation().getY1(), 2);
   }
   
   @Test public void rotation3() {
-    Rectangle rec = new Rectangle(5, 2, 7 , 5);
-    rec.rotation();
-    compareDelta(rec.getX2(), 7);
+    compareDelta(new Rectangle(5, 2, 7 , 5).rotation().getX2(), 2);
   }
   
   @Test public void rotation4() {
-    Rectangle rec = new Rectangle(5, 2, 7 , 5);
-    rec.rotation();
-    compareDelta(rec.getY2(), 5);
+    compareDelta(new Rectangle(5, 2, 7 , 5).rotation().getY2(), 4);
   }
   
 }

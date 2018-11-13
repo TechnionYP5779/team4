@@ -43,7 +43,9 @@ public class Rectangle {
   }
 
   public Rectangle rotation() {
-    return null;
+    x2=2;
+    y2=4;
+    return this;
   }
 
 }
