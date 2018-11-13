@@ -144,4 +144,28 @@ import fluent.ly.*;
     compareDelta(new Rectangle(3, 4, 9 , 7).rotation().getY2(), 10);
   }
   
+  @Test public void twoRotations34X2() {
+    compareDelta(new Rectangle(3, 4, 9 , 7).rotation().rotation().getX2(), -3);
+  }
+  
+  @Test public void twoRotations34Y2() {
+    compareDelta(new Rectangle(3, 4, 9 , 7).rotation().rotation().getY2(), 1);
+  }
+  
+  @Test public void threeRotations34X2() {
+    compareDelta(new Rectangle(3, 4, 9 , 7).rotation().rotation().rotation().getX2(), 6);
+  }
+  
+  @Test public void threeRotations34Y2() {
+    compareDelta(new Rectangle(3, 4, 9 , 7).rotation().rotation().rotation().getY2(), -2);
+  }
+  
+  @Test public void fourRotations34X2() {
+    compareDelta(new Rectangle(3, 4, 9 , 7).rotation().rotation().rotation().rotation().getX2(), 9);
+  }
+  
+  @Test public void fourRotations34Y2() {
+    compareDelta(new Rectangle(3, 4, 9 , 7).rotation().rotation().rotation().rotation().getY2(), 7);
+  }
+  
 }

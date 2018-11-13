@@ -1,13 +1,13 @@
 package il.org.spartan.utils;
 
 public class Rectangle {
-  private double y1, y2, x1, x2;
+  private double y1, y2, x1, x2, prevX2;
   
   public Rectangle(double x1, double y1, double x2, double y2) {
     this.y1 = y1;
     this.y2 = y2;
     this.x1 = x1;
-    this.x2 = x2;
+    prevX2 = this.x2 = x2;
   }
 
   public double getLen() {
@@ -43,27 +43,19 @@ public class Rectangle {
   }
 
   public Rectangle rotation() {
-    if(y2>y1) {
-      if(x2>x1) {
-        double prevx2=x2;
-        x2=x1-(y2-y1);
-        y2=y1+(prevx2-x1);
-      }
-      else {
-        x2=3;
-        y2=-1;
-      }
-    }
-    else {
-      if(x2>x1) {
-        x2=7;
-        y2=5;
-      }
-      else {
-        x2=8;
-        y2=0; 
+    if (y2 > y1) {
+      x2 = x1 + y1 - y2;
+      y2 = prevX2 <= x1 ? y1-(x1-prevX2) : y1 + prevX2 - x1;
+    } else {
+      if (x2 > x1) {
+        x2 = x1+(y1-y2);
+        y2 = y1+(prevX2-x1);
+      } else {
+        x2 = x1+(y1-y2);
+        y2 = y1-(x1-prevX2);
       }
     }
+    prevX2 = x2;
     return this;
   }
 
