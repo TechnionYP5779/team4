@@ -23,6 +23,6 @@ public class Rectangle {
   }
 
   public double area() {
-    return 1652.42;
+    return getLen()*getWidth();
   }
 }

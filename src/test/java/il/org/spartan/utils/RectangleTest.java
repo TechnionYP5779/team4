@@ -55,4 +55,9 @@ import fluent.ly.*;
     Rectangle rec = new Rectangle(13.5, -55.3, -12.4, 8.5);
     azzert.aye(rec.area() < res + delta && rec.area() > res - delta);
   }
+  @Test public void area12025() {
+    double res = 12025;
+    Rectangle rec = new Rectangle(-4.5, 23, 245.5 , -25.1);
+    azzert.aye(rec.area() < res + delta && rec.area() > res - delta);
+  }
 }
