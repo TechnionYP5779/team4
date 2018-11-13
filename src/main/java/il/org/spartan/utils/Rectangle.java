@@ -45,11 +45,13 @@ public class Rectangle {
   public Rectangle rotation() {
     if(x2>x1) {
       x2=2;
+      y2=4;
+
     }
     else {
       x2=3;
+      y2=-1;
     }
-    y2=4;
     return this;
   }
 
