@@ -51,18 +51,27 @@ import org.junit.*;
     azzert.that(it.next(), is(1));
     assert it.hasNext();
     azzert.that(it.next(), is(3));
+  }
+
+  @Test public void asIterableOddTillTen1() {
     Iterator<Integer> it2 = as.asIterableLambda(Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9))
         .iterator();
     assert it2.hasNext();
     azzert.that(it2.next(), is(1));
     assert it2.hasNext();
     azzert.that(it2.next(), is(3));
+  }
+
+  @Test public void asIterableOddTillTen2() {
     Iterator<Integer> it3 = as.asIterableEssence(Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9))
         .iterator();
     assert it3.hasNext();
     azzert.that(it3.next(), is(1));
     assert it3.hasNext();
     azzert.that(it3.next(), is(3));
+  }
+
+  @Test public void asIterableOddTillTen3() {
     List<Integer> list = as.list(as.asIterable(Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9)));
     Integer odds[] = { Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9) };
     for (int ¢ = 0; ¢ < odds.length; ++¢)

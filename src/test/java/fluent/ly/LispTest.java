@@ -7,6 +7,21 @@ import org.junit.*;
 import static fluent.ly.azzert.*;
 
 @SuppressWarnings("static-method") public class LispTest {
+  final ArrayList<Integer> b = new ArrayList<>();
+  ArrayList<Integer> a;
+  ArrayList<Integer> c;
+
+  @Before public void setup() {
+    b.add(Integer.valueOf(1));
+    b.add(Integer.valueOf(2));
+    b.add(Integer.valueOf(3));
+    a = (ArrayList<Integer>) lisp.replace(b, Integer.valueOf(6), 1);
+  }
+
+  private void anotherSetup() {
+    c = (ArrayList<Integer>) lisp.replaceFirst(b, Integer.valueOf(6));
+  }
+
   @Test public void next() {
     azzert.that(lisp.next(1, Arrays.asList(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3))), is(3));
   }
@@ -15,30 +30,56 @@ import static fluent.ly.azzert.*;
     azzert.that(lisp.get(Arrays.asList(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3)), 0), is(2));
   }
 
-  @Test public void replace() {
-    ArrayList<Integer> b = new ArrayList<>();
-    b.add(Integer.valueOf(1));
-    b.add(Integer.valueOf(2));
-    b.add(Integer.valueOf(3));
-    ArrayList<Integer> a = (ArrayList<Integer>) lisp.replace(b, Integer.valueOf(6), 1);
+  @Test public void replace1() {
     if (a != null)
       azzert.that(a.get(0), is(1));
+  }
+
+  @Test public void replace2() {
     if (a != null)
       azzert.that(a.get(1), is(6));
+  }
+
+  @Test public void replace3() {
     if (a != null)
       azzert.that(a.get(2), is(3));
-    ArrayList<Integer> c = (ArrayList<Integer>) lisp.replaceFirst(b, Integer.valueOf(6));
+  }
+
+  @Test public void replace4() {
+    anotherSetup();
     if (c != null)
       azzert.that(c.get(0), is(6));
+  }
+
+  @Test public void replace5() {
+    anotherSetup();
     if (c != null)
       azzert.that(c.get(1), is(6));
+  }
+
+  @Test public void replace6() {
+    anotherSetup();
     if (c != null)
       azzert.that(c.get(2), is(3));
-    ArrayList<Integer> d = (ArrayList<Integer>) lisp.replaceLast(b, Integer.valueOf(6));
+  }
+
+  @Test public void replace7() {
+    anotherSetup();
+    @SuppressWarnings("null") ArrayList<Integer> d = (ArrayList<Integer>) lisp.replaceLast(b, Integer.valueOf(6));
     if (d != null)
       azzert.that(d.get(0), is(6));
+  }
+
+  @Test public void replace8() {
+    anotherSetup();
+    @SuppressWarnings("null") ArrayList<Integer> d = (ArrayList<Integer>) lisp.replaceLast(b, Integer.valueOf(6));
     if (d != null)
       azzert.that(d.get(1), is(6));
+  }
+
+  @Test public void replace9() {
+    anotherSetup();
+    @SuppressWarnings("null") ArrayList<Integer> d = (ArrayList<Integer>) lisp.replaceLast(b, Integer.valueOf(6));
     if (d != null)
       azzert.that(d.get(2), is(6));
   }
