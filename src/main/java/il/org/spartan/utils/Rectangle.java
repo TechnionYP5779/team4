@@ -25,4 +25,25 @@ public class Rectangle {
   public double area() {
     return getLen()*getWidth();
   }
+
+  public double getX1() {
+    // TODO Auto-generated method stub
+    return 10;
+  }
+  
+  public double getY1() {
+    // TODO Auto-generated method stub
+    return 20;
+  }
+  
+  public double getX2() {
+    // TODO Auto-generated method stub
+    return 50;
+  }
+
+  public double getY2() {
+    // TODO Auto-generated method stub
+    return 40;
+  }
+
 }
