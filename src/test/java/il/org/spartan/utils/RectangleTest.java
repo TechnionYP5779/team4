@@ -94,4 +94,22 @@ import fluent.ly.*;
     compareDelta(rec.getX1(), 5);
   }
   
+  @Test public void rotation2() {
+    Rectangle rec = new Rectangle(5, 2, 7 , 5);
+    rec.rotation();
+    compareDelta(rec.getY1(), 2);
+  }
+  
+  @Test public void rotation3() {
+    Rectangle rec = new Rectangle(5, 2, 7 , 5);
+    rec.rotation();
+    compareDelta(rec.getX2(), 7);
+  }
+  
+  @Test public void rotation4() {
+    Rectangle rec = new Rectangle(5, 2, 7 , 5);
+    rec.rotation();
+    compareDelta(rec.getY2(), 5);
+  }
+  
 }
