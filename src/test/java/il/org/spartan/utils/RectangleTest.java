@@ -112,4 +112,8 @@ import fluent.ly.*;
     compareDelta(new Rectangle(5, 2, 7 , 5).rotation().rotation().getY2(), -1);
   }
   
+  @Test public void rotation7() {
+    compareDelta(new Rectangle(5, 2, 7 , 5).rotation().rotation().rotation().getX2(), 8);
+  }
+  
 }
