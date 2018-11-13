@@ -88,4 +88,10 @@ import fluent.ly.*;
     compareDelta(new Rectangle(-4.5, 23, 245.5 , -25.1).area(), 12025);
   }
   
+  @Test public void rotation() {
+    Rectangle rec = new Rectangle(5, 2, 7 , 5);
+    rec.rotation();
+    compareDelta(rec.getX1(), 5);
+  }
+  
 }

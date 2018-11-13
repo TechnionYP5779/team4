@@ -42,4 +42,8 @@ public class Rectangle {
     return this.y2;
   }
 
+  public Rectangle rotation() {
+    return null;
+  }
+
 }
