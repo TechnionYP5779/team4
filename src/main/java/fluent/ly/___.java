@@ -19,25 +19,6 @@ import fluent.ly.___.Bug.Contract.*;
  * @author Yossi Gil (
  * @since 11/01/2006) */
 @SuppressWarnings("null") public abstract class ___ {
-  /** A do nothing method to document the fact that a <code><b>long</b></code>
-   * parameter, along with a optional list of {@link Object}s are not used by a
-   * function, and to suppress the warning.
-   * @param __   the unused parameter
-   * @param ____ more unused parameters */
-  public static void ______unused(final long l, final Object... os) {
-    forget.it(l);
-    forget.all(os);
-  }
-
-  /** A do nothing method to document the fact that some <code>Object</code>(s)
-   * parameter(s) (or local variable(s)) are not used by a function. Calling this
-   * method saves the caller the trouble of suppressing a "variable unused"
-   * warnings on the argument(s).
-   * @param ____ the unused parameters */
-  public static void ______unused(final Object... ____) {
-    unused(____);
-  }
-
   /** Exercise the {@link Invariantable#check()}
    * @param v a Invariantable object whose invariant should be checked */
   public static void check(final ___.Invariantable ¢) {
@@ -527,46 +508,6 @@ import fluent.ly.___.Bug.Contract.*;
 
   @SuppressWarnings("unused") public static void unuse(final long __, final Object... ____) {
     // empty
-  }
-
-  /** A do nothing method to document the fact that a <code><b>double</b></code>
-   * parameter, along with a optional list of {@link Object}s are not used by a
-   * function, and to suppress the warning.
-   * @param __   the unused parameter
-   * @param ____ more unused parameters */
-  @SuppressWarnings("unused") public static void unused(final double __, final double... ____) {
-    // empty
-  }
-
-  @SuppressWarnings("unused") public static void unused(final double __, final Object... ____) {
-    // empty
-  }
-
-  /** A do nothing method to document the fact that a <code><b>long</b></code>
-   * parameter, along with a optional list of {@link Object}s are not used by a
-   * function, and to suppress the warning.
-   * @param __   the unused parameter
-   * @param ____ more unused parameters */
-  @SuppressWarnings("unused") public static void unused(final int __, final int... ____) {
-    // empty
-  }
-
-  /** A do nothing method to document the fact that a <code><b>long</b></code>
-   * parameter, along with a optional list of {@link Object}s are not used by a
-   * function, and to suppress the warning.
-   * @param __   the unused parameter
-   * @param ____ more unused parameters */
-  @SuppressWarnings("unused") public static void unused(final long __, final long... ____) {
-    // empty
-  }
-
-  /** A do nothing method to document the fact that some <code>Object</code>(s)
-   * parameter(s) (or local variable(s)) are not used by a function. Calling this
-   * method saves the caller the trouble of suppressing a "variable unused"
-   * warnings on the argument(s).
-   * @param ____ the unused parameters */
-  public static void unused(final Object... ____) {
-    forget.it(____);
   }
 
   /** The base of all exception classes thrown as a result of violations of

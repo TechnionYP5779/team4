@@ -37,7 +37,7 @@ public final class Separator {
     @NotNull String $ = "";
     final @NotNull Separator s = new Separator(between);
     for (final int ¢ : is)
-      $ += s + (Integer.valueOf(¢) + "");
+      $ += s + (box.it(¢) + "");
     return $;
   }
 

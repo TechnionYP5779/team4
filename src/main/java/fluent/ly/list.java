@@ -96,7 +96,7 @@ public interface list {
    * @return <code><b>true</b></code> <i>iff</i> the an {@link Object} parameter
    *         occurs as the penultimate element of the {@link List} parameter */
   static <@Nullable T> boolean penultimateIn(final T o, final @Nullable List<T> os) {
-    assert os != null;
+    azzert.notNull(os);
     return penultimate(os) == o;
   }
 }

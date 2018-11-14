@@ -132,7 +132,7 @@ import il.org.spartan.*;
   String NL = System.getProperty("line.separator");
 
   default String cellReal(final Double ¢) {
-    return ¢.longValue() != ¢.doubleValue() ? ¢ + "" : cellInt(Long.valueOf(¢.longValue()));
+    return ¢.longValue() != ¢.doubleValue() ? ¢ + "" : cellInt(box.it(¢.longValue()));
   }
 
   static String empty() {
@@ -232,7 +232,7 @@ import il.org.spartan.*;
     final Separator s = new Separator(recordSeparator());
     values.forEach(λ -> $.append(s)
         .append(λ instanceof Object[] ? cellArray((Object[]) λ)
-            : λ instanceof Integer ? cellInt(Long.valueOf(unbox.unboxInteger((Integer) λ)))
+            : λ instanceof Integer ? cellInt(box.boxLong(unbox.unboxInteger((Integer) λ)))
                 : λ instanceof Long ? cellInt((Long) λ) : λ instanceof Double ? cellReal((Double) λ) : λ));
     return $ + recordEnd();
   }

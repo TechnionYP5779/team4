@@ -4,6 +4,8 @@ import java.util.*;
 
 import org.jetbrains.annotations.*;
 
+import fluent.ly.*;
+
 public class PairsList<T extends Number & Comparable<T>> implements Iterable<PairsList<T>.Pair> {
   public class PairComparator implements Comparator<Pair> {
     @Override public int compare(PairsList<T>.Pair o1, PairsList<T>.Pair o2) {
@@ -70,31 +72,30 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
     return list_of_pairs.size();
   }
 
-  @SuppressWarnings("null") public PairsList<Double>.Pair mean() {
+  public PairsList<Double>.Pair mean() {
     // TODO Auto-generated method stub
     if (list_of_pairs.isEmpty())
       return null;
-    Double sum_x = Double.valueOf(0.0), sum_y = Double.valueOf(0.0);
+    Double sum_x = box.it(0.0), sum_y = box.it(0.0);
     for (final PairsList<T>.Pair ¢ : this) {
-      sum_x = Double.valueOf(sum_x.doubleValue() + ¢.x.doubleValue());
-      sum_y = Double.valueOf(sum_y.doubleValue() + ¢.y.doubleValue());
+      sum_x = box.it(sum_x.doubleValue() + ¢.x.doubleValue());
+      sum_y = box.it(sum_y.doubleValue() + ¢.y.doubleValue());
     }
-    final Double $ = Double.valueOf(sum_x.doubleValue() / list_of_pairs.size()), mean_y = Double.valueOf(sum_y.doubleValue() / list_of_pairs.size());
+    final Double $ = box.it(sum_x.doubleValue() / list_of_pairs.size()), mean_y = box.it(sum_y.doubleValue() / list_of_pairs.size());
     final PairsList<Double> pd = new PairsList<>();
     pd.count();
     return pd.new Pair($, mean_y);
   }
 
-  @SuppressWarnings("null") public PairsList<Double>.Pair variance() {
+  public PairsList<Double>.Pair variance() {
     // TODO Auto-generated method stub
     if (list_of_pairs.isEmpty())
       return null;
-    Double $ = Double.valueOf(0.0), sum_y = Double.valueOf(0.0);
+    Double $ = box.it(0.0), sum_y = box.it(0.0);
     final PairsList<Double>.Pair mean_ = mean();
     for (final PairsList<T>.Pair ¢ : this) {
-      $ = Double.valueOf($.doubleValue() + (¢.x.doubleValue() - mean_.getX().doubleValue()) * (¢.x.doubleValue() - mean_.getX().doubleValue()));
-      sum_y = Double
-          .valueOf(sum_y.doubleValue() + (¢.y.doubleValue() - mean_.getY().doubleValue()) * (¢.y.doubleValue() - mean_.getY().doubleValue()));
+      $ = box.it($.doubleValue() + (¢.x.doubleValue() - mean_.getX().doubleValue()) * (¢.x.doubleValue() - mean_.getX().doubleValue()));
+      sum_y = box.it(sum_y.doubleValue() + (¢.y.doubleValue() - mean_.getY().doubleValue()) * (¢.y.doubleValue() - mean_.getY().doubleValue()));
     }
     final PairsList<Double> pd = new PairsList<>();
     pd.count();
@@ -111,13 +112,13 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
     return $;
   }
 
-  @SuppressWarnings("null") public PairsList<Double>.Pair linear_regression() {
+  public PairsList<Double>.Pair linear_regression() {
     // TODO Auto-generated method stub
     if (list_of_pairs.isEmpty())
       return null;
     final PairsList<Double>.Pair mean_ = mean();
-    final Double $ = Double.valueOf(co_variance() / variance().getX().doubleValue()),
-        alpha = Double.valueOf(mean_.getY().doubleValue() - $.doubleValue() * mean_.getX().doubleValue());
+    final Double $ = box.it(co_variance() / variance().getX().doubleValue()),
+        alpha = box.it(mean_.getY().doubleValue() - $.doubleValue() * mean_.getX().doubleValue());
     final PairsList<Double> pd = new PairsList<>();
     pd.count();
     return pd.new Pair(alpha, $);

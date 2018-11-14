@@ -21,6 +21,18 @@ import fluent.ly.*;
     return $;
   }
 
+  @Test(expected = NullPointerException.class) public void testAlternateNullArg1() {
+    iterable.alternate(iterable.over(randIntArray(A_SIZE)), null);
+  }
+
+  @Test(expected = NullPointerException.class) public void testAlternateNullArg2() {
+    iterable.alternate(null, iterable.over(randIntArray(A_SIZE)));
+  }
+
+  @Test(expected = NullPointerException.class) public void testAlternateNullArg3() {
+    iterable.alternate(null, null);
+  }
+
   @Test public void testAlternate() {
     final Integer[] a = randIntArray(A_SIZE), b = randIntArray(B_SIZE);
     Iterator<Integer> altn = iterable.alternate(iterable.over(a), iterable.over(b)).iterator();

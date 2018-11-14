@@ -2,7 +2,6 @@
 package fluent.ly;
 
 import static il.org.spartan.Utils.*;
-import static org.junit.Assert.assertEquals;
 
 import static fluent.ly.azzert.*;
 
@@ -83,7 +82,7 @@ import org.junit.*;
         null, null, null);
 
     @Test public void nullsNotNullArrayLength() {
-      assertEquals(nonNullArray.length, nulls(nonNullArray).length);
+      azzert.that(nonNullArray.length, is(nulls(nonNullArray).length));
     }
 
     @Test public void nullsNullArrayItems() {

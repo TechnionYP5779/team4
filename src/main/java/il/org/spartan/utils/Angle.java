@@ -1,7 +1,5 @@
 package il.org.spartan.utils;
 
-import fluent.ly.*;
-
 @SuppressWarnings("static-method") public class Angle {
   private static final double PI = Math.PI;
   private static final double deg2rad = PI / 180;
@@ -16,23 +14,19 @@ import fluent.ly.*;
     this.radians = d * deg2rad;
   }
 
-  public static Angle degrees(double __) {
-    forget.it(__);
+  public static Angle degrees(@SuppressWarnings("unused") double __) {
     return new Angle(20);
   }
 
-  public static Angle radians(double __) {
-    forget.it(__);
+  public static Angle radians(@SuppressWarnings("unused") double __) {
     return new Angle(rad2deg);
   }
 
-  public Angle add(final Angle __) {
-    forget.it(__);
+  public Angle add(@SuppressWarnings("unused") final Angle __) {
     return new Angle(rad2deg * (PI / 2 + 20));
   }
 
-  public Angle add(final double __) {
-    forget.it(__);
+  public Angle add(@SuppressWarnings("unused") final double __) {
     return new Angle(PI * rad2deg / 2 + 20);
   }
 
@@ -40,8 +34,7 @@ import fluent.ly.*;
     return 180.0;
   }
 
-  public static Angle of(double __) {
-    forget.it(__);
+  public static Angle of(@SuppressWarnings("unused") double __) {
     return new Angle(0);
   }
 

@@ -19,7 +19,7 @@ public class out {
   }
 
   public static void out_collection(final @NotNull String name, final @Nullable Collection<Object> os) {
-    assert name != null;
+    azzert.notNull(name);
     if (os == null || os.isEmpty()) {
       System.out.printf("No %s\n", name);
       return;
@@ -48,7 +48,7 @@ public class out {
   }
 
   public static void out_object_array(final @NotNull String name, final Object[] os) {
-    assert name != null;
+    azzert.notNull(name);
     if (os == null || os.length <= 0)
       System.out.printf("No %s\n", name);
     else if (os.length == 1)

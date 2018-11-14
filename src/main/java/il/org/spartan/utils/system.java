@@ -96,7 +96,7 @@ public interface system {
         case '(':
         case '[':
         case '{':
-          $.push(Character.valueOf(¢));
+          $.push(box.it(¢));
           continue;
         case ')':
           if ($.isEmpty() || $.pop().charValue() != '(')

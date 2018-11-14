@@ -12,7 +12,6 @@ import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.*;
-import il.org.spartan.Utils.*;
 
 /** A static nested class hosting unit tests for the nesting class Unit test for
  * the containing class. Note the naming convention: a) names of test methods do
@@ -110,7 +109,9 @@ import il.org.spartan.Utils.*;
   @Test @SuppressWarnings("null") public void swapTypicalCase() {
     final Integer @NotNull [] $ = intToIntegers(29, 1, 60);
     swap($, 0, 1);
-    assertArrayEquals(intToIntegers(1, 29, 60), $);
+    azzert.that($[0], is(1));
+    azzert.that($[1], is(29));
+    azzert.that($[2], is(60));
   }
 
   @Test public void prepend() {

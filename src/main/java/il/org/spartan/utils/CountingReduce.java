@@ -7,10 +7,10 @@ import fluent.ly.*;
  * @since 2017-03-19 */
 public class CountingReduce extends Reduce<Integer> {
   @Override @SuppressWarnings("null") public final Integer reduce(final Integer i1, final Integer i2) {
-    return Integer.valueOf(unbox.unboxInteger(i1) + unbox.unboxInteger(i2));
+    return box.it(unbox.unboxInteger(i1) + unbox.unboxInteger(i2));
   }
 
   @Override public final Integer reduce() {
-    return Integer.valueOf(0);
+    return box.it(0);
   }
 }

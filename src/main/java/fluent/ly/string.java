@@ -16,19 +16,19 @@ public enum string {
   static final int MAX_LAST = 10;
 
   public static double atod(final @NotNull String ¢) {
-    return Double.valueOf(¢).doubleValue();
+    return Double.parseDouble(¢);
   }
 
   public static float atof(final @NotNull String ¢) {
-    return Float.valueOf(¢).floatValue();
+    return Float.parseFloat(¢);
   }
 
-  @SuppressWarnings("null") public static int atoi(final @NotNull String ¢) {
-    return unbox.unboxInteger(Integer.valueOf(¢));
+  public static int atoi(final @NotNull String ¢) {
+    return Integer.parseInt(¢);
   }
 
   public static long atol(final @NotNull String ¢) {
-    return Long.valueOf(¢).longValue();
+    return Long.parseLong(¢);
   }
 
   @NotNull public static String capitalize(final @NotNull String ¢) {
@@ -122,7 +122,7 @@ public enum string {
 
   public static boolean isDouble(final @NotNull String s) {
     try {
-      Double.valueOf(s);
+      Double.parseDouble(s);
       return true;
     } catch (final NumberFormatException ¢) {
       forget.it(¢);
@@ -132,7 +132,7 @@ public enum string {
 
   public static boolean isFloat(final @NotNull String s) {
     try {
-      Float.valueOf(s);
+      Float.parseFloat(s);
       return true;
     } catch (final NumberFormatException ¢) {
       forget.it(¢);
@@ -142,7 +142,7 @@ public enum string {
 
   public static boolean isInt(final @NotNull String s) {
     try {
-      Integer.valueOf(s);
+      Integer.parseInt(s);
       return true;
     } catch (final NumberFormatException ¢) {
       forget.it(¢);
@@ -152,7 +152,7 @@ public enum string {
 
   public static boolean isLong(final @NotNull String s) {
     try {
-      Long.valueOf(s);
+      Long.parseLong(s);
       return true;
     } catch (final NumberFormatException ¢) {
       forget.it(¢);
