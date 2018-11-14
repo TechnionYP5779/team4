@@ -8,6 +8,7 @@ import java.util.function.*;
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
+import fluent.ly.idiomatic.*;
 
 @SuppressWarnings("static-method") public class IdiomaticTest {
   @Test public void evalAndIgnoreTrigger() {

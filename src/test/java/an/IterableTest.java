@@ -1,12 +1,13 @@
 package an;
 
+import static fluent.ly.azzert.*;
+
 import java.util.*;
 
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.*;
-import static fluent.ly.azzert.*;
 
 @SuppressWarnings("static-method") public class IterableTest {
   public static final int A_SIZE = 100;

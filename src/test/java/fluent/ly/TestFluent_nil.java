@@ -1,9 +1,11 @@
 package fluent.ly;
 
+import static fluent.ly.azzert.*;
+
 import java.util.function.*;
 
 import org.junit.*;
-import static fluent.ly.azzert.*;
+
 public class TestFluent_nil {
   static String helloString = "Hello";
 

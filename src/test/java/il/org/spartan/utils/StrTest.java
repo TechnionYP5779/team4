@@ -1,9 +1,10 @@
 package il.org.spartan.utils;
 
+import static fluent.ly.azzert.*;
+
 import org.junit.*;
 
 import fluent.ly.*;
-import static fluent.ly.azzert.*;
 
 @SuppressWarnings("static-method") public class StrTest {
   @Test public void testStr() {
