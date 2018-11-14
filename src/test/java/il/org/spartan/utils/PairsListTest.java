@@ -74,7 +74,7 @@ import static fluent.ly.azzert.*;
     pl.record(x2, y2);
     azzert.that(pl.linear_regression(), is(pl.new Pair(Double.valueOf(8.0), Double.valueOf(-1.0))));
   }
-  
+
   @Test public void equalzSameObject() {
     Double x1 = Double.valueOf(5.2), y1 = Double.valueOf(3.1), x2 = Double.valueOf(5.2), y2 = Double.valueOf(3.0);
     PairsList<Double> pl = new PairsList<>();
@@ -83,8 +83,9 @@ import static fluent.ly.azzert.*;
     PairsList<Double>.Pair p = pl.new Pair(x2, y2);
     azzert.that(p, is(p));
   }
-  
-  //This tests equals of different types, it is intended to have the warning unlikely-arg-type.
+
+  // This tests equals of different types, it is intended to have the warning
+  // unlikely-arg-type.
   @Test @SuppressWarnings("unlikely-arg-type") public void equalzObjNotOfClass() {
     Double x1 = Double.valueOf(5.2), y1 = Double.valueOf(3.1), x2 = Double.valueOf(5.2), y2 = Double.valueOf(3.0);
     PairsList<Double> pl = new PairsList<>();
@@ -92,7 +93,7 @@ import static fluent.ly.azzert.*;
     pl.record(x2, y2);
     azzert.nay((pl.new Pair(x2, y2)).equals(Integer.valueOf(5)));
   }
-  
+
   @Test public void equalzObjNull() {
     Double x1 = Double.valueOf(5.2), y1 = Double.valueOf(3.1), x2 = Double.valueOf(5.2), y2 = Double.valueOf(3.0);
     PairsList<Double> pl = new PairsList<>();
@@ -100,7 +101,7 @@ import static fluent.ly.azzert.*;
     pl.record(x2, y2);
     azzert.nay((pl.new Pair(x2, y2)).equals(null));
   }
-  
+
   @Test public void notEqualz() {
     Double x1 = Double.valueOf(5.2), y1 = Double.valueOf(3.1), x2 = Double.valueOf(5.2), y2 = Double.valueOf(3.0);
     PairsList<Double> pl = new PairsList<>();
