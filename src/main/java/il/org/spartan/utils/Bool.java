@@ -1,5 +1,7 @@
 package il.org.spartan.utils;
 
+import fluent.ly.*;
+
 /** A poor man's approximation of a mutable boolean, which is so much more
  * convenient than {@link Boolean}
  * @author Ori Marcovitch
@@ -28,7 +30,7 @@ public final class Bool {
 
   /** Function form, good substitute for auto-boxing */
   public Boolean inner() {
-    return Boolean.valueOf(inner);
+    return box.it(inner);
   }
 
   public Bool set() {

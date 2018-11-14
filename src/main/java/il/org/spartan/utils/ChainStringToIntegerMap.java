@@ -15,7 +15,7 @@ public class ChainStringToIntegerMap {
   }
 
   public boolean containsValue(final int value) {
-    return inner.containsValue(Integer.valueOf(value));
+    return inner.containsValue(box.it(value));
   }
 
   public Set<Entry<String, Integer>> entrySet() {
@@ -36,12 +36,12 @@ public class ChainStringToIntegerMap {
 
   public ChainStringToIntegerMap put(final @NotNull String key, final int value) {
     azzert.nay(inner.containsKey(key));
-    inner.put(key, Integer.valueOf(value));
+    inner.put(key, box.it(value));
     return this;
   }
 
   public ChainStringToIntegerMap putIfAbsent(final @NotNull String key, final int value) {
-    inner.putIfAbsent(key, Integer.valueOf(value));
+    inner.putIfAbsent(key, box.it(value));
     return this;
   }
 
