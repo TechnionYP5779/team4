@@ -97,7 +97,7 @@ public class range {
             throw new NoSuchElementException();
           final int $ = next;
           next += step;
-          return Integer.valueOf($);
+          return box.it($);
         }
       };
     }
