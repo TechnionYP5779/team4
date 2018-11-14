@@ -1,7 +1,8 @@
 package fluent.ly;
 
-import org.junit.*;
 import java.util.logging.*;
+
+import org.junit.*;
 
 @SuppressWarnings("static-method") public class NoteTest {
   @Test public void testLevels() {

@@ -1,7 +1,9 @@
 package il.org.spartan.utils;
 
 import static fluent.ly.azzert.*;
+
 import org.junit.*;
+
 import fluent.ly.*;
 import il.org.spartan.utils.Accumulator.*;
 

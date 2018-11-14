@@ -31,21 +31,21 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
     }
 
     /* (non-Javadoc)
-     * 
+     *
      * @see java.lang.Object#hashCode() */
     @Override public int hashCode() {
       return Objects.hash(x, y);
     }
 
     /* (non-Javadoc)
-     * 
+     *
      * @see java.lang.Object#equals(java.lang.Object) */
     @Override public boolean equals(Object obj) {
       if (obj == this)
         return true;
       if (obj == null || !(obj instanceof PairsList.Pair))
         return false;
-      @SuppressWarnings("unchecked") Pair other = (Pair) obj;
+      @SuppressWarnings("unchecked") final Pair other = (Pair) obj;
       return Objects.equals(x, other.x) && Objects.equals(y, other.y);
     }
   }
@@ -75,12 +75,12 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
     if (list_of_pairs.isEmpty())
       return null;
     Double sum_x = Double.valueOf(0.0), sum_y = Double.valueOf(0.0);
-    for (PairsList<T>.Pair ¢ : this) {
+    for (final PairsList<T>.Pair ¢ : this) {
       sum_x = Double.valueOf(sum_x.doubleValue() + ¢.x.doubleValue());
       sum_y = Double.valueOf(sum_y.doubleValue() + ¢.y.doubleValue());
     }
-    Double $ = Double.valueOf(sum_x.doubleValue() / list_of_pairs.size()), mean_y = Double.valueOf(sum_y.doubleValue() / list_of_pairs.size());
-    PairsList<Double> pd = new PairsList<>();
+    final Double $ = Double.valueOf(sum_x.doubleValue() / list_of_pairs.size()), mean_y = Double.valueOf(sum_y.doubleValue() / list_of_pairs.size());
+    final PairsList<Double> pd = new PairsList<>();
     pd.count();
     return pd.new Pair($, mean_y);
   }
@@ -90,13 +90,13 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
     if (list_of_pairs.isEmpty())
       return null;
     Double $ = Double.valueOf(0.0), sum_y = Double.valueOf(0.0);
-    PairsList<Double>.Pair mean_ = mean();
-    for (PairsList<T>.Pair ¢ : this) {
+    final PairsList<Double>.Pair mean_ = mean();
+    for (final PairsList<T>.Pair ¢ : this) {
       $ = Double.valueOf($.doubleValue() + (¢.x.doubleValue() - mean_.getX().doubleValue()) * (¢.x.doubleValue() - mean_.getX().doubleValue()));
       sum_y = Double
           .valueOf(sum_y.doubleValue() + (¢.y.doubleValue() - mean_.getY().doubleValue()) * (¢.y.doubleValue() - mean_.getY().doubleValue()));
     }
-    PairsList<Double> pd = new PairsList<>();
+    final PairsList<Double> pd = new PairsList<>();
     pd.count();
     return pd.new Pair($, sum_y);
   }
@@ -105,8 +105,8 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
     if (list_of_pairs.isEmpty())
       return 0.0;
     double $ = 0.0;
-    PairsList<Double>.Pair mean_ = mean();
-    for (PairsList<T>.Pair ¢ : this)
+    final PairsList<Double>.Pair mean_ = mean();
+    for (final PairsList<T>.Pair ¢ : this)
       $ += (¢.x.doubleValue() - mean_.getX().doubleValue()) * (¢.y.doubleValue() - mean_.getY().doubleValue());
     return $;
   }
@@ -115,10 +115,10 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
     // TODO Auto-generated method stub
     if (list_of_pairs.isEmpty())
       return null;
-    PairsList<Double>.Pair mean_ = mean();
-    Double $ = Double.valueOf(co_variance() / variance().getX().doubleValue()),
+    final PairsList<Double>.Pair mean_ = mean();
+    final Double $ = Double.valueOf(co_variance() / variance().getX().doubleValue()),
         alpha = Double.valueOf(mean_.getY().doubleValue() - $.doubleValue() * mean_.getX().doubleValue());
-    PairsList<Double> pd = new PairsList<>();
+    final PairsList<Double> pd = new PairsList<>();
     pd.count();
     return pd.new Pair(alpha, $);
   }

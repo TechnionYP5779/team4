@@ -30,7 +30,7 @@ import org.junit.*;
   }
 
   @Test public void nthOfCollection() {
-    List<Object> l1 = new ArrayList<>();
+    final List<Object> l1 = new ArrayList<>();
     l1.add(new Object());
     l1.add(new Object());
     l1.add(new Object());
@@ -50,22 +50,22 @@ import org.junit.*;
   }
 
   @Test @SuppressWarnings("null") public void tailOfList() {
-    List<@NotNull Integer> l2 = new ArrayList<>();
+    final List<@NotNull Integer> l2 = new ArrayList<>();
     l2.add(Integer.valueOf(2));
     l2.add(Integer.valueOf(3));
     l2.add(Integer.valueOf(4));
-    List<Integer> res = the.tailOf(l);
+    final List<Integer> res = the.tailOf(l);
     azzert.that(res.size(), is(l2.size()));
     for (int ¢ = 0; ¢ < l2.size(); ++¢)
       azzert.that(res.get(¢), is(l2.get(¢)));
   }
 
   @Test @SuppressWarnings("null") public void restOfList() {
-    List<@NotNull Integer> l2 = new ArrayList<>();
+    final List<@NotNull Integer> l2 = new ArrayList<>();
     l2.add(Integer.valueOf(2));
     l2.add(Integer.valueOf(3));
     l2.add(Integer.valueOf(4));
-    List<Integer> res = the.rest(Integer.valueOf(1), l);
+    final List<Integer> res = the.rest(Integer.valueOf(1), l);
     azzert.that(res.size(), is(l2.size()));
     for (int ¢ = 0; ¢ < l2.size(); ++¢)
       azzert.that(res.get(¢), is(l2.get(¢)));
@@ -99,14 +99,14 @@ import org.junit.*;
   }
 
   @Test public void lastOfEmptyList() {
-    @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
+    @Nullable final List<@Nullable Integer> l1 = new ArrayList<>();
     l1.add(Integer.valueOf(1));
     l1.remove(Integer.valueOf(1));
     azzert.isNull(the.lastOf(l1));
   }
 
   @Test public void lastOfNonEmptyList() {
-    @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
+    @Nullable final List<@Nullable Integer> l1 = new ArrayList<>();
     l1.add(Integer.valueOf(4));
     azzert.that(the.lastOf(l1), is(Integer.valueOf(4)));
   }
@@ -119,21 +119,21 @@ import org.junit.*;
   }
 
   @Test public void penultimateOfEmptyList() {
-    @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
+    @Nullable final List<@Nullable Integer> l1 = new ArrayList<>();
     l1.add(Integer.valueOf(1));
     l1.remove(Integer.valueOf(1));
     azzert.isNull(the.penultimateOf(l1));
   }
 
   @Test public void penultimateOfMoreThanTwoList() {
-    @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
+    @Nullable final List<@Nullable Integer> l1 = new ArrayList<>();
     l1.add(Integer.valueOf(4));
     l1.add(Integer.valueOf(3));
     azzert.that(the.penultimateOf(l1), is(Integer.valueOf(4)));
   }
 
   @Test public void secondOfList() {
-    @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
+    @Nullable final List<@Nullable Integer> l1 = new ArrayList<>();
     l1.add(Integer.valueOf(4));
     l1.add(Integer.valueOf(3));
     azzert.that(the.secondOf(l1), is(Integer.valueOf(3)));

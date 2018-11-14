@@ -12,10 +12,10 @@ import fluent.ly.*;
   }
 
   @Test @SuppressWarnings("static-access") public void testIterable() {
-    Iterable<?> iterable = empty.iterable();
-    Iterator<?> iterator = iterable.iterator();
+    final Iterable<?> iterable = empty.iterable();
+    final Iterator<?> iterator = iterable.iterator();
     azzert.assertEquals(false, iterator.hasNext());
-    azzert.assertEquals(null, iterator.next());
+    Assert.assertEquals(null, iterator.next());
     azzert.assertNotEquals(iterator, iterable.iterator());
   }
 }

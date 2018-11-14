@@ -1,7 +1,11 @@
 package il.org.spartan.utils;
 
 public class Rectangle {
-  private double y1, y2, x1, x2, prevX2;
+  private final double y1;
+  private double y2;
+  private final double x1;
+  private double x2;
+  private double prevX2;
 
   public Rectangle(double x1, double y1, double x2, double y2) {
     this.y1 = y1;
@@ -11,11 +15,11 @@ public class Rectangle {
   }
 
   public double getLen() {
-    return (y2 > y1) ? (y2 - y1) : (y1 - y2);
+    return y2 > y1 ? y2 - y1 : y1 - y2;
   }
 
   public double getWidth() {
-    return (x2 > x1) ? (x2 - x1) : (x1 - x2);
+    return x2 > x1 ? x2 - x1 : x1 - x2;
   }
 
   public double perimeter() {

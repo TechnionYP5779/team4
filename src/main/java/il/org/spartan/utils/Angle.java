@@ -1,10 +1,10 @@
 package il.org.spartan.utils;
 
-import fluent.ly.forget;
+import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class Angle {
   private static final double PI = Math.PI;
-  private static final double deg2rad = (PI / 180);
+  private static final double deg2rad = PI / 180;
   private static final double rad2deg = 1 / deg2rad;
   public double degrees;
   public double radians;

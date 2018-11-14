@@ -1,12 +1,6 @@
 package fluent.ly;
 
-import static fluent.ly.azzert.*;
-
 import java.util.function.*;
-
-import org.junit.*;
-
-import il.org.spartan.utils.*;
 
 /** TODO Yossi Gil: document class
  * @author Yossi Gil

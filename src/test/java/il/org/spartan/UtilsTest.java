@@ -1,5 +1,6 @@
 package il.org.spartan;
 
+import static il.org.spartan.Utils.*;
 import static org.junit.Assert.*;
 
 import static fluent.ly.azzert.*;
@@ -11,7 +12,7 @@ import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.*;
-import static il.org.spartan.Utils.*;
+import il.org.spartan.Utils.*;
 
 /** A static nested class hosting unit tests for the nesting class Unit test for
  * the containing class. Note the naming convention: a) names of test methods do
@@ -125,8 +126,8 @@ import static il.org.spartan.Utils.*;
   }
 
   @Test public void remove() {
-    ArrayList<Integer> a = new ArrayList<>();
-    Integer x3 = Integer.valueOf(2);
+    final ArrayList<Integer> a = new ArrayList<>();
+    final Integer x3 = Integer.valueOf(2);
     a.add(Integer.valueOf(2));
     a.add(x3);
     Utils.removeDuplicates(a);
@@ -137,7 +138,7 @@ import static il.org.spartan.Utils.*;
   }
 
   @Test public void sort() {
-    int[] arr = Utils.sort(new int[] { 15, 2, 6 });
+    final int[] arr = Utils.sort(new int[] { 15, 2, 6 });
     azzert.that(arr[0], is(2));
     azzert.that(arr[1], is(6));
     azzert.that(arr[2], is(15));
@@ -148,8 +149,8 @@ import static il.org.spartan.Utils.*;
   }
 
   @Test public void suffixedBy() {
-    File f = new File("file1"), g = new File("file2");
-    ArrayList<String> slist = new ArrayList<>();
+    final File f = new File("file1"), g = new File("file2");
+    final ArrayList<String> slist = new ArrayList<>();
     slist.add("suf1");
     slist.add("e1");
     azzert.aye(Utils.suffixedBy(f, slist));
@@ -163,77 +164,77 @@ import static il.org.spartan.Utils.*;
   }
 
   @Test public void addIterableToCollection() {
-    List<Integer> list1 = new ArrayList<>();
+    final List<Integer> list1 = new ArrayList<>();
     list1.add(Integer.valueOf(4));
     list1.add(Integer.valueOf(5));
     list1.add(Integer.valueOf(6));
-    @NotNull Collection<Integer> list2 = new ArrayList<>();
+    @NotNull final Collection<Integer> list2 = new ArrayList<>();
     list2.add(Integer.valueOf(1));
     list2.add(Integer.valueOf(2));
     list2.add(Integer.valueOf(3));
-    Collection<Integer> res = Utils.add(list2, list1);
+    final Collection<Integer> res = Utils.add(list2, list1);
     for (int ¢ = 0; ¢ < 6; ++¢)
       azzert.that(((List<Integer>) res).get(¢), is(¢ + 1));
   }
 
   @Test public void addValuesToCollection() {
-    @NotNull Collection<Integer> list2 = new ArrayList<>();
+    @NotNull final Collection<Integer> list2 = new ArrayList<>();
     list2.add(Integer.valueOf(1));
     list2.add(Integer.valueOf(2));
     list2.add(Integer.valueOf(3));
-    Collection<Integer> res = Utils.add(list2, Integer.valueOf(4), Integer.valueOf(5), Integer.valueOf(6));
+    final Collection<Integer> res = Utils.add(list2, Integer.valueOf(4), Integer.valueOf(5), Integer.valueOf(6));
     for (int ¢ = 0; ¢ < 6; ++¢)
       azzert.that(((List<Integer>) res).get(¢), is(¢ + 1));
   }
 
   @Test public void addCollectionsToCollection() {
-    List<Integer> list1 = new ArrayList<>();
+    final List<Integer> list1 = new ArrayList<>();
     list1.add(Integer.valueOf(4));
     list1.add(Integer.valueOf(5));
     list1.add(Integer.valueOf(6));
-    List<Integer> list3 = new ArrayList<>();
+    final List<Integer> list3 = new ArrayList<>();
     list3.add(Integer.valueOf(7));
     list3.add(Integer.valueOf(8));
     list3.add(Integer.valueOf(9));
-    @NotNull Collection<Integer> list2 = new ArrayList<>();
+    @NotNull final Collection<Integer> list2 = new ArrayList<>();
     list2.add(Integer.valueOf(1));
     list2.add(Integer.valueOf(2));
     list2.add(Integer.valueOf(3));
-    Collection<Integer> res = Utils.addAll(list2, list1, list3);
+    final Collection<Integer> res = Utils.addAll(list2, list1, list3);
     for (int ¢ = 0; ¢ < 9; ++¢)
       azzert.that(((List<Integer>) res).get(¢), is(¢ + 1));
   }
 
   @Test public void addIterablesToCollection() {
-    List<Integer> list1 = new ArrayList<>();
+    final List<Integer> list1 = new ArrayList<>();
     list1.add(Integer.valueOf(4));
     list1.add(Integer.valueOf(5));
     list1.add(Integer.valueOf(6));
-    List<Integer> list3 = new ArrayList<>();
+    final List<Integer> list3 = new ArrayList<>();
     list3.add(Integer.valueOf(7));
     list3.add(Integer.valueOf(8));
     list3.add(Integer.valueOf(9));
-    @NotNull Collection<Integer> list2 = new ArrayList<>();
+    @NotNull final Collection<Integer> list2 = new ArrayList<>();
     list2.add(Integer.valueOf(1));
     list2.add(Integer.valueOf(2));
     list2.add(Integer.valueOf(3));
-    Collection<Integer> res = Utils.addAll(list2, (Iterable<Integer>) list1, (Iterable<Integer>) list3);
+    final Collection<Integer> res = Utils.addAll(list2, (Iterable<Integer>) list1, (Iterable<Integer>) list3);
     for (int ¢ = 0; ¢ < 9; ++¢)
       azzert.that(((List<Integer>) res).get(¢), is(¢ + 1));
   }
 
   @Test public void addAllElementsToCollection() {
-    @NotNull Collection<Integer> list2 = new ArrayList<>();
+    @NotNull final Collection<Integer> list2 = new ArrayList<>();
     list2.add(Integer.valueOf(1));
     list2.add(Integer.valueOf(2));
     list2.add(Integer.valueOf(3));
-    Collection<Integer> res = Utils.addAll(list2, Integer.valueOf(4), Integer.valueOf(5), Integer.valueOf(6));
+    final Collection<Integer> res = Utils.addAll(list2, Integer.valueOf(4), Integer.valueOf(5), Integer.valueOf(6));
     for (int ¢ = 0; ¢ < 6; ++¢)
       azzert.that(((List<Integer>) res).get(¢), is(¢ + 1));
   }
 
   @Test public void appendToArray() {
-    @SuppressWarnings("null") @NotNull Integer a[] = { Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3) },
+    @SuppressWarnings("null") @NotNull final Integer a[] = { Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3) },
         res[] = Utils.append(a, Integer.valueOf(4));
     for (int ¢ = 0; ¢ < 4; ++¢)
       azzert.that(res[¢], is(¢ + 1));
@@ -245,7 +246,7 @@ import static il.org.spartan.Utils.*;
   }
 
   @Test public void deleteFromArray() {
-    @SuppressWarnings("null") @NotNull Integer a[] = { Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3) }, res[] = Utils.delete(a, 1);
+    @SuppressWarnings("null") @NotNull final Integer a[] = { Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3) }, res[] = Utils.delete(a, 1);
     azzert.that(res[0], is(1));
     azzert.that(res[1], is(3));
   }
@@ -267,13 +268,13 @@ import static il.org.spartan.Utils.*;
   }
 
   @Test @SuppressWarnings("null") public void foundHandler() {
-    FoundHandleForT<Integer> fh = new Utils.FoundHandleForT<>(Integer.valueOf(1));
+    final FoundHandleForT<Integer> fh = new Utils.FoundHandleForT<>(Integer.valueOf(1));
     azzert.aye(fh.in(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3)));
     azzert.not(fh.in(Integer.valueOf(2), Integer.valueOf(3)));
   }
 
   @Test public void foundHandlerInt() {
-    FoundHandleForT.FoundHandleForInt fh = new Utils.FoundHandleForT.FoundHandleForInt(1);
+    final FoundHandleForT.FoundHandleForInt fh = new Utils.FoundHandleForT.FoundHandleForInt(1);
     azzert.aye(fh.in(1, 2, 3));
     azzert.not(fh.in(2, 3));
   }

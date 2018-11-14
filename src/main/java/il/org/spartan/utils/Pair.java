@@ -1,6 +1,7 @@
 package il.org.spartan.utils;
 
 import org.jetbrains.annotations.*;
+
 import il.org.spartan.*;
 
 public class Pair<First, Second> {

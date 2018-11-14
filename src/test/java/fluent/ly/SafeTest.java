@@ -1,7 +1,8 @@
 package fluent.ly;
 
-import org.junit.*;
 import static fluent.ly.azzert.*;
+
+import org.junit.*;
 
 @SuppressWarnings("static-method") public class SafeTest {
   @Test public void divTest() {

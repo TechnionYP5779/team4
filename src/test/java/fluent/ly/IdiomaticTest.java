@@ -1,17 +1,18 @@
 package fluent.ly;
 
 import static fluent.ly.azzert.*;
+import static fluent.ly.idiomatic.*;
 
 import java.util.function.*;
 
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
-import static fluent.ly.idiomatic.*;
+import fluent.ly.idiomatic.*;
 
 @SuppressWarnings("static-method") public class IdiomaticTest {
   @Test public void evalAndIgnoreTrigger() {
-    Supplier<@Nullable Integer> supp = () -> Integer.valueOf(10);
+    final Supplier<@Nullable Integer> supp = () -> Integer.valueOf(10);
     azzert.that(eval.eval(supp), is(Integer.valueOf(10)));
     azzert.isNull(ignore.eval(supp));
     azzert.that(eval.eval(Integer.valueOf(10)), is(Integer.valueOf(10)));
@@ -47,7 +48,7 @@ import static fluent.ly.idiomatic.*;
   }
 
   @Test public void runner() {
-    Runner r = run(() -> {
+    final Runner r = run(() -> {
       /**/});
     r.unless(5 < 3);
     r.unless(5 > 3);
@@ -66,13 +67,13 @@ import static fluent.ly.idiomatic.*;
   }
 
   @Test public void unlessTrigger() {
-    Supplier<@Nullable Integer> supp = () -> Integer.valueOf(10);
+    final Supplier<@Nullable Integer> supp = () -> Integer.valueOf(10);
     azzert.isNull(unless(5 > 3).eval(supp));
     azzert.that(unless(5 < 3).eval(supp), is(Integer.valueOf(10)));
   }
 
   @Test public void holderUnless() {
-    Holder<Integer> holder = () -> Integer.valueOf(10);
+    final Holder<Integer> holder = () -> Integer.valueOf(10);
     azzert.that(holder.unless(5 < 3), is(Integer.valueOf(10)));
     azzert.isNull(holder.unless(5 > 3));
   }

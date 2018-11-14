@@ -1,10 +1,10 @@
 package fluent.ly;
 
+import static fluent.ly.azzert.*;
+
 import java.util.*;
 
 import org.junit.*;
-
-import static fluent.ly.azzert.*;
 
 @SuppressWarnings("static-method") public class CountTest {
   @Test public void usecase0() {

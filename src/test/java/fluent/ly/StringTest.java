@@ -1,12 +1,11 @@
 package fluent.ly;
 
-import org.junit.*;
 import static fluent.ly.azzert.*;
 
 import java.io.*;
 import java.util.*;
 
-import fluent.ly.forget;
+import org.junit.*;
 
 @SuppressWarnings("static-method") public class StringTest {
   @Test public void atod() {
@@ -190,7 +189,7 @@ import fluent.ly.forget;
     try {
       string.last("");
       azzert.fail();
-    } catch (Exception ¢) {
+    } catch (final Exception ¢) {
       forget.it(¢);
     }
   }
@@ -309,10 +308,10 @@ import fluent.ly.forget;
 
   @Test public void toLines() {
     try {
-      List<String> a = string.toLines("ab\ncd");
+      final List<String> a = string.toLines("ab\ncd");
       azzert.that(a.get(0), is("ab"));
       azzert.that(a.get(1), is("cd"));
-    } catch (IOException ¢) {
+    } catch (final IOException ¢) {
       forget.it(¢);
       azzert.fail();
     }

@@ -190,14 +190,14 @@ import fluent.ly.*;
   }
 
   @Test public void record() {
-    Double d = null;
-    RealStatistics r = new RealStatistics();
+    final Double d = null;
+    final RealStatistics r = new RealStatistics();
     azzert.that(r.record(d).missing(), is(1));
     azzert.that(r.record(d).missing(), is(2));
   }
 
   @Test public void variance() {
-    RealStatistics r = new RealStatistics();
+    final RealStatistics r = new RealStatistics();
     r.record(4.2);
     r.record(15.4);
     r.record(42.2);

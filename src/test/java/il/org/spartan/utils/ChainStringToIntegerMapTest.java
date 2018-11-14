@@ -5,11 +5,12 @@ import static fluent.ly.azzert.*;
 import java.util.*;
 
 import org.junit.*;
+
 import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class ChainStringToIntegerMapTest {
   @Test public void testCase() {
-    ChainStringToIntegerMap map = new ChainStringToIntegerMap();
+    final ChainStringToIntegerMap map = new ChainStringToIntegerMap();
     azzert.not(map.containsKey("abc"));
     azzert.not(map.containsValue(1));
     azzert.aye(map.isEmpty());
@@ -20,10 +21,10 @@ import fluent.ly.*;
     azzert.not(map.isEmpty());
     azzert.that(map.size(), is(1));
     azzert.that(map.get("abc"), is(1));
-    Set<String> keys = new HashSet<>();
+    final Set<String> keys = new HashSet<>();
     keys.add("abc");
     azzert.that(keys, is(map.keySet()));
-    Collection<Integer> values = new HashSet<>();
+    final Collection<Integer> values = new HashSet<>();
     values.add(Integer.valueOf(1));
     map.values();
     map.entrySet();
@@ -42,11 +43,11 @@ import fluent.ly.*;
   }
 
   @Test public void testPutAll() {
-    Map<String, Integer> map = new HashMap<>();
+    final Map<String, Integer> map = new HashMap<>();
     map.put("a", Integer.valueOf(1));
     map.put("b", Integer.valueOf(2));
     map.put("c", Integer.valueOf(3));
-    ChainStringToIntegerMap copy = new ChainStringToIntegerMap();
+    final ChainStringToIntegerMap copy = new ChainStringToIntegerMap();
     copy.putAll(map);
     azzert.aye(copy.containsKey("a"));
     azzert.aye(copy.containsValue(1));
@@ -57,7 +58,7 @@ import fluent.ly.*;
   }
 
   @Test public void testPutOn() {
-    ChainStringToIntegerMap map = new ChainStringToIntegerMap();
+    final ChainStringToIntegerMap map = new ChainStringToIntegerMap();
     map.putOn(1, "a", "b", "c");
     azzert.aye(map.containsValue(1));
     azzert.aye(map.containsKey("a"));

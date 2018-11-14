@@ -13,7 +13,7 @@ import fluent.ly.*;
   }
 
   @Test public void testOr() {
-    Truth t = Truth.T, f = Truth.F;
+    final Truth t = Truth.T, f = Truth.F;
     azzert.that(t.or(t), is(Truth.T));
     azzert.that(t.or(f), is(Truth.T));
     azzert.that(f.or(t), is(Truth.T));
@@ -21,7 +21,7 @@ import fluent.ly.*;
   }
 
   @Test public void testAnd() {
-    Truth t = Truth.T, f = Truth.F;
+    final Truth t = Truth.T, f = Truth.F;
     azzert.that(t.and(t), is(Truth.T));
     azzert.that(t.and(f), is(Truth.F));
     azzert.that(f.and(t), is(Truth.F));

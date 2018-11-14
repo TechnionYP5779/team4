@@ -2,7 +2,6 @@ package il.org.spartan.utils;
 
 import static fluent.ly.azzert.*;
 
-import il.org.spartan.utils.Tab;
 import org.jetbrains.annotations.*;
 import org.junit.*;
 

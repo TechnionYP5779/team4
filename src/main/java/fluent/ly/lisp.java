@@ -26,7 +26,7 @@ public interface lisp {
   }
 
   static <T> @Nullable T get(final List<@Nullable T> ts, final int i) {
-    return (ts == null) ? null : ts.get(i + 1);
+    return ts == null ? null : ts.get(i + 1);
   }
 
   /** Retrieve previous item in a list

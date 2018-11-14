@@ -41,7 +41,7 @@ public class BigIntegerRange {
       }
 
       @Override public BigInteger next() {
-        BigInteger $ = current;
+        final BigInteger $ = current;
         current = current.add(step);
         return $;
       }
@@ -55,11 +55,11 @@ public class BigIntegerRange {
   public BigIntegerRange interset(BigIntegerRange other) {
     return this.to != null && other.from != null && this.to.compareTo(other.from) == -1
         || other.to != null && this.from != null && other.to.compareTo(this.from) == -1 ? null
-            : (new BigIntegerRange()).from(this.from != null && this.from.compareTo(other.from) != -1 ? this.from : other.from)
+            : new BigIntegerRange().from(this.from != null && this.from.compareTo(other.from) != -1 ? this.from : other.from)
                 .to(other.to != null && this.to.compareTo(other.to) == -1 ? this.from : other.from);
   }
 
   public boolean includes(BigInteger value) {
-    return (from == null || (from != null && from.compareTo(value) == -1)) && ((to == null) || (to != null && value.compareTo(to) == -1));
+    return (from == null || from != null && from.compareTo(value) == -1) && (to == null || to != null && value.compareTo(to) == -1);
   }
 }

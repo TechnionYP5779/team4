@@ -14,7 +14,7 @@ public class HasTest {
 
   @Test @SuppressWarnings("static-method") public void seriesA02() {
     azzert.nay(has.nulls("A"));
-    @NotNull Iterable<@Nullable String> os = new ArrayList<>();
+    @NotNull final Iterable<@Nullable String> os = new ArrayList<>();
     ((List<String>) os).add(String.valueOf("A"));
     azzert.nay(has.nulls(os));
   }

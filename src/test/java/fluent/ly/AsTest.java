@@ -45,7 +45,7 @@ import org.junit.*;
   }
 
   @Test public void asIterableOddTillTen() {
-    Iterator<Integer> it = as.asIterable(Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9))
+    final Iterator<Integer> it = as.asIterable(Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9))
         .iterator();
     assert it.hasNext();
     azzert.that(it.next(), is(1));
@@ -54,8 +54,8 @@ import org.junit.*;
   }
 
   @Test public void asIterableOddTillTen1() {
-    Iterator<Integer> it2 = as.asIterableLambda(Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9))
-        .iterator();
+    final Iterator<Integer> it2 = as
+        .asIterableLambda(Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9)).iterator();
     assert it2.hasNext();
     azzert.that(it2.next(), is(1));
     assert it2.hasNext();
@@ -63,8 +63,8 @@ import org.junit.*;
   }
 
   @Test public void asIterableOddTillTen2() {
-    Iterator<Integer> it3 = as.asIterableEssence(Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9))
-        .iterator();
+    final Iterator<Integer> it3 = as
+        .asIterableEssence(Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9)).iterator();
     assert it3.hasNext();
     azzert.that(it3.next(), is(1));
     assert it3.hasNext();
@@ -72,8 +72,9 @@ import org.junit.*;
   }
 
   @Test public void asIterableOddTillTen3() {
-    List<Integer> list = as.list(as.asIterable(Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9)));
-    Integer odds[] = { Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9) };
+    final List<Integer> list = as
+        .list(as.asIterable(Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9)));
+    final Integer odds[] = { Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9) };
     for (int ¢ = 0; ¢ < odds.length; ++¢)
       azzert.that(list.get(¢), is(odds[¢]));
   }
@@ -84,15 +85,15 @@ import org.junit.*;
   }
 
   @Test public void iteratorOfObjs() {
-    @NotNull Object o1 = new Object(), o2 = new Object(), o3 = new Object();
-    Iterator<Object> it = as.iterator(o1, o2, o3);
+    @NotNull final Object o1 = new Object(), o2 = new Object(), o3 = new Object();
+    final Iterator<Object> it = as.iterator(o1, o2, o3);
     azzert.that(it.next(), is(o1));
     azzert.that(it.next(), is(o2));
     azzert.that(it.next(), is(o3));
   }
 
   @Test public void setOfObjs() {
-    @NotNull Object o2 = new Object(), o3 = new Object();
+    @NotNull final Object o2 = new Object(), o3 = new Object();
     azzert.that(as.set(new Object(), o2, o3, o3).size(), is(3));
   }
 

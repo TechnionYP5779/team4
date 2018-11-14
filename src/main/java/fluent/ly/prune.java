@@ -141,31 +141,29 @@ import org.junit.*;
   @SuppressWarnings({ "static-method", "synthetic-access" }) public static class TEST2 {
     @NotNull final String @NotNull [] alternatingArray = new String[] { null, "A", null, null, "B", null, null, null, "C", null };
     @NotNull final String @NotNull [] nonNullArray = { "1", "2", "4" };
-    @NotNull final Supplier<List<String>> x = new Supplier<List<String>>() {
-      @Override public List<String> get() {
-        List<String> $ = an.empty.list();
-        $.add(null);
-        $.add(null);
-        $.add(null);
-        $.add(null);
-        $.add(null);
-        $.add("A");
-        $.add(null);
-        $.add(null);
-        $.add(null);
-        $.add("B");
-        $.add(null);
-        $.add("C");
-        $.add(null);
-        $.add(null);
-        $.add(null);
-        $.add(null);
-        return $;
-      }
+    @NotNull final Supplier<List<String>> x = () -> {
+      final List<String> $ = an.empty.list();
+      $.add(null);
+      $.add(null);
+      $.add(null);
+      $.add(null);
+      $.add(null);
+      $.add("A");
+      $.add(null);
+      $.add(null);
+      $.add(null);
+      $.add("B");
+      $.add(null);
+      $.add("C");
+      $.add(null);
+      $.add(null);
+      $.add(null);
+      $.add(null);
+      return $;
     };
-    @NotNull private List<String> sparseCollection = new Supplier<List<String>>() {
+    @NotNull private final List<String> sparseCollection = new Supplier<List<String>>() {
       @Override @NotNull public List<String> get() {
-        @NotNull List<String> $ = an.empty.list();
+        @NotNull final List<String> $ = an.empty.list();
         $.add(null);
         $.add(null);
         $.add(null);

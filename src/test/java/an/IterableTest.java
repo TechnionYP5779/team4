@@ -12,15 +12,15 @@ import fluent.ly.*;
   public static final int B_SIZE = 88;
 
   private Integer @NotNull [] randIntArray(final int size) {
-    Integer[] $ = new Integer[size];
-    Random rand = new Random();
+    final Integer[] $ = new Integer[size];
+    final Random rand = new Random();
     for (int ¢ = 0; ¢ < size; ++¢)
       $[¢] = Integer.valueOf(rand.nextInt());
     return $;
   }
 
   @Test public void testAlternate() {
-    Integer[] a = randIntArray(A_SIZE), b = randIntArray(B_SIZE);
+    final Integer[] a = randIntArray(A_SIZE), b = randIntArray(B_SIZE);
     Iterator<Integer> altn = iterable.alternate(iterable.over(a), iterable.over(b)).iterator();
     for (int ¢ = 0; ¢ < 2 * B_SIZE; ++¢) {
       azzert.aye(altn.hasNext());

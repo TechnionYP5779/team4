@@ -50,7 +50,7 @@ public interface system {
   }
 
   static Extension ephemeral(final @Nullable String stem) {
-    return (stem == null) ? ephemeral(new Random() + "")
+    return stem == null ? ephemeral(new Random() + "")
         : λ -> new File(system.tmp + stem + new SimpleDateFormat("-yyyy-MM-dd-HH-mm-ss").format(new Date()) + "." + λ);
   }
 
