@@ -40,12 +40,12 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
     /* (non-Javadoc)
      *
      * @see java.lang.Object#equals(java.lang.Object) */
-    @Override public boolean equals(Object obj) {
-      if (obj == this)
+    @Override public boolean equals(Object o) {
+      if (o == this)
         return true;
-      if (obj == null || !(obj instanceof PairsList.Pair))
+      if (o == null || !(o instanceof PairsList.Pair))
         return false;
-      @SuppressWarnings("unchecked") final Pair other = (Pair) obj;
+      @SuppressWarnings("unchecked") final Pair other = (Pair) o;
       return Objects.equals(x, other.x) && Objects.equals(y, other.y);
     }
   }

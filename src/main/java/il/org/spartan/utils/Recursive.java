@@ -59,7 +59,7 @@ public interface Recursive<T> extends Duplo<T> {
           if (¢ != null)
             $ = Stream.concat(¢.neighborsStream(), $);
         return self == null ? $ : Stream.concat($, Stream.of(self));
-      }
+      };
     }
   }
 
@@ -76,7 +76,7 @@ public interface Recursive<T> extends Duplo<T> {
           if (¢ != null)
             $ = Stream.concat($, ¢.neighborsStream());
         return $;
-      }
+      };
     }
   }
 }

@@ -11,7 +11,7 @@ import fluent.ly.*;
     azzert.assertEquals(0, empty.list().size());
   }
 
-  @Test @SuppressWarnings("static-access") public void testIterable() {
+  @Test public void testIterable() {
     final Iterable<?> iterable = empty.iterable();
     final Iterator<?> iterator = iterable.iterator();
     azzert.assertEquals(false, iterator.hasNext());

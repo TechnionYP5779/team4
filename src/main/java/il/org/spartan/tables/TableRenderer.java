@@ -122,9 +122,9 @@ import il.org.spartan.*;
         return " | ";
       }
     };
-    int lastSize;
+    static int lastSize;
 
-    @Override void setHeaderCount(final int size) {
+    @Override public void setHeaderCount(final int size) {
       builtin.lastSize = size;
     }
   }

@@ -31,7 +31,7 @@ import il.org.spartan.*;
     azzert.assertEquals(false, nullPair.equals(firstNull));
   }
 
-  @Test @SuppressWarnings("static-access") public void testToString() {
+  @Test public void testToString() {
     Assert.assertEquals("<Hello,1>", Pair.newPair("Hello", Integer.valueOf(1)) + "");
   }
 
