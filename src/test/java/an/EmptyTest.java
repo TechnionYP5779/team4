@@ -15,7 +15,7 @@ import fluent.ly.*;
     final Iterable<?> iterable = empty.iterable();
     final Iterator<?> iterator = iterable.iterator();
     azzert.assertEquals(false, iterator.hasNext());
-    Assert.assertEquals(null, iterator.next());
+    azzert.isNull(iterator.next());
     azzert.assertNotEquals(iterator, iterable.iterator());
   }
 }

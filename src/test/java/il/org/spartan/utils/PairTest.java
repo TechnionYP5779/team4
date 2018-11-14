@@ -5,6 +5,8 @@ import org.junit.*;
 import fluent.ly.*;
 import il.org.spartan.*;
 
+import static fluent.ly.azzert.*;
+
 @SuppressWarnings("static-method") public class PairTest {
   public static final int N = 100;
   public static final int M = 37;
@@ -32,7 +34,7 @@ import il.org.spartan.*;
   }
 
   @Test public void testToString() {
-    Assert.assertEquals("<Hello,1>", Pair.newPair("Hello", Integer.valueOf(1)) + "");
+    azzert.that(Pair.newPair("Hello", Integer.valueOf(1)) + "", is("<Hello,1>"));
   }
 
   @Test public void testHashCode() {

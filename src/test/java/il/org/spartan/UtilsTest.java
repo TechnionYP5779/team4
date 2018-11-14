@@ -1,7 +1,6 @@
 package il.org.spartan;
 
 import static il.org.spartan.Utils.*;
-import static org.junit.Assert.*;
 
 import static fluent.ly.azzert.*;
 
@@ -109,7 +108,9 @@ import fluent.ly.*;
   @Test @SuppressWarnings("null") public void swapTypicalCase() {
     final Integer @NotNull [] $ = intToIntegers(29, 1, 60);
     swap($, 0, 1);
-    assertArrayEquals(intToIntegers(1, 29, 60), $);
+    azzert.that($[0], is(1));
+    azzert.that($[1], is(29));
+    azzert.that($[2], is(60));
   }
 
   @Test public void prepend() {
