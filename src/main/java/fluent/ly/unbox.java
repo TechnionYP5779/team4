@@ -36,7 +36,7 @@ import org.jetbrains.annotations.*;
   }
 
   public static int it(final @NotNull Integer ¢) {
-    return ¢.intValue();
+    return unbox.unboxInteger(¢);
   }
 
   public static int @NotNull [] it(final @NotNull Integer[] ¢) {
@@ -144,7 +144,7 @@ import org.jetbrains.annotations.*;
   public static int @NotNull [] unboxIntegerArray(final @NotNull Integer[] is) {
     final int @NotNull [] $ = new int[is.length];
     for (int ¢ = 0; ¢ < is.length; ++¢)
-      $[¢] = is[¢].intValue();
+      $[¢] = unbox.unboxInteger(is[¢]);
     return $;
   }
 

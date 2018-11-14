@@ -23,8 +23,8 @@ public enum string {
     return Float.valueOf(¢).floatValue();
   }
 
-  public static int atoi(final @NotNull String ¢) {
-    return Integer.valueOf(¢).intValue();
+  @SuppressWarnings("null") public static int atoi(final @NotNull String ¢) {
+    return unbox.unboxInteger(Integer.valueOf(¢));
   }
 
   public static long atol(final @NotNull String ¢) {

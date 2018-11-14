@@ -70,7 +70,7 @@ import il.org.spartan.utils.*;
    *        {@code null @param value The value associated with the key @return
    *            {@code this} */
   public final Self col(final @NotNull String key, final Integer value) {
-    return value == null ? col(key) : col(key, value.intValue());
+    return value == null ? col(key) : col(key, unbox.unboxInteger(value));
   }
 
   /** Add a key and a {@code long} value to this instance

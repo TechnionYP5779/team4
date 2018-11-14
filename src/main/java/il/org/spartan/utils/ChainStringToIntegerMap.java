@@ -5,6 +5,8 @@ import java.util.Map.*;
 
 import org.jetbrains.annotations.*;
 
+import fluent.ly.*;
+
 public class ChainStringToIntegerMap {
   public Map<String, Integer> inner = new HashMap<>();
 
@@ -20,8 +22,8 @@ public class ChainStringToIntegerMap {
     return inner.entrySet();
   }
 
-  public int get(final String key) {
-    return inner.get(key).intValue();
+  @SuppressWarnings("null") public int get(final String key) {
+    return unbox.unboxInteger(inner.get(key));
   }
 
   public boolean isEmpty() {
