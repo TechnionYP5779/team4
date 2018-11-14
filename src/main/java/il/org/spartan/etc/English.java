@@ -189,6 +189,7 @@ import il.org.spartan.utils.*;
   }
 
   static String repeat(final int i, final char c) {
+    /* use of valueOf apporved by Yossi */
     return String.valueOf(new char[i]).replace('\0', c);
   }
 
