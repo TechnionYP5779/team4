@@ -37,7 +37,8 @@ public interface iterable {
   }
 
   static <T> Iterable<T> alternate(Iterable<T> itA, Iterable<T> itB) {
-    if (itA == null || itB == null) throw new NullPointerException();
+    if (itA == null || itB == null)
+      throw new NullPointerException();
     return new Iterable<T>() {
       @Override @NotNull public Iterator<T> iterator() {
         return new Iterator<T>() {

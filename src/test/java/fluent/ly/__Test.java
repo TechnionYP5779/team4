@@ -215,7 +215,7 @@ import fluent.ly.___.Variant;
       azzert.that(v.value(), is(0));
     }
     try {
-      ___.unused(new Variant(-1));
+      forget.unused(new Variant(-1));
     } catch (final Initial e) {
       azzert.that(e.getMessage(), is("Initial variant value (-1) is negative"));
     }

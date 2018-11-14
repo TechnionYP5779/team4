@@ -10,7 +10,7 @@ public final class Int {
   public int inner;
 
   public Int() {
-    ___.______unused();
+    forget.______unused();
   }
 
   public Int(final int inner) {

@@ -284,7 +284,7 @@ import il.org.spartan.*;
 
     @Test public final void byFOfTTArrayChar() {
       final @NotNull Applicator<Object, String> f = new Applicator<>(λ -> "'" + λ + "'");
-      azzert.notNull("Function literals should never by null.",f);
+      azzert.notNull("Function literals should never by null.", f);
       final @NotNull Collection<String> c = as.list("Hello", "World");
       azzert.that(c.size(), is(2));
       final @NotNull Iterable<String> ts = f.to(c);
