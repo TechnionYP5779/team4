@@ -35,7 +35,7 @@ public class ChainStringToIntegerMap {
   }
 
   public ChainStringToIntegerMap put(final @NotNull String key, final int value) {
-    assert !inner.containsKey(key);
+    azzert.nay(inner.containsKey(key));
     inner.put(key, Integer.valueOf(value));
     return this;
   }

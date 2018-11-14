@@ -104,7 +104,7 @@ import il.org.spartan.Utils.FoundHandleForT.*;
    *         <code><b>null</b></code>
    * @see #mustBeNull(Object) */
   @NotNull static <T> T cantBeNull(final @Nullable T $) {
-    assert $ != null;
+    azzert.notNull($);
     return $;
   }
 
@@ -216,7 +216,7 @@ import il.org.spartan.Utils.FoundHandleForT.*;
    *          <code><b>null</b></code>.
    * @return parameter */
   static <@Nullable T> @Nullable Void mustBeNull(final @Nullable T $) {
-    assert $ == null;
+    azzert.isNull($);
     return null;
   }
 

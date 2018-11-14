@@ -5,6 +5,7 @@ import java.util.*;
 
 import org.jetbrains.annotations.*;
 
+import fluent.ly.*;
 // import static il.org.spartan.utils.___.*;
 import il.org.spartan.Aggregator.Aggregation.*;
 import il.org.spartan.statistics.*;
@@ -36,8 +37,8 @@ import il.org.spartan.statistics.*;
    *                   columns in the principal file
    * @throws IOException */
   public CSVStatistics(final @NotNull String baseName, final @NotNull String keysHeader) {
-    assert baseName != null;
-    assert keysHeader != null;
+    azzert.notNull(baseName);
+    azzert.notNull(keysHeader);
     inner = new CSVWriter(removeExtension(baseName));
     summarizer = new CSVWriter(removeExtension(baseName) + SUMMARY_EXTENSION);
     this.keysHeader = keysHeader;
