@@ -114,14 +114,14 @@ import fluent.ly.*;
 
   @Test public void prepend() {
     StringBuilder s = Utils.prepend(new StringBuilder(), 'c');
-    azzert.that(s.charAt(0), azzert.is('c'));
+    azzert.that(s.charAt(0), is('c'));
     s = Utils.prepend(s, "str");
-    azzert.that(s.charAt(0), azzert.is('s'));
+    azzert.that(s.charAt(0), is('s'));
   }
 
   @Test public void quoteTest() {
-    azzert.that(Utils.quote("abc"), azzert.is("'abc'"));
-    azzert.that(Utils.quote(null), azzert.is("<null reference>"));
+    azzert.that(Utils.quote("abc"), is("'abc'"));
+    azzert.that(Utils.quote(null), is("<null reference>"));
   }
 
   @Test public void remove() {
@@ -130,10 +130,10 @@ import fluent.ly.*;
     a.add(Integer.valueOf(2));
     a.add(x3);
     Utils.removeDuplicates(a);
-    azzert.that(a.size(), azzert.is(1));
-    azzert.that(Utils.removePrefix("abc", "ab"), azzert.is("c"));
-    azzert.that(Utils.removeSuffix("abc", "c"), azzert.is("ab"));
-    azzert.that(Utils.removeWhites("abc def "), azzert.is("abcdef"));
+    azzert.that(a.size(), is(1));
+    azzert.that(Utils.removePrefix("abc", "ab"), is("c"));
+    azzert.that(Utils.removeSuffix("abc", "c"), is("ab"));
+    azzert.that(Utils.removeWhites("abc def "), is("abcdef"));
   }
 
   @Test public void sort() {
@@ -144,7 +144,7 @@ import fluent.ly.*;
   }
 
   @Test public void sqr() {
-    azzert.that(Utils.sqr(4.0), azzert.is(16.0));
+    azzert.that(Utils.sqr(4.0), is(16.0));
   }
 
   @Test public void suffixedBy() {
@@ -159,7 +159,7 @@ import fluent.ly.*;
   }
 
   @Test public void nameTest() {
-    azzert.that(Utils.name(new File("abc")), azzert.is("abc"));
+    azzert.that(Utils.name(new File("abc")), is("abc"));
   }
 
   @Test public void addIterableToCollection() {

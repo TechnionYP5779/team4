@@ -26,7 +26,7 @@ import org.junit.*;
   }
 
   @Test public void nilIsNull() {
-    azzert.isNull(the.nil());
+    isNull(the.nil());
   }
 
   @Test public void nthOfCollection() {
@@ -42,11 +42,11 @@ import org.junit.*;
   }
 
   @Test @SuppressWarnings("null") public void previousOfFirst() {
-    azzert.isNull(the.previous(Integer.valueOf(1), l));
+    isNull(the.previous(Integer.valueOf(1), l));
   }
 
   @Test @SuppressWarnings("null") public void previousOfNotFound() {
-    azzert.isNull(the.previous(Integer.valueOf(0), l));
+    isNull(the.previous(Integer.valueOf(0), l));
   }
 
   @Test @SuppressWarnings("null") public void tailOfList() {
@@ -95,14 +95,14 @@ import org.junit.*;
     @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
     l1.add(Integer.valueOf(1));
     l1 = null;
-    azzert.isNull(the.lastOf(l1));
+    isNull(the.lastOf(l1));
   }
 
   @Test public void lastOfEmptyList() {
     @Nullable final List<@Nullable Integer> l1 = new ArrayList<>();
     l1.add(Integer.valueOf(1));
     l1.remove(Integer.valueOf(1));
-    azzert.isNull(the.lastOf(l1));
+    isNull(the.lastOf(l1));
   }
 
   @Test public void lastOfNonEmptyList() {
@@ -115,14 +115,14 @@ import org.junit.*;
     @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
     l1.add(Integer.valueOf(1));
     l1 = null;
-    azzert.isNull(the.penultimateOf(l1));
+    isNull(the.penultimateOf(l1));
   }
 
   @Test public void penultimateOfEmptyList() {
     @Nullable final List<@Nullable Integer> l1 = new ArrayList<>();
     l1.add(Integer.valueOf(1));
     l1.remove(Integer.valueOf(1));
-    azzert.isNull(the.penultimateOf(l1));
+    isNull(the.penultimateOf(l1));
   }
 
   @Test public void penultimateOfMoreThanTwoList() {
@@ -143,6 +143,6 @@ import org.junit.*;
     @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
     l1.add(Integer.valueOf(1));
     l1 = null;
-    azzert.isNull(the.secondOf(l1));
+    isNull(the.secondOf(l1));
   }
 }

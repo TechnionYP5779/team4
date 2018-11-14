@@ -12,8 +12,8 @@ import fluent.ly.*;
 @SuppressWarnings("static-method") public class BigIntegerRangeTest {
   @Test public void testDefaultValues() {
     final BigIntegerRange r = new BigIntegerRange();
-    azzert.isNull(r.from());
-    azzert.isNull(r.to());
+    isNull(r.from());
+    isNull(r.to());
     azzert.that(r.step, is(BigInteger.ONE));
   }
 
@@ -52,7 +52,7 @@ import fluent.ly.*;
   @Test public void testFromInfinity() {
     final BigIntegerRange r = new BigIntegerRange();
     azzert.that(r.to(BigInteger.valueOf(2)).to(), is(BigInteger.valueOf(2)));
-    azzert.isNull(r.from());
+    isNull(r.from());
   }
 
   @Test public void testIntersection() {

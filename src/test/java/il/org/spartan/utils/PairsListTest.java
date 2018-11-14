@@ -42,7 +42,7 @@ import fluent.ly.*;
   @Test public void statisticsMean() {
     final Double x1 = Double.valueOf(5.0), y1 = Double.valueOf(3.0), x2 = Double.valueOf(7.0), y2 = Double.valueOf(1.0);
     final PairsList<Double> pl = new PairsList<>();
-    azzert.isNull(pl.mean());
+    isNull(pl.mean());
     pl.record(x1, y1);
     pl.record(x2, y2);
     azzert.that(pl.mean(), is(pl.new Pair(Double.valueOf(6.0), Double.valueOf(2.0))));
@@ -51,7 +51,7 @@ import fluent.ly.*;
   @Test public void statisticsVariance() {
     final Double x1 = Double.valueOf(5.0), y1 = Double.valueOf(3.0), x2 = Double.valueOf(7.0), y2 = Double.valueOf(1.0);
     final PairsList<Double> pl = new PairsList<>();
-    azzert.isNull(pl.variance());
+    isNull(pl.variance());
     pl.record(x1, y1);
     pl.record(x2, y2);
     azzert.that(pl.variance(), is(pl.new Pair(Double.valueOf(2.0), Double.valueOf(2.0))));
@@ -69,7 +69,7 @@ import fluent.ly.*;
   @Test public void linearRegression() {
     final Double x1 = Double.valueOf(5.0), y1 = Double.valueOf(3.0), x2 = Double.valueOf(7.0), y2 = Double.valueOf(1.0);
     final PairsList<Double> pl = new PairsList<>();
-    azzert.isNull(pl.linear_regression());
+    isNull(pl.linear_regression());
     pl.record(x1, y1);
     pl.record(x2, y2);
     azzert.that(pl.linear_regression(), is(pl.new Pair(Double.valueOf(8.0), Double.valueOf(-1.0))));

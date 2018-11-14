@@ -22,6 +22,6 @@ import org.junit.*;
   }
 
   @Test public void anySupplierNull() {
-    azzert.isNull(anonymous.ly(() -> null));
+    isNull(anonymous.ly(() -> null));
   }
 }

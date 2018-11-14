@@ -6,6 +6,7 @@ import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.*;
+import static fluent.ly.azzert.*;
 
 @SuppressWarnings("static-method") public class IterableTest {
   public static final int A_SIZE = 100;
@@ -24,21 +25,21 @@ import fluent.ly.*;
     Iterator<Integer> altn = iterable.alternate(iterable.over(a), iterable.over(b)).iterator();
     for (int ¢ = 0; ¢ < 2 * B_SIZE; ++¢) {
       azzert.aye(altn.hasNext());
-      azzert.that(altn.next(), azzert.is(¢ % 2 == 0 ? a[¢ / 2] : b[¢ / 2]));
+      azzert.that(altn.next(), is(¢ % 2 == 0 ? a[¢ / 2] : b[¢ / 2]));
     }
     for (int ¢ = B_SIZE; ¢ < A_SIZE; ++¢) {
       azzert.aye(altn.hasNext());
-      azzert.that(altn.next(), azzert.is(a[¢]));
+      azzert.that(altn.next(), is(a[¢]));
     }
     azzert.nay(altn.hasNext());
     altn = iterable.alternate(iterable.over(b), iterable.over(a)).iterator();
     for (int ¢ = 0; ¢ < 2 * B_SIZE; ++¢) {
       azzert.aye(altn.hasNext());
-      azzert.that(altn.next(), azzert.is(¢ % 2 == 0 ? b[¢ / 2] : a[¢ / 2]));
+      azzert.that(altn.next(), is(¢ % 2 == 0 ? b[¢ / 2] : a[¢ / 2]));
     }
     for (int ¢ = B_SIZE; ¢ < A_SIZE; ++¢) {
       azzert.aye(altn.hasNext());
-      azzert.that(altn.next(), azzert.is(a[¢]));
+      azzert.that(altn.next(), is(a[¢]));
     }
     azzert.nay(altn.hasNext());
   }

@@ -3,10 +3,11 @@ package il.org.spartan.utils;
 import org.junit.*;
 
 import fluent.ly.*;
+import static fluent.ly.azzert.*;
 
 @SuppressWarnings("static-method") public class StrTest {
   @Test public void testStr() {
-    azzert.isNull(new Str().inner());
+    isNull(new Str().inner());
   }
 
   @Test public void testIsEmptyx() {

@@ -56,7 +56,7 @@ import fluent.ly.*;
   }
 
   @Test public void testFindIncludedIn() {
-    azzert.isNull(new Range(0, 1).findIncludedIn(null));
+    isNull(new Range(0, 1).findIncludedIn(null));
   }
 
   @Test public void testEquals() {

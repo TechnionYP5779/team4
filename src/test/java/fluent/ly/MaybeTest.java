@@ -1,14 +1,15 @@
 package fluent.ly;
 
 import org.junit.*;
+import static fluent.ly.azzert.*;
 
 @SuppressWarnings("static-method") public class MaybeTest {
   @Test public void usecase0() {
-    azzert.isNull(maybe.no().get());
+    isNull(maybe.no().get());
   }
 
   @Test public void usecase1() {
-    azzert.isNull(maybe.yes(null).get());
+    isNull(maybe.yes(null).get());
   }
 
   @Test public void usecase2() {
