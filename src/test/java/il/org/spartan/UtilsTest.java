@@ -59,8 +59,8 @@ import fluent.ly.*;
     }
   }
 
-  @SuppressWarnings("null") @Test public void cantBeNullTypical() {
-    azzert.aye( cantBeNull(new Object()) != null);
+  @Test @SuppressWarnings("null") public void cantBeNullTypical() {
+    azzert.aye(cantBeNull(new Object()) != null);
   }
 
   @Test public void isNullTypical() {
