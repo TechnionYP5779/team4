@@ -50,47 +50,47 @@ import org.junit.*;
   }
 
   @Test public void intIsIn() {
-    azzert.aye(is.intIsIn(1, 1, 3, 5));
-    azzert.aye(is.intIsIn(3, 1, 3, 5));
-    azzert.aye(is.intIsIn(5, 1, 3, 5));
-    azzert.nay(is.intIsIn(0, 1, 3, 5));
-    azzert.nay(is.intIsIn(2, 1, 3, 5));
-    azzert.nay(is.intIsIn(4, 1, 3, 5));
-    azzert.nay(is.intIsIn(77, 1, 3, 5));
+    assert (is.intIsIn(1, 1, 3, 5));
+    assert (is.intIsIn(3, 1, 3, 5));
+    assert(is.intIsIn(5, 1, 3, 5));
+    assert !(is.intIsIn(0, 1, 3, 5));
+    assert !(is.intIsIn(2, 1, 3, 5));
+    assert !(is.intIsIn(4, 1, 3, 5));
+    assert !(is.intIsIn(77, 1, 3, 5));
   }
 
   @Test public void notIn() {
-    azzert.nay(is.not.in(Integer.valueOf(2), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
-    azzert.nay(is.not.in(Integer.valueOf(5), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
-    azzert.nay(is.not.in(Integer.valueOf(7), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
-    azzert.aye(is.not.in(Integer.valueOf(-3), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
-    azzert.aye(is.not.in(Integer.valueOf(3), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
-    azzert.aye(is.not.in(Integer.valueOf(6), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
-    azzert.aye(is.not.in(Integer.valueOf(16), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
+    assert !(is.not.in(Integer.valueOf(2), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
+    assert !(is.not.in(Integer.valueOf(5), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
+    assert !(is.not.in(Integer.valueOf(7), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
+    assert (is.not.in(Integer.valueOf(-3), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
+    assert (is.not.in(Integer.valueOf(3), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
+    assert (is.not.in(Integer.valueOf(6), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
+    assert (is.not.in(Integer.valueOf(16), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
   }
 
   @Test public void out() {
-    azzert.nay(is.out(Integer.valueOf(2), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
-    azzert.nay(is.out(Integer.valueOf(5), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
-    azzert.nay(is.out(Integer.valueOf(7), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
-    azzert.aye(is.out(Integer.valueOf(-3), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
-    azzert.aye(is.out(Integer.valueOf(3), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
-    azzert.aye(is.out(Integer.valueOf(6), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
-    azzert.aye(is.out(Integer.valueOf(16), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
+    assert !(is.out(Integer.valueOf(2), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
+    assert !(is.out(Integer.valueOf(5), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
+    assert !(is.out(Integer.valueOf(7), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
+    assert (is.out(Integer.valueOf(-3), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
+    assert (is.out(Integer.valueOf(3), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
+    assert (is.out(Integer.valueOf(6), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
+    assert (is.out(Integer.valueOf(16), Integer.valueOf(2), Integer.valueOf(5), Integer.valueOf(7)));
   }
 
   @Test public void emptyString() {
-    azzert.aye(is.empty(String.valueOf("")));
-    azzert.nay(is.empty(String.valueOf("abc")));
+    assert (is.empty(String.valueOf("")));
+    assert !(is.empty(String.valueOf("abc")));
   }
 
   @Test public void emptyArray() {
-    azzert.aye(is.empty(new Integer[] {}));
-    azzert.nay(is.empty(new Integer[] { Integer.valueOf(1) }));
+    assert (is.empty(new Integer[] {}));
+    assert !(is.empty(new Integer[] { Integer.valueOf(1) }));
   }
 
   @Test public void emptyList() {
-    azzert.aye(is.empty(Arrays.asList()));
-    azzert.nay(is.empty(Arrays.asList(Integer.valueOf(1))));
+    assert (is.empty(Arrays.asList()));
+    assert !(is.empty(Arrays.asList(Integer.valueOf(1))));
   }
 }
