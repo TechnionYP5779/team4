@@ -1,7 +1,7 @@
 package il.org.spartan;
 
 import static il.org.spartan.Utils.*;
-import static org.junit.Assert.*;
+
 
 import static fluent.ly.azzert.*;
 
@@ -12,7 +12,7 @@ import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.*;
-import il.org.spartan.Utils.*;
+
 
 /** A static nested class hosting unit tests for the nesting class Unit test for
  * the containing class. Note the naming convention: a) names of test methods do
@@ -59,8 +59,8 @@ import il.org.spartan.Utils.*;
     }
   }
 
-  @Test public void cantBeNullTypical() {
-    assert cantBeNull(new Object()) != null;
+  @SuppressWarnings("null") @Test public void cantBeNullTypical() {
+    azzert.aye( cantBeNull(new Object()) != null);
   }
 
   @Test public void isNullTypical() {
@@ -95,16 +95,16 @@ import il.org.spartan.Utils.*;
     azzert.that(idiomatic.quote("A"), is("'A'"));
   }
 
-  @Test @SuppressWarnings("null") public void swapDegenerate() {
+  @Test @SuppressWarnings({ "null", "static-access" }) public void swapDegenerate() {
     final @NotNull String @NotNull [] ss = as.array("A", "B", "C", "D");
     swap(ss, 1, 1);
-    assertArrayEquals(as.array("A", "B", "C", "D"), ss);
+    azzert.assertArrayEquals(as.array("A", "B", "C", "D"), ss);
   }
 
-  @Test @SuppressWarnings("null") public void swapTypical() {
+  @Test @SuppressWarnings({ "null", "static-access" }) public void swapTypical() {
     final @NotNull String @NotNull [] ss = as.array("A", "B", "C", "D");
     swap(ss, 1, 2);
-    assertArrayEquals(as.array("A", "C", "B", "D"), ss);
+    azzert.assertArrayEquals(as.array("A", "C", "B", "D"), ss);
   }
 
   @Test @SuppressWarnings("null") public void swapTypicalCase() {
