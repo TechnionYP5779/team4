@@ -8,7 +8,7 @@ import fluent.ly.*;
 
 public class PairsList<T extends Number & Comparable<T>> implements Iterable<PairsList<T>.Pair> {
   public class PairComparator implements Comparator<Pair> {
-    @Override public int compare(PairsList<T>.Pair o1, PairsList<T>.Pair o2) {
+    @Override public int compare(final PairsList<T>.Pair o1, final PairsList<T>.Pair o2) {
       // TODO Auto-generated method stub
       return o1.x.equals(o2.x) ? o1.y.compareTo(o2.y) : o1.x.compareTo(o2.x);
     }
@@ -17,7 +17,7 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
   public class Pair {
     @NotNull T x, y;
 
-    public Pair(@NotNull T x, @NotNull T y) {
+    public Pair(@NotNull final T x, @NotNull final T y) {
       this.x = x;
       this.y = y;
     }
@@ -42,7 +42,7 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
     /* (non-Javadoc)
      *
      * @see java.lang.Object#equals(java.lang.Object) */
-    @Override public boolean equals(Object o) {
+    @Override public boolean equals(final Object o) {
       if (o == this)
         return true;
       if (o == null || !(o instanceof PairsList.Pair))
@@ -58,7 +58,7 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
     list_of_pairs = new ArrayList<>();
   }
 
-  public void record(@NotNull T x, @NotNull T y) {
+  public void record(@NotNull final T x, @NotNull final T y) {
     list_of_pairs.add(new Pair(x, y));
     Collections.sort(list_of_pairs, this.new PairComparator());
   }

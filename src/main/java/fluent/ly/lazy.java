@@ -26,7 +26,7 @@ public interface lazy<@Nullable T> extends Supplier<@Nullable T> {
       /** Cached value; invalid cache if {@code null} */
       @Nullable T $;
 
-      /** [[SuppressWarningsSpartan]] No need to be {@code synchronized} to make it
+      /**  No need to be {@code synchronized} to make it
        * thread safe. Instance is always unique.
        * @Return value of the supplier */
       @Override @Nullable public T get() {
@@ -34,8 +34,7 @@ public interface lazy<@Nullable T> extends Supplier<@Nullable T> {
         return $;
       }
 
-      /** [[SuppressWarningsSpartan]] */
-      void set(@Nullable T value) {
+      void set(@Nullable final T value) {
         $ = value;
       }
     };

@@ -14,7 +14,7 @@ public class BigIntegerRange {
     this.step = BigInteger.ONE;
   }
 
-  public BigIntegerRange from(BigInteger value) {
+  public BigIntegerRange from(final BigInteger value) {
     this.from = value;
     return this;
   }
@@ -23,7 +23,7 @@ public class BigIntegerRange {
     return this.from;
   }
 
-  public BigIntegerRange to(BigInteger value) {
+  public BigIntegerRange to(final BigInteger value) {
     this.to = value;
     return this;
   }
@@ -52,14 +52,14 @@ public class BigIntegerRange {
     };
   }
 
-  public BigIntegerRange interset(BigIntegerRange other) {
+  public BigIntegerRange interset(final BigIntegerRange other) {
     return this.to != null && other.from != null && this.to.compareTo(other.from) == -1
         || other.to != null && this.from != null && other.to.compareTo(this.from) == -1 ? null
             : new BigIntegerRange().from(this.from != null && this.from.compareTo(other.from) != -1 ? this.from : other.from)
                 .to(other.to != null && this.to.compareTo(other.to) == -1 ? this.from : other.from);
   }
 
-  public boolean includes(BigInteger value) {
+  public boolean includes(final BigInteger value) {
     return (from == null || from != null && from.compareTo(value) == -1) && (to == null || to != null && value.compareTo(to) == -1);
   }
 }

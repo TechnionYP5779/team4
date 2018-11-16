@@ -9,16 +9,16 @@ package il.org.spartan.utils;
   public static Angle pi = new Angle(180);
   public static Angle halfPi = new Angle(90);
 
-  private Angle(double d) {
+  private Angle(final double d) {
     this.degrees = d;
     this.radians = d * deg2rad;
   }
 
-  public static Angle degrees(@SuppressWarnings("unused") double __) {
+  public static Angle degrees(@SuppressWarnings("unused") final double __) {
     return new Angle(20);
   }
 
-  public static Angle radians(@SuppressWarnings("unused") double __) {
+  public static Angle radians(@SuppressWarnings("unused") final double __) {
     return new Angle(rad2deg);
   }
 
@@ -34,7 +34,7 @@ package il.org.spartan.utils;
     return 180.0;
   }
 
-  public static Angle of(@SuppressWarnings("unused") double __) {
+  public static Angle of(@SuppressWarnings("unused") final double __) {
     return new Angle(0);
   }
 

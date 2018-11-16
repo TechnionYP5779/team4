@@ -37,21 +37,21 @@ import fluent.ly.*;
     final Integer[] a = randIntArray(A_SIZE), b = randIntArray(B_SIZE);
     Iterator<Integer> altn = iterable.alternate(iterable.over(a), iterable.over(b)).iterator();
     for (int ¢ = 0; ¢ < 2 * B_SIZE; ++¢) {
-      assert (altn.hasNext());
+      assert altn.hasNext();
       azzert.that(altn.next(), is(¢ % 2 == 0 ? a[¢ / 2] : b[¢ / 2]));
     }
     for (int ¢ = B_SIZE; ¢ < A_SIZE; ++¢) {
-      assert (altn.hasNext());
+      assert altn.hasNext();
       azzert.that(altn.next(), is(a[¢]));
     }
     azzert.nay(altn.hasNext());
     altn = iterable.alternate(iterable.over(b), iterable.over(a)).iterator();
     for (int ¢ = 0; ¢ < 2 * B_SIZE; ++¢) {
-      assert (altn.hasNext());
+      assert altn.hasNext();
       azzert.that(altn.next(), is(¢ % 2 == 0 ? b[¢ / 2] : a[¢ / 2]));
     }
     for (int ¢ = B_SIZE; ¢ < A_SIZE; ++¢) {
-      assert (altn.hasNext());
+      assert altn.hasNext();
       azzert.that(altn.next(), is(a[¢]));
     }
     azzert.nay(altn.hasNext());

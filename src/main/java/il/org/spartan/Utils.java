@@ -432,7 +432,7 @@ import il.org.spartan.Utils.FoundHandleForT.*;
     }
   }
 
-  static int hash(Object ¢) {
+  static int hash(final Object ¢) {
     return ¢ == null ? 0 : ¢.hashCode();
   }
 }

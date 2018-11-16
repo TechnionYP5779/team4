@@ -31,14 +31,14 @@ import org.junit.*;
 
   @Test public void testFloat() {
     final float f = new Random().nextFloat();
-    assert (unbox.unboxFloat(box.boxFloat(f)) - f > -1 * FLOAT_DELTA && unbox.unboxFloat(box.boxFloat(f)) - f < FLOAT_DELTA);
-    assert (unbox.unboxFloat(box.it(f)) - f > -1 * FLOAT_DELTA && unbox.unboxFloat(box.it(f)) - f < FLOAT_DELTA);
+    assert unbox.unboxFloat(box.boxFloat(f)) - f > -1 * FLOAT_DELTA && unbox.unboxFloat(box.boxFloat(f)) - f < FLOAT_DELTA;
+    assert unbox.unboxFloat(box.it(f)) - f > -1 * FLOAT_DELTA && unbox.unboxFloat(box.it(f)) - f < FLOAT_DELTA;
   }
 
   @Test public void testDouble() {
     final double d = new Random().nextDouble();
-    assert (unbox.unboxDouble(box.boxDouble(d)) - d > -1 * DOUBLE_DELTA && unbox.unboxDouble(box.boxDouble(d)) - d < DOUBLE_DELTA);
-    assert (unbox.unboxDouble(box.it(d)) - d > -1 * DOUBLE_DELTA && unbox.unboxDouble(box.it(d)) - d < DOUBLE_DELTA);
+    assert unbox.unboxDouble(box.boxDouble(d)) - d > -1 * DOUBLE_DELTA && unbox.unboxDouble(box.boxDouble(d)) - d < DOUBLE_DELTA;
+    assert unbox.unboxDouble(box.it(d)) - d > -1 * DOUBLE_DELTA && unbox.unboxDouble(box.it(d)) - d < DOUBLE_DELTA;
   }
 
   @Test public void testChar() {

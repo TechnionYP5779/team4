@@ -6,7 +6,7 @@ import org.junit.*;
 
 @SuppressWarnings("static-method") public class AnonymousTest {
   @Test public void boolSupplier() {
-    assert (anonymous.ly(() -> true));
+    assert anonymous.ly(() -> true);
   }
 
   @Test public void doubleSupplier() {

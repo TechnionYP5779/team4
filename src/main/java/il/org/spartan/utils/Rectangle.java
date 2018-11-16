@@ -7,7 +7,7 @@ public class Rectangle {
   private double x2;
   private double prevX2;
 
-  public Rectangle(double x1, double y1, double x2, double y2) {
+  public Rectangle(final double x1, final double y1, final double x2, final double y2) {
     this.y1 = y1;
     this.y2 = y2;
     this.x1 = x1;

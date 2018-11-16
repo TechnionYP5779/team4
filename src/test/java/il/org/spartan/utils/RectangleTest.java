@@ -7,7 +7,7 @@ import fluent.ly.*;
 @SuppressWarnings("static-method") public class RectangleTest {
   private final double delta = 0.0000001;
 
-  private void compareDelta(double res, double expected) {
+  private void compareDelta(final double res, final double expected) {
     azzert.aye(res < delta + expected && res > expected - delta);
   }
 

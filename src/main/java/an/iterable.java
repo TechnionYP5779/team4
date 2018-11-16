@@ -36,7 +36,7 @@ public interface iterable {
     };
   }
 
-  static <T> Iterable<T> alternate(Iterable<T> itA, Iterable<T> itB) {
+  static <T> Iterable<T> alternate(final Iterable<T> itA, final Iterable<T> itB) {
     if (itA == null || itB == null)
       throw new NullPointerException();
     return new Iterable<T>() {

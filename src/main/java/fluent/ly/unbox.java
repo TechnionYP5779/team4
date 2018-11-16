@@ -31,7 +31,7 @@ import org.jetbrains.annotations.*;
     return unboxDoubleArray(¢);
   }
 
-  public static float @NotNull [] it(Float[] ¢) {
+  public static float @NotNull [] it(final Float[] ¢) {
     return unboxFloatArray(¢);
   }
 
