@@ -8,7 +8,6 @@ import java.util.function.*;
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
-
 @SuppressWarnings("static-method") public class IdiomaticTest {
   @Test public void evalAndIgnoreTrigger() {
     final Supplier<@Nullable Integer> supp = () -> Integer.valueOf(10);

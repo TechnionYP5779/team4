@@ -27,7 +27,7 @@ import fluent.ly.*;
     azzert.that(f.and(t), is(Truth.F));
     azzert.that(f.and(f), is(Truth.F));
   }
-  
+
   @Test public void testToString() {
     azzert.that(Truth.T + "", is("true"));
     azzert.that(Truth.F + "", is("false"));
@@ -36,7 +36,7 @@ import fluent.ly.*;
     azzert.that(Truth.R + "", is("Runtime exception"));
     azzert.that(Truth.Ħ + "", is("Throwable of some other kind"));
   }
-  
+
   @Test public void testLetterOf() {
     azzert.that(Truth.letterOf(() -> true), is("true"));
     azzert.that(Truth.letterOf(() -> false), is("false"));
