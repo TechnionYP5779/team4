@@ -6,8 +6,6 @@ import org.junit.*;
 
 import fluent.ly.*;
 
-import static il.org.spartan.utils.PropositionPrettyPrinter.*;
-
 @SuppressWarnings("static-method") public class PropositionPrettyPrinterTest {
   @Test public void testNumber() {
     PropositionPrettyPrinter.Number n = new PropositionPrettyPrinter.Number();

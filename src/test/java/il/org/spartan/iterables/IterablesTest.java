@@ -64,6 +64,6 @@ import fluent.ly.*;
   }
   
   @Test public void singleton() {
-    azzert.that((iterables.<String> singletonIterator("1")).next(), is("1"));
+    azzert.that(iterables.<String> singletonIterator("1").next(), is("1"));
   }
 }

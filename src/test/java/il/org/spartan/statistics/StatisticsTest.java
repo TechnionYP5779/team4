@@ -16,7 +16,4 @@ import fluent.ly.*;
     azzert.aye(res - 105.0 / 36 > -0.001 && res - 105.0 / 36 < 0.001);
   }
 
-  @Test public void mizzing() {
-    // int miss = Statistics.missing();
-  }
 }
