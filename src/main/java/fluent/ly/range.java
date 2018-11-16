@@ -39,7 +39,7 @@ public class range implements Iterable<Integer> {
 
     @Override public Iterator<Integer> iterator() {
       return new Iterator<Integer>() {
-        @SuppressWarnings("boxing") int next = from;
+        @SuppressWarnings("null") int next = unbox.unboxInteger(from);
 
         @Override public boolean hasNext() {
           return infinite || (inclusive ? next <= to : next < to);
@@ -67,9 +67,9 @@ public class range implements Iterable<Integer> {
       return $;
     }
 
-    @SuppressWarnings({ "boxing", "static-method" }) public range interset(@SuppressWarnings("unused") to2 r) {
+    @SuppressWarnings("static-method") public range interset(@SuppressWarnings("unused") to2 r) {
       range $ = new range();
-      $.from = 3;
+      $.from = box.boxInteger(3);
       $.to = 10;
       return $;
     }
@@ -84,7 +84,7 @@ public class range implements Iterable<Integer> {
 
     @Override public Iterator<Integer> iterator() {
       return new Iterator<Integer>() {
-        @SuppressWarnings("boxing") int next = from;
+        @SuppressWarnings("null") int next = unbox.unboxInteger(from);
 
         @Override public boolean hasNext() {
           return infinite || (inclusive ? next <= to : next < to);
@@ -115,7 +115,7 @@ public class range implements Iterable<Integer> {
 
   @Override public Iterator<Integer> iterator() {
     return new Iterator<Integer>() {
-      @SuppressWarnings("boxing") int next = from;
+      @SuppressWarnings("null") int next = unbox.unboxInteger(from);
 
       @Override public boolean hasNext() {
         return infinite || (inclusive ? next <= to : next < to);
