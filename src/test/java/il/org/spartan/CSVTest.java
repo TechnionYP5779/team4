@@ -36,7 +36,7 @@ import static fluent.ly.azzert.*;
   }
   
   @Test @SuppressWarnings("null") public void dataToCsv() {
-    azzert.that(CSV.toCsv(new String[][] { { "5", "4" }, { "Hello", "World" } }), is("5,4\nHello,World\n"));
+    azzert.that(CSV.toCsv(new String[][] { { "5", "4" }, { "Hello", "World" } }).replaceAll("\r\n", "\n"), is("5,4\nHello,World\n"));
   }
   
   @Test @SuppressWarnings("null") public void unescaped() {
