@@ -3,7 +3,6 @@ package il.org.spartan.utils;
 import static fluent.ly.azzert.*;
 
 import org.junit.*;
-import org.junit.experimental.theories.internal.*;
 
 import fluent.ly.*;
 

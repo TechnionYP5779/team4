@@ -15,16 +15,16 @@ public class range implements Iterable<Integer>{
     return this;
   }
   public static from2 to(int j) {
-      from2 r = new from2();
-      r.to = j;
-      r.infinite = true;
-      return r;
+      from2 $ = new from2();
+      $.to = j;
+      $.infinite = true;
+      return $;
     } 
-  public static to2 from(Integer i) {
-      to2 r = new to2();
-      r.from = i;
-      r.infinite = true;
-      return r;
+  public static to2 from(Integer ¢) {
+      to2 $ = new to2();
+      $.from = ¢;
+      $.infinite = true;
+      return $;
     }
 
   public static class from2  implements Iterable<Integer>{
@@ -53,18 +53,18 @@ public class range implements Iterable<Integer>{
     public Iterator<Integer> numbers(){
       return this.iterator();
     }
-    public range from(Integer i) {
-      range r = new range();
-      r.from = i;
-      r.to = this.to;
-      r.infinite = false;
-      return r;
+    public range from(Integer ¢) {
+      range $ = new range();
+      $.from = ¢;
+      $.to = this.to;
+      $.infinite = false;
+      return $;
     }
     @SuppressWarnings({ "boxing", "static-method" }) public range interset(@SuppressWarnings("unused") to2 r) {
-      range r2 = new range();
-      r2.from = 3;
-      r2.to = 10;
-      return r2;
+      range $ = new range();
+      $.from = 3;
+      $.to = 10;
+      return $;
     }
   }
   public static class to2  implements Iterable<Integer>{
@@ -94,11 +94,11 @@ public class range implements Iterable<Integer>{
       return this.iterator();
     }
     public range to(int j) {
-      range r = new range();
-      r.to = j;
-      r.from = this.from;
-      r.infinite = false;
-      return r;
+      range $ = new range();
+      $.to = j;
+      $.from = this.from;
+      $.infinite = false;
+      return $;
     }
   }
   @Override public Iterator<Integer> iterator() {
