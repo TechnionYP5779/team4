@@ -13,10 +13,10 @@ import il.org.spartan.utils.*;
  * @author Yossi Gil
  * @since 2017-04-12 */
 public interface the {
-  @SuppressWarnings({ "null", "boxing" }) static int index(final int i, final int... is) {
-    for (final Integer $ : range.from(0).to(is.length))
-      if (is[unbox.unboxInteger($)] == i)
-        return unbox.unboxInteger($);
+  static int index(final int i, final int... is) {
+    for (final int $ : range.from(box.boxInteger(0)).to(is.length))
+      if (is[$] == i)
+        return $;
     return -1;
   }
 
