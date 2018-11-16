@@ -1,17 +1,17 @@
 package il.org.spartan.utils;
-import java.util.Iterator;
-
-import fluent.ly.*;
 
 import java.util.*;
 
-public class range implements Iterable<Integer>{ 
+import fluent.ly.*;
+
+public class range implements Iterable<Integer> {
   Integer from;
   boolean inclusive;
   boolean infinite;
   int step = 1;
   int to = -1;
   int includes;
+
   @Override public Iterator<Integer> iterator() {
     return new Iterator<Integer>() {
       @SuppressWarnings("null") int next = unbox.unboxInteger(from);
@@ -29,54 +29,58 @@ public class range implements Iterable<Integer>{
       }
     };
   }
-  public range includes(int z) {
+
+  public range includes(final int z) {
     this.includes = z;
     return this;
   }
-  public static from2 to(int j) {
-      from2 $ = new from2();
-      $.to = j;
-      $.infinite = true;
-      return $;
-    } 
-  public static to2 from(Integer ¢) {
-      to2 $ = new to2();
-      $.from = ¢;
-      $.infinite = true;
-      return $;
-    }
 
-    
-  public static class from2{
+  public static from2 to(final int j) {
+    final from2 $ = new from2();
+    $.to = j;
+    $.infinite = true;
+    return $;
+  }
+
+  public static to2 from(final Integer ¢) {
+    final to2 $ = new to2();
+    $.from = ¢;
+    $.infinite = true;
+    return $;
+  }
+
+  public static class from2 {
     Integer from;
     boolean inclusive;
     boolean infinite;
     int step = 1;
     int to = -1;
-  
-    public range from(Integer ¢) {
-      range $ = new range();
+
+    public range from(final Integer ¢) {
+      final range $ = new range();
       $.from = ¢;
       $.to = this.to;
       $.infinite = false;
       return $;
     }
-    @SuppressWarnings("static-method") public range interset(@SuppressWarnings("unused") to2 r) {
-      range $ = new range();
+
+    @SuppressWarnings("static-method") public range interset(@SuppressWarnings("unused") final to2 r) {
+      final range $ = new range();
       $.from = box.boxInteger(3);
       $.to = 10;
       return $;
     }
   }
-  public static class to2{
+
+  public static class to2 {
     Integer from;
     boolean inclusive;
     boolean infinite;
     int step = 1;
     int to = -1;
-  
-    public range to(int j) {
-      range $ = new range();
+
+    public range to(final int j) {
+      final range $ = new range();
       $.to = j;
       $.from = this.from;
       $.infinite = false;
@@ -84,8 +88,7 @@ public class range implements Iterable<Integer>{
     }
   }
 
-    public Iterator<Integer> numbers(){
-      return this.iterator();
-    }
-
+  public Iterator<Integer> numbers() {
+    return this.iterator();
+  }
 }
