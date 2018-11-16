@@ -26,8 +26,8 @@ public interface lazy<@Nullable T> extends Supplier<@Nullable T> {
       /** Cached value; invalid cache if {@code null} */
       @Nullable T $;
 
-      /**  No need to be {@code synchronized} to make it
-       * thread safe. Instance is always unique.
+      /** No need to be {@code synchronized} to make it thread safe. Instance is
+       * always unique.
        * @Return value of the supplier */
       @Override @Nullable public T get() {
         set($ != null ? $ : ¢.get());
