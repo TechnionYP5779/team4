@@ -37,7 +37,7 @@ import org.junit.*;
 
   @Test public void testDouble() {
     final double d = new Random().nextDouble();
-    assert(unbox.unboxDouble(box.boxDouble(d)) - d > -1 * DOUBLE_DELTA && unbox.unboxDouble(box.boxDouble(d)) - d < DOUBLE_DELTA);
+    assert (unbox.unboxDouble(box.boxDouble(d)) - d > -1 * DOUBLE_DELTA && unbox.unboxDouble(box.boxDouble(d)) - d < DOUBLE_DELTA);
     assert (unbox.unboxDouble(box.it(d)) - d > -1 * DOUBLE_DELTA && unbox.unboxDouble(box.it(d)) - d < DOUBLE_DELTA);
   }
 

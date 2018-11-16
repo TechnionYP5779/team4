@@ -52,7 +52,7 @@ import org.junit.*;
   @Test public void intIsIn() {
     assert (is.intIsIn(1, 1, 3, 5));
     assert (is.intIsIn(3, 1, 3, 5));
-    assert(is.intIsIn(5, 1, 3, 5));
+    assert (is.intIsIn(5, 1, 3, 5));
     assert !(is.intIsIn(0, 1, 3, 5));
     assert !(is.intIsIn(2, 1, 3, 5));
     assert !(is.intIsIn(4, 1, 3, 5));

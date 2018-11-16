@@ -2,7 +2,6 @@ package il.org.spartan;
 
 import static il.org.spartan.Utils.*;
 
-
 import static fluent.ly.azzert.*;
 
 import java.io.*;
@@ -12,7 +11,6 @@ import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.*;
-
 
 /** A static nested class hosting unit tests for the nesting class Unit test for
  * the containing class. Note the naming convention: a) names of test methods do

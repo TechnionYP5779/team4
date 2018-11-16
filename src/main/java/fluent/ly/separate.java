@@ -370,7 +370,7 @@ import il.org.spartan.*;
       azzert.notNull(these);
       final Iterable<?> os = these.os;
       azzert.notNull(os);
-      assert(is.empty(os));
+      assert (is.empty(os));
       final @NotNull String[] ss = as.strings(os);
       azzert.notNull(ss);
       azzert.zero(ss.length);
