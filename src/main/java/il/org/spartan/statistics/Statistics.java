@@ -56,7 +56,8 @@ public abstract class Statistics {
       $ += ¢;
       sum2 += ¢ * ¢;
     }
-    return sum2 / ds.length - $ * $ / (ds.length * ds.length);
+    int length_squared = (ds.length * ds.length); //defined for overflow check in integer multiplication.
+    return length_squared / ds.length != ds.length ? 0 : sum2 / ds.length - $ * $ / length_squared;
   }
 
   protected int n;
