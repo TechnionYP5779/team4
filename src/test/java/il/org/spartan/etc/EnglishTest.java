@@ -68,10 +68,12 @@ import java.util.*;
   }
   @Test public void plurales4() {
     Int i = null;
+    forget.it(i);
     azzert.that(English.plurales("hi", i), is("??? hies")); 
   }
   @Test public void plurales5() {
     Integer i = null;
+    forget.it(i);
     azzert.that(English.plurales("hi", i), is("??? hies")); 
   }
   @Test public void plurales6() {
@@ -94,10 +96,12 @@ import java.util.*;
   }
   @Test public void plurals4() {
     Int i = null;
+    forget.it(i);
     azzert.that(English.plurals("hi", i), is("??? his")); 
   }
   @Test public void plurals5() {
     Integer i = null;
+    forget.it(i);
     azzert.that(English.plurals("hi", i), is("??? his")); 
   }
   @Test public void plurals6() {
