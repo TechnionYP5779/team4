@@ -17,7 +17,7 @@ import fluent.ly.*;
     assert !Proposition.AND("abc", Proposition.F, Proposition.T).eval();
     assert !Proposition.AND("abc", Proposition.F, Proposition.F).eval();
   }
-  
+
   @Test public void testOR() {
     assert Proposition.OR(Proposition.T, Proposition.T).eval();
     assert Proposition.OR(Proposition.T, Proposition.F).eval();
@@ -28,17 +28,17 @@ import fluent.ly.*;
     assert Proposition.OR("abc", Proposition.F, Proposition.T).eval();
     assert !Proposition.OR("abc", Proposition.F, Proposition.F).eval();
   }
-  
+
   @Test public void testNot() {
     assert !Proposition.not(Proposition.T).eval();
     assert Proposition.not(Proposition.F).eval();
   }
-  
+
   @Test public void testThat() {
     assert Proposition.that(Proposition.T).eval();
     assert !Proposition.that(Proposition.F).eval();
   }
-  
+
   @Test public void testToString() {
     azzert.that(Proposition.T + "", is("T"));
   }

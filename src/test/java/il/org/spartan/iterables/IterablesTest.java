@@ -52,17 +52,17 @@ import fluent.ly.*;
   @Test public void countThree() {
     azzert.that(iterables.count(iterable.over("One", "Two", "Three")), is(3));
   }
-  
+
   @Test public void countNull() {
     azzert.that(iterables.count(null), is(0));
   }
-  
+
   @Test public void isEmpty() {
     assert !iterables.isEmpty(iterable.over("One", "Two", "Three"));
     assert iterables.isEmpty(iterables.<String> empty());
     assert !iterables.isEmpty(iterable.over(null, null, "Three"));
   }
-  
+
   @Test public void singleton() {
     azzert.that(iterables.<String> singletonIterator("1").next(), is("1"));
   }

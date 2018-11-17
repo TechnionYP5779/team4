@@ -1,6 +1,5 @@
 package fluent.ly;
 
-import java.util.Iterator;
 import java.util.*;
 
 public class range implements Iterable<Integer> {
@@ -11,20 +10,20 @@ public class range implements Iterable<Integer> {
   int to = -1;
   int includes;
 
-  public range includes(int z) {
+  public range includes(final int z) {
     this.includes = z;
     return this;
   }
 
-  public static from2 to(int j) {
-    from2 $ = new from2();
+  public static from2 to(final int j) {
+    final from2 $ = new from2();
     $.to = j;
     $.infinite = true;
     return $;
   }
 
-  public static to2 from(Integer ¢) {
-    to2 $ = new to2();
+  public static to2 from(final Integer ¢) {
+    final to2 $ = new to2();
     $.from = ¢;
     $.infinite = true;
     return $;
@@ -59,16 +58,16 @@ public class range implements Iterable<Integer> {
       return this.iterator();
     }
 
-    public range from(Integer ¢) {
-      range $ = new range();
+    public range from(final Integer ¢) {
+      final range $ = new range();
       $.from = ¢;
       $.to = this.to;
       $.infinite = false;
       return $;
     }
 
-    @SuppressWarnings("static-method") public range interset(@SuppressWarnings("unused") to2 r) {
-      range $ = new range();
+    @SuppressWarnings("static-method") public range interset(@SuppressWarnings("unused") final to2 r) {
+      final range $ = new range();
       $.from = box.boxInteger(3);
       $.to = 10;
       return $;
@@ -104,8 +103,8 @@ public class range implements Iterable<Integer> {
       return this.iterator();
     }
 
-    public range to(int j) {
-      range $ = new range();
+    public range to(final int j) {
+      final range $ = new range();
       $.to = j;
       $.from = this.from;
       $.infinite = false;

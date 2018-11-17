@@ -15,5 +15,4 @@ import fluent.ly.*;
     final double res = Statistics.sampleVariance(new double[] { 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 });
     azzert.aye(res - 105.0 / 36 > -0.001 && res - 105.0 / 36 < 0.001);
   }
-
 }

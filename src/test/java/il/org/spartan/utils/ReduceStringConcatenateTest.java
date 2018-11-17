@@ -8,19 +8,19 @@ import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class ReduceStringConcatenateTest {
   @Test public void testReduce0() {
-    azzert.that((new ReduceStringConcatenate()).reduce(), is(""));
+    azzert.that(new ReduceStringConcatenate().reduce(), is(""));
   }
 
   @Test public void testReduce1() {
-    azzert.that((new ReduceStringConcatenate()).reduce("abc"), is("abc"));
-    azzert.that((new ReduceStringConcatenate()).reduce((String[]) null), is(""));
+    azzert.that(new ReduceStringConcatenate().reduce("abc"), is("abc"));
+    azzert.that(new ReduceStringConcatenate().reduce((String[]) null), is(""));
   }
 
   @Test public void testReduce2() {
-    azzert.that((new ReduceStringConcatenate()).reduce("abc", "def"), is("abcdef"));
+    azzert.that(new ReduceStringConcatenate().reduce("abc", "def"), is("abcdef"));
   }
 
   @Test public void testReduceN() {
-    azzert.that((new ReduceStringConcatenate()).reduce("abc", "def", "ghi"), is("abcdefghi"));
+    azzert.that(new ReduceStringConcatenate().reduce("abc", "def", "ghi"), is("abcdefghi"));
   }
 }
