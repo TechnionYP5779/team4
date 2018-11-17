@@ -93,16 +93,16 @@ import fluent.ly.*;
     azzert.that(idiomatic.quote("A"), is("'A'"));
   }
 
-  @Test @SuppressWarnings("null") public void swapDegenerate() {
+  @Test @SuppressWarnings({ "null", "static-access" }) public void swapDegenerate() {
     final @NotNull String @NotNull [] ss = as.array("A", "B", "C", "D");
     swap(ss, 1, 1);
-    Assert.assertArrayEquals(as.array("A", "B", "C", "D"), ss);
+    azzert.assertArrayEquals(as.array("A", "B", "C", "D"), ss);
   }
 
-  @Test @SuppressWarnings("null") public void swapTypical() {
+  @Test @SuppressWarnings({ "null", "static-access" }) public void swapTypical() {
     final @NotNull String @NotNull [] ss = as.array("A", "B", "C", "D");
     swap(ss, 1, 2);
-    Assert.assertArrayEquals(as.array("A", "C", "B", "D"), ss);
+    azzert.assertArrayEquals(as.array("A", "C", "B", "D"), ss);
   }
 
   @Test @SuppressWarnings("null") public void swapTypicalCase() {

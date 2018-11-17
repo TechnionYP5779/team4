@@ -127,7 +127,6 @@ import fluent.ly.*;
   }
 
   @Test public void sum() {
-    assertEquals(36, s11_20_5.sum(), 1E-6);
     equalFloats(15, s15.sum(), 1E-6);
     equalFloats(28, s07.sum(), 1E-6);
     equalFloats(5.0, s_4x0_5x1.sum(), 1E-6);

@@ -190,7 +190,7 @@ import fluent.ly.___.Variant;
     try {
       ___.unreachable();
     } catch (final Reachability ¢) {
-      assertEquals("", ¢.getMessage());
+      azzert.that(¢.getMessage(), is(""));
     }
     try {
       ___.unreachable("unreachable message");
@@ -207,7 +207,7 @@ import fluent.ly.___.Variant;
   @Test public void variant() {
     {
       final Variant v = new Variant(10);
-      assertEquals(10, v.value());
+      azzert.that(v.value(), is(10));
       v.check(9);
       v.check(8);
       v.check(4);

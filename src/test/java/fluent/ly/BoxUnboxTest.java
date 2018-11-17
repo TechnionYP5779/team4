@@ -14,13 +14,13 @@ import org.junit.*;
   @Test public void testBoolean() {
     final boolean b = new Random().nextBoolean();
     azzert.that(unbox.unboxBoolean(box.boxBoolean(b)), is(b));
-    azzert.assertEquals(b, unbox.unboxBoolean(box.it(b)));
+    azzert.that( unbox.unboxBoolean(box.it(b)), is(b));
   }
 
   @Test public void testInteger() {
     final int i = new Random().nextInt();
-    azzert.assertEquals(i, unbox.unboxInteger(box.boxInteger(i)));
-    azzert.assertEquals(i, unbox.it(box.it(i)));
+    azzert.that(unbox.unboxInteger(box.boxInteger(i)), is(i));
+    azzert.that( unbox.it(box.it(i)), is(i));
   }
 
   @Test public void testLong() {
@@ -43,20 +43,20 @@ import org.junit.*;
 
   @Test public void testChar() {
     final char c = (char) new Random().nextInt(Character.MAX_VALUE);
-    azzert.assertEquals(c, unbox.unboxChar(box.boxCharacter(c)));
-    azzert.assertEquals(c, unbox.unboxChar(box.it(c)));
+    azzert.that( unbox.unboxChar(box.boxCharacter(c)), is(c));
+    azzert.that(unbox.unboxChar(box.it(c)), is(c));
   }
 
   @Test public void testShort() {
     final short s = (short) new Random().nextInt(Short.MAX_VALUE);
-    azzert.assertEquals(s, unbox.unboxShort(box.boxShort(s)));
-    azzert.assertEquals(s, unbox.unboxShort(box.it(s)));
+    azzert.that( unbox.unboxShort(box.boxShort(s)), is(s));
+    azzert.that( unbox.unboxShort(box.it(s)), is(s));
   }
 
   @Test public void testByte() {
     final byte b = (byte) new Random().nextInt(Byte.MAX_VALUE);
-    azzert.assertEquals(b, unbox.unboxByte(box.boxByte(b)));
-    azzert.assertEquals(b, unbox.unboxByte(box.it(b)));
+    azzert.that( unbox.unboxByte(box.boxByte(b)), is(b));
+    azzert.that(unbox.unboxByte(box.it(b)), is(b));
   }
 
   @Test public void testBooleanArray() {

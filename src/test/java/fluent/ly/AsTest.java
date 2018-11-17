@@ -18,9 +18,9 @@ import org.junit.*;
     azzert.that(as.bit(true), is(1));
   }
 
-  @Test public void asIntArraySimple() {
+  @Test @SuppressWarnings("static-access") public void asIntArraySimple() {
     final int @NotNull [] is = as.intArray(100, 200, 200, 12, 13, 0);
-    assertArrayEquals(is, as.intArray(as.ingeterList(is)));
+    azzert.assertArrayEquals(is, as.intArray(as.ingeterList(is)));
   }
 
   @Test public void asListSimple() {
