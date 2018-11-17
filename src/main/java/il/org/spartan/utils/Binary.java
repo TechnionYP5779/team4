@@ -36,7 +36,7 @@ public class Binary {
   private Binary() {
     /**/}
 
-  @Override public boolean equals(final Object ¢) {
+  @Override final public boolean equals(final Object ¢) {
     throw new IllegalArgumentException(¢ + "");
   }
 

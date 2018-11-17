@@ -84,7 +84,7 @@ public interface lisp {
   }
 
   /** swaps two elements in an indexed list in given indexes, if they are legal
-   * @param ts the indexed list
+   * @param $ the indexed list
    * @param i1 the index of the first element
    * @param i2 the index of the second element
    * @return the list after swapping the elements */

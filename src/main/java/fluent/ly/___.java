@@ -20,7 +20,7 @@ import fluent.ly.___.Bug.Contract.*;
  * @since 11/01/2006) */
 @SuppressWarnings("null") public abstract class ___ {
   /** Exercise the {@link Invariantable#check()}
-   * @param v a Invariantable object whose invariant should be checked */
+   * @param ¢ a Invariantable object whose invariant should be checked */
   public static void check(final ___.Invariantable ¢) {
     ¢.check();
   }
@@ -94,7 +94,7 @@ import fluent.ly.___.Bug.Contract.*;
 
   /** A possibly non-returning method to be used for checking integers which must
    * be negative.
-   * @param n a value which must be negative
+   * @param ¢ a value which must be negative
    * @throws Negative in case <code>n</code> was nonnegative */
   public static void negative(final int ¢) throws Negative {
     negative(¢, "");
@@ -125,7 +125,7 @@ import fluent.ly.___.Bug.Contract.*;
 
   /** A possibly non-returning method to be used for checking integers which must
    * be non-NaN.
-   * @param d a value which must be not be NaN
+   * @param ¢ a value which must be not be NaN
    * @throws NonNan in case <code>d</code> was NaN */
   public static void nonNaN(final double ¢) throws NonNan {
     nonNaN(¢, "");
@@ -173,7 +173,7 @@ import fluent.ly.___.Bug.Contract.*;
 
   /** A possibly non-returning method to be used for checking integers which must
    * be nonnegative.
-   * @param d a value which must be nonnegative
+   * @param ¢ a value which must be nonnegative
    * @throws NonNegative in case <code>d</code> was negative */
   public static void nonnegative(final double ¢) throws NonNegative {
     nonnegative(¢, "");
@@ -235,7 +235,7 @@ import fluent.ly.___.Bug.Contract.*;
 
   /** A possibly non-returning method to be used for checking objects that should
    * never be <code><b>null</b></code>.
-   * @param o if <code><b>null</b></code>, program will halt.
+   * @param ¢ if <code><b>null</b></code>, program will halt.
    * @throws NotNull in case <code>o</code> was <code><b>null</b></code> */
   public static void nonnull(final Object ¢) throws NotNullValue {
     nonnull(¢, "");
@@ -265,7 +265,7 @@ import fluent.ly.___.Bug.Contract.*;
 
   /** A possibly non-returning method to be used for checking integers which must
    * be nonpositive.
-   * @param d a value which must be nonpositive
+   * @param ¢ a value which must be nonpositive
    * @throws NonPositive in case <code>d</code> was positive */
   public static void nonpositive(final double ¢) throws NonPositive {
     nonpositive(¢, "");
@@ -296,7 +296,7 @@ import fluent.ly.___.Bug.Contract.*;
 
   /** A possibly non-returning method to be used for checking integers which must
    * be nonpositive.
-   * @param n a value which must be positive
+   * @param ¢ a value which must be positive
    * @throws NonPositive in case <code>n</code> was positive. */
   public static void nonpositive(final int ¢) throws NonPositive {
     nonpositive(¢, "");
@@ -349,7 +349,7 @@ import fluent.ly.___.Bug.Contract.*;
 
   /** A possibly non-returning method to be used for checking floating point
    * numbers which must be positive.
-   * @param d a value which must be positive
+   * @param ¢ a value which must be positive
    * @throws Positive in case <code>d</code> was nonpositive */
   public static void positive(final double ¢) throws Positive {
     positive(¢, "");
@@ -380,7 +380,7 @@ import fluent.ly.___.Bug.Contract.*;
 
   /** A possibly non-returning method to be used for checking integers which must
    * be positive.
-   * @param n a value which must be positive
+   * @param ¢ a value which must be positive
    * @throws Positive in case <code>n</code> was nonpositive */
   public static void positive(final int ¢) throws Positive {
     positive(¢, "");
