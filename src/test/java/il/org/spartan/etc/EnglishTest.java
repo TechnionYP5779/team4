@@ -67,14 +67,11 @@ import java.util.*;
     azzert.that(English.plurales("hi", new Int(1)), is("one hi")); 
   }
   @Test public void plurales4() {
-    Int i = null;
-    forget.it(i);
-    azzert.that(English.plurales("hi", i), is("??? hies")); 
+
+    azzert.that(English.plurales("hi", (Int)null), is("??? hies")); 
   }
   @Test public void plurales5() {
-    Integer i = null;
-    forget.it(i);
-    azzert.that(English.plurales("hi", i), is("??? hies")); 
+    azzert.that(English.plurales("hi", (Integer)null), is("??? hies")); 
   }
   @Test public void plurales6() {
     azzert.that(English.plurales("hi", Integer.valueOf(4)), is("4 hies")); 
@@ -95,14 +92,10 @@ import java.util.*;
     azzert.that(English.plurals("hi", new Int(1)), is("one hi")); 
   }
   @Test public void plurals4() {
-    Int i = null;
-    forget.it(i);
-    azzert.that(English.plurals("hi", i), is("??? his")); 
+    azzert.that(English.plurals("hi", (Int)null), is("??? his")); 
   }
   @Test public void plurals5() {
-    Integer i = null;
-    forget.it(i);
-    azzert.that(English.plurals("hi", i), is("??? his")); 
+    azzert.that(English.plurals("hi", (Integer)null), is("??? his")); 
   }
   @Test public void plurals6() {
     azzert.that(English.plurals("hi", Integer.valueOf(4)), is("4 his")); 

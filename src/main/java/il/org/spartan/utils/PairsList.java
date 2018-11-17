@@ -73,9 +73,9 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
   }
 
   public PairsList<Double>.Pair mean() {
-    /* In this class we use .doubleValue() functions instead of unboxing it because we are generating a new pair list of type Double
-     * from PairList of type T. That is to say, there is no double that is boxed, so nothing to unbox. */
-    
+    /* In this class we use .doubleValue() functions instead of unboxing it because
+     * we are generating a new pair list of type Double from PairList of type T.
+     * That is to say, there is no double that is boxed, so nothing to unbox. */
     // TODO Auto-generated method stub
     if (list_of_pairs.isEmpty())
       return null;
@@ -91,9 +91,9 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
   }
 
   public PairsList<Double>.Pair variance() {
-    /* In this class we use .doubleValue() functions instead of unboxing it because we are generating a new pair list of type Double
-     * from PairList of type T. That is to say, there is no double that is boxed, so nothing to unbox. */
-    
+    /* In this class we use .doubleValue() functions instead of unboxing it because
+     * we are generating a new pair list of type Double from PairList of type T.
+     * That is to say, there is no double that is boxed, so nothing to unbox. */
     // TODO Auto-generated method stub
     if (list_of_pairs.isEmpty())
       return null;
@@ -109,8 +109,9 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
   }
 
   @SuppressWarnings("null") public double co_variance() {
-    /* In this class we use .doubleValue() functions instead of unboxing it because we are generating a new double
-     * from PairList of type T. That is to say, there is no double that is boxed, so nothing to unbox. */
+    /* In this class we use .doubleValue() functions instead of unboxing it because
+     * we are generating a new double from PairList of type T. That is to say, there
+     * is no double that is boxed, so nothing to unbox. */
     if (list_of_pairs.isEmpty())
       return 0.0;
     double $ = 0.0;
