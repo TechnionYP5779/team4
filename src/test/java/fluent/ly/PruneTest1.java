@@ -10,10 +10,9 @@ import org.junit.*;
 /** A JUnit test class for the enclosing class.
  * @author Yossi Gil, the Technion.
  * @since 27/08/2008 */
-@SuppressWarnings("static-method")
-public class PruneTest1 {
-  @Nullable final String @NotNull[] alternatingArray = new @Nullable String[] { null, "A", null, null, "B", null, null, null, "C", null };
-  @NotNull final String @NotNull[] nonNullArray = { "1", "2", "4" };
+@SuppressWarnings("static-method") public class PruneTest1 {
+  @Nullable final String @NotNull [] alternatingArray = new @Nullable String[] { null, "A", null, null, "B", null, null, null, "C", null };
+  @NotNull final String @NotNull [] nonNullArray = { "1", "2", "4" };
   @NotNull private final List<String> sparseCollection = as.list(null, null, null, null, null, "A", null, null, null, "B", null, "C", null, null,
       null, null, null);
 
