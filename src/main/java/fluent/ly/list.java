@@ -81,8 +81,7 @@ public interface list {
     return new PrependOrAppend<T>().prepend(¢);
   }
 
-  /** @param <T> JD
-   * @param ¢ a list
+  /** @param ¢ a list
    * @return last item in a list or <code><b>null</b></code> if the parameter is
    *         <code><b>null</b></code> or empty */
   static <T> @Nullable T penultimate(final List<T> ¢) {
