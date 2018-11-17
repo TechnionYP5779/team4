@@ -73,21 +73,27 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
   }
 
   public PairsList<Double>.Pair mean() {
+    /* In this class we use .doubleValue() functions instead of unboxing it because we are generating a new pair list of type Double
+     * from PairList of type T. That is to say, there is no double that is boxed, so nothing to unbox. */
+    
     // TODO Auto-generated method stub
     if (list_of_pairs.isEmpty())
       return null;
     Double sum_x = box.it(0.0), sum_y = box.it(0.0);
     for (final PairsList<T>.Pair ¢ : this) {
-      sum_x = box.it(sum_x.doubleValue() + ¢.x.doubleValue());
+      sum_x = box.it(unbox.unboxDouble(sum_x) + ¢.x.doubleValue());
       sum_y = box.it(sum_y.doubleValue() + ¢.y.doubleValue());
     }
-    final Double $ = box.it(sum_x.doubleValue() / list_of_pairs.size()), mean_y = box.it(sum_y.doubleValue() / list_of_pairs.size());
+    final Double $ = box.it(unbox.unboxDouble(sum_x) / list_of_pairs.size()), mean_y = box.it(unbox.unboxDouble(sum_y) / list_of_pairs.size());
     final PairsList<Double> pd = new PairsList<>();
     pd.count();
     return pd.new Pair($, mean_y);
   }
 
   public PairsList<Double>.Pair variance() {
+    /* In this class we use .doubleValue() functions instead of unboxing it because we are generating a new pair list of type Double
+     * from PairList of type T. That is to say, there is no double that is boxed, so nothing to unbox. */
+    
     // TODO Auto-generated method stub
     if (list_of_pairs.isEmpty())
       return null;
@@ -95,30 +101,32 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
     final PairsList<Double>.Pair mean_ = mean();
     for (final PairsList<T>.Pair ¢ : this) {
       $ = box.it($.doubleValue() + (¢.x.doubleValue() - mean_.getX().doubleValue()) * (¢.x.doubleValue() - mean_.getX().doubleValue()));
-      sum_y = box.it(sum_y.doubleValue() + (¢.y.doubleValue() - mean_.getY().doubleValue()) * (¢.y.doubleValue() - mean_.getY().doubleValue()));
+      sum_y = box.it(unbox.unboxDouble(sum_y) + (¢.y.doubleValue() - mean_.getY().doubleValue()) * (¢.y.doubleValue() - mean_.getY().doubleValue()));
     }
     final PairsList<Double> pd = new PairsList<>();
     pd.count();
     return pd.new Pair($, sum_y);
   }
 
-  public double co_variance() {
+  @SuppressWarnings("null") public double co_variance() {
+    /* In this class we use .doubleValue() functions instead of unboxing it because we are generating a new double
+     * from PairList of type T. That is to say, there is no double that is boxed, so nothing to unbox. */
     if (list_of_pairs.isEmpty())
       return 0.0;
     double $ = 0.0;
     final PairsList<Double>.Pair mean_ = mean();
     for (final PairsList<T>.Pair ¢ : this)
-      $ += (¢.x.doubleValue() - mean_.getX().doubleValue()) * (¢.y.doubleValue() - mean_.getY().doubleValue());
+      $ += (¢.x.doubleValue() - unbox.unboxDouble(mean_.getX())) * (¢.y.doubleValue() - unbox.unboxDouble(mean_.getY()));
     return $;
   }
 
-  public PairsList<Double>.Pair linear_regression() {
+  @SuppressWarnings("null") public PairsList<Double>.Pair linear_regression() {
     // TODO Auto-generated method stub
     if (list_of_pairs.isEmpty())
       return null;
     final PairsList<Double>.Pair mean_ = mean();
-    final Double $ = box.it(co_variance() / variance().getX().doubleValue()),
-        alpha = box.it(mean_.getY().doubleValue() - $.doubleValue() * mean_.getX().doubleValue());
+    final Double $ = box.it(co_variance() / unbox.unboxDouble(variance().getX())),
+        alpha = box.it(unbox.unboxDouble(mean_.getY()) - unbox.unboxDouble($) * unbox.unboxDouble(mean_.getX()));
     final PairsList<Double> pd = new PairsList<>();
     pd.count();
     return pd.new Pair(alpha, $);
