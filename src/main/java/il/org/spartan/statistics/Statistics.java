@@ -8,6 +8,7 @@ import java.util.*;
 
 import org.jetbrains.annotations.*;
 
+import fluent.ly.*;
 import il.org.spatan.iteration.*;
 
 /** @author Yossi Gil
@@ -56,8 +57,9 @@ public abstract class Statistics {
       $ += ¢;
       sum2 += ¢ * ¢;
     }
-    int length_squared = (ds.length * ds.length); //defined for overflow check in integer multiplication.
-    return length_squared / ds.length != ds.length ? 0 : sum2 / ds.length - $ * $ / length_squared;
+    long length_squared = (ds.length * ds.length); //defined for overflow problems.
+    forget.it(length_squared);
+    return sum2 / ds.length - $ * $ / length_squared;
   }
 
   protected int n;
