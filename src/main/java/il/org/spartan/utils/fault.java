@@ -6,6 +6,9 @@ import java.util.stream.*;
 
 import org.jetbrains.annotations.*;
 
+import fluent.ly.*;
+import il.org.spartan.Utils;
+
 /** Fluent API
  * @author Yossi Gil
  * @since 2016 */
@@ -44,15 +47,16 @@ public interface fault {
     return false;
   }
 
-  @NotNull @SuppressWarnings("null") static String specifically(final @NotNull String explanation, final Object... os) {
-    return dump("\n " + explanation) + Stream.of(os).map(λ -> dump(λ.getClass().getSimpleName(), λ)).reduce((x, y) -> x + y).get() + done();
+  @NotNull static String specifically(final @NotNull String explanation, final Object... os) {
+    return dump("\n " + explanation) + Stream.of(os).map(λ -> dump(Utils.cantBeNull(λ.getClass().getSimpleName()), λ)).reduce((x, y) -> x + y).get() + done();
   }
 
   @NotNull static String dump(final @NotNull String name, final Object value) {
     return "\n " + name + "=[" + value + "]";
   }
 
-  static boolean bool(@SuppressWarnings("unused") final Object __) {
+  static boolean bool(final Object __) {
+    forget.it(__);
     return false;
   }
 }

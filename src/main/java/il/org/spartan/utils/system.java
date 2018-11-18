@@ -9,6 +9,7 @@ import java.util.*;
 import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
+import il.org.spartan.*;
 import il.org.spartan.etc.*;
 
 /** Not such a good name for a bunch of static functions
@@ -133,12 +134,12 @@ public interface system {
   }
 
   /** @return the name of the class from which this method was called. */
-  @NotNull @SuppressWarnings("null") static String myFullClassName() {
+  @NotNull static String myFullClassName() {
     final StackTraceElement[] $ = new Throwable().getStackTrace();
     for (int ¢ = 1; ¢ < $.length; ++¢)
       if (!$[¢].getClassName().equals($[0].getClassName()))
-        return $[¢].getClassName();
-    return new Object().getClass().getEnclosingClass().getCanonicalName();
+        return Utils.cantBeNull($[¢].getClassName());
+    return Utils.cantBeNull(new Object().getClass().getEnclosingClass().getCanonicalName());
   }
 
   static String myShortClassName() {
@@ -179,8 +180,8 @@ public interface system {
     return bash("./essence <" + fileName + ">" + essenced(fileName));
   }
 
-  @SuppressWarnings("null") static String userName() {
-    return English.upperFirstLetter(getProperty("user.name", "User"));
+  static String userName() {
+    return English.upperFirstLetter(Utils.cantBeNull(getProperty("user.name", "User")));
   }
 
   /** This function counts the number of words the given string contains. Words

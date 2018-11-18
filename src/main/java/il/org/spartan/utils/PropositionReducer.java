@@ -1,10 +1,7 @@
 package il.org.spartan.utils;
 
-import static fluent.ly.azzert.*;
-
 import java.util.function.*;
 
-import fluent.ly.*;
 import il.org.spartan.utils.Proposition.*;
 
 /** TODO Yossi Gil: document class
@@ -12,9 +9,9 @@ import il.org.spartan.utils.Proposition.*;
  * @author Yossi Gil
  * @since 2017-03-19 */
 public abstract class PropositionReducer<R> extends Reduce<R> {
-  @SuppressWarnings("null") public PropositionReducer(final Reduce<R> inner) {
+  public PropositionReducer(final Reduce<R> inner) {
     this.inner = inner;
-    azzert.that(inner, not(this));
+    assert inner != this;
   }
 
   @Override public R reduce() {

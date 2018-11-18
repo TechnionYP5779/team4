@@ -5,6 +5,8 @@ import static fluent.ly.___.*;
 
 import org.jetbrains.annotations.*;
 
+import il.org.spartan.*;
+
 /** Prefix text with varying indentation level. Class can be used for an
  * indented printout of a hierarchical tree data structure, e.g.,:
  *
@@ -24,7 +26,7 @@ import org.jetbrains.annotations.*;
  *
  * @author Adrian Kuhn
  * @since August 4th, 2008 */
-@SuppressWarnings("null") public class Tab {
+public class Tab {
   /** What to add before each indented line of text? */
   private String indentation = "";
   @NotNull public final String tab;
@@ -45,7 +47,7 @@ import org.jetbrains.annotations.*;
   /** Increase indentation but returns the previous tabulation string.
    * @return the previous tabulation string. */
   public String begin() {
-    final @NotNull String $ = toString();
+    final @NotNull String $ = Utils.cantBeNull(toString());
     more();
     return $;
   }

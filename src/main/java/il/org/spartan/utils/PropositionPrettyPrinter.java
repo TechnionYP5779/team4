@@ -4,6 +4,7 @@ import java.util.function.*;
 
 import org.jetbrains.annotations.*;
 
+import fluent.ly.*;
 import il.org.spartan.etc.*;
 import il.org.spartan.utils.Proposition.*;
 
@@ -45,7 +46,7 @@ public class PropositionPrettyPrinter {
     default   void  down()                                    {/**/}
     default   void  up()                                      {/**/}
     default   void  next()                                    {/**/}
-    default   void  in(@SuppressWarnings("unused") final T __)      {/**/}
+    default   void  in(final T __)                            { forget.it(__); }
     //@formatter:on
   }
 
