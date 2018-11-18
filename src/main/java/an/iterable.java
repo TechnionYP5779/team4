@@ -50,17 +50,11 @@ public interface iterable {
           }
 
           @Override public T next() {
-            @SuppressWarnings("null") T $ = null;
-            if (a.hasNext() && b.hasNext()) {
-              $ = (nextA ? a : b).next();
-              nextA = !nextA;
-            } else {
-              if (a.hasNext())
-                $ = a.next();
-              if (b.hasNext())
-                $ = b.next();
-            }
-            return $;
+            
+            if (!a.hasNext() || !b.hasNext())
+              return a.hasNext() ? a.next() : (!b.hasNext() ? null : b.next());
+            nextA = !nextA;
+            return (nextA ? b : a).next();
           }
         };
       }

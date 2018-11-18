@@ -18,7 +18,7 @@ import fluent.ly.___.Bug.Contract.*;
  * <code><b>static import</b></code>.
  * @author Yossi Gil (
  * @since 11/01/2006) */
-@SuppressWarnings("null") public abstract class ___ {
+public abstract class ___ {
   /** Exercise the {@link Invariantable#check()}
    * @param ¢ a Invariantable object whose invariant should be checked */
   public static void check(final ___.Invariantable ¢) {
@@ -335,7 +335,7 @@ import fluent.ly.___.Bug.Contract.*;
     return sprintf(format, boxDouble(d), o);
   }
 
-  public static String nprintf(final @NotNull String format, final int n1, final int n2) {
+  @NotNull public static String nprintf(final @NotNull String format, final int n1, final int n2) {
     return sprintf(format, boxInteger(n1), boxInteger(n2));
   }
 
@@ -343,7 +343,7 @@ import fluent.ly.___.Bug.Contract.*;
     return sprintf(format, boxInteger(i), o);
   }
 
-  public static String nprintf(final String format, final Object... args) {
+  @NotNull public static String nprintf(final String format, final Object... args) {
     return format == null ? "" : args == null ? format : sprintf(format, args);
   }
 
@@ -506,8 +506,9 @@ import fluent.ly.___.Bug.Contract.*;
     throw new Reachability(nprintf(format, args));
   }
 
-  @SuppressWarnings("unused") public static void unuse(final long __, final Object... ____) {
-    // empty
+  public static void unuse(final long __, final Object... ____) {
+    forget.it(__);
+    forget.it(____);
   }
 
   /** The base of all exception classes thrown as a result of violations of
