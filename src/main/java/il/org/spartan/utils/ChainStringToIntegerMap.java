@@ -22,7 +22,7 @@ public class ChainStringToIntegerMap {
     return inner.entrySet();
   }
 
-  @SuppressWarnings("null") public int get(final String key) {
+  public int get(final String key) {
     return unbox.unboxInteger(inner.get(key));
   }
 

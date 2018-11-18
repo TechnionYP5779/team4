@@ -24,26 +24,26 @@ import org.jetbrains.annotations.*;
  * function such as {@link Long#longValue()}
  * @author Yossi Gil.
  * @see box */
-@SuppressWarnings("null") public enum unbox {
+public enum unbox {
   // A namespace: no values to this <code><b>enum</b></code>
   ;
-  public static double @NotNull [] it(final @NotNull Double[] ¢) {
+  public static double[] it(final Double[] ¢) {
     return unboxDoubleArray(¢);
   }
 
-  public static float @NotNull [] it(final Float[] ¢) {
+  public static float[] it(final Float[] ¢) {
     return unboxFloatArray(¢);
   }
 
-  public static int it(final @NotNull Integer ¢) {
+  public static int it(final Integer ¢) {
     return unbox.unboxInteger(¢);
   }
 
-  public static int @NotNull [] it(final @NotNull Integer[] ¢) {
+  public static int[] it(final Integer[] ¢) {
     return unboxIntegerArray(¢);
   }
 
-  public static int @NotNull [] it(final List<@NotNull Integer> ¢) {
+  public static int[] it(final List<Integer> ¢) {
     return it(¢.toArray(new Integer[¢.size()]));
   }
 
@@ -55,28 +55,28 @@ import org.jetbrains.annotations.*;
    * <code><b>boolean</b></code>s.
    * @param bs an array of {@link Boolean}s
    * @return an equivalent array of <code><b>boolean</b></code>s. */
-  public static boolean @NotNull [] unboxBooleanArray(final @NotNull Boolean[] bs) {
-    final boolean @NotNull [] $ = new boolean[bs.length];
+  public static boolean[] unboxBooleanArray(final Boolean[] bs) {
+    final boolean[] $ = new boolean[bs.length];
     for (int ¢ = 0; ¢ < bs.length; ++¢)
       $[¢] = bs[¢].booleanValue();
     return $;
   }
 
-  public static byte unboxByte(final @NotNull Byte ¢) {
+  public static byte unboxByte(final Byte ¢) {
     return ¢.byteValue();
   }
 
   /** unbox an array of {@link Byte}s into an array of <code><b>byte</b></code> s.
    * @param bs an array of {@link Byte}s
    * @return an equivalent array of <code><b>byte</b></code>s. */
-  public static byte @NotNull [] unboxByteArray(final @NotNull Byte[] bs) {
-    final byte @NotNull [] $ = new byte[bs.length];
+  public static byte[] unboxByteArray(final Byte[] bs) {
+    final byte[] $ = new byte[bs.length];
     for (int ¢ = 0; ¢ < bs.length; ++¢)
       $[¢] = bs[¢].byteValue();
     return $;
   }
 
-  public static char unboxChar(final @NotNull Character ¢) {
+  public static char unboxChar(final Character ¢) {
     return ¢.charValue();
   }
 
@@ -84,8 +84,8 @@ import org.jetbrains.annotations.*;
    * <code><b>char</b></code>s.
    * @param cs an array of {@link Character}s
    * @return an equivalent array of <code><b>char</b></code>s. */
-  public static char @NotNull [] unboxCharArray(final @NotNull Character[] cs) {
-    final char @NotNull [] $ = new char[cs.length];
+  public static char[] unboxCharArray(final Character[] cs) {
+    final char[] $ = new char[cs.length];
     for (int ¢ = 0; ¢ < cs.length; ++¢)
       $[¢] = cs[¢].charValue();
     return $;
@@ -95,15 +95,15 @@ import org.jetbrains.annotations.*;
    * <code><b>short</b></code>s.
    * @param ss a {@link Collection} of {@link Integer}s
    * @return an equivalent array of <code><b>short</b></code>s. */
-  public static short @NotNull [] unboxShortCollection(final Collection<@NotNull Short> ss) {
-    final short @NotNull [] $ = new short[ss.size()];
+  public static short[] unboxShortCollection(final Collection<Short> ss) {
+    final short[] $ = new short[ss.size()];
     int i = 0;
-    for (final @NotNull Short v : ss)
+    for (final Short v : ss)
       $[i++] = v.shortValue();
     return $;
   }
 
-  public static double unboxDouble(final @NotNull Double ¢) {
+  public static double unboxDouble(final Double ¢) {
     return ¢.doubleValue();
   }
 
@@ -111,14 +111,14 @@ import org.jetbrains.annotations.*;
    * <code><b>double</b></code>s.
    * @param ds an array of {@link Double}s
    * @return an equivalent array of <code><b>double</b></code>s. */
-  public static double @NotNull [] unboxDoubleArray(final @NotNull Double[] ds) {
+  public static double[] unboxDoubleArray(final Double[] ds) {
     final double @NotNull [] $ = new double[ds.length];
     for (int ¢ = 0; ¢ < ds.length; ++¢)
       $[¢] = ds[¢].floatValue();
     return $;
   }
 
-  public static float unboxFloat(final @NotNull Float ¢) {
+  public static float unboxFloat(final Float ¢) {
     return ¢.floatValue();
   }
 
@@ -126,14 +126,14 @@ import org.jetbrains.annotations.*;
    * s.
    * @param fs an array of {@link Float}s
    * @return an equivalent array of <code><b>float</b></code>s. */
-  public static float @NotNull [] unboxFloatArray(final Float[] fs) {
-    final float @NotNull [] $ = new float[fs.length];
+  public static float[] unboxFloatArray(final Float[] fs) {
+    final float[] $ = new float[fs.length];
     for (int ¢ = 0; ¢ < fs.length; ++¢)
       $[¢] = fs[¢].floatValue();
     return $;
   }
 
-  public static int unboxInteger(final @NotNull Integer ¢) {
+  public static int unboxInteger(final Integer ¢) {
     return ¢.intValue();
   }
 
@@ -141,28 +141,28 @@ import org.jetbrains.annotations.*;
    * s.
    * @param is an array of {@link Integer}s
    * @return an equivalent array of <code><b>int</b></code>s. */
-  public static int @NotNull [] unboxIntegerArray(final @NotNull Integer[] is) {
-    final int @NotNull [] $ = new int[is.length];
+  public static int[] unboxIntegerArray(final Integer[] is) {
+    final int[] $ = new int[is.length];
     for (int ¢ = 0; ¢ < is.length; ++¢)
       $[¢] = unbox.unboxInteger(is[¢]);
     return $;
   }
 
-  public static long unboxLong(final @NotNull Long ¢) {
+  public static long unboxLong(final Long ¢) {
     return ¢.longValue();
   }
 
   /** unbox an array of {@link Long}s into an array of <code><b>long</b></code> s.
    * @param ls an array of {@link Long}s
    * @return an equivalent array of <code><b>long</b></code>s. */
-  public static long @NotNull [] unboxLongArray(final @NotNull Long[] ls) {
-    final long @NotNull [] $ = new long[ls.length];
+  public static long[] unboxLongArray(final Long[] ls) {
+    final long[] $ = new long[ls.length];
     for (int ¢ = 0; ¢ < ls.length; ++¢)
       $[¢] = ls[¢].longValue();
     return $;
   }
 
-  public static short unboxShort(final @NotNull Short ¢) {
+  public static short unboxShort(final Short ¢) {
     return ¢.shortValue();
   }
 
@@ -170,8 +170,8 @@ import org.jetbrains.annotations.*;
    * s.
    * @param ss an array of {@link Integer}s
    * @return an equivalent array of <code><b>short</b></code>s. */
-  public static short @NotNull [] unboxShortArray(final @NotNull Short[] ss) {
-    final short @NotNull [] $ = new short[ss.length];
+  public static short[] unboxShortArray(final Short[] ss) {
+    final short[] $ = new short[ss.length];
     for (int ¢ = 0; ¢ < ss.length; ++¢)
       $[¢] = ss[¢].shortValue();
     return $;

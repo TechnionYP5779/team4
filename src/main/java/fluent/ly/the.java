@@ -11,7 +11,7 @@ import org.jetbrains.annotations.*;
  * @author Yossi Gil
  * @since 2017-04-12 */
 public interface the {
-  @SuppressWarnings("null") static int index(final int i, final int... is) {
+  static int index(final int i, final int... is) {
     for (final Integer $ : range.from(box.boxInteger(0)).to(is.length))
       if (is[unbox.unboxInteger($)] == i)
         return unbox.unboxInteger($);

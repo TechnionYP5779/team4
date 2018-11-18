@@ -108,7 +108,7 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
     return pd.new Pair($, sum_y);
   }
 
-  @SuppressWarnings("null") public double co_variance() {
+  public double co_variance() {
     /* In this class we use .doubleValue() functions instead of unboxing it because
      * we are generating a new double from PairList of type T. That is to say, there
      * is no double that is boxed, so nothing to unbox. */
@@ -121,7 +121,7 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
     return $;
   }
 
-  @SuppressWarnings("null") public PairsList<Double>.Pair linear_regression() {
+  public PairsList<Double>.Pair linear_regression() {
     // TODO Auto-generated method stub
     if (list_of_pairs.isEmpty())
       return null;
