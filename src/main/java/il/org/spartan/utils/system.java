@@ -89,7 +89,7 @@ public interface system {
     ;
   }
 
- static boolean isBalanced(final @NotNull String s) {
+  static boolean isBalanced(final @NotNull String s) {
     final Stack<Character> $ = new Stack<>();
     for (final char ¢ : s.toCharArray())
       switch (¢) {

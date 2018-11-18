@@ -97,7 +97,7 @@ public enum box {
   }
 
   @NotNull public static Integer @NotNull [] boxIntegerArray(final int is[]) {
-    final @NotNull Integer @NotNull [] $ = new @NotNull Integer @NotNull[is.length];
+    final @NotNull Integer @NotNull [] $ = new @NotNull Integer @NotNull [is.length];
     for (int ¢ = 0; ¢ < $.length; ++¢)
       $[¢] = boxInteger(is[¢]);
     return $;
@@ -218,7 +218,7 @@ public enum box {
   }
 
   @NotNull public static Long @NotNull [] it(final long ls[]) {
-    final @NotNull Long @NotNull [] $ = new @NotNull Long @NotNull[ls.length];
+    final @NotNull Long @NotNull [] $ = new @NotNull Long @NotNull [ls.length];
     for (int ¢ = 0; ¢ < $.length; ++¢)
       $[¢] = it(ls[¢]);
     return $;

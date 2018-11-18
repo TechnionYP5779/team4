@@ -1,7 +1,5 @@
 package fluent.ly;
 
-
-
 import static fluent.ly.azzert.*;
 
 import java.util.*;
@@ -18,9 +16,9 @@ import org.junit.*;
     azzert.that(as.bit(true), is(1));
   }
 
-  @Test @SuppressWarnings("static-access") public void asIntArraySimple() {
+  @Test public void asIntArraySimple() {
     final int @NotNull [] is = as.intArray(100, 200, 200, 12, 13, 0);
-    azzert.assertArrayEquals(is, as.intArray(as.ingeterList(is)));
+    Assert.assertArrayEquals(is, as.intArray(as.ingeterList(is)));
   }
 
   @Test public void asListSimple() {

@@ -1,7 +1,5 @@
 package il.org.spartan.statistics;
 
-
-
 import static fluent.ly.azzert.*;
 
 import org.jetbrains.annotations.*;

@@ -8,14 +8,16 @@ import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class cCamelCaseTest {
   @Test public void lastComponent() {
-    azzert.that(cCamelCase.lastComponent(String.class), is("String")); 
+    azzert.that(cCamelCase.lastComponent(String.class), is("String"));
   }
+
   @Test public void lastComponent2() {
-    azzert.that(cCamelCase.lastComponent("String"), is("String")); 
+    azzert.that(cCamelCase.lastComponent("String"), is("String"));
   }
+
   @Test public void usefulTypeName() {
-    assert cCamelCase.usefulTypeName("String"); 
-    assert !cCamelCase.usefulTypeName("S"); 
-    assert cCamelCase.usefulTypeName("s"); 
+    assert cCamelCase.usefulTypeName("String");
+    assert !cCamelCase.usefulTypeName("S");
+    assert cCamelCase.usefulTypeName("s");
   }
 }

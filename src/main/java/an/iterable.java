@@ -50,9 +50,8 @@ public interface iterable {
           }
 
           @Override public T next() {
-            
             if (!a.hasNext() || !b.hasNext())
-              return a.hasNext() ? a.next() : (!b.hasNext() ? null : b.next());
+              return a.hasNext() ? a.next() : b.hasNext() ? b.next() : null;
             nextA = !nextA;
             return (nextA ? b : a).next();
           }
