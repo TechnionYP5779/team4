@@ -16,7 +16,7 @@ import il.org.spartan.utils.*;
  * including aggregation information.
  * @author Yossi Gil
  * @since 2016-12-25 */
-@SuppressWarnings("null") public class Table extends Row<Table> implements Closeable {
+@SuppressWarnings({"null", "resource"}) public class Table extends Row<Table> implements Closeable {
   private static final long serialVersionUID = 0x4AA7BE471985E874L;
   String path;
 
@@ -37,7 +37,7 @@ import il.org.spartan.utils.*;
    *             TEX, TXT).
    * @author oran1248
    * @since 2017-04-21 */
-  @SuppressWarnings("resource") public Table(final @NotNull String name, final TableRenderer... rs) {
+  public Table(final @NotNull String name, final TableRenderer... rs) {
     this.name = name.toLowerCase();
     as.list(rs).forEach(r -> {
       try {
@@ -49,7 +49,7 @@ import il.org.spartan.utils.*;
     });
   }
 
-  @SuppressWarnings("resource") public Table(final @NotNull String name, final @NotNull String outputFolder) {
+  public Table(final @NotNull String name, final @NotNull String outputFolder) {
     this.name = name.toLowerCase();
     path = outputFolder.lastIndexOf('/') == outputFolder.length() ? outputFolder : outputFolder + System.getProperty("file.separator", "/");
     as.list(TableRenderer.builtin.values()).forEach(r -> {

@@ -5,6 +5,7 @@ import java.util.*;
 import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
+import il.org.spartan.*;
 
 /** A class to compute statistics, e.g., the minimal and maximal value, the mean
  * and the standard deviation, of a sequence of real numbers.
@@ -37,13 +38,13 @@ public class RealStatistics extends ImmutableStatistics {
     return this;
   }
 
-  @NotNull @SuppressWarnings("null") protected RealStatistics recordValue(final double v) {
+  @NotNull protected RealStatistics recordValue(final double v) {
     if (n() == 0) {
       min = max = v;
       flips = 2;
     }
     if (n == values.length)
-      values = increase(values);
+      values = Utils.cantBeNull(increase(values));
     values[n++] = v;
     flips += as.bit(min > v || max < v);
     min = Math.min(min, v);

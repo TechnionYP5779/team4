@@ -3,6 +3,7 @@ package il.org.spartan.etc;
 import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
+import il.org.spartan.*;
 
 /** An empty {@code interface} for fluent programming. The name should say it
  * all: The name, followed by a dot, followed by a method name, should read like
@@ -14,8 +15,8 @@ public interface cCamelCase {
     return javaName.split(JAVA_CAMEL_CASE_SEPARATOR);
   }
 
-  @SuppressWarnings("null") static String lastComponent(final Class<?> ¢) {
-    return lastComponent(¢.getCanonicalName());
+  static String lastComponent(final Class<?> ¢) {
+    return lastComponent(Utils.cantBeNull(¢.getCanonicalName()));
   }
 
   static String lastComponent(final @NotNull String fullClassName) {
