@@ -10,18 +10,26 @@ import org.junit.*;
 @SuppressWarnings("static-method") public class StringTest {
   @Test public void atod() {
     azzert.that(string.atod("2.4"), is(2.4));
+    azzert.that(string.atod("0.0"), is(0.0));
+    azzert.that(string.atod("-1.1"), is(-1.1));
   }
 
   @Test public void atof() {
     azzert.that(string.atof("2.4"), is(2.4F));
+    azzert.that(string.atof("2.0"), is(2.0F));
+    azzert.that(string.atof("0.0"), is(0.0F));
   }
 
   @Test public void atoi() {
     azzert.that(string.atoi("24"), is(24));
+    azzert.that(string.atoi("0"), is(0));
+    azzert.that(string.atoi("-1"), is(-1));
   }
 
   @Test public void atol() {
     azzert.that(string.atol("222"), is(222L));
+    azzert.that(string.atol("0"), is(0L));
+    azzert.that(string.atol("-4"), is(-4L));
   }
 
   @Test public void capitalize0() {

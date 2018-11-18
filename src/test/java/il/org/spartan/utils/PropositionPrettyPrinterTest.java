@@ -10,10 +10,13 @@ import fluent.ly.*;
   @Test public void testNumber() {
     final PropositionPrettyPrinter.Number n = new PropositionPrettyPrinter.Number();
     azzert.that(n + "", is("1"));
+    
     n.next();
     azzert.that(n + "", is("2"));
+    
     n.next();
     azzert.that(n + "", is("3"));
+    
     n.next();
     azzert.that(n + "", is("4"));
     azzert.isNull(n.less());
@@ -25,8 +28,10 @@ import fluent.ly.*;
     final PropositionPrettyPrinter.NumberWithTab n = new PropositionPrettyPrinter.NumberWithTab();
     n.more();
     azzert.notNull(n + "");
+    
     n.less();
     azzert.notNull(n + "");
+    
     n.next();
     azzert.notNull(n + "");
   }
@@ -36,8 +41,10 @@ import fluent.ly.*;
     final PropositionPrettyPrinter.NodePrettyPrinter n = p0.new NodePrettyPrinter();
     n.down();
     azzert.notNull(n + "");
+    
     n.next();
     azzert.notNull(n + "");
+    
     n.up();
     azzert.notNull(n + "");
   }

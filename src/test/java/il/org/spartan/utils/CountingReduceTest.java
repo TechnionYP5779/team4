@@ -17,4 +17,16 @@ import fluent.ly.*;
     azzert.that(new CountingReduce().reduce(Integer.valueOf(1), Integer.valueOf(-1)), is(0));
     azzert.that(new CountingReduce().reduce(Integer.valueOf(2), Integer.valueOf(2)), is(4));
   }
+  
+  @Test public void testReduceN() {
+    azzert.that(new CountingReduce().reduce(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(0)), is(3));
+    azzert.that(new CountingReduce().reduce(Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0)), is(0));
+    azzert.that(new CountingReduce().reduce(Integer.valueOf(1), Integer.valueOf(-1), Integer.valueOf(0)), is(0));
+    azzert.that(new CountingReduce().reduce(Integer.valueOf(2), Integer.valueOf(2), Integer.valueOf(0)), is(4));
+    
+    azzert.that(new CountingReduce().reduce(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(-1)), is(2));
+    azzert.that(new CountingReduce().reduce(Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(-1)), is(-1));
+    azzert.that(new CountingReduce().reduce(Integer.valueOf(1), Integer.valueOf(-1), Integer.valueOf(-1)), is(-1));
+    azzert.that(new CountingReduce().reduce(Integer.valueOf(2), Integer.valueOf(2), Integer.valueOf(-1)), is(3));
+  }
 }
