@@ -7,6 +7,8 @@ import java.util.*;
 
 import org.jetbrains.annotations.*;
 
+import il.org.spartan.*;
+
 /** A bunch of string functions.
  * @author Yossi Gil */
 public enum string {
@@ -92,7 +94,7 @@ public enum string {
   @NotNull public static String expandLeadingTabs(final @NotNull String s) {
     nonnull(s);
     for (@NotNull String $ = s;;) {
-      @SuppressWarnings("null") final @NotNull String newValue = $.replaceAll("(?m)^([\t]*)\t", "$1    ");
+      final @NotNull String newValue = Utils.cantBeNull($.replaceAll("(?m)^([\t]*)\t", "$1    "));
       if ($.equals(newValue))
         return $;
       $ = newValue;
