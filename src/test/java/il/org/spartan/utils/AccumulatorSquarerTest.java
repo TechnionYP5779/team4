@@ -14,5 +14,9 @@ import il.org.spartan.utils.Accumulator.*;
     azzert.that(s.transform(3), is(9));
     azzert.that(s.transform(0), is(0));
     azzert.that(s.transform(-1), is(1));
+    azzert.that(s.transform(1), is(1));
+    azzert.that(s.transform(2), is(4));
+    azzert.that(s.transform(5), is(25));
+    azzert.that(s.transform(-3), is(9));
   }
 }

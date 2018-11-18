@@ -8,7 +8,7 @@ import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class StrTest {
   @Test public void testStr() {
-    isNull(new Str().inner());
+    azzert.isNull(new Str().inner());
   }
 
   @Test public void testIsEmptyx() {
@@ -22,7 +22,32 @@ import fluent.ly.*;
   }
 
   @Test public void testSet() {
-    new Str().set("set");
+    
+    Str s = new Str();
+    
+    azzert.isNull(s.inner());
+    azzert.aye(new Str().isEmptyx());
+    azzert.not(new Str().notEmpty());
+    
+    s.set("set");
+    azzert.that(s.inner(), is("set"));
     azzert.not(new Str().isEmptyx());
+    
+    s.set("abc");
+    azzert.that(s.inner(), is("abc"));
+    azzert.not(new Str().isEmptyx());
+    
+    s.set("123");
+    azzert.that(s.inner(), is("123"));
+    azzert.not(new Str().isEmptyx());
+    
+    s.set("");
+    azzert.that(s.inner(), is(""));
+    azzert.aye(new Str().isEmptyx());
+    azzert.not(new Str().notEmpty());
+    
+    s.set("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+    azzert.not(new Str().isEmptyx());
+    azzert.that(s.inner(), is("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
   }
 }

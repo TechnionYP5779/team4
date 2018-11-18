@@ -10,22 +10,48 @@ import fluent.ly.*;
   @Test public void testNot() {
     azzert.that(Truth.T.not(), is(Truth.F));
     azzert.that(Truth.F.not(), is(Truth.T));
+    
+    azzert.that(Truth.T.not().not(), is(Truth.T));
+    azzert.that(Truth.F.not().not(), is(Truth.F));
+    
+    azzert.that(Truth.T.not().not().not(), is(Truth.F));
+    azzert.that(Truth.F.not().not().not(), is(Truth.T));
   }
 
   @Test public void testOr() {
-    final Truth t = Truth.T, f = Truth.F;
-    azzert.that(t.or(t), is(Truth.T));
-    azzert.that(t.or(f), is(Truth.T));
-    azzert.that(f.or(t), is(Truth.T));
-    azzert.that(f.or(f), is(Truth.F));
+    azzert.that(Truth.T.or(Truth.T), is(Truth.T));
+    azzert.that(Truth.T.or(Truth.F), is(Truth.T));
+    azzert.that(Truth.F.or(Truth.T), is(Truth.T));
+    azzert.that(Truth.F.or(Truth.F), is(Truth.F));
+    
+    azzert.that(Truth.T.or(Truth.T).not(), is(Truth.F));
+    azzert.that(Truth.T.or(Truth.F).not(), is(Truth.F));
+    azzert.that(Truth.F.or(Truth.T).not(), is(Truth.F));
+    azzert.that(Truth.F.or(Truth.F).not(), is(Truth.T));
   }
 
   @Test public void testAnd() {
-    final Truth t = Truth.T, f = Truth.F;
-    azzert.that(t.and(t), is(Truth.T));
-    azzert.that(t.and(f), is(Truth.F));
-    azzert.that(f.and(t), is(Truth.F));
-    azzert.that(f.and(f), is(Truth.F));
+    azzert.that(Truth.T.and(Truth.T), is(Truth.T));
+    azzert.that(Truth.T.and(Truth.F), is(Truth.F));
+    azzert.that(Truth.F.and(Truth.T), is(Truth.F));
+    azzert.that(Truth.F.and(Truth.F), is(Truth.F));
+    
+    azzert.that(Truth.T.and(Truth.T).not(), is(Truth.F));
+    azzert.that(Truth.T.and(Truth.F).not(), is(Truth.T));
+    azzert.that(Truth.F.and(Truth.T).not(), is(Truth.T));
+    azzert.that(Truth.F.and(Truth.F).not(), is(Truth.T));
+  }
+  
+  @Test public void testAndOr() {
+    azzert.that(Truth.T.and(Truth.T).or(Truth.F), is(Truth.T));
+    azzert.that(Truth.T.and(Truth.F).or(Truth.F), is(Truth.F));
+    azzert.that(Truth.F.and(Truth.T).or(Truth.F), is(Truth.F));
+    azzert.that(Truth.F.and(Truth.F).or(Truth.F), is(Truth.F));
+    
+    azzert.that(Truth.T.or(Truth.T).and(Truth.T), is(Truth.T));
+    azzert.that(Truth.T.or(Truth.F).and(Truth.T), is(Truth.T));
+    azzert.that(Truth.F.or(Truth.T).and(Truth.T), is(Truth.T));
+    azzert.that(Truth.F.or(Truth.F).and(Truth.T), is(Truth.F));
   }
 
   @Test public void testToString() {
