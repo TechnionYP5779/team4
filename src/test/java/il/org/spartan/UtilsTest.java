@@ -19,30 +19,30 @@ import fluent.ly.*;
  * @author Yossi Gil
  * @since 2014-05-31 */
 @SuppressWarnings("static-method") public class UtilsTest {
-  @NotNull @SuppressWarnings("null") public static Integer[] intToIntegers(final int... is) {
-    final Integer @NotNull [] $ = new Integer @NotNull [is.length];
+  @NotNull public static Integer[] intToIntegers(final int... is) {
+    final @NotNull Integer @NotNull [] $ = new @NotNull Integer @NotNull [is.length];
     for (int ¢ = 0; ¢ < is.length; ++¢)
       $[¢] = fluent.ly.box.it(is[¢]);
     return $;
   }
 
-  @Test @SuppressWarnings({ "unchecked", "null" }) public void addAllTypical() {
+  @Test @SuppressWarnings("unchecked") public void addAllTypical() {
     final Set<String> ss = new HashSet<>();
     accumulate.to(ss).addAll(as.set("A", "B"), null, as.set("B", "C", "D"));
     azzert.nay(ss.contains("E"));
     azzert.nay(ss.contains(null));
     azzert.that(ss.size(), is(4));
-    for (final @NotNull String ¢ : ss)
+    for (final String ¢ : ss)
       azzert.aye("", ss.contains(¢));
   }
 
-  @Test @SuppressWarnings("null") public void addTypical() {
+  @Test public void addTypical() {
     final Set<String> ss = new HashSet<>();
     accumulate.to(ss).add(null, "A", null, "B", "B", null, "C", "D", null);
     azzert.nay(ss.contains("E"));
     azzert.nay(ss.contains(null));
     azzert.that(ss.size(), is(4));
-    for (final @NotNull String ¢ : ss)
+    for (final String ¢ : ss)
       azzert.aye("", ss.contains(¢));
     azzert.aye(ss.contains("A"));
   }
@@ -57,8 +57,8 @@ import fluent.ly.*;
     }
   }
 
-  @Test @SuppressWarnings("null") public void cantBeNullTypical() {
-    azzert.aye(cantBeNull(new Object()) != null);
+  @Test public void cantBeNullTypical() {
+    assert cantBeNull(new Object()) != null;
   }
 
   @Test public void isNullTypical() {
@@ -93,20 +93,20 @@ import fluent.ly.*;
     azzert.that(idiomatic.quote("A"), is("'A'"));
   }
 
-  @Test @SuppressWarnings("null") public void swapDegenerate() {
-    final @NotNull String @NotNull [] ss = as.array("A", "B", "C", "D");
+  @Test public void swapDegenerate() {
+    final @NotNull String[] ss = as.array("A", "B", "C", "D");
     swap(ss, 1, 1);
     Assert.assertArrayEquals(as.array("A", "B", "C", "D"), ss);
   }
 
-  @Test @SuppressWarnings("null") public void swapTypical() {
-    final @NotNull String @NotNull [] ss = as.array("A", "B", "C", "D");
+  @Test public void swapTypical() {
+    final @NotNull String[] ss = as.array("A", "B", "C", "D");
     swap(ss, 1, 2);
     Assert.assertArrayEquals(as.array("A", "C", "B", "D"), ss);
   }
 
-  @Test @SuppressWarnings("null") public void swapTypicalCase() {
-    final Integer @NotNull [] $ = intToIntegers(29, 1, 60);
+  @Test public void swapTypicalCase() {
+    final @NotNull Integer[] $ = intToIntegers(29, 1, 60);
     swap($, 0, 1);
     azzert.that($[0], is(1));
     azzert.that($[1], is(29));
@@ -267,10 +267,10 @@ import fluent.ly.*;
     azzert.not(Utils.intIsIn(5, 1, 2, 3));
   }
 
-  @Test @SuppressWarnings("null") public void foundHandler() {
+  @Test public void foundHandler() {
     final FoundHandleForT<Integer> fh = new Utils.FoundHandleForT<>(Integer.valueOf(1));
-    azzert.aye(fh.in(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3)));
-    azzert.not(fh.in(Integer.valueOf(2), Integer.valueOf(3)));
+    azzert.aye(fh.in(Utils.cantBeNull(Integer.valueOf(1)), Utils.cantBeNull(Integer.valueOf(2)), Utils.cantBeNull(Integer.valueOf(3))));
+    azzert.not(fh.in(Utils.cantBeNull(Integer.valueOf(2)), Utils.cantBeNull(Integer.valueOf(3))));
   }
 
   @Test public void foundHandlerInt() {
