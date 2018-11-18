@@ -7,14 +7,16 @@ import java.util.*;
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class TheTest {
-  final List<@NotNull Integer> l = new ArrayList<>();
+import il.org.spartan.*;
 
-  @Before @SuppressWarnings("null") public void setUp() {
-    l.add(Integer.valueOf(1));
-    l.add(Integer.valueOf(2));
-    l.add(Integer.valueOf(3));
-    l.add(Integer.valueOf(4));
+@SuppressWarnings("static-method") public class TheTest {
+  final List<@Nullable Integer> l = new ArrayList<>();
+
+  @Before public void setUp() {
+    l.add(Utils.cantBeNull(Integer.valueOf(1)));
+    l.add(Utils.cantBeNull(Integer.valueOf(2)));
+    l.add(Utils.cantBeNull(Integer.valueOf(3)));
+    l.add(Utils.cantBeNull(Integer.valueOf(4)));
   }
 
   @Test public void indexFound() {
@@ -37,34 +39,34 @@ import org.junit.*;
     azzert.that(the.nth(2, l1), is(" #2/3"));
   }
 
-  @Test @SuppressWarnings("null") public void previousOfFound() {
-    azzert.that(the.previous(Integer.valueOf(4), l), is(Integer.valueOf(3)));
+  @Test public void previousOfFound() {
+    azzert.that(the.previous(Utils.cantBeNull(Integer.valueOf(4)), l), is(Integer.valueOf(3)));
   }
 
-  @Test @SuppressWarnings("null") public void previousOfFirst() {
+  @Test public void previousOfFirst() {
     isNull(the.previous(Integer.valueOf(1), l));
   }
 
-  @Test @SuppressWarnings("null") public void previousOfNotFound() {
+  @Test public void previousOfNotFound() {
     isNull(the.previous(Integer.valueOf(0), l));
   }
 
-  @Test @SuppressWarnings("null") public void tailOfList() {
+  @Test public void tailOfList() {
     final List<@NotNull Integer> l2 = new ArrayList<>();
-    l2.add(Integer.valueOf(2));
-    l2.add(Integer.valueOf(3));
-    l2.add(Integer.valueOf(4));
+    l2.add(Utils.cantBeNull(Integer.valueOf(2)));
+    l2.add(Utils.cantBeNull(Integer.valueOf(3)));
+    l2.add(Utils.cantBeNull(Integer.valueOf(4)));
     final List<Integer> res = the.tailOf(l);
     azzert.that(res.size(), is(l2.size()));
     for (int ¢ = 0; ¢ < l2.size(); ++¢)
       azzert.that(res.get(¢), is(l2.get(¢)));
   }
 
-  @Test @SuppressWarnings("null") public void restOfList() {
+  @Test public void restOfList() {
     final List<@NotNull Integer> l2 = new ArrayList<>();
-    l2.add(Integer.valueOf(2));
-    l2.add(Integer.valueOf(3));
-    l2.add(Integer.valueOf(4));
+    l2.add(Utils.cantBeNull(Integer.valueOf(2)));
+    l2.add(Utils.cantBeNull(Integer.valueOf(3)));
+    l2.add(Utils.cantBeNull(Integer.valueOf(4)));
     final List<Integer> res = the.rest(Integer.valueOf(1), l);
     azzert.that(res.size(), is(l2.size()));
     for (int ¢ = 0; ¢ < l2.size(); ++¢)

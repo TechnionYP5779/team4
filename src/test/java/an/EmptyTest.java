@@ -13,11 +13,11 @@ import fluent.ly.*;
     azzert.that(empty.list().size(), is(0));
   }
 
-  @Test @SuppressWarnings("null") public void testIterable() {
+  @Test public void testIterable() {
     final Iterable<?> iterable = empty.iterable();
     final Iterator<?> iterator = iterable.iterator();
     azzert.nay(iterator.hasNext());
     azzert.isNull(iterator.next());
-    azzert.that(iterable.iterator(), not(iterator));
+    assert iterable.iterator() != iterator;
   }
 }

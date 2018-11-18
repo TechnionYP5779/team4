@@ -6,6 +6,8 @@ import java.util.*;
 
 import org.junit.*;
 
+import il.org.spartan.*;
+
 @SuppressWarnings("static-method") public class LispTest {
   final ArrayList<Integer> b = new ArrayList<>();
   ArrayList<Integer> a;
@@ -65,21 +67,21 @@ import org.junit.*;
 
   @Test public void replace7() {
     anotherSetup();
-    @SuppressWarnings("null") final ArrayList<Integer> d = (ArrayList<Integer>) lisp.replaceLast(b, Integer.valueOf(6));
+    final ArrayList<Integer> d = (ArrayList<Integer>) lisp.replaceLast(Utils.cantBeNull(b), Integer.valueOf(6));
     if (d != null)
       azzert.that(d.get(0), is(6));
   }
 
   @Test public void replace8() {
     anotherSetup();
-    @SuppressWarnings("null") final ArrayList<Integer> d = (ArrayList<Integer>) lisp.replaceLast(b, Integer.valueOf(6));
+    final ArrayList<Integer> d = (ArrayList<Integer>) lisp.replaceLast(Utils.cantBeNull(b), Integer.valueOf(6));
     if (d != null)
       azzert.that(d.get(1), is(6));
   }
 
   @Test public void replace9() {
     anotherSetup();
-    @SuppressWarnings("null") final ArrayList<Integer> d = (ArrayList<Integer>) lisp.replaceLast(b, Integer.valueOf(6));
+    final ArrayList<Integer> d = (ArrayList<Integer>) lisp.replaceLast(Utils.cantBeNull(b), Integer.valueOf(6));
     if (d != null)
       azzert.that(d.get(2), is(6));
   }
