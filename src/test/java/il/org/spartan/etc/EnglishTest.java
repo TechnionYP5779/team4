@@ -86,6 +86,13 @@ import il.org.spartan.utils.*;
   @Test public void plurales2() {
     azzert.that(English.plurales("hi", 2), is("2 hies"));
   }
+  @Test public void plurales11() {
+    azzert.that(English.plurales("banana", 1), is("one banana"));
+  }
+
+  @Test public void plurales22() {
+    azzert.that(English.plurales("class", 2), is("2 classes"));
+  }
 
   @Test public void plurales3() {
     azzert.that(English.plurales("hi", new Int()), is("0 hies"));
@@ -93,6 +100,10 @@ import il.org.spartan.utils.*;
 
   @Test public void plurales35() {
     azzert.that(English.plurales("hi", new Int(1)), is("one hi"));
+  }
+
+  @Test public void plurales353() {
+    azzert.that(English.plurales("dance", new Int(1)), is("one dance"));
   }
 
   @Test public void plurales4() {
@@ -105,6 +116,9 @@ import il.org.spartan.utils.*;
 
   @Test public void plurales6() {
     azzert.that(English.plurales("hi", Integer.valueOf(4)), is("4 hies"));
+  }
+  @Test public void plurales36() {
+    azzert.that(English.plurales("brush", Integer.valueOf(6)), is("6 brushes"));
   }
 
   @Test public void plurales65() {
