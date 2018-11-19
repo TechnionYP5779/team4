@@ -152,6 +152,11 @@ import il.org.spartan.utils.*;
   @Test public void plurals6() {
     azzert.that(English.plurals("hi", Integer.valueOf(4)), is("4 his"));
   }
+  
+  @Test public void plurals633() {
+    azzert.that(English.plurals("car", Integer.valueOf(22)), is("22 cars"));
+  }
+
 
   @Test public void plurals65() {
     azzert.that(English.plurals("hi", Integer.valueOf(1)), is("one hi"));
@@ -189,6 +194,10 @@ import il.org.spartan.utils.*;
   @Test public void repeat() {
     azzert.that(English.repeat(4, 'z'), is("zzzz"));
   }
+  
+  @Test public void repeat2() {
+    azzert.that(English.repeat(2, 'n'), is("nn"));
+  }
 
   @Test public void selfName() {
     azzert.that(English.selfName(String.class), is("String"));
@@ -196,6 +205,10 @@ import il.org.spartan.utils.*;
 
   @Test public void time() {
     azzert.that(English.time(3234), is("0.00"));
+  }
+  
+  @Test public void time2() {
+    azzert.that(English.time(32300000), is("0.03"));
   }
 
   @Test public void trim() {
