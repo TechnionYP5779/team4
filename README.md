@@ -57,7 +57,7 @@ The project is available under the **[MIT License]**
 [MIT License]: https://opensource.org/licenses/MIT
 
 ## Relevant Links
-https://lgtm.com/
+https://lgtm.com/projects/g/TechnionYP5779/team4/
 https://www.sonarqube.org/
 
 ## References 
