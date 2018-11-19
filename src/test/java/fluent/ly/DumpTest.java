@@ -31,4 +31,13 @@ import org.junit.*;
     assert (outContent + "").contains("hi") && (outContent + "").contains("Works");
   }
   
+  @Test public void mainPrints() {
+    dump.printall();
+    assert (outContent + "").contains("main");
+  }
+  
+  @Test public void mainDumps() {
+    dump.dumpall();
+    assert (outContent + "").contains("main");
+  }
 }

@@ -128,9 +128,9 @@ import il.org.spartan.etc.*;
     out.out_message("--END OBJECT--\n\n");
     System.out.flush();
   }
-
-  public static void main(final @NotNull String[] args) {
-    // Explore.go(Package.class);
+  
+  public static void printall() {
+ // Explore.go(Package.class);
     final ClassLoadingMXBean a = ManagementFactory.getClassLoadingMXBean();
     System.out.println(a.getLoadedClassCount());
     System.out.println(a.getTotalLoadedClassCount());
@@ -140,7 +140,9 @@ import il.org.spartan.etc.*;
     System.out.println(b.getTotalCompilationTime());
     System.out.println(b.getName());
     System.out.println(b.isCompilationTimeMonitoringSupported());
-    System.exit(1);
+  }
+
+  public static void dumpall() {
     dump.go(ManagementFactory.getGarbageCollectorMXBeans());
     dump.go(ManagementFactory.getMemoryManagerMXBeans());
     dump.go(ManagementFactory.getMemoryPoolMXBeans());
@@ -148,5 +150,11 @@ import il.org.spartan.etc.*;
     dump.go(ManagementFactory.getPlatformMBeanServer());
     dump.go(ManagementFactory.getRuntimeMXBean());
     dump.go(ManagementFactory.getThreadMXBean());
+  }
+  
+  public static void main(final @NotNull String[] args) {
+    printall();
+    System.exit(1);
+    dumpall();
   }
 }
