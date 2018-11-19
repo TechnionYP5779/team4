@@ -22,7 +22,17 @@ import il.org.spartan.utils.*;
   @Test public void get3() {
     azzert.that(Inflection.stem("shake").getIng(), is("shakeing"));
   }
+  @Test public void get11() {
+    azzert.that(Inflection.stem("sleep").get(), is("shake"));
+  }
 
+  @Test public void get22() {
+    azzert.that(Inflection.stem("sleep").getEd(), is("sleeped"));
+  }
+
+  @Test public void get33() {
+    azzert.that(Inflection.stem("sleep").getIng(), is("sleeping"));
+  }
   @Test public void name() {
     azzert.that(English.indefinite("hi"), is("an hi"));
   }
