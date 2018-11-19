@@ -57,7 +57,9 @@ public abstract class Statistics {
       $ += ¢;
       sum2 += ¢ * ¢;
     }
-    final long length_squared = ds.length * ds.length; // defined for overflow problems.
+    final long length_in_long = ds.length; // defined for overflow problems.
+    forget.it(length_in_long);
+    final long length_squared = length_in_long * length_in_long;
     forget.it(length_squared);
     return sum2 / ds.length - $ * $ / length_squared;
   }
