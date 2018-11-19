@@ -7,9 +7,6 @@ import org.junit.*;
 import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class BinaryTest {
-  @Test public void testHashCode() {
-    azzert.that(Binary.T.hashCode(), is(1));
-  }
 
   @Test public void testAnd() {
     azzert.that(Binary.and(Binary.F, Binary.F), is(Binary.F));

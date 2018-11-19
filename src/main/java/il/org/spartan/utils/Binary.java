@@ -36,9 +36,6 @@ public class Binary {
   private Binary() {
     /**/}
 
-  @Override public int hashCode() {
-    return 1;
-  }
 
   @Override protected Binary clone() {
     return this;
