@@ -4,7 +4,7 @@ import static fluent.ly.azzert.*;
 
 import org.junit.*;
 
-public class NilTest {
+@SuppressWarnings("static-method") public class NilTest {
   private final Object o = null;
 
   @Test public void testIgnoring0() {
@@ -29,5 +29,17 @@ public class NilTest {
 
   @Test public void testIgnoring5() {
     azzert.that(nil.ignoring(-1), is(o));
+  }
+  
+  @Test public void testForgetting1() {
+    azzert.isNull(nil.forgetting(null));
+  }
+  
+  @Test public void testForgetting2() {
+    azzert.isNull(nil.forgetting("1"));
+  }
+  
+  @Test public void testForgetting3() {
+    azzert.isNull(nil.forgetting(Integer.valueOf(1)));
   }
 }

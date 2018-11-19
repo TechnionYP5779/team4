@@ -30,8 +30,16 @@ import org.junit.*;
     azzert.that(is.size(), is(3));
   }
 
-  @Test public void stringOfNull() {
+  @Test public void stringOfNullString() {
     azzert.that(as.string(null), is("null"));
+  }
+  
+  @Test public void stringOfNullObject() {
+    azzert.that(as.string((Object)null), is("null"));
+  }
+  
+  @Test public void stringOfString() {
+    azzert.that(as.string(""), is(""));
   }
 
   @Test public void stringWhenToStringReturnsNull() {
@@ -43,12 +51,12 @@ import org.junit.*;
   }
 
   @Test public void asIterableOddTillTen() {
-    final Iterator<Integer> it = as.asIterable(Integer.valueOf(1), Integer.valueOf(3), Integer.valueOf(5), Integer.valueOf(7), Integer.valueOf(9))
-        .iterator();
+    final Iterator<Integer> it = as.asIterable(Integer.valueOf(1), Integer.valueOf(3)).iterator();
     assert it.hasNext();
     azzert.that(it.next(), is(1));
     assert it.hasNext();
     azzert.that(it.next(), is(3));
+    assert !it.hasNext();
   }
 
   @Test public void asIterableOddTillTen1() {
@@ -97,5 +105,15 @@ import org.junit.*;
 
   @Test public void charToString() {
     azzert.that(as.string('a'), is("a"));
+  }
+  
+  @Test public void strings1() {
+    azzert.that(as.strings(null), is(new String[] {}));
+  }
+  
+  @Test public void strings2() {
+    List<String> l = new ArrayList<>();
+    l.add(null);
+    azzert.that(as.strings(l), is(new String[] {}));
   }
 }

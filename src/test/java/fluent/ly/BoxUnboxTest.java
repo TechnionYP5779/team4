@@ -185,4 +185,12 @@ import org.junit.*;
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res_2[¢], is(arr[¢]));
   }
+  
+  @Test public void testItDouble() {
+    azzert.that(unbox.it(new Double[] {Double.valueOf(1.0)}), is(new Double[] {Double.valueOf(1.0)}));
+  }
+  
+  @Test public void testItFloat() {
+    azzert.that(unbox.it(new Float[] {Float.valueOf("1.0")}), is(new Float[] {Float.valueOf("1.0")}));
+  }
 }
