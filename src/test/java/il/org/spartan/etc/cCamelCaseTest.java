@@ -20,7 +20,7 @@ import fluent.ly.*;
     assert !cCamelCase.usefulTypeName("S");
     assert cCamelCase.usefulTypeName("s");
   }
-  
+
   @Test public void usefulTypeName2() {
     assert cCamelCase.usefulTypeName("Integer");
     assert !cCamelCase.usefulTypeName("I");

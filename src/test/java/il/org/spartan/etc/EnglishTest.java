@@ -22,6 +22,7 @@ import il.org.spartan.utils.*;
   @Test public void get3() {
     azzert.that(Inflection.stem("shake").getIng(), is("shakeing"));
   }
+
   @Test public void get11() {
     azzert.that(Inflection.stem("sleep").get(), is("sleep"));
   }
@@ -33,6 +34,7 @@ import il.org.spartan.utils.*;
   @Test public void get33() {
     azzert.that(Inflection.stem("sleep").getIng(), is("sleeping"));
   }
+
   @Test public void name() {
     azzert.that(English.indefinite("hi"), is("an hi"));
   }
@@ -64,6 +66,7 @@ import il.org.spartan.utils.*;
   @Test public void lower() {
     azzert.that(English.lowerFirstLetter("hii"), is("hii"));
   }
+
   @Test public void lower2() {
     azzert.that(English.lowerFirstLetter("Hi"), is("hi"));
   }
@@ -71,6 +74,7 @@ import il.org.spartan.utils.*;
   @Test public void classs() {
     azzert.that(English.name(String.class), is("String"));
   }
+
   @Test public void classs2() {
     azzert.that(English.name(Integer.class), is("Integer"));
   }
@@ -86,6 +90,7 @@ import il.org.spartan.utils.*;
   @Test public void plurales2() {
     azzert.that(English.plurales("hi", 2), is("2 hies"));
   }
+
   @Test public void plurales11() {
     azzert.that(English.plurales("banana", 1), is("one banana"));
   }
@@ -117,6 +122,7 @@ import il.org.spartan.utils.*;
   @Test public void plurales6() {
     azzert.that(English.plurales("hi", Integer.valueOf(4)), is("4 hies"));
   }
+
   @Test public void plurales36() {
     azzert.that(English.plurales("brush", Integer.valueOf(6)), is("6 brushes"));
   }
@@ -152,11 +158,10 @@ import il.org.spartan.utils.*;
   @Test public void plurals6() {
     azzert.that(English.plurals("hi", Integer.valueOf(4)), is("4 his"));
   }
-  
+
   @Test public void plurals633() {
     azzert.that(English.plurals("car", Integer.valueOf(22)), is("22 cars"));
   }
-
 
   @Test public void plurals65() {
     azzert.that(English.plurals("hi", Integer.valueOf(1)), is("one hi"));
@@ -194,7 +199,7 @@ import il.org.spartan.utils.*;
   @Test public void repeat() {
     azzert.that(English.repeat(4, 'z'), is("zzzz"));
   }
-  
+
   @Test public void repeat2() {
     azzert.that(English.repeat(2, 'n'), is("nn"));
   }
@@ -206,7 +211,7 @@ import il.org.spartan.utils.*;
   @Test public void time() {
     azzert.that(English.time(3234), is("0.00"));
   }
-  
+
   @Test public void time2() {
     azzert.that(English.time(32300000), is("0.03"));
   }
