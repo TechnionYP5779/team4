@@ -6,7 +6,7 @@ import java.util.function.*;
 
 import org.junit.*;
 
-public class TestFluent_nil {
+public class NilTest2 {
   static String helloString = "Hello";
 
   @Test public void t() {
