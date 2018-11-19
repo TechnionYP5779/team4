@@ -10,6 +10,7 @@
 [![Build Status](https://travis-ci.org/TechnionYP5779/team4.svg?branch=master)](https://travis-ci.org/TechnionYP5779/team4)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/TechnionYP5779/team4.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/TechnionYP5779/team4/alerts/)
 [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/TechnionYP5779/team4.svg?maxAge=2592000)]()
+[![codecov.io](http://codecov.io/github/TechnionYP5779/team4/coverage.svg?branch=master)](http://codecov.io/github/TechnionYP5779/team4?branch=master)
 
 
 ## Articles
