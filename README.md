@@ -56,6 +56,12 @@ The project is available under the **[MIT License]**
 [ASTVisitor]: http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jdt.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fjdt%2Fcore%2Fdom%2FASTVisitor.html
 [MIT License]: https://opensource.org/licenses/MIT
 
+## Relevant Links
+https://lgtm.com/
+https://www.sonarqube.org/
+
 ## References 
 This project is a work of team 4 on the original [SpartanRefactoring project](https://github.com/SpartanRefactoring/Main)
+
+
 
