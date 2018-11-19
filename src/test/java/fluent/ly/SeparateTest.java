@@ -261,4 +261,51 @@ public class SeparateTest {
   @Test public final void theseOfNoItemslSpaceSeparated() {
     azzert.that(separate.these(new String[] {}).bySpaces(), is(""));
   }
+  
+  @Test public final void byDots() {
+    azzert.that(separate.these("A", "B", "C").byDots(), is("A.B.C"));
+  }
+  
+  @Test public final void byNothing() {
+    azzert.that(separate.these("A", "B", "C").byNothing(), is("ABC"));
+  }
+  
+  @Test public final void by() {
+    azzert.that(separate.these("A", "B", "C").by("1"), is("A1B1C"));
+  }
+  
+  @Test public final void assertEquals1() {
+    separate.assertEquals(Integer.valueOf(1), Integer.valueOf(1));
+  }
+  
+  @Test public final void assertEquals2() {
+    separate.assertEquals("reason", Integer.valueOf(1), Integer.valueOf(1));
+  }
+  
+  @Test public final void assertFalse1() {
+    separate.assertFalse(false);
+  }
+  
+  @Test public final void assertFalse2() {
+    separate.assertFalse("reason", false);
+  }
+  
+  @Test public final void assertTrue1() {
+    separate.assertTrue(true);
+  }
+  
+  @Test public final void assertTrue2() {
+    separate.assertTrue("reason", true);
+  }
+  
+  @Test public final void assertNotEquals() {
+    separate.assertNotEquals(Integer.valueOf(1), Integer.valueOf(1));
+  }
+  
+  @Test public final void enumTest() {
+    separate.assertEquals(separate.COMMA, separate.COMMA);
+    separate.assertEquals(separate.DOT, separate.DOT);
+    separate.assertEquals(separate.NL, separate.NL);
+    separate.assertEquals(separate.SPACE, separate.SPACE);
+  }
 }
