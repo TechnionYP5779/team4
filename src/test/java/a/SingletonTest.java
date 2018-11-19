@@ -6,7 +6,7 @@ import org.junit.*;
 
 import fluent.ly.*;
 
-@SuppressWarnings("static-method") public class SingletonTest {
+@SuppressWarnings("static-method") public class singletonTest {
   @Test public void intListSingelton() {
     azzert.that(singleton.list(Integer.valueOf(5)).size(), is(1));
   }
