@@ -7,7 +7,6 @@ import org.junit.*;
 import fluent.ly.*;
 import static fluent.ly.azzert.*;
 
-
 @SuppressWarnings("static-method") public class PropositionReducerTest {
   @Test public void reduce1() {
     azzert.that((new PropositionReducer<Integer>(new Reduce<Integer>() {
@@ -24,8 +23,7 @@ import static fluent.ly.azzert.*;
       }
     }).reduce(() -> true), is(Integer.valueOf(1)));
   }
-  
-  
+
   @Test public void reduceAndAllTrue() {
     azzert.that((new PropositionReducer<Integer>(new Reduce<Integer>() {
       @Override public Integer reduce() {
@@ -39,9 +37,9 @@ import static fluent.ly.azzert.*;
       @Override protected Integer map(BooleanSupplier ¢) {
         return box.boxInteger(¢.getAsBoolean() ? 1 : 0);
       }
-    }).reduce(new Proposition.And(() -> true, new BooleanSupplier[] {()->true})), is(Integer.valueOf(2)));
+    }).reduce(new Proposition.And(() -> true, new BooleanSupplier[] { () -> true })), is(Integer.valueOf(2)));
   }
-  
+
   @Test public void reduceAndWithFalse() {
     azzert.that((new PropositionReducer<Integer>(new Reduce<Integer>() {
       @Override public Integer reduce() {
@@ -55,6 +53,6 @@ import static fluent.ly.azzert.*;
       @Override protected Integer map(BooleanSupplier ¢) {
         return box.boxInteger(¢.getAsBoolean() ? 1 : 0);
       }
-    }).reduce(new Proposition.And(() -> true, new BooleanSupplier[] {()->false})), is(Integer.valueOf(1)));
+    }).reduce(new Proposition.And(() -> true, new BooleanSupplier[] { () -> false })), is(Integer.valueOf(1)));
   }
 }

@@ -314,7 +314,7 @@ import org.junit.*;
   @Test public void strip1() {
     azzert.that(string.strip("abc"), is("b"));
   }
-  
+
   @Test public void strip2() {
     azzert.that(string.strip("bc"), is(""));
   }
@@ -349,49 +349,48 @@ import org.junit.*;
   @Test public void wrap() {
     azzert.that(string.wrap("*", "abc"), is("*abc*"));
   }
-  
+
   @Test @SuppressWarnings("null") public void cat() {
     azzert.that(string.cat(new String[] { "abc" }, new String[] { "def" }), is("abcdef"));
   }
-  
+
   @Test public void expandLeadingTabs1() {
     azzert.that(string.expandLeadingTabs("abc"), is("abc"));
   }
-  
+
   @Test public void expandLeadingTabs2() {
     azzert.that(string.expandLeadingTabs(""), is(""));
   }
-  
+
   @Test public void expandLeadingTabs3() {
     azzert.that(string.expandLeadingTabs("  a"), is("  a"));
   }
- 
-  
+
   @Test public void pretty1() {
     azzert.that(string.pretty("a", new HashSet<>()), is(""));
   }
-  
+
   @Test public void pretty2() {
     Collection<String> c = new HashSet<>();
     c.add("a");
     azzert.that(string.pretty("a", c), is("1 a: a\n"));
   }
-  
+
   @Test public void pretty3() {
     Collection<String> c = new HashSet<>();
     c.add("a");
     c.add("b");
     azzert.that(string.pretty("a", c), is("2 as:\n\t1) a\n\t2) b\n"));
   }
-  
+
   @Test @SuppressWarnings("null") public void sprintf1() {
     azzert.that(string.sprintf(new String[] { "a", "b" }), is("a"));
   }
-  
+
   @Test @SuppressWarnings("null") public void sprintf2() {
-    azzert.that(string.sprintf(new String[] { "a"}), is("a"));
+    azzert.that(string.sprintf(new String[] { "a" }), is("a"));
   }
-  
+
   @Test @SuppressWarnings("null") public void sprint3() {
     azzert.that(string.sprintf(new String[] {}), is(""));
   }

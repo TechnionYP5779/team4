@@ -48,7 +48,8 @@ public interface fault {
   }
 
   @NotNull static String specifically(final @NotNull String explanation, final Object... os) {
-    return dump("\n " + explanation) + Stream.of(os).map(λ -> dump(Utils.cantBeNull(λ.getClass().getSimpleName()), λ)).reduce((x, y) -> x + y).get() + done();
+    return dump("\n " + explanation) + Stream.of(os).map(λ -> dump(Utils.cantBeNull(λ.getClass().getSimpleName()), λ)).reduce((x, y) -> x + y).get()
+        + done();
   }
 
   @NotNull static String dump(final @NotNull String name, final Object value) {

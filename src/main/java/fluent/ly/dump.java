@@ -128,9 +128,9 @@ import il.org.spartan.etc.*;
     out.out_message("--END OBJECT--\n\n");
     System.out.flush();
   }
-  
+
   public static void printall() {
- // Explore.go(Package.class);
+    // Explore.go(Package.class);
     final ClassLoadingMXBean a = ManagementFactory.getClassLoadingMXBean();
     System.out.println(a.getLoadedClassCount());
     System.out.println(a.getTotalLoadedClassCount());
@@ -151,7 +151,7 @@ import il.org.spartan.etc.*;
     dump.go(ManagementFactory.getRuntimeMXBean());
     dump.go(ManagementFactory.getThreadMXBean());
   }
-  
+
   public static void main(final @NotNull String[] args) {
     printall();
     System.exit(1);

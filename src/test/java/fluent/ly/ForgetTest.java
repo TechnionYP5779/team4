@@ -18,24 +18,24 @@ import org.junit.*;
     forget.it("1.4");
     forget.it(true);
   }
-  
+
   @Test public void forgetUnused1() {
-    forget.unused(1.0, new double[] {1.0});
+    forget.unused(1.0, new double[] { 1.0 });
   }
-  
+
   @Test public void forgetUnused2() {
     forget.unused(1.0, new Object[] {});
   }
-  
+
   @Test public void forgetUnused3() {
     forget.unused(1L, new Object[] {});
   }
-  
+
   @Test public void forgetUnused4() {
-    forget.unused(1, new int[] {1});
+    forget.unused(1, new int[] { 1 });
   }
-  
+
   @Test public void forgetUnused5() {
-    forget.unused(1L, new long[] {1L});
+    forget.unused(1L, new long[] { 1L });
   }
 }

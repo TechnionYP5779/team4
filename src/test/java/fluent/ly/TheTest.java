@@ -46,7 +46,7 @@ import il.org.spartan.*;
   @Test public void previousOfNull() {
     isNull(the.previous(null, null));
   }
-  
+
   @Test public void previousOfFirst() {
     isNull(the.previous(Integer.valueOf(1), l));
   }
@@ -144,13 +144,12 @@ import il.org.spartan.*;
     l1.add(Integer.valueOf(3));
     azzert.that(the.secondOf(l1), is(Integer.valueOf(3)));
   }
-  
+
   @Test public void secondOfList2() {
     @Nullable final List<@Nullable Integer> l1 = new ArrayList<>();
     l1.add(Integer.valueOf(4));
     azzert.isNull(the.secondOf(l1));
   }
-
 
   @Test public void secondOfnullList() {
     @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
@@ -158,74 +157,74 @@ import il.org.spartan.*;
     l1 = null;
     isNull(the.secondOf(l1));
   }
-  
+
   @Test public void tailOf() {
-    azzert.that(the.tailOf(new String[] {"a", "b", "c"}), is(new String[] {"b", "c"}));
+    azzert.that(the.tailOf(new String[] { "a", "b", "c" }), is(new String[] { "b", "c" }));
   }
-  
+
   @Test public void sqr1() {
     azzert.that(the.sqr(1), is(1));
   }
-  
+
   @Test public void sqr2() {
     azzert.that(the.sqr(0), is(0));
   }
-  
+
   @Test public void sqr3() {
     azzert.that(the.sqr(-1), is(1));
   }
-  
+
   @Test public void headOfNullList() {
     azzert.isNull(the.headOf(null));
   }
-  
+
   @Test public void headOfEmptyList() {
     azzert.isNull(the.headOf(new ArrayList<String>()));
   }
-  
+
   @Test public void last1() {
     @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
     l1.add(Integer.valueOf(1));
     azzert.that(the.last(l1), is(Integer.valueOf(1)));
   }
-  
+
   @Test public void last2() {
     azzert.isNull(the.last(null));
   }
-  
+
   @Test public void last3() {
     azzert.isNull(the.last(new ArrayList<>()));
   }
-  
+
   @Test @SuppressWarnings("null") public void lastOf() {
     azzert.that(the.lastOf(new String[] { "a", "b", "c" }), is("c"));
   }
-  
+
   @Test public void onlyOneOf1() {
     azzert.isNull(the.onlyOneOf(null));
   }
-  
+
   @Test public void onlyOneOf2() {
     @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
     l1.add(Integer.valueOf(1));
     azzert.that(the.onlyOneOf(l1), is(Integer.valueOf(1)));
   }
-  
+
   @Test public void onlyOneOf3() {
     @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
     l1.add(Integer.valueOf(1));
     l1.add(Integer.valueOf(1));
     azzert.isNull(the.onlyOneOf(l1));
   }
-  
+
   @Test public void lastOfString() {
     azzert.that(the.lastOf("123"), is('3'));
   }
-  
+
   @Test public void lastOfSet() {
     azzert.notNull(the.lastOf(new HashSet<>()));
   }
-  
+
   @Test public void lastOfSetIterator() {
     Set<String> i = new HashSet<>();
     i.add("a");

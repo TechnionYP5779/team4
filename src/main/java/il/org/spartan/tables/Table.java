@@ -16,7 +16,7 @@ import il.org.spartan.utils.*;
  * including aggregation information.
  * @author Yossi Gil
  * @since 2016-12-25 */
-@SuppressWarnings({"null", "resource"}) public class Table extends Row<Table> implements Closeable {
+@SuppressWarnings({ "null", "resource" }) public class Table extends Row<Table> implements Closeable {
   private static final long serialVersionUID = 0x4AA7BE471985E874L;
   String path;
 

@@ -13,20 +13,15 @@ import il.org.spartan.utils.Accumulator.*;
     final @NotNull Last c = new Last();
     azzert.that(as.bit(false), is(0));
     azzert.that(c.value(), is(0));
-    
     c.add(true);
     azzert.that(c.value(), is(1));
     azzert.that(as.bit(false), is(0));
-    
     c.add(false);
     azzert.that(c.value(), is(0));
-    
     c.add(false);
     azzert.that(c.value(), is(0));
-    
     c.add(true);
     azzert.that(c.value(), is(1));
-    
     c.add(true);
     azzert.that(c.value(), is(1));
   }

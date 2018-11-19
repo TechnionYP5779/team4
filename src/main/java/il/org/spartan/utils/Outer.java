@@ -7,7 +7,7 @@ import il.org.spartan.*;
 /** TODO Yossi Gil: document class
  * @author Yossi Gil
  * @since 2017-03-21 */
-@SuppressWarnings({"unchecked", "null"}) public class Outer<Inner> {
+@SuppressWarnings({ "unchecked", "null" }) public class Outer<Inner> {
   public Inner inner;
 
   public Outer(final Inner inner) {

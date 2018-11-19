@@ -12,11 +12,10 @@ import fluent.ly.*;
       static final long serialVersionUID = 1;
     }).flipping(), is(Double.NaN));
   }
-  
+
   @Test public void testUnit() {
     azzert.isNull((new ImmutableStatistics() {
       static final long serialVersionUID = 1;
     }).unit());
   }
- 
 }

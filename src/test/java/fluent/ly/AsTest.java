@@ -33,11 +33,11 @@ import org.junit.*;
   @Test public void stringOfNullString() {
     azzert.that(as.string(null), is("null"));
   }
-  
+
   @Test public void stringOfNullObject() {
-    azzert.that(as.string((Object)null), is("null"));
+    azzert.that(as.string((Object) null), is("null"));
   }
-  
+
   @Test public void stringOfString() {
     azzert.that(as.string(""), is(""));
   }
@@ -106,11 +106,11 @@ import org.junit.*;
   @Test public void charToString() {
     azzert.that(as.string('a'), is("a"));
   }
-  
+
   @Test public void strings1() {
     azzert.that(as.strings(null), is(new String[] {}));
   }
-  
+
   @Test public void strings2() {
     List<String> l = new ArrayList<>();
     l.add(null);
