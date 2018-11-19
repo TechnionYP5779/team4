@@ -8,7 +8,7 @@ import il.org.spartan.utils.Proposition.*;
  * @param <R>
  * @author Yossi Gil
  * @since 2017-03-19 */
-public abstract class PropositionReducer<R> extends Reduce<R> {
+@SuppressWarnings("unused") public abstract class PropositionReducer<R> extends Reduce<R> {
   public PropositionReducer(final Reduce<R> inner) {
     this.inner = inner;
     assert inner != this;
@@ -59,37 +59,37 @@ public abstract class PropositionReducer<R> extends Reduce<R> {
     return reduce($, post(o));
   }
 
-  protected R ante(@SuppressWarnings("unused") final Proposition.Not __) {
+  protected R ante( final Proposition.Not __) {
     return reduce();
   }
 
-  protected R ante(@SuppressWarnings("unused") final Proposition.Singleton __) {
+  protected R ante( final Proposition.Singleton __) {
     return reduce();
   }
 
-  protected R ante(@SuppressWarnings("unused") final Some __) {
+  protected R ante( final Some __) {
     return reduce();
   }
 
-  protected R inter(@SuppressWarnings("unused") final And __) {
+  protected R inter( final And __) {
     return reduce();
   }
 
-  protected R inter(@SuppressWarnings("unused") final Or __) {
+  protected R inter( final Or __) {
     return reduce();
   }
 
   protected abstract R map(BooleanSupplier ¢);
 
-  protected R post(@SuppressWarnings("unused") final Proposition.Not __) {
+  protected R post( final Proposition.Not __) {
     return reduce();
   }
 
-  protected R post(@SuppressWarnings("unused") final Proposition.Singleton __) {
+  protected R post( final Proposition.Singleton __) {
     return reduce();
   }
 
-  protected R post(@SuppressWarnings("unused") final Some __) {
+  protected R post( final Some __) {
     return reduce();
   }
 
