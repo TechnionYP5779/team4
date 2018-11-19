@@ -16,6 +16,19 @@ import fluent.ly.*;
     out.out_message("hello");
     azzert.that(outContent + "", is("hello"));
   }
+  
+  @Test public void out_message23() {
+    final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(outContent));
+    out.out_message("bye bye");
+    azzert.that(outContent + "", is("bye bye"));
+  }
+  @Test public void out_message24() {
+    final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(outContent));
+    out.out_message("whatsup");
+    azzert.that(outContent + "", is("whatsup"));
+  }
 
   @Test public void out_message2() {
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -23,6 +36,14 @@ import fluent.ly.*;
     out.out_message("hello", true);
     azzert.that(outContent + "", is("hello = true\n"));
   }
+  
+  @Test public void out_message25() {
+    final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(outContent));
+    out.out_message("noWay", true);
+    azzert.that(outContent + "", is("noWay = true\n"));
+  }
+
 
   @Test public void out_collection() {
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
