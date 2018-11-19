@@ -5,7 +5,6 @@ import java.util.logging.*;
 
 import static java.lang.String.*;
 
-import static fluent.ly.azzert.*;
 
 
 import org.junit.*;
@@ -24,8 +23,8 @@ import org.junit.*;
           return msg;
       }    
 
-      @Override public void publish(LogRecord record) {
-          msg = record.getMessage();
+      @Override public void publish(LogRecord ¢) {
+          msg = ¢.getMessage();
       }
 
       @Override public void close(){/**/}
@@ -107,7 +106,6 @@ import org.junit.*;
   
   @Test public void ioExceptionIO() {
     note.io(new IOException());
-    String l = lh.get() + "";
     assert (lh.get() + "").contains("IOException");
   }
 }

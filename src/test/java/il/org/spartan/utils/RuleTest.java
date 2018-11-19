@@ -7,8 +7,6 @@ import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.*;
-import static fluent.ly.azzert.*;
-import static il.org.spartan.utils.Rule.*;
 @SuppressWarnings("static-method") public class RuleTest {
   static final LogHandler lh = (new RuleTest()).new LogHandler();
   
@@ -20,8 +18,8 @@ import static il.org.spartan.utils.Rule.*;
           return msg;
       }    
 
-      @Override public void publish(LogRecord record) {
-          msg = record.getMessage();
+      @Override public void publish(LogRecord ¢) {
+          msg = ¢.getMessage();
       }
 
       @Override public void close(){/**/}
@@ -47,7 +45,7 @@ import static il.org.spartan.utils.Rule.*;
         return box.boxInteger(unbox.unboxInteger(¢) + 1);
       }
 
-      @Override public boolean check(@Nullable Integer n) {
+      @Override public boolean check(@Nullable Integer __) {
         // TODO Auto-generated method stub
         return false;
       }

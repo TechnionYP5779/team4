@@ -78,7 +78,13 @@ import il.org.spartan.utils.*;
   }
 
   @NotNull static String name(final @Nullable Object ¢) {
-    String $ = ¢ == null ? English.name("null") : English.name(¢.getClass());
+    String $;
+    if (¢ != null)
+      $ = English.name(¢.getClass());
+    else {
+      $ = English.name("null");
+      forget.it($);
+    }
     return $;
   }
 
