@@ -78,7 +78,8 @@ import il.org.spartan.utils.*;
   }
 
   @NotNull static String name(final @Nullable Object ¢) {
-    return English.name(¢ == null ? "null" : ¢.getClass());
+    String $ = ¢ == null ? English.name("null") : English.name(¢.getClass());
+    return $;
   }
 
   /** Get the plural form of the word if needed, by adding an 'es' to its end.
