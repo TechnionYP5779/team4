@@ -23,7 +23,7 @@ import il.org.spartan.utils.*;
     azzert.that(Inflection.stem("shake").getIng(), is("shakeing"));
   }
   @Test public void get11() {
-    azzert.that(Inflection.stem("sleep").get(), is("shake"));
+    azzert.that(Inflection.stem("sleep").get(), is("sleep"));
   }
 
   @Test public void get22() {
@@ -64,9 +64,15 @@ import il.org.spartan.utils.*;
   @Test public void lower() {
     azzert.that(English.lowerFirstLetter("hii"), is("hii"));
   }
+  @Test public void lower2() {
+    azzert.that(English.lowerFirstLetter("Hi"), is("hi"));
+  }
 
   @Test public void classs() {
     azzert.that(English.name(String.class), is("String"));
+  }
+  @Test public void classs2() {
+    azzert.that(English.name(Integer.class), is("Integer"));
   }
 
   @Test public void classss() {
