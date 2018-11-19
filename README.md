@@ -1,11 +1,3 @@
-[Installation Instructions](https://github.com/SpartanRefactoring/Spartanizer/wiki/Installation-Instructions "Installation") | 
-[Video Demo](https://github.com/SpartanRefactoring/Spartanizer/wiki/Video-Demos "Demos") |
-[Background](https://github.com/SpartanRefactoring/Spartanizer/wiki/Background "Background") | 
-[User Manual](https://github.com/SpartanRefactoring/Spartanizer/wiki/User-Manual "User Manual") | 
-[Theoretical Background](https://github.com/SpartanRefactoring/Spartanizer/wiki/Theoretical-Background "Theoretical Background") | 
-[Developer Guide](https://github.com/SpartanRefactoring/Spartanizer/wiki/Developer-Guide "Developer Guide") | 
-[Tippers' List](https://github.com/SpartanRefactoring/Spartanizer/wiki/List-of-Tippers "List of the Tippers")
-
 ## Development Status
 [![Build Status](https://travis-ci.org/TechnionYP5779/team4.svg?branch=master)](https://travis-ci.org/TechnionYP5779/team4)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/TechnionYP5779/team4.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/TechnionYP5779/team4/alerts/)
