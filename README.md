@@ -13,17 +13,9 @@
 [![codecov](https://codecov.io/gh/TechnionYP5779/team4/branch/master/graph/badge.svg)](https://codecov.io/gh/TechnionYP5779/team4)
 
 
-## Articles
-
-- Y. Gil and M. Orrú, “Code spartanization: One Rational Approach for Resolving Religious Style Wars” in Proc. of SAC’17, the 32nd ACM Symposium on Applied Computing, Marrakesh, Morocco, April 3–7 2017.
-
-- Y. Gil and M. Orrù, "The Spartanizer: Massive automatic refactoring," 
-2017 IEEE 24th International Conference on Software Analysis, Evolution and Reengineering (SANER), Klagenfurt, 2017, pp. 477-481. doi: 10.1109/SANER.2017.7884657
-[IEEExplore](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7884657&isnumber=7884596)
-
-- [The Spartanizer on IEEE Software Blog](http://blog.ieeesoftware.org/2017/03/the-spartanizer.html "IEEE Software Blog")
-
-
+# Project Description
+This is part of the 2018-2019 yearly project @ Technion Israel Institute of Technology.
+Project goal is to improve the Spartanizer tool by refactoring it's code, adding documentation, improving test coverage, and much more.
 
 # <a name="introduction"></a>The Spartanizer is:
 - An Eclipse plugin
@@ -45,17 +37,6 @@ Institute of Technology], and was later developed for several years by
 different students and members of the Computer Science faculty.
 
 The refactorings made by this plug-in are based on the concept of Spartan Programming, which suggests guidelines for writing short, clean code. There's a lot of reading material on the subject in the [project wiki].
-
-## License
-The project is available under the **[MIT License]**
-
-[Release]: https://github.com/SpartanRefactoring/Spartanizer/releases/tag/2.6.3
-[Spartan Programming]: http://blog.codinghorror.com/spartan-programming/
-[project wiki]: https://github.com/SpartanRefactoring/spartan-refactoring/wiki/Spartan-Programming
-[Technion - Israel Institute of Technology]: http://www.technion.ac.il/en/
-[abstract syntax tree]: https://en.wikipedia.org/wiki/Abstract_syntax_tree
-[ASTVisitor]: http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jdt.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fjdt%2Fcore%2Fdom%2FASTVisitor.html
-[MIT License]: https://opensource.org/licenses/MIT
 
 ## Relevant Links
 https://lgtm.com/projects/g/TechnionYP5779/team4/
