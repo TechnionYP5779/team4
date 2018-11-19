@@ -163,4 +163,19 @@ import fluent.ly.*;
     out.out_object_array("hi", new Object[] { Integer.valueOf(1), Integer.valueOf(2) });
     azzert.that(outContent + "", is("Total of 2 hi:\n\t1\n\t2\n"));
   }
+  
+  @Test public void out_object_array12() {
+    final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(outContent));
+    out.out_object_array("tea", new Object[] { Integer.valueOf(1) });
+    azzert.that(outContent + "", is("Only one tea: 1\n"));
+  }
+
+  @Test public void out_object_array33() {
+    new out().getClass();
+    final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(outContent));
+    out.out_object_array("milk", new Object[] { Integer.valueOf(1), Integer.valueOf(2) });
+    azzert.that(outContent + "", is("Total of 2 milk:\n\t1\n\t2\n"));
+  }
 }
