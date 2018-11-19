@@ -39,4 +39,11 @@ import org.junit.*;
     azzert.that(range.from(box.boxInteger(1)).to(3).includes(5).from, is(1));
     azzert.that(range.from(box.boxInteger(1)).to(3).includes(5).to, is(3));
   }
+  
+  @Test public void iterators() {
+    assert range.from(box.boxInteger(1)).to(3).numbers().hasNext();
+    azzert.that(range.from(box.boxInteger(1)).to(3).numbers().next(), is(1));
+    assert range.from(box.boxInteger(1)).numbers().hasNext();
+    assert range.from(box.boxInteger(1)).to(3).iterator().hasNext();
+  }
 }
