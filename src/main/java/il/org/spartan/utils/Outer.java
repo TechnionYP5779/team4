@@ -17,7 +17,7 @@ import il.org.spartan.*;
   }
 
   @Override public boolean equals(final Object ¢) {
-    return ¢ == this || (¢ != null && getClass() == ¢.getClass() && equals((Outer<Inner>) ¢));
+    return ¢ == this || ¢ != null && getClass() == ¢.getClass() && equals((Outer<Inner>) ¢);
   }
 
   protected boolean equals(final Outer<Inner> other) {

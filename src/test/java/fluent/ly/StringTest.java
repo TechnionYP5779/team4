@@ -1,6 +1,5 @@
 package fluent.ly;
 
-import java.util.HashSet;
 import static fluent.ly.azzert.*;
 
 import java.io.*;
@@ -371,13 +370,13 @@ import org.junit.*;
   }
 
   @Test public void pretty2() {
-    Collection<String> c = new HashSet<>();
+    final Collection<String> c = new HashSet<>();
     c.add("a");
     azzert.that(string.pretty("a", c), is("1 a: a\n"));
   }
 
   @Test public void pretty3() {
-    Collection<String> c = new HashSet<>();
+    final Collection<String> c = new HashSet<>();
     c.add("a");
     c.add("b");
     azzert.that(string.pretty("a", c), is("2 as:\n\t1) a\n\t2) b\n"));

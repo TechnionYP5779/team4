@@ -59,37 +59,37 @@ import il.org.spartan.utils.Proposition.*;
     return reduce($, post(o));
   }
 
-  protected R ante( final Proposition.Not __) {
+  protected R ante(final Proposition.Not __) {
     return reduce();
   }
 
-  protected R ante( final Proposition.Singleton __) {
+  protected R ante(final Proposition.Singleton __) {
     return reduce();
   }
 
-  protected R ante( final Some __) {
+  protected R ante(final Some __) {
     return reduce();
   }
 
-  protected R inter( final And __) {
+  protected R inter(final And __) {
     return reduce();
   }
 
-  protected R inter( final Or __) {
+  protected R inter(final Or __) {
     return reduce();
   }
 
   protected abstract R map(BooleanSupplier ¢);
 
-  protected R post( final Proposition.Not __) {
+  protected R post(final Proposition.Not __) {
     return reduce();
   }
 
-  protected R post( final Proposition.Singleton __) {
+  protected R post(final Proposition.Singleton __) {
     return reduce();
   }
 
-  protected R post( final Some __) {
+  protected R post(final Some __) {
     return reduce();
   }
 

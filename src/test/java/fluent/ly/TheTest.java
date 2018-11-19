@@ -183,7 +183,7 @@ import il.org.spartan.*;
   }
 
   @Test public void last1() {
-    @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
+    @Nullable final List<@Nullable Integer> l1 = new ArrayList<>();
     l1.add(Integer.valueOf(1));
     azzert.that(the.last(l1), is(Integer.valueOf(1)));
   }
@@ -205,13 +205,13 @@ import il.org.spartan.*;
   }
 
   @Test public void onlyOneOf2() {
-    @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
+    @Nullable final List<@Nullable Integer> l1 = new ArrayList<>();
     l1.add(Integer.valueOf(1));
     azzert.that(the.onlyOneOf(l1), is(Integer.valueOf(1)));
   }
 
   @Test public void onlyOneOf3() {
-    @Nullable List<@Nullable Integer> l1 = new ArrayList<>();
+    @Nullable final List<@Nullable Integer> l1 = new ArrayList<>();
     l1.add(Integer.valueOf(1));
     l1.add(Integer.valueOf(1));
     azzert.isNull(the.onlyOneOf(l1));
@@ -226,7 +226,7 @@ import il.org.spartan.*;
   }
 
   @Test public void lastOfSetIterator() {
-    Set<String> i = new HashSet<>();
+    final Set<String> i = new HashSet<>();
     i.add("a");
     i.add("a");
     azzert.nay(the.lastOf(i).iterator().hasNext());

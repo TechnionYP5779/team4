@@ -112,7 +112,7 @@ import org.junit.*;
   }
 
   @Test public void strings2() {
-    List<String> l = new ArrayList<>();
+    final List<String> l = new ArrayList<>();
     l.add(null);
     azzert.that(as.strings(l), is(new String[] {}));
   }

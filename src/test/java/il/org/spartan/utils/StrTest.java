@@ -22,7 +22,7 @@ import fluent.ly.*;
   }
 
   @Test public void testSet1() {
-    Str s = new Str();
+    final Str s = new Str();
     azzert.isNull(s.inner());
     azzert.aye(new Str().isEmptyx());
     azzert.not(new Str().notEmpty());
@@ -32,21 +32,21 @@ import fluent.ly.*;
   }
 
   @Test public void testSet2() {
-    Str s = new Str();
+    final Str s = new Str();
     s.set("abc");
     azzert.that(s.inner(), is("abc"));
     azzert.not(new Str().isEmptyx());
   }
 
   @Test public void testSet3() {
-    Str s = new Str();
+    final Str s = new Str();
     s.set("123");
     azzert.that(s.inner(), is("123"));
     azzert.not(new Str().isEmptyx());
   }
 
   @Test public void testSet4() {
-    Str s = new Str();
+    final Str s = new Str();
     s.set("");
     azzert.that(s.inner(), is(""));
     azzert.aye(new Str().isEmptyx());
@@ -54,7 +54,7 @@ import fluent.ly.*;
   }
 
   @Test public void testSet5() {
-    Str s = new Str();
+    final Str s = new Str();
     s.set("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
     azzert.not(new Str().isEmptyx());
     azzert.that(s.inner(), is("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));

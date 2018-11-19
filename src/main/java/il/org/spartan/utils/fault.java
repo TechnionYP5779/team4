@@ -7,7 +7,7 @@ import java.util.stream.*;
 import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
-import il.org.spartan.Utils;
+import il.org.spartan.*;
 
 /** Fluent API
  * @author Yossi Gil
