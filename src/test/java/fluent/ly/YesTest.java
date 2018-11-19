@@ -1,8 +1,4 @@
 package fluent.ly;
-
-import static fluent.ly.azzert.*;
-
-import org.jetbrains.annotations.*;
 import org.junit.*;
 
 @SuppressWarnings("static-method") public class YesTest {
