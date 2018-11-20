@@ -51,6 +51,10 @@ public enum unbox {
     return unbox.unboxShort(¢);
   }
 
+  public static byte it(final Byte ¢) {
+    return unbox.unboxByte(¢);
+  }
+
   public static char it(final Character ¢) {
     return unbox.unboxChar(¢);
   }
@@ -61,6 +65,10 @@ public enum unbox {
 
   public static short[] it(final Short[] ¢) {
     return unboxShortArray(¢);
+  }
+  
+  public static byte[] it(final Byte[] ¢) {
+    return unboxByteArray(¢);
   }
 
   public static char[] it(final Character[] ¢) {

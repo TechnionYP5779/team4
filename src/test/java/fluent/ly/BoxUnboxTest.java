@@ -55,8 +55,8 @@ import org.junit.*;
 
   @Test public void testByte() {
     final byte b = (byte) new Random().nextInt(Byte.MAX_VALUE);
-    azzert.that(unbox.unboxByte(box.boxByte(b)), is(b));
-    azzert.that(unbox.unboxByte(box.it(b)), is(b));
+    azzert.that(unbox.it(box.boxByte(b)), is(b));
+    azzert.that(unbox.it(box.it(b)), is(b));
   }
 
   @Test public void testBooleanArray() {
@@ -178,10 +178,10 @@ import org.junit.*;
     final byte[] arr = new byte[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = (byte) r.nextInt(Byte.MAX_VALUE);
-    final byte[] arr_res = unbox.unboxByteArray(box.boxByteArray(arr));
+    final byte[] arr_res = unbox.it(box.boxByteArray(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res[¢], is(arr[¢]));
-    final byte[] arr_res_2 = unbox.unboxByteArray(box.it(arr));
+    final byte[] arr_res_2 = unbox.it(box.it(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res_2[¢], is(arr[¢]));
   }
