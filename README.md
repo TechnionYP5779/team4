@@ -3,7 +3,7 @@
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/TechnionYP5779/team4.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/TechnionYP5779/team4/alerts/)
 [![SonarCube](https://sonarcloud.io/api/project_badges/measure?project=team4project&metric=alert_status)](https://sonarcloud.io/dashboard?id=team4project)
 
-[![GitHub issues](https://img.shields.io/github/issues/TechnionYP5779/team2.svg)](https://github.com/TechnionYP5779/team5/issues)
+[![GitHub issues](https://img.shields.io/github/issues/TechnionYP5779/team4.svg)](https://github.com/TechnionYP5779/team5/issues)
 [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/TechnionYP5779/team4.svg?maxAge=99999)](https://github.com/TechnionYP5779/team4/issues?q=is%3Aissue+is%3Aclosed)
 
 [![codecov](https://codecov.io/gh/TechnionYP5779/team4/branch/master/graph/badge.svg)](https://codecov.io/gh/TechnionYP5779/team4)
