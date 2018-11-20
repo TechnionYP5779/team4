@@ -1,4 +1,4 @@
-package il.org.spartan.utils;
+package fluent.ly;
 
 import java.io.*;
 import java.nio.charset.*;
@@ -8,8 +8,6 @@ import java.util.stream.*;
 import org.jetbrains.annotations.*;
 
 import static il.org.spartan.Utils.*;
-
-import fluent.ly.*;
 
 /** Fluent API
  * @author Yossi Gil
