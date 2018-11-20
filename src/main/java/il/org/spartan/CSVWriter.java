@@ -33,7 +33,8 @@ public final class CSVWriter {
   @SuppressWarnings("null") public CSVWriter(final @NotNull String fileName) {
     this.fileName = fileName;
     file = new File(fileName);
-    inner = open(file);
+    @SuppressWarnings("resource") @Nullable FileWriter fw = open(file);
+    inner = fw != null ? fw : new OutputStreamWriter(System.out);
   }
 
   public String close() {

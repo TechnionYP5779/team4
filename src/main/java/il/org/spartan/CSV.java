@@ -157,7 +157,7 @@ import fluent.ly.*;
    * @return Unescaped string */
   public static String unescape(final @NotNull String s) {
     if (NULL.equals(s))
-      return null;
+      return "null";
     boolean esc = false;
     final int length = s.length();
     final @NotNull StringBuilder $ = new StringBuilder(length);

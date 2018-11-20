@@ -433,6 +433,6 @@ import il.org.spartan.Utils.FoundHandleForT.*;
   }
 
   static int hash(final Object ¢) {
-    return ¢ == null ? 0 : ¢.hashCode();
+    return ¢.hashCode();
   }
 }

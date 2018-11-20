@@ -129,7 +129,11 @@ import il.org.spartan.utils.*;
     if (!stats.isEmpty())
       $ += "The table consists of " + stats.size() + " numerical columns: " + stats.keySet() + "\n";
     final Int n = new Int();
-    return $ + writers.stream().map(λ -> "\t " + ++n.inner + ". " + λ.fileName + "\n").reduce((x, y) -> x + y).get();
+    Optional<String> op = writers.stream().map(λ -> "\t " + ++n.inner + ". " + λ.fileName + "\n").reduce((x, y) -> x + y);
+    if(op.isPresent()) {
+      return $ + op.get();
+    }
+    return $;
   }
 
   RealStatistics getRealStatistics(final @NotNull String key) {

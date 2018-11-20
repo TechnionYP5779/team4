@@ -38,6 +38,8 @@ import static il.org.spartan.Utils.*;
       }
 
       @Override public Integer next() {
+        if(!hasNext())
+          throw new NoSuchElementException();
         return is[current++];
       }
     };
@@ -176,6 +178,8 @@ import static il.org.spartan.Utils.*;
       }
 
       @Override public Integer next() {
+        if(!hasNext())
+          throw new NoSuchElementException();
         return is[current++];
       }
     };

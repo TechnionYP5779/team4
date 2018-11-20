@@ -213,7 +213,7 @@ public class azzert extends org.junit.Assert {
   }
 
   public static void assertNotEquals(final @NotNull String s1, final @NotNull String s2) {
-    assertNotEquals(null, s1, s2);
+    assertNotEquals("", s1, s2);
   }
 
   public static void assertNotEquals(final @NotNull String message, final @NotNull String s1, final @NotNull String s2) {

@@ -218,7 +218,7 @@ import il.org.spartan.utils.Separate.*;
   }
 
   public final CSVLine put(final @NotNull String key, @Nullable final Object[] os) {
-    return put(key, os == null ? null : Separate.by(os, ARRAY_SEPARATOR));
+    return put(key, os == null ? "null" : Separate.by(os, ARRAY_SEPARATOR));
   }
 
   /** Add a key and a <code><b>short</b></code> value to this instance

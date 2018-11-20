@@ -63,6 +63,8 @@ import fluent.ly.*;
       }
 
       @Override @Nullable public File next() {
+        if(!hasNext())
+          throw new NoSuchElementException();
         return next;
       }
     };
@@ -154,6 +156,8 @@ import fluent.ly.*;
       }
 
       @Override public File next() {
+        if(!hasNext())
+          throw new NoSuchElementException();
         return next;
       }
 

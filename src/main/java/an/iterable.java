@@ -28,6 +28,8 @@ public interface iterable {
           }
 
           @Override public T next() {
+            if(!hasNext())
+              throw new NoSuchElementException();
             return ts[current++];
           }
         };
@@ -50,6 +52,8 @@ public interface iterable {
           }
 
           @Override public T next() {
+            if(!hasNext())
+              throw new NoSuchElementException();
             if (!a.hasNext() || !b.hasNext())
               return a.hasNext() ? a.next() : b.hasNext() ? b.next() : null;
             nextA = !nextA;
