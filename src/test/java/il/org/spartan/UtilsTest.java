@@ -11,6 +11,7 @@ import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.*;
+import il.org.spartan.Utils.*;
 
 /** A static nested class hosting unit tests for the nesting class Unit test for
  * the containing class. Note the naming convention: a) names of test methods do
