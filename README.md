@@ -33,7 +33,6 @@ The refactorings made by this plug-in are based on the concept of Spartan Progra
 
 ## Relevant Links
 https://lgtm.com/projects/g/TechnionYP5779/team4/
-https://www.sonarqube.org/
 
 ## References 
 This project is a work of team 4 on the original [SpartanRefactoring project](https://github.com/SpartanRefactoring/Main)
