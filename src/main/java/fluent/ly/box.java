@@ -107,8 +107,8 @@ public enum box {
     return cantBeNull(Long.valueOf(¢));
   }
 
-  public static Long @NotNull [] boxLongArray(final long ls[]) {
-    final Long @NotNull [] $ = new Long[ls.length];
+  @NotNull public static Long @NotNull [] boxLongArray(final long ls[]) {
+    final @NotNull Long @NotNull [] $ = new @NotNull Long @NotNull [ls.length];
     for (int ¢ = 0; ¢ < $.length; ++¢)
       $[¢] = boxLong(ls[¢]);
     return $;
@@ -122,8 +122,8 @@ public enum box {
     return cantBeNull(Short.valueOf(¢));
   }
 
-  public static Short @NotNull [] boxShortArray(final short ss[]) {
-    final Short @NotNull [] $ = new Short @NotNull [ss.length];
+  @NotNull public static Short @NotNull [] boxShortArray(final short ss[]) {
+    final @NotNull Short @NotNull [] $ = new @NotNull Short @NotNull [ss.length];
     for (int ¢ = 0; ¢ < $.length; ++¢)
       $[¢] = boxShort(ss[¢]);
     return $;
@@ -134,14 +134,11 @@ public enum box {
    * @return a non-<code><b>null</b></code> {@link Boolean} with the value of
    *         <code>c</code> */
   @NotNull public static Boolean it(final boolean ¢) {
-    return cantBeNull(Boolean.valueOf(¢));
+    return cantBeNull(box.boxBoolean(¢));
   }
 
-  public static Boolean @NotNull [] it(final boolean bs[]) {
-    final Boolean @NotNull [] $ = new Boolean @NotNull [bs.length];
-    for (int ¢ = 0; ¢ < $.length; ++¢)
-      $[¢] = boxBoolean(bs[¢]);
-    return $;
+  public static Boolean @NotNull [] it(final boolean ¢[]) {
+    return cantBeNull(boxBooleanArray(¢));
   }
 
   /** box a <code><b>byte</b></code> into a {@link Byte} object.
@@ -149,25 +146,19 @@ public enum box {
    * @return a non-<code><b>null</b></code> {@link Long} with the value of
    *         <code>l</code> */
   @NotNull public static Byte it(final byte ¢) {
-    return cantBeNull(Byte.valueOf(¢));
+    return cantBeNull(box.boxByte(¢));
   }
 
-  public static Byte @NotNull [] it(final byte bs[]) {
-    final Byte @NotNull [] $ = new Byte @NotNull [bs.length];
-    for (int ¢ = 0; ¢ < $.length; ++¢)
-      $[¢] = boxByte(bs[¢]);
-    return $;
+  public static Byte @NotNull [] it(final byte ¢[]) {
+    return cantBeNull(boxByteArray(¢));
   }
 
   @NotNull public static Character it(final char ¢) {
-    return cantBeNull(Character.valueOf(¢));
+    return cantBeNull(box.boxCharacter(¢));
   }
 
-  public static Character @NotNull [] it(final char cs[]) {
-    final Character @NotNull [] $ = new Character @NotNull [cs.length];
-    for (int ¢ = 0; ¢ < $.length; ++¢)
-      $[¢] = it(cs[¢]);
-    return $;
+  public static Character @NotNull [] it(final char ¢[]) {
+    return cantBeNull(boxCharacterArray(¢));
   }
 
   /** box a <code><b>double</b></code> into a {@link Double} object.
@@ -175,14 +166,11 @@ public enum box {
    * @return a non-<code><b>null</b></code> {@link Double} with the value of
    *         <code>d</code> */
   @NotNull public static Double it(final double ¢) {
-    return cantBeNull(Double.valueOf(¢));
+    return cantBeNull(box.boxDouble(¢));
   }
 
-  public static Double @NotNull [] it(final double ds[]) {
-    final Double @NotNull [] $ = new Double[ds.length];
-    for (int ¢ = 0; ¢ < $.length; ++¢)
-      $[¢] = boxDouble(ds[¢]);
-    return $;
+  public static Double @NotNull [] it(final double ¢[]) {
+    return cantBeNull(boxDoubleArray(¢));
   }
 
   /** box a <code><b>float</b></code> into a {@link Float} object.
@@ -190,14 +178,11 @@ public enum box {
    * @return a non-<code><b>null</b></code> {@link Float} with the value of
    *         <code>f</code> */
   @NotNull public static Float it(final float ¢) {
-    return cantBeNull(Float.valueOf(¢));
+    return cantBeNull(box.boxFloat(¢));
   }
 
-  public static Float @NotNull [] it(final float fs[]) {
-    final Float @NotNull [] $ = new Float @NotNull [fs.length];
-    for (int ¢ = 0; ¢ < $.length; ++¢)
-      $[¢] = it(fs[¢]);
-    return $;
+  public static Float @NotNull [] it(final float ¢[]) {
+    return cantBeNull(boxFloatArray(¢));
   }
 
   /** box an <code><b>int</b></code> into an {@link Integer} object.
@@ -214,24 +199,18 @@ public enum box {
   }
 
   @NotNull public static Long it(final long ¢) {
-    return cantBeNull(Long.valueOf(¢));
+    return cantBeNull(box.boxLong(¢));
   }
 
-  @NotNull public static Long @NotNull [] it(final long ls[]) {
-    final @NotNull Long @NotNull [] $ = new @NotNull Long @NotNull [ls.length];
-    for (int ¢ = 0; ¢ < $.length; ++¢)
-      $[¢] = it(ls[¢]);
-    return $;
+  @NotNull public static Long @NotNull [] it(final long ¢[]) {
+    return cantBeNull(boxLongArray(¢));
   }
 
   @NotNull public static Short it(final short ¢) {
-    return cantBeNull(Short.valueOf(¢));
+    return cantBeNull(box.boxShort(¢));
   }
 
-  @NotNull public static Short @NotNull [] it(final short ss[]) {
-    final @NotNull Short @NotNull [] $ = new @NotNull Short @NotNull [ss.length];
-    for (int ¢ = 0; ¢ < $.length; ++¢)
-      $[¢] = it(ss[¢]);
-    return $;
+  @NotNull public static Short @NotNull [] it(final short ¢[]) {
+    return cantBeNull(boxShortArray(¢));
   }
 }
