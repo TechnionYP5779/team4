@@ -101,24 +101,8 @@ import il.org.spartan.*;
     azzert.that(t2, is(t1));
   }
 
-  static void assertFalse(final boolean ¢) {
-    azzert.nay(¢);
-  }
-
-  static void assertFalse(final @NotNull String reason, final boolean b) {
-    azzert.nay(reason, b);
-  }
-
   static <T> void assertNotEquals(final T t1, final T t2) {
     azzert.that(t2, is(t1));
-  }
-
-  static void assertTrue(final boolean ¢) {
-    assert ¢;
-  }
-
-  static void assertTrue(final @NotNull String reason, final boolean b) {
-    azzert.aye(reason, b);
   }
 
   @NotNull static SeparationSubject these(final int @NotNull [] ¢) {
