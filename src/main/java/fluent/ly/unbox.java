@@ -47,6 +47,10 @@ public enum unbox {
     return unbox.unboxFloat(¢);
   }
 
+  public static short it(final Short ¢) {
+    return unbox.unboxShort(¢);
+  }
+
   public static char it(final Character ¢) {
     return unbox.unboxChar(¢);
   }
@@ -55,12 +59,21 @@ public enum unbox {
     return unboxIntegerArray(¢);
   }
 
+  public static short[] it(final Short[] ¢) {
+    return unboxShortArray(¢);
+  }
+
   public static char[] it(final Character[] ¢) {
     return unboxCharArray(¢);
   }
 
   public static int[] it(final List<Integer> ¢) {
     return it(¢.toArray(new Integer[¢.size()]));
+  }
+
+
+  public static short[] it(final Collection<Short> ¢) {
+    return it(¢.toArray(new Short[¢.size()]));
   }
 
   public static boolean unboxBoolean(final @NotNull Boolean ¢) {
