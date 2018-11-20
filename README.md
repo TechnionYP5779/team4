@@ -1,6 +1,7 @@
 ## Development Status
 [![Build Status](https://travis-ci.org/TechnionYP5779/team4.svg?branch=master)](https://travis-ci.org/TechnionYP5779/team4)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/TechnionYP5779/team4.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/TechnionYP5779/team4/alerts/)
+[![SonarCubeQuality](https://sonarcloud.io/api/project_badges/measure?project=team4project&metric=alert_status)](https://sonarcloud.io/dashboard?id=team4project)
 
 [![GitHub issues](https://img.shields.io/github/issues/TechnionYP5779/team4.svg)](https://github.com/TechnionYP5779/team5/issues)
 [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/TechnionYP5779/team4.svg?maxAge=100)](https://github.com/TechnionYP5779/team4/issues?q=is%3Aissue+is%3Aclosed)
