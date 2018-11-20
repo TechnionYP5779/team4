@@ -31,7 +31,7 @@ import org.junit.*;
 
   @Test public void testFloat() {
     final float f = new Random().nextFloat();
-    assert unbox.it(box.boxFloat(f)) - f > -1 * FLOAT_DELTA && unbox.it(box.boxFloat(f)) - f < FLOAT_DELTA;
+    assert unbox.it(box.it(f)) - f > -1 * FLOAT_DELTA && unbox.it(box.it(f)) - f < FLOAT_DELTA;
     assert unbox.it(box.it(f)) - f > -1 * FLOAT_DELTA && unbox.it(box.it(f)) - f < FLOAT_DELTA;
   }
 
@@ -113,7 +113,7 @@ import org.junit.*;
     final float[] arr = new float[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = r.nextFloat();
-    final float[] arr_res = unbox.it(box.boxFloatArray(arr));
+    final float[] arr_res = unbox.it(box.it(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.aye(arr_res[¢] - arr[¢] > -1 * FLOAT_DELTA && arr_res[¢] - arr[¢] < FLOAT_DELTA);
     final float[] arr_res_2 = unbox.it(box.it(arr));
