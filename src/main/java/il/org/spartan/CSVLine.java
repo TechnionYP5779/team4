@@ -153,7 +153,7 @@ import il.org.spartan.utils.Separate.*;
   public CSVLine put(final @NotNull String key, final double value, final @NotNull String format, @NotNull final FormatSpecifier... ss) {
     aggregator.record(key, value, ss);
     ___.sure(ss.length == 0 || aggregating());
-    return put(key, String.format(format, boxDouble(value)));
+    return put(key, String.format(format, it(value)));
   }
 
   /** Add a key and a general <code><b>float</b><code> value to this instance

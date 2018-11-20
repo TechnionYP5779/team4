@@ -35,7 +35,7 @@ public abstract class Statistics {
     final double median = median(ds), mad = mad(ds);
     for (final double ¢ : ds)
       if (median - 2 * mad <= ¢ && ¢ <= median + 2 * mad)
-        $.add(boxDouble(¢));
+        $.add(it(¢));
     return Iterables.toArray($);
   }
 
