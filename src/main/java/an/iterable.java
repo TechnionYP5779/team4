@@ -18,21 +18,17 @@ public interface iterable {
    * @param ts what to iterate on
    * @return an {@link Iterable} over the parameter */
   @SafeVarargs @NotNull static <T> Iterable<T> over(final T... ts) {
-    return new Iterable<T>() {
-      @Override @NotNull public Iterator<T> iterator() {
-        return new Iterator<T>() {
-          int current;
+    return () -> new Iterator<T>() {
+      int current;
 
-          @Override public boolean hasNext() {
-            return current < ts.length;
-          }
+      @Override public boolean hasNext() {
+        return current < ts.length;
+      }
 
-          @Override public T next() {
-            if(!hasNext())
-              throw new NoSuchElementException();
-            return ts[current++];
-          }
-        };
+      @Override public T next() {
+        if (!hasNext())
+          throw new NoSuchElementException();
+        return ts[current++];
       }
     };
   }
