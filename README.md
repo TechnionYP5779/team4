@@ -1,28 +1,13 @@
-[Installation Instructions](https://github.com/SpartanRefactoring/Spartanizer/wiki/Installation-Instructions "Installation") | 
-[Video Demo](https://github.com/SpartanRefactoring/Spartanizer/wiki/Video-Demos "Demos") |
-[Background](https://github.com/SpartanRefactoring/Spartanizer/wiki/Background "Background") | 
-[User Manual](https://github.com/SpartanRefactoring/Spartanizer/wiki/User-Manual "User Manual") | 
-[Theoretical Background](https://github.com/SpartanRefactoring/Spartanizer/wiki/Theoretical-Background "Theoretical Background") | 
-[Developer Guide](https://github.com/SpartanRefactoring/Spartanizer/wiki/Developer-Guide "Developer Guide") | 
-[Tippers' List](https://github.com/SpartanRefactoring/Spartanizer/wiki/List-of-Tippers "List of the Tippers")
-
 ## Development Status
 [![Build Status](https://travis-ci.org/TechnionYP5779/team4.svg?branch=master)](https://travis-ci.org/TechnionYP5779/team4)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/TechnionYP5779/team4.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/TechnionYP5779/team4/alerts/)
 [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/TechnionYP5779/team4.svg?maxAge=2592000)]()
+[![codecov](https://codecov.io/gh/TechnionYP5779/team4/branch/master/graph/badge.svg)](https://codecov.io/gh/TechnionYP5779/team4)
 
 
-## Articles
-
-- Y. Gil and M. Orrú, “Code spartanization: One Rational Approach for Resolving Religious Style Wars” in Proc. of SAC’17, the 32nd ACM Symposium on Applied Computing, Marrakesh, Morocco, April 3–7 2017.
-
-- Y. Gil and M. Orrù, "The Spartanizer: Massive automatic refactoring," 
-2017 IEEE 24th International Conference on Software Analysis, Evolution and Reengineering (SANER), Klagenfurt, 2017, pp. 477-481. doi: 10.1109/SANER.2017.7884657
-[IEEExplore](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7884657&isnumber=7884596)
-
-- [The Spartanizer on IEEE Software Blog](http://blog.ieeesoftware.org/2017/03/the-spartanizer.html "IEEE Software Blog")
-
-
+# Project Description
+This is part of the 2018-2019 yearly project @ Technion Israel Institute of Technology.
+Project goal is to improve the Spartanizer tool by refactoring it's code, adding documentation, improving test coverage, and much more.
 
 # <a name="introduction"></a>The Spartanizer is:
 - An Eclipse plugin
@@ -45,19 +30,8 @@ different students and members of the Computer Science faculty.
 
 The refactorings made by this plug-in are based on the concept of Spartan Programming, which suggests guidelines for writing short, clean code. There's a lot of reading material on the subject in the [project wiki].
 
-## License
-The project is available under the **[MIT License]**
-
-[Release]: https://github.com/SpartanRefactoring/Spartanizer/releases/tag/2.6.3
-[Spartan Programming]: http://blog.codinghorror.com/spartan-programming/
-[project wiki]: https://github.com/SpartanRefactoring/spartan-refactoring/wiki/Spartan-Programming
-[Technion - Israel Institute of Technology]: http://www.technion.ac.il/en/
-[abstract syntax tree]: https://en.wikipedia.org/wiki/Abstract_syntax_tree
-[ASTVisitor]: http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jdt.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fjdt%2Fcore%2Fdom%2FASTVisitor.html
-[MIT License]: https://opensource.org/licenses/MIT
-
 ## Relevant Links
-https://lgtm.com/
+https://lgtm.com/projects/g/TechnionYP5779/team4/
 https://www.sonarqube.org/
 
 ## References 
