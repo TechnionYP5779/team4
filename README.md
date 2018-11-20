@@ -12,8 +12,8 @@
 
 
 # Project Description
-This is part of the 2018-2019 yearly project @ Technion Israel Institute of Technology.
-Project goal is to improve the Spartanizer tool by refactoring it's code, adding documentation, improving test coverage, and much more.
+This is part of the 2018-2019 yearly project @ Technion Israel Institute of Technology.\
+Project goal is to take a small library and improve it by refactoring it's code, adding documentation, improving test coverage, and much more.
 
 # <a name="introduction"></a>The Spartanizer is:
 - An Eclipse plugin
@@ -21,26 +21,26 @@ Project goal is to improve the Spartanizer tool by refactoring it's code, adding
 - Make your code laconic: say much in few words.
 - Platform for other research: nano-patterns, source to source transformation, and The Athenizer
 
-<!-- <img style="float: right;" src="https://www.spartan.org.il/images/logo-header.png"/> -->
+The Spartanizer is an Eclipse plugin that offers tips for simplifying your code and make it shorter.
 
-The Spartanizer applies the principles of *[Spartan Programming]* to your Java code. It applies many different _tippers_, which are little rules that provide suggestions on how to shorten and
-simplify your code, e.g, by using fewer variables, factoring out common structures, more efficient use of control flow, etc. 
+The Spartanizer applies spartan programming principles to your code. It refactors your code so it is simpler, contains less variable names that take place in the program's namespaces and is supposed to make the code cleaner.
 
-The Spartanizer help you make a sequence small, nano-refactorings of your code, to make it shorter, and more conforming to a language of nano-patterns. The resulting code is not just shorter, it is more regular. The spartanization process tries to remove as many distracting details and variations from the code, stripping it to its bare bone.
+The Spartanizer offers a various of programming tips and improvements, including removal of unnecessary code, changing temporary variables to generic names and much more.
 
-This includes removal of piles of _syntactic baggage_, which is code that does nothing, except for being there:  curly brackets around one statement, initializations which reiterate the default, modifiers which do not change the semantics, implicit call to `super()` which every constructor has, fancy, but uselessly long variable names, variables which never vary and contain temporaries and  many more. Overall, the Spartanizer has over 100 tippers.
+This project was conceived as an academic project in the 'Technion - Israel Institute of Technology', and was later developed for several years by different students and members of the Computer Science faculty.
 
-This project was conceived as an academic project in the [Technion - Israel
-Institute of Technology], and was later developed for several years by
-different students and members of the Computer Science faculty.
+# Contributers
+* **Guy Menhel**
+* **Ameer Amer**
+* **Yuval Ron**
+* **Ron Marcovich**
+* **Moshe Sebag**
+* **Max Calderon**
+* **Rany Jamal**
 
-The refactorings made by this plug-in are based on the concept of Spartan Programming, which suggests guidelines for writing short, clean code. There's a lot of reading material on the subject in the [project wiki].
-
-## Relevant Links
-https://lgtm.com/projects/g/TechnionYP5779/team4/
-
-## References 
-This project is a work of team 4 on the original [SpartanRefactoring project](https://github.com/SpartanRefactoring/Main)
+# Instructors
+* [**Prof. Yossi Gil**](https://github.com/yossigil/)
+* [**Dor Maayan**](https://github.com/dormaayan/)
 
 
 
