@@ -292,10 +292,9 @@ public enum string {
         final Object @NotNull [] $ = new Object[args.length - 1];
         for (int ¢ = 1; ¢ < args.length; ++¢)
           $[¢ - 1] = args[¢];
-        try(Formatter f = new Formatter()){
+        try (Formatter f = new Formatter()) {
           return f.format(args[0], $) + "";
-        }
-        catch(Exception ¢) {
+        } catch (Exception ¢) {
           throw ¢;
         }
     }

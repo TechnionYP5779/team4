@@ -80,7 +80,7 @@ public enum unbox {
   public static short[] it(final Short[] ¢) {
     return unboxShortArray(¢);
   }
-  
+
   public static byte[] it(final Byte[] ¢) {
     return unboxByteArray(¢);
   }

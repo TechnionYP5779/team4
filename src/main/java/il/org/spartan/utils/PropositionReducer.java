@@ -33,7 +33,7 @@ import il.org.spartan.utils.Proposition.*;
 
   private R reduce(final And a) {
     R $ = ante(a);
-    for(int size = a.inner.size(), ¢ = 0; ¢ < size; ++¢) {
+    for (int size = a.inner.size(), ¢ = 0; ¢ < size; ++¢) {
       $ = reduce($, reduce(a.inner.get(¢)));
       if (¢ < size - 1)
         $ = reduce($, inter(a));

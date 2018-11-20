@@ -281,6 +281,7 @@ public class SeparateTest {
   @Test public final void assertEquals2() {
     separate.assertEquals("reason", Integer.valueOf(1), Integer.valueOf(1));
   }
+
   @Test public final void assertNotEquals() {
     separate.assertNotEquals(Integer.valueOf(1), Integer.valueOf(1));
   }

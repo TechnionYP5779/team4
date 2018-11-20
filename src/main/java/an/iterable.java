@@ -36,26 +36,22 @@ public interface iterable {
   static <T> Iterable<T> alternate(final Iterable<T> itA, final Iterable<T> itB) {
     if (itA == null || itB == null)
       throw new NullPointerException();
-    return new Iterable<T>() {
-      @Override @NotNull public Iterator<T> iterator() {
-        return new Iterator<T>() {
-          boolean nextA = true;
-          Iterator<T> a = itA.iterator();
-          Iterator<T> b = itB.iterator();
+    return () -> new Iterator<T>() {
+      boolean nextA = true;
+      Iterator<T> a = itA.iterator();
+      Iterator<T> b = itB.iterator();
 
-          @Override public boolean hasNext() {
-            return a.hasNext() || b.hasNext();
-          }
+      @Override public boolean hasNext() {
+        return a.hasNext() || b.hasNext();
+      }
 
-          @Override public T next() {
-            if(!hasNext())
-              throw new NoSuchElementException();
-            if (!a.hasNext() || !b.hasNext())
-              return a.hasNext() ? a.next() : b.hasNext() ? b.next() : null;
-            nextA = !nextA;
-            return (nextA ? b : a).next();
-          }
-        };
+      @Override public T next() {
+        if (!hasNext())
+          throw new NoSuchElementException();
+        if (!a.hasNext() || !b.hasNext())
+          return a.hasNext() ? a.next() : b.hasNext() ? b.next() : null;
+        nextA = !nextA;
+        return (nextA ? b : a).next();
       }
     };
   }

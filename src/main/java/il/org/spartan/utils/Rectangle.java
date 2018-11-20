@@ -46,7 +46,7 @@ public class Rectangle {
     return this.y2;
   }
 
-  //rotating around x1,y1 90 degrees left
+  // rotating around x1,y1 90 degrees left
   public Rectangle rotation() {
     x2 = x1 + y1 - y2;
     y2 = y1 + prevX2 - x1;
