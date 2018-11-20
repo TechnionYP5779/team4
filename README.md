@@ -3,6 +3,7 @@
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/TechnionYP5779/team4.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/TechnionYP5779/team4/alerts/)
 [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/TechnionYP5779/team4.svg?maxAge=2592000)]()
 [![codecov](https://codecov.io/gh/TechnionYP5779/team4/branch/master/graph/badge.svg)](https://codecov.io/gh/TechnionYP5779/team4)
+[![Projects code style](https://img.shields.io/badge/code%20style-spartanized-blue.svg)]()
 
 
 # Project Description
