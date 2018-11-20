@@ -93,13 +93,12 @@ public enum unbox {
     return unboxBooleanArray(¢);
   }
 
-  public static int[] it(final List<Integer> ¢) {
+  public static int[] it(final Collection<Integer> ¢) {
     return it(¢.toArray(new Integer[¢.size()]));
   }
 
-
-  public static short[] it(final Collection<Short> ¢) {
-    return it(¢.toArray(new Short[¢.size()]));
+  public static short[] it(final List<Short> ¢) {
+    return unboxShortCollection(¢);
   }
 
   public static boolean unboxBoolean(final @NotNull Boolean ¢) {
@@ -150,7 +149,7 @@ public enum unbox {
    * <code><b>short</b></code>s.
    * @param ss a {@link Collection} of {@link Integer}s
    * @return an equivalent array of <code><b>short</b></code>s. */
-  public static short[] unboxShortCollection(final Collection<Short> ss) {
+  public static short[] unboxShortCollection(final List<Short> ss) {
     final short[] $ = new short[ss.size()];
     int i = 0;
     for (final Short v : ss)
