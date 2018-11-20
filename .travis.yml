@@ -13,7 +13,7 @@ addons:
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
   - "mvn cobertura:cobertura"
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
-
+  - "mvn sonar:sonar -Dsonar.projectKey=team4project -Dsonar.organization=team4 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=2327236e3fbad6ea7a90c093ba7e68b449ae32b0"
+  
 after_success:
   - bash <(curl -s https://codecov.io/bash)
