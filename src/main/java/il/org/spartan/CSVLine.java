@@ -184,7 +184,7 @@ import il.org.spartan.utils.Separate.*;
   public CSVLine put(final @NotNull String key, final int value, final @NotNull String format, @NotNull final FormatSpecifier... ss) {
     aggregator.record(key, value, ss);
     ___.sure(ss.length == 0 || aggregating());
-    return put(key, String.format(format, boxInteger(value)));
+    return put(key, String.format(format, it(value)));
   }
 
   /** Add a key and a general {@link Object} value to this instance

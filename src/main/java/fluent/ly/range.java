@@ -68,7 +68,7 @@ public class range implements Iterable<Integer> {
 
     @SuppressWarnings("static-method") public range interset(@SuppressWarnings("unused") final to2 r) {
       final range $ = new range();
-      $.from = box.boxInteger(3);
+      $.from = box.it(3);
       $.to = 10;
       return $;
     }

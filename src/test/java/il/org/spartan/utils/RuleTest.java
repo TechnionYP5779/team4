@@ -42,7 +42,7 @@ import fluent.ly.*;
     assert new Rule<@Nullable Integer, Integer>() {
       @Override public Integer apply(@Nullable final Integer ¢) {
         // TODO Auto-generated method stub
-        return box.boxInteger(unbox.it(¢) + 1);
+        return box.it(unbox.it(¢) + 1);
       }
 
       @Override public boolean check(@Nullable final Integer __) {
