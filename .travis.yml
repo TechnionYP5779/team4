@@ -4,8 +4,16 @@ install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgpg.skip=true 
 
 jdk:
   - oraclejdk8
-  
-script: "mvn cobertura:cobertura"
+
+addons:
+  sonarcloud:
+    organization: "team4" # the key of the org you chose at step #3
+    token:
+      secure: 2327236e3fbad6ea7a90c093ba7e68b449ae32b0 # encrypted value of your token
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - "mvn cobertura:cobertura"
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)

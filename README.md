@@ -1,9 +1,12 @@
 ## Development Status
 [![Build Status](https://travis-ci.org/TechnionYP5779/team4.svg?branch=master)](https://travis-ci.org/TechnionYP5779/team4)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/TechnionYP5779/team4.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/TechnionYP5779/team4/alerts/)
-[![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/TechnionYP5779/team4.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/TechnionYP5779/team4/context:java)
+
+[![GitHub issues](https://img.shields.io/github/issues/TechnionYP5779/team2.svg)](https://github.com/TechnionYP5779/team5/issues)
 [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/TechnionYP5779/team4.svg?maxAge=2592000)]()
+
 [![codecov](https://codecov.io/gh/TechnionYP5779/team4/branch/master/graph/badge.svg)](https://codecov.io/gh/TechnionYP5779/team4)
+[![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/TechnionYP5779/team4.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/TechnionYP5779/team4/context:java)
 [![Projects code style](https://img.shields.io/badge/code%20style-spartanized-blue.svg)]()
 
 
