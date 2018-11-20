@@ -31,7 +31,7 @@ This project was conceived as an academic project in the 'Technion - Israel Inst
 
 # Contributers
 * **Guy Menhel**
-* **Ameer Amer**
+* **A'meer A'mer**
 * **Yuval Ron**
 * **Ron Marcovich**
 * **Moshe Sebag**
