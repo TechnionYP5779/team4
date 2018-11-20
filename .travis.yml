@@ -12,9 +12,8 @@ addons:
       secure: 2327236e3fbad6ea7a90c093ba7e68b449ae32b0 # encrypted value of your token
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - "mvn cobertura:cobertura"
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
-  
-script: "mvn cobertura:cobertura"
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
