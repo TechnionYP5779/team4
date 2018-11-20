@@ -7,7 +7,7 @@ import java.util.*;
 
 import org.jetbrains.annotations.*;
 
-import il.org.spartan.*;
+import static il.org.spartan.Utils.*;
 
 /** A bunch of string functions.
  * @author Yossi Gil */
@@ -94,7 +94,7 @@ public enum string {
   @NotNull public static String expandLeadingTabs(final @NotNull String s) {
     nonnull(s);
     for (@NotNull String $ = s;;) {
-      final @NotNull String newValue = Utils.cantBeNull($.replaceAll("(?m)^([\t]*)\t", "$1    "));
+      final @NotNull String newValue = cantBeNull($.replaceAll("(?m)^([\t]*)\t", "$1    "));
       if ($.equals(newValue))
         return $;
       $ = newValue;

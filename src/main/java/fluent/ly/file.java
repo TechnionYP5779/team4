@@ -3,9 +3,9 @@ package fluent.ly;
 import java.io.*;
 import java.nio.file.*;
 
-import org.jetbrains.annotations.*;
+import static il.org.spartan.Utils.*;
 
-import il.org.spartan.*;
+import org.jetbrains.annotations.*;
 
 /** File utils
  * @author Ori Marcovitch
@@ -36,7 +36,7 @@ public class file {
   }
 
   @NotNull public static String read(final @NotNull File f) throws IOException {
-    final @NotNull String ls = Utils.cantBeNull(System.getProperty("line.separator"));
+    final @NotNull String ls = cantBeNull(System.getProperty("line.separator"));
     System.err.println(ls.compareTo("\n"));
     final @NotNull StringBuilder $ = new StringBuilder();
     try (@NotNull BufferedReader reader = new BufferedReader(new FileReader(f))) {

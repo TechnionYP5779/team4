@@ -7,16 +7,16 @@ import java.util.*;
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
-import il.org.spartan.*;
+import static il.org.spartan.Utils.*;
 
 @SuppressWarnings("static-method") public class TheTest {
   final List<@Nullable Integer> l = new ArrayList<>();
 
   @Before public void setUp() {
-    l.add(Utils.cantBeNull(Integer.valueOf(1)));
-    l.add(Utils.cantBeNull(Integer.valueOf(2)));
-    l.add(Utils.cantBeNull(Integer.valueOf(3)));
-    l.add(Utils.cantBeNull(Integer.valueOf(4)));
+    l.add(cantBeNull(Integer.valueOf(1)));
+    l.add(cantBeNull(Integer.valueOf(2)));
+    l.add(cantBeNull(Integer.valueOf(3)));
+    l.add(cantBeNull(Integer.valueOf(4)));
   }
 
   @Test public void indexFound() {
@@ -40,7 +40,7 @@ import il.org.spartan.*;
   }
 
   @Test public void previousOfFound() {
-    azzert.that(the.previous(Utils.cantBeNull(Integer.valueOf(4)), l), is(Integer.valueOf(3)));
+    azzert.that(the.previous(cantBeNull(Integer.valueOf(4)), l), is(Integer.valueOf(3)));
   }
 
   @Test public void previousOfNull() {
@@ -57,9 +57,9 @@ import il.org.spartan.*;
 
   @Test public void tailOfList() {
     final List<@NotNull Integer> l2 = new ArrayList<>();
-    l2.add(Utils.cantBeNull(Integer.valueOf(2)));
-    l2.add(Utils.cantBeNull(Integer.valueOf(3)));
-    l2.add(Utils.cantBeNull(Integer.valueOf(4)));
+    l2.add(cantBeNull(Integer.valueOf(2)));
+    l2.add(cantBeNull(Integer.valueOf(3)));
+    l2.add(cantBeNull(Integer.valueOf(4)));
     final List<Integer> res = the.tailOf(l);
     azzert.that(res.size(), is(l2.size()));
     for (int ¢ = 0; ¢ < l2.size(); ++¢)
@@ -68,9 +68,9 @@ import il.org.spartan.*;
 
   @Test public void restOfList() {
     final List<@NotNull Integer> l2 = new ArrayList<>();
-    l2.add(Utils.cantBeNull(Integer.valueOf(2)));
-    l2.add(Utils.cantBeNull(Integer.valueOf(3)));
-    l2.add(Utils.cantBeNull(Integer.valueOf(4)));
+    l2.add(cantBeNull(Integer.valueOf(2)));
+    l2.add(cantBeNull(Integer.valueOf(3)));
+    l2.add(cantBeNull(Integer.valueOf(4)));
     final List<Integer> res = the.rest(Integer.valueOf(1), l);
     azzert.that(res.size(), is(l2.size()));
     for (int ¢ = 0; ¢ < l2.size(); ++¢)

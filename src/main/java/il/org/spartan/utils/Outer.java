@@ -4,6 +4,8 @@ import org.jetbrains.annotations.*;
 
 import il.org.spartan.*;
 
+import static il.org.spartan.Utils.*;
+
 /** TODO Yossi Gil: document class
  * @author Yossi Gil
  * @since 2017-03-21 */
@@ -44,10 +46,10 @@ import il.org.spartan.*;
   }
 
   @Override @NotNull public String toString() {
-    return inner == null ? "null" : Utils.cantBeNull(inner + "");
+    return inner == null ? "null" : cantBeNull(inner + "");
   }
 
   @Override @NotNull public Outer<Inner> clone() throws CloneNotSupportedException {
-    return (Outer<Inner>) Utils.cantBeNull(super.clone());
+    return (Outer<Inner>) cantBeNull(super.clone());
   }
 }
