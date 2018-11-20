@@ -59,6 +59,10 @@ public enum unbox {
     return unbox.unboxChar(¢);
   }
 
+  public static boolean it(final Boolean ¢) {
+    return unbox.unboxBoolean(¢);
+  }
+
   public static int[] it(final Integer[] ¢) {
     return unboxIntegerArray(¢);
   }
@@ -73,6 +77,10 @@ public enum unbox {
 
   public static char[] it(final Character[] ¢) {
     return unboxCharArray(¢);
+  }
+
+  public static boolean[] it(final Boolean[] ¢) {
+    return unboxBooleanArray(¢);
   }
 
   public static int[] it(final List<Integer> ¢) {
