@@ -49,7 +49,7 @@ import org.junit.*;
 
   @Test public void testShort() {
     final short s = (short) new Random().nextInt(Short.MAX_VALUE);
-    azzert.that(unbox.it(box.boxShort(s)), is(s));
+    azzert.that(unbox.it(box.it(s)), is(s));
     azzert.that(unbox.it(box.it(s)), is(s));
   }
 
@@ -152,7 +152,7 @@ import org.junit.*;
     final short[] arr = new short[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = (short) r.nextInt(Short.MAX_VALUE);
-    final short[] arr_res = unbox.it(Arrays.asList(box.boxShortArray(arr)));
+    final short[] arr_res = unbox.it(Arrays.asList(box.it(arr)));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res[¢], is(arr[¢]));
     final short[] arr_res_2 = unbox.it(box.it(arr));
@@ -165,7 +165,7 @@ import org.junit.*;
     final short[] arr = new short[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = (short) r.nextInt(Short.MAX_VALUE);
-    final short[] arr_res = unbox.it(box.boxShortArray(arr));
+    final short[] arr_res = unbox.it(box.it(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res[¢], is(arr[¢]));
     final short[] arr_res_2 = unbox.it(box.it(arr));
