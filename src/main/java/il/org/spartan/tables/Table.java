@@ -123,17 +123,13 @@ import il.org.spartan.utils.*;
   }
 
   public String description() {
-    String $ = "Table named " + name + " produced in " + writers.size() + " formats (versions) in " + baseName() + "\n" + //
-        "The table has " + length() + " data rows, each consisting of " + size() + " columns.\n" + //
-        "Table header is  " + keySet() + "\n"; //
+    String $ = "Table named " + name + " produced in " + writers.size() + " formats (versions) in " + baseName() + "\nThe table has " + length()
+        + " data rows, each consisting of " + size() + " columns.\nTable header is  " + keySet() + "\n";
     if (!stats.isEmpty())
       $ += "The table consists of " + stats.size() + " numerical columns: " + stats.keySet() + "\n";
     final Int n = new Int();
     Optional<String> op = writers.stream().map(λ -> "\t " + ++n.inner + ". " + λ.fileName + "\n").reduce((x, y) -> x + y);
-    if(op.isPresent()) {
-      return $ + op.get();
-    }
-    return $;
+    return !op.isPresent() ? $ : $ + op.get();
   }
 
   RealStatistics getRealStatistics(final @NotNull String key) {

@@ -30,7 +30,7 @@ public final class CSVWriter {
     fileName = "";
   }
 
-  @SuppressWarnings("null") public CSVWriter(final @NotNull String fileName) {
+  public CSVWriter(final @NotNull String fileName) {
     this.fileName = fileName;
     file = new File(fileName);
     @SuppressWarnings("resource") @Nullable FileWriter fw = open(file);
