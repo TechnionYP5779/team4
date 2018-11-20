@@ -10,7 +10,7 @@ import org.junit.*;
 /** A JUnit test class for the enclosing class.
  * @author Yossi Gil, the Technion.
  * @since 27/08/2008 */
-@SuppressWarnings("static-method") public class PruneTest1 {
+@SuppressWarnings("static-method") public class PruneTest {
   @Nullable final String @NotNull [] alternatingArray = new @Nullable String[] { null, "A", null, null, "B", null, null, null, "C", null };
   @NotNull final String @NotNull [] nonNullArray = { "1", "2", "4" };
   @NotNull private final List<String> sparseCollection = as.list(null, null, null, null, null, "A", null, null, null, "B", null, "C", null, null,
@@ -66,5 +66,45 @@ import org.junit.*;
 
   @Test public void whitesEmptyList() {
     azzert.that(prune.whites().length, is(0));
+  }
+  
+  @Test public void testNotNullArrayItems() {
+    azzert.that(prune.nulls(nonNullArray)[0], is("1"));
+    azzert.that(prune.nulls(nonNullArray)[1], is("2"));
+    azzert.that(prune.nulls(nonNullArray)[2], is("4"));
+  }
+
+  @Test public void testNotNullArrayLength() {
+    azzert.that(prune.nulls(nonNullArray).length, is(nonNullArray.length));
+  }
+
+  @Test public void testPruneArrayAltenatingItems() {
+    azzert.that(prune.nulls(alternatingArray)[0], is("A"));
+    azzert.that(prune.nulls(alternatingArray)[1], is("B"));
+    azzert.that(prune.nulls(alternatingArray)[2], is("C"));
+  }
+
+  @Test public void testPruneArrayAltenatingLength() {
+    azzert.that(prune.nulls(alternatingArray).length, is(3));
+  }
+
+  @Test public void testPruneSparseCollectionContents() {
+    @SuppressWarnings("null") final @NotNull String[] a = prune.nulls(sparseCollection).toArray(new String[3]);
+    azzert.that(a[0], is("A"));
+    azzert.that(a[1], is("B"));
+    azzert.that(a[2], is("C"));
+    azzert.that(a.length, is(3));
+  }
+
+  @Test public void testPruneSparseCollectionLength() {
+    azzert.that(prune.nulls(sparseCollection).size(), is(3));
+  }
+
+  @Test public void testPrunNotNull() {
+    azzert.notNull(prune.nulls(sparseCollection));
+  }
+
+  @Test public void testShrink() {
+    azzert.that(prune.shrink(new Object[10]).length, is(0));
   }
 }
