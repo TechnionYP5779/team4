@@ -13,7 +13,7 @@ import org.junit.*;
 
   @Test public void testBoolean() {
     final boolean b = new Random().nextBoolean();
-    azzert.that(unbox.it(box.boxBoolean(b)), is(b));
+    azzert.that(unbox.it(box.it(b)), is(b));
     azzert.that(unbox.it(box.it(b)), is(b));
   }
 
@@ -64,7 +64,7 @@ import org.junit.*;
     final boolean[] arr = new boolean[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = r.nextBoolean();
-    final boolean[] arr_res = unbox.it(box.boxBooleanArray(arr));
+    final boolean[] arr_res = unbox.it(box.it(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res[¢], is(arr[¢]));
     final boolean[] arr_res_2 = unbox.it(box.it(arr));
