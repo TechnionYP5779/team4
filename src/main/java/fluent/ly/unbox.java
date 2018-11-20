@@ -4,6 +4,8 @@ import java.util.*;
 
 import org.jetbrains.annotations.*;
 
+import static il.org.spartan.Utils.*;
+
 /** A utility class, offering a collection of function to unbox arrays and
  * collection of the boxed versions of the primitive types. The input of each
  * unboxing function is a {@link Collection} or an array of one the following
@@ -64,7 +66,7 @@ public enum unbox {
   }
 
   public static boolean it(final Boolean ¢) {
-    return unbox.unboxBoolean(¢);
+    return unbox.unboxBoolean(cantBeNull(¢));
   }
 
   public static int[] it(final Integer[] ¢) {
