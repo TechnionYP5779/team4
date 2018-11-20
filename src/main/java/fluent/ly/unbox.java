@@ -43,8 +43,16 @@ public enum unbox {
     return unbox.unboxDouble(¢);
   }
 
+  public static char it(final Character ¢) {
+    return unbox.unboxChar(¢);
+  }
+
   public static int[] it(final Integer[] ¢) {
     return unboxIntegerArray(¢);
+  }
+
+  public static char[] it(final Character[] ¢) {
+    return unboxCharArray(¢);
   }
 
   public static int[] it(final List<Integer> ¢) {

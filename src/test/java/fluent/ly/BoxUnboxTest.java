@@ -43,8 +43,8 @@ import org.junit.*;
 
   @Test public void testChar() {
     final char c = (char) new Random().nextInt(Character.MAX_VALUE);
-    azzert.that(unbox.unboxChar(box.boxCharacter(c)), is(c));
-    azzert.that(unbox.unboxChar(box.it(c)), is(c));
+    azzert.that(unbox.it(box.boxCharacter(c)), is(c));
+    azzert.that(unbox.it(box.it(c)), is(c));
   }
 
   @Test public void testShort() {
@@ -139,10 +139,10 @@ import org.junit.*;
     final char[] arr = new char[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = (char) r.nextInt(Character.MAX_VALUE);
-    final char[] arr_res = unbox.unboxCharArray(box.boxCharacterArray(arr));
+    final char[] arr_res = unbox.it(box.boxCharacterArray(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res[¢], is(arr[¢]));
-    final char[] arr_res_2 = unbox.unboxCharArray(box.it(arr));
+    final char[] arr_res_2 = unbox.it(box.it(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res_2[¢], is(arr[¢]));
   }

@@ -101,15 +101,15 @@ public interface system {
           $.push(box.it(¢));
           continue;
         case ')':
-          if ($.isEmpty() || unbox.unboxChar($.pop()) != '(')
+          if ($.isEmpty() || unbox.it($.pop()) != '(')
             return false;
           continue;
         case ']':
-          if ($.isEmpty() || unbox.unboxChar($.pop()) != '[')
+          if ($.isEmpty() || unbox.it($.pop()) != '[')
             return false;
           continue;
         case '}':
-          if ($.isEmpty() || unbox.unboxChar($.pop()) != '{')
+          if ($.isEmpty() || unbox.it($.pop()) != '{')
             return false;
           continue;
         default:
