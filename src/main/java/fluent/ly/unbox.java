@@ -39,6 +39,10 @@ public enum unbox {
     return unbox.unboxInteger(¢);
   }
 
+  public static double it(final Double ¢) {
+    return unbox.unboxDouble(¢);
+  }
+
   public static int[] it(final Integer[] ¢) {
     return unboxIntegerArray(¢);
   }

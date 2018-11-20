@@ -37,8 +37,8 @@ import org.junit.*;
 
   @Test public void testDouble() {
     final double d = new Random().nextDouble();
-    assert unbox.unboxDouble(box.boxDouble(d)) - d > -1 * DOUBLE_DELTA && unbox.unboxDouble(box.boxDouble(d)) - d < DOUBLE_DELTA;
-    assert unbox.unboxDouble(box.it(d)) - d > -1 * DOUBLE_DELTA && unbox.unboxDouble(box.it(d)) - d < DOUBLE_DELTA;
+    assert unbox.it(box.boxDouble(d)) - d > -1 * DOUBLE_DELTA && unbox.it(box.boxDouble(d)) - d < DOUBLE_DELTA;
+    assert unbox.it(box.boxDouble(d)) - d > -1 * DOUBLE_DELTA && unbox.it(box.it(d)) - d < DOUBLE_DELTA;
   }
 
   @Test public void testChar() {
@@ -126,10 +126,10 @@ import org.junit.*;
     final double[] arr = new double[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = r.nextDouble();
-    final double[] arr_res = unbox.unboxDoubleArray(box.boxDoubleArray(arr));
+    final double[] arr_res = unbox.it(box.boxDoubleArray(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.aye(arr_res[¢] - arr[¢] > -1 * DOUBLE_DELTA && arr_res[¢] - arr[¢] < DOUBLE_DELTA);
-    final double[] arr_res_2 = unbox.unboxDoubleArray(box.it(arr));
+    final double[] arr_res_2 = unbox.it(box.it(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.aye(arr_res_2[¢] - arr[¢] > -1 * DOUBLE_DELTA && arr_res_2[¢] - arr[¢] < DOUBLE_DELTA);
   }
