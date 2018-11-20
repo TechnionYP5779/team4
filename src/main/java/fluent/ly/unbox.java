@@ -39,6 +39,10 @@ public enum unbox {
     return unbox.unboxInteger(¢);
   }
 
+  public static long it(final Long ¢) {
+    return unbox.unboxLong(¢);
+  }
+
   public static double it(final Double ¢) {
     return unbox.unboxDouble(¢);
   }
@@ -65,6 +69,10 @@ public enum unbox {
 
   public static int[] it(final Integer[] ¢) {
     return unboxIntegerArray(¢);
+  }
+
+  public static long[] it(final Long[] ¢) {
+    return unboxLongArray(¢);
   }
 
   public static short[] it(final Short[] ¢) {

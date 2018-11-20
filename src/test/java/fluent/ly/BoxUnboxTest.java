@@ -25,8 +25,8 @@ import org.junit.*;
 
   @Test public void testLong() {
     final long l = new Random().nextLong();
-    azzert.that(unbox.unboxLong(box.boxLong(l)), is(l));
-    azzert.that(unbox.unboxLong(box.it(l)), is(l));
+    azzert.that(unbox.it(box.boxLong(l)), is(l));
+    azzert.that(unbox.it(box.it(l)), is(l));
   }
 
   @Test public void testFloat() {
@@ -100,10 +100,10 @@ import org.junit.*;
     final long[] arr = new long[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = r.nextLong();
-    final long[] arr_res = unbox.unboxLongArray(box.boxLongArray(arr));
+    final long[] arr_res = unbox.it(box.boxLongArray(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res[¢], is(arr[¢]));
-    final long[] arr_res_2 = unbox.unboxLongArray(box.it(arr));
+    final long[] arr_res_2 = unbox.it(box.it(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res_2[¢], is(arr[¢]));
   }
