@@ -23,7 +23,7 @@ public class ChainStringToIntegerMap {
   }
 
   public int get(final String key) {
-    return unbox.unboxInteger(inner.get(key));
+    return unbox.it(inner.get(key));
   }
 
   public boolean isEmpty() {

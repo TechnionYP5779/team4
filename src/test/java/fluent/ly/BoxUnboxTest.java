@@ -19,7 +19,7 @@ import org.junit.*;
 
   @Test public void testInteger() {
     final int i = new Random().nextInt();
-    azzert.that(unbox.unboxInteger(box.boxInteger(i)), is(i));
+    azzert.that(unbox.it(box.boxInteger(i)), is(i));
     azzert.that(unbox.it(box.it(i)), is(i));
   }
 
@@ -77,10 +77,10 @@ import org.junit.*;
     final int[] arr = new int[TEST_ARRAY_SIZE];
     for (int ¢ = 1; ¢ < arr.length; ++¢)
       arr[¢] = r.nextInt();
-    final int[] arr_res = unbox.unboxIntegerArray(box.boxIntegerArray(arr));
+    final int[] arr_res = unbox.it(box.boxIntegerArray(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res[¢], is(arr[¢]));
-    final int[] arr_res_2 = unbox.unboxIntegerArray(box.it(arr));
+    final int[] arr_res_2 = unbox.it(box.it(arr));
     for (int ¢ = 0; ¢ < arr.length; ++¢)
       azzert.that(arr_res_2[¢], is(arr[¢]));
   }

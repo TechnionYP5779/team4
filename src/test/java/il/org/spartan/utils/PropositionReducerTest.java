@@ -16,7 +16,7 @@ import fluent.ly.*;
       }
 
       @Override public Integer reduce(final Integer r1, final Integer r2) {
-        return box.boxInteger(unbox.unboxInteger(r1) + unbox.unboxInteger(r2));
+        return box.boxInteger(unbox.it(r1) + unbox.it(r2));
       }
     }) {
       @Override protected Integer map(final BooleanSupplier ¢) {
@@ -32,7 +32,7 @@ import fluent.ly.*;
       }
 
       @Override public Integer reduce(final Integer r1, final Integer r2) {
-        return box.boxInteger(unbox.unboxInteger(r1) + unbox.unboxInteger(r2));
+        return box.boxInteger(unbox.it(r1) + unbox.it(r2));
       }
     }) {
       @Override protected Integer map(final BooleanSupplier ¢) {
@@ -48,7 +48,7 @@ import fluent.ly.*;
       }
 
       @Override public Integer reduce(final Integer r1, final Integer r2) {
-        return box.boxInteger(unbox.unboxInteger(r1) + unbox.unboxInteger(r2));
+        return box.boxInteger(unbox.it(r1) + unbox.it(r2));
       }
     }) {
       @Override protected Integer map(final BooleanSupplier ¢) {

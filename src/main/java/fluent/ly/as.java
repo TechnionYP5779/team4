@@ -96,7 +96,7 @@ import static il.org.spartan.Utils.*;
   public static int @NotNull [] intArray(final @NotNull List<Integer> is) {
     final int @NotNull [] $ = new int @NotNull [is.size()];
     for (int ¢ = 0; ¢ < $.length; ++¢)
-      $[¢] = unbox.unboxInteger(is.get(¢));
+      $[¢] = unbox.it(is.get(¢));
     return $;
   }
 

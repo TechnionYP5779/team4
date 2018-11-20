@@ -13,8 +13,8 @@ import org.jetbrains.annotations.*;
 public interface the {
   static int index(final int i, final int... is) {
     for (final Integer $ : range.from(box.boxInteger(0)).to(is.length))
-      if (is[unbox.unboxInteger($)] == i)
-        return unbox.unboxInteger($);
+      if (is[unbox.it($)] == i)
+        return unbox.it($);
     return -1;
   }
 

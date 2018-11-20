@@ -7,7 +7,7 @@ import fluent.ly.*;
  * @since 2017-03-19 */
 public class CountingReduce extends Reduce<Integer> {
   @Override public final Integer reduce(final Integer i1, final Integer i2) {
-    return box.it(unbox.unboxInteger(i1) + unbox.unboxInteger(i2));
+    return box.it(unbox.it(i1) + unbox.it(i2));
   }
 
   @Override public final Integer reduce() {
