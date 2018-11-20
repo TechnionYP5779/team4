@@ -43,6 +43,10 @@ public enum unbox {
     return unbox.unboxDouble(¢);
   }
 
+  public static float it(final Float ¢) {
+    return unbox.unboxFloat(¢);
+  }
+
   public static char it(final Character ¢) {
     return unbox.unboxChar(¢);
   }
