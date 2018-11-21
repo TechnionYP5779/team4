@@ -2,7 +2,7 @@ package fluent.ly;
 
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class DeTest {
+@SuppressWarnings("static-method") public class deTest {
   @Test public void fault1() {
     azzert.notNull(de.fault("a"));
   }

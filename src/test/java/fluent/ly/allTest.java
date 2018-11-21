@@ -5,7 +5,7 @@ import java.util.*;
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class AllTest {
+@SuppressWarnings("static-method") public class allTest {
   @Test public void testNotNull1() {
     assert !all.notNull((Iterable<String>) null);
     final List<String> list = new ArrayList<>();

@@ -4,7 +4,7 @@ import static fluent.ly.azzert.*;
 
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class AnonymousTest {
+@SuppressWarnings("static-method") public class anonymousTest {
   @Test public void boolSupplier() {
     assert anonymous.ly(() -> true);
   }

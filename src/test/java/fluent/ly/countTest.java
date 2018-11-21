@@ -6,7 +6,7 @@ import java.util.*;
 
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class CountTest {
+@SuppressWarnings("static-method") public class countTest {
   @Test public void usecase0() {
     azzert.that(count.of(Arrays.asList("Hello", "World!", "How", "Are", "You")), is(5));
   }

@@ -6,7 +6,7 @@ import java.util.*;
 
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class BoxUnboxTest {
+@SuppressWarnings("static-method") public class boxUnboxTest {
   public static final double DOUBLE_DELTA = 0.0001;
   public static final float FLOAT_DELTA = 0.0001f;
   public static final int TEST_ARRAY_SIZE = 100;
