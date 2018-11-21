@@ -67,7 +67,7 @@ import org.junit.*;
   @Test public void whitesEmptyList() {
     azzert.that(prune.whites().length, is(0));
   }
-  
+
   @Test public void testNotNullArrayItems() {
     azzert.that(prune.nulls(nonNullArray)[0], is("1"));
     azzert.that(prune.nulls(nonNullArray)[1], is("2"));

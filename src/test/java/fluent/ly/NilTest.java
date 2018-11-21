@@ -44,7 +44,7 @@ import org.junit.*;
   @Test public void testForgetting3() {
     azzert.isNull(nil.forgetting(Integer.valueOf(1)));
   }
-  
+
   static String helloString = "Hello";
 
   @Test public void t() {
