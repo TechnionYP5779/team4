@@ -7,8 +7,8 @@ import java.util.logging.*;
 
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class NoteTest {
-  static final LogHandler lh = new NoteTest().new LogHandler();
+@SuppressWarnings("static-method") public class noteTest {
+  static final LogHandler lh = new noteTest().new LogHandler();
 
   class LogHandler extends Handler {
     String msg;

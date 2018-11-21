@@ -2,7 +2,7 @@ package fluent.ly;
 
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class YesTest {
+@SuppressWarnings("static-method") public class yesTest {
   @Test public void ignoringBoolean() {
     assert yes.ignoring(false);
     assert yes.ignoring(true);

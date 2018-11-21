@@ -14,7 +14,7 @@ import an.*;
 import fluent.ly.separate.*;
 
 @SuppressWarnings({ "static-method", "null" }) //
-public class SeparateTest {
+public class separateTest {
   private static final Function<String, String> quote = λ -> "'" + λ + "'";
 
   static <T> void assertEquals(final @NotNull String reason, final T t1, final T t2) {

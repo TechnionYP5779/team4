@@ -6,7 +6,7 @@ import java.util.function.*;
 
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class NilTest {
+@SuppressWarnings("static-method") public class nilTest {
   private final Object o = null;
 
   @Test public void testIgnoring0() {

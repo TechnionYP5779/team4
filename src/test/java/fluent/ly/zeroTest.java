@@ -4,7 +4,7 @@ import static fluent.ly.azzert.*;
 
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class ZeroTest {
+@SuppressWarnings("static-method") public class zeroTest {
   @Test public void forgetBoolean() {
     azzert.that(zero.forget(true), is(0));
     azzert.that(zero.forget(false), is(0));

@@ -4,7 +4,7 @@ import static fluent.ly.azzert.*;
 
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class RangeTest {
+@SuppressWarnings("static-method") public class rangeTest {
   @Test public void fromtest() {
     azzert.that(range.from(box.it(2)).from, is(2));
     assert range.from(box.it(2)).infinite;

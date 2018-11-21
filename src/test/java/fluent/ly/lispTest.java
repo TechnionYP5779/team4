@@ -8,7 +8,7 @@ import org.junit.*;
 
 import static il.org.spartan.Utils.*;
 
-@SuppressWarnings("static-method") public class LispTest {
+@SuppressWarnings("static-method") public class lispTest {
   final ArrayList<Integer> b = new ArrayList<>();
   ArrayList<Integer> a;
   ArrayList<Integer> c;

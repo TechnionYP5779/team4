@@ -4,7 +4,7 @@ import static fluent.ly.azzert.*;
 
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class OnceTest {
+@SuppressWarnings("static-method") public class onceTest {
   @Test public void case1() {
     azzert.that(new once("1") + "", is("1"));
   }

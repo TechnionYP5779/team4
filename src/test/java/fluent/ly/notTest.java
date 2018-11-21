@@ -2,7 +2,7 @@ package fluent.ly;
 
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class NotTest {
+@SuppressWarnings("static-method") public class notTest {
   @Test public void nill1() {
     assert !not.nil(null);
   }

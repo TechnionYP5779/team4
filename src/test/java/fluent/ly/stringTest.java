@@ -7,7 +7,7 @@ import java.util.*;
 
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class StringTest {
+@SuppressWarnings("static-method") public class stringTest {
   @Test public void atod() {
     azzert.that(string.atod("2.4"), is(2.4));
     azzert.that(string.atod("0.0"), is(0.0));

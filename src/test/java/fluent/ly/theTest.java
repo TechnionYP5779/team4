@@ -9,7 +9,7 @@ import org.junit.*;
 
 import static il.org.spartan.Utils.*;
 
-@SuppressWarnings("static-method") public class TheTest {
+@SuppressWarnings("static-method") public class theTest {
   final List<@Nullable Integer> l = new ArrayList<>();
 
   @Before public void setUp() {
