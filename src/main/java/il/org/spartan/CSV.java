@@ -1,12 +1,12 @@
 package il.org.spartan;
 
+import static il.org.spartan.Utils.*;
+
 import static fluent.ly.___.*;
 
 import java.io.*;
 import java.lang.reflect.*;
 import java.util.*;
-
-import static il.org.spartan.Utils.*;
 
 import org.jetbrains.annotations.*;
 

@@ -1,13 +1,13 @@
 package fluent.ly;
 
+import static il.org.spartan.Utils.*;
+
 import static fluent.ly.___.*;
 
 import java.io.*;
 import java.util.*;
 
 import org.jetbrains.annotations.*;
-
-import static il.org.spartan.Utils.*;
 
 /** A bunch of string functions.
  * @author Yossi Gil */
@@ -294,7 +294,7 @@ public enum string {
           $[¢ - 1] = args[¢];
         try (Formatter f = new Formatter()) {
           return f.format(args[0], $) + "";
-        } catch (Exception ¢) {
+        } catch (final Exception ¢) {
           throw ¢;
         }
     }

@@ -1,9 +1,9 @@
 package fluent.ly;
 
+import static il.org.spartan.Utils.*;
+
 import java.io.*;
 import java.nio.file.*;
-
-import static il.org.spartan.Utils.*;
 
 import org.jetbrains.annotations.*;
 

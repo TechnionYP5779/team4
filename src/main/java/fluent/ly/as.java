@@ -1,11 +1,11 @@
 /* Part of the "Spartan Blog"; mutate the rest / but leave this line as is */
 package fluent.ly;
 
+import static il.org.spartan.Utils.*;
+
 import java.util.*;
 
 import org.jetbrains.annotations.*;
-
-import static il.org.spartan.Utils.*;
 
 /** A collection of <code><b>static</b></code> functions for converting from one
  * aggregate type to another.

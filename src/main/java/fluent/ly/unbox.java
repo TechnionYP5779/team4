@@ -1,10 +1,10 @@
 package fluent.ly;
 
+import static il.org.spartan.Utils.*;
+
 import java.util.*;
 
 import org.jetbrains.annotations.*;
-
-import static il.org.spartan.Utils.*;
 
 /** A utility class, offering a collection of function to unbox arrays and
  * collection of the boxed versions of the primitive types. The input of each

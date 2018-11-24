@@ -1,12 +1,12 @@
 package fluent.ly;
 
+import static il.org.spartan.Utils.*;
+
 import static fluent.ly.azzert.*;
 
 import java.util.*;
 
 import org.junit.*;
-
-import static il.org.spartan.Utils.*;
 
 @SuppressWarnings("static-method") public class lispTest {
   final ArrayList<Integer> b = new ArrayList<>();

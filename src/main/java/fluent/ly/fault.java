@@ -1,13 +1,13 @@
 package fluent.ly;
 
+import static il.org.spartan.Utils.*;
+
 import java.io.*;
 import java.nio.charset.*;
 import java.util.*;
 import java.util.stream.*;
 
 import org.jetbrains.annotations.*;
-
-import static il.org.spartan.Utils.*;
 
 /** Fluent API
  * @author Yossi Gil
@@ -48,7 +48,7 @@ public interface fault {
   }
 
   @NotNull static String specifically(final @NotNull String explanation, final Object... os) {
-    Optional<String> $ = Stream.of(os).map(λ -> dump(cantBeNull(λ.getClass().getSimpleName()), λ)).reduce((x, y) -> x + y);
+    final Optional<String> $ = Stream.of(os).map(λ -> dump(cantBeNull(λ.getClass().getSimpleName()), λ)).reduce((x, y) -> x + y);
     return !$.isPresent() ? dump("\n " + explanation) + done() : dump("\n " + explanation) + $.get() + done();
   }
 

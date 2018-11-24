@@ -1,5 +1,6 @@
 package il.org.spartan.utils;
 
+import static il.org.spartan.Utils.*;
 import static java.lang.System.*;
 
 import java.io.*;
@@ -10,8 +11,6 @@ import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
 import il.org.spartan.etc.*;
-
-import static il.org.spartan.Utils.*;
 
 /** Not such a good name for a bunch of static functions
  * @author Yossi Gil

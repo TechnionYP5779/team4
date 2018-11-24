@@ -1,10 +1,9 @@
 package il.org.spartan.statistics;
 
+import static il.org.spartan.Utils.*;
 import static il.org.spartan.bench.Unit.*;
 
 import java.util.*;
-
-import static il.org.spartan.Utils.*;
 
 import org.jetbrains.annotations.*;
 

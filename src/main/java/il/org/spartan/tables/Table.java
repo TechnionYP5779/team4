@@ -128,7 +128,7 @@ import il.org.spartan.utils.*;
     if (!stats.isEmpty())
       $ += "The table consists of " + stats.size() + " numerical columns: " + stats.keySet() + "\n";
     final Int n = new Int();
-    Optional<String> op = writers.stream().map(λ -> "\t " + ++n.inner + ". " + λ.fileName + "\n").reduce((x, y) -> x + y);
+    final Optional<String> op = writers.stream().map(λ -> "\t " + ++n.inner + ". " + λ.fileName + "\n").reduce((x, y) -> x + y);
     return !op.isPresent() ? $ : $ + op.get();
   }
 

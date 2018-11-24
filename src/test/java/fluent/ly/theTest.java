@@ -1,13 +1,13 @@
 package fluent.ly;
 
+import static il.org.spartan.Utils.*;
+
 import static fluent.ly.azzert.*;
 
 import java.util.*;
 
 import org.jetbrains.annotations.*;
 import org.junit.*;
-
-import static il.org.spartan.Utils.*;
 
 @SuppressWarnings("static-method") public class theTest {
   final List<@Nullable Integer> l = new ArrayList<>();

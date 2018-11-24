@@ -1,10 +1,10 @@
 package il.org.spartan.utils;
 
+import static il.org.spartan.Utils.*;
+
 import org.jetbrains.annotations.*;
 
 import il.org.spartan.*;
-
-import static il.org.spartan.Utils.*;
 
 /** TODO Yossi Gil: document class
  * @author Yossi Gil
