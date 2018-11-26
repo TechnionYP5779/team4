@@ -1,18 +1,17 @@
 package il.org.parknet;
 
-import fluent.ly.*;
-
 public class User {
 
   private String id;
   private String name;
   private String phone;
+  private String email;
 
   public User(String id, String name, String phone, String email) {
     this.id = id;
     this.name = name;
     this.phone = phone;
-    forget.it(email);
+    this.email = email;
   }
 
   public String getId() {
@@ -25,5 +24,9 @@ public class User {
 
   public String getPhone() {
     return phone;
+  }
+
+  public String getEmail() {
+    return email;
   }
 }

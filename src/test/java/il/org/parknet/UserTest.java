@@ -28,4 +28,16 @@ import static fluent.ly.azzert.*;
   @Test public void get_phone1() {
     azzert.that(U1.getPhone(), is("0548088095"));
   }
+  
+  @Test public void get_phone2() {
+    azzert.that(U2.getPhone(), is("0522552322"));
+  }
+  
+  @Test public void get_email1() {
+    azzert.that(U1.getEmail(), is("ameeramer@campus.technion.ac.il"));
+  }
+  
+  @Test public void get_email2() {
+    azzert.that(U2.getEmail(), is("johns@campus.technion.ac.il"));
+  }
 }
