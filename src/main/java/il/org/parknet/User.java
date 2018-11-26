@@ -84,14 +84,8 @@ public class User {
   /* (non-Javadoc)
    * @see java.lang.Object#equals(java.lang.Object)
    */
-  @Override public boolean equals(Object obj) {
-    if (obj == this)
-      return true;
-    if (obj == null || !(obj instanceof User)) {
-      return false;
-    }
-    User other = (User) obj;
-    return Objects.equals(id, other.id);
+  @Override public boolean equals(Object ¢) {
+    return ¢ == this || ¢ != null && ¢ instanceof User && Objects.equals(id, ((User) ¢).id);
   }
   
   
