@@ -62,4 +62,8 @@ import static fluent.ly.azzert.*;
   @Test public void add_new_available() {
     azzert.that(U1.newAvailableParkingLot(P).availableParkingLots().next().getId(), is("1"));
   }
+  
+  @Test public void rent_parking_lot() {
+    azzert.that(U1.rentParkingLot(P).rentedParkingLots().next().getId(), is("1"));
+  }
 }

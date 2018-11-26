@@ -9,6 +9,7 @@ public class User {
   private String phone;
   private String email;
   private List<ParkingLot> available;
+  private List<ParkingLot> rented;
 
   public User(String id, String name, String phone, String email) {
     this.id = id;
@@ -16,6 +17,7 @@ public class User {
     this.phone = phone;
     this.email = email;
     this.available = new ArrayList<>();
+    this.rented = new ArrayList<>();
   }
 
   public String getId() {
@@ -51,5 +53,14 @@ public class User {
 
   public Iterator<ParkingLot> availableParkingLots() {
     return available.iterator();
+  }
+
+  public User rentParkingLot(ParkingLot p) {
+    this.rented.add(p);
+    return this;
+  }
+
+  public Iterator<ParkingLot> rentedParkingLots() {
+    return rented.iterator();
   }
 }
