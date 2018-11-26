@@ -73,4 +73,26 @@ public class User {
   public Iterator<ParkingLot> orderedParkingLots() {
     return ordered.iterator();
   }
+
+  /* (non-Javadoc)
+   * @see java.lang.Object#hashCode()
+   */
+  @Override public int hashCode() {
+    return Objects.hash(id);
+  }
+
+  /* (non-Javadoc)
+   * @see java.lang.Object#equals(java.lang.Object)
+   */
+  @Override public boolean equals(Object obj) {
+    if (obj == this)
+      return true;
+    if (obj == null || !(obj instanceof User)) {
+      return false;
+    }
+    User other = (User) obj;
+    return Objects.equals(id, other.id);
+  }
+  
+  
 }

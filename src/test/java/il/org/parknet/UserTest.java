@@ -71,4 +71,8 @@ import static fluent.ly.azzert.*;
   @Test public void order_parking_lot() {
     azzert.that(U1.orderParkingLot(P).orderedParkingLots().next().getId(), is("1"));
   }
+  
+  @Test public void equal() {
+    assert U2.equals(U3);
+  }
 }
