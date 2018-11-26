@@ -18,6 +18,6 @@ import fluent.ly.*;
   }
 
   @Test public void wrap() {
-    azzert.that(Separator.wrap("\"", Arrays.asList(box.boxInteger(1), box.boxInteger(2), box.boxInteger(3)), ","), is("\"1,2,3\""));
+    azzert.that(Separator.wrap("\"", Arrays.asList(box.it(1), box.it(2), box.it(3)), ","), is("\"1,2,3\""));
   }
 }

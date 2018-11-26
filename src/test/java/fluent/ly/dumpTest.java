@@ -5,7 +5,7 @@ import java.util.*;
 
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class DumpTest {
+@SuppressWarnings("static-method") public class dumpTest {
   static final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
   @Before public void setup() {

@@ -81,10 +81,10 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
       return null;
     Double sum_x = box.it(0.0), sum_y = box.it(0.0);
     for (final PairsList<T>.Pair ¢ : this) {
-      sum_x = box.it(unbox.unboxDouble(sum_x) + ¢.x.doubleValue());
+      sum_x = box.it(unbox.it(sum_x) + ¢.x.doubleValue());
       sum_y = box.it(sum_y.doubleValue() + ¢.y.doubleValue());
     }
-    final Double $ = box.it(unbox.unboxDouble(sum_x) / list_of_pairs.size()), mean_y = box.it(unbox.unboxDouble(sum_y) / list_of_pairs.size());
+    final Double $ = box.it(unbox.it(sum_x) / list_of_pairs.size()), mean_y = box.it(unbox.it(sum_y) / list_of_pairs.size());
     final PairsList<Double> pd = new PairsList<>();
     pd.count();
     return pd.new Pair($, mean_y);
@@ -101,7 +101,7 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
     final PairsList<Double>.Pair mean_ = mean();
     for (final PairsList<T>.Pair ¢ : this) {
       $ = box.it($.doubleValue() + (¢.x.doubleValue() - mean_.getX().doubleValue()) * (¢.x.doubleValue() - mean_.getX().doubleValue()));
-      sum_y = box.it(unbox.unboxDouble(sum_y) + (¢.y.doubleValue() - mean_.getY().doubleValue()) * (¢.y.doubleValue() - mean_.getY().doubleValue()));
+      sum_y = box.it(unbox.it(sum_y) + (¢.y.doubleValue() - mean_.getY().doubleValue()) * (¢.y.doubleValue() - mean_.getY().doubleValue()));
     }
     final PairsList<Double> pd = new PairsList<>();
     pd.count();
@@ -117,7 +117,7 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
     double $ = 0.0;
     final PairsList<Double>.Pair mean_ = mean();
     for (final PairsList<T>.Pair ¢ : this)
-      $ += (¢.x.doubleValue() - unbox.unboxDouble(mean_.getX())) * (¢.y.doubleValue() - unbox.unboxDouble(mean_.getY()));
+      $ += (¢.x.doubleValue() - unbox.it(mean_.getX())) * (¢.y.doubleValue() - unbox.it(mean_.getY()));
     return $;
   }
 
@@ -126,8 +126,8 @@ public class PairsList<T extends Number & Comparable<T>> implements Iterable<Pai
     if (list_of_pairs.isEmpty())
       return null;
     final PairsList<Double>.Pair mean_ = mean();
-    final Double $ = box.it(co_variance() / unbox.unboxDouble(variance().getX())),
-        alpha = box.it(unbox.unboxDouble(mean_.getY()) - unbox.unboxDouble($) * unbox.unboxDouble(mean_.getX()));
+    final Double $ = box.it(co_variance() / unbox.it(variance().getX())),
+        alpha = box.it(unbox.it(mean_.getY()) - unbox.it($) * unbox.it(mean_.getX()));
     final PairsList<Double> pd = new PairsList<>();
     pd.count();
     return pd.new Pair(alpha, $);

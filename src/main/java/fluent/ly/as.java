@@ -1,11 +1,11 @@
 /* Part of the "Spartan Blog"; mutate the rest / but leave this line as is */
 package fluent.ly;
 
+import static il.org.spartan.Utils.*;
+
 import java.util.*;
 
 import org.jetbrains.annotations.*;
-
-import il.org.spartan.*;
 
 /** A collection of <code><b>static</b></code> functions for converting from one
  * aggregate type to another.
@@ -38,6 +38,8 @@ import il.org.spartan.*;
       }
 
       @Override public Integer next() {
+        if (!hasNext())
+          throw new NoSuchElementException();
         return is[current++];
       }
     };
@@ -96,7 +98,7 @@ import il.org.spartan.*;
   public static int @NotNull [] intArray(final @NotNull List<Integer> is) {
     final int @NotNull [] $ = new int @NotNull [is.size()];
     for (int ¢ = 0; ¢ < $.length; ++¢)
-      $[¢] = unbox.unboxInteger(is.get(¢));
+      $[¢] = unbox.it(is.get(¢));
     return $;
   }
 
@@ -164,7 +166,7 @@ import il.org.spartan.*;
       for (final @Nullable Object ¢ : os)
         if (¢ != null)
           $.add(¢ + "");
-    return Utils.cantBeNull($.toArray(new String @NotNull [$.size()]));
+    return cantBeNull($.toArray(new String @NotNull [$.size()]));
   }
 
   static Iterable<Integer> asIterableEssence(final @NotNull Integer... is) {
@@ -176,6 +178,8 @@ import il.org.spartan.*;
       }
 
       @Override public Integer next() {
+        if (!hasNext())
+          throw new NoSuchElementException();
         return is[current++];
       }
     };

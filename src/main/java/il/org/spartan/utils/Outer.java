@@ -1,5 +1,7 @@
 package il.org.spartan.utils;
 
+import static il.org.spartan.Utils.*;
+
 import org.jetbrains.annotations.*;
 
 import il.org.spartan.*;
@@ -17,7 +19,7 @@ import il.org.spartan.*;
   }
 
   @Override public boolean equals(final Object ¢) {
-    return ¢ == this || (¢ != null && getClass() == ¢.getClass() && equals((Outer<Inner>) ¢));
+    return ¢ == this || ¢ != null && getClass() == ¢.getClass() && equals((Outer<Inner>) ¢);
   }
 
   protected boolean equals(final Outer<Inner> other) {
@@ -44,10 +46,10 @@ import il.org.spartan.*;
   }
 
   @Override @NotNull public String toString() {
-    return inner == null ? "null" : Utils.cantBeNull(inner + "");
+    return inner == null ? "null" : cantBeNull(inner + "");
   }
 
   @Override @NotNull public Outer<Inner> clone() throws CloneNotSupportedException {
-    return (Outer<Inner>) Utils.cantBeNull(super.clone());
+    return (Outer<Inner>) cantBeNull(super.clone());
   }
 }

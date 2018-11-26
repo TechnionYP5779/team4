@@ -20,7 +20,7 @@ public enum empty {
       }
 
       @Override public T next() {
-        return null;
+        throw new NoSuchElementException();
       }
     };
   }

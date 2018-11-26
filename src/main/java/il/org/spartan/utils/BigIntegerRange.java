@@ -37,7 +37,7 @@ public class BigIntegerRange {
       BigInteger current = from;
 
       @Override public boolean hasNext() {
-        return to == null || current.add(step).compareTo(to) == -1;
+        return to == null || current.add(step).compareTo(to) < 0;
       }
 
       @Override public BigInteger next() {
@@ -53,13 +53,13 @@ public class BigIntegerRange {
   }
 
   public BigIntegerRange interset(final BigIntegerRange other) {
-    return this.to != null && other.from != null && this.to.compareTo(other.from) == -1
-        || other.to != null && this.from != null && other.to.compareTo(this.from) == -1 ? null
-            : new BigIntegerRange().from(this.from != null && this.from.compareTo(other.from) != -1 ? this.from : other.from)
-                .to(other.to != null && to != null && this.to.compareTo(other.to) == -1 ? this.from : other.from);
+    return this.to != null && other.from != null && this.to.compareTo(other.from) < 0
+        || other.to != null && this.from != null && other.to.compareTo(this.from) < 0 ? null
+            : new BigIntegerRange().from(this.from != null && this.from.compareTo(other.from) > 0 ? this.from : other.from)
+                .to(other.to != null && to != null && this.to.compareTo(other.to) < 0 ? this.from : other.from);
   }
 
   public boolean includes(final BigInteger value) {
-    return (from == null || from.compareTo(value) == -1) && (to == null || value.compareTo(to) == -1);
+    return (from == null || from.compareTo(value) < 0) && (to == null || value.compareTo(to) < 0);
   }
 }

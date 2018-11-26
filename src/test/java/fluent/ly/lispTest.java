@@ -1,14 +1,14 @@
 package fluent.ly;
 
+import static il.org.spartan.Utils.*;
+
 import static fluent.ly.azzert.*;
 
 import java.util.*;
 
 import org.junit.*;
 
-import il.org.spartan.*;
-
-@SuppressWarnings("static-method") public class LispTest {
+@SuppressWarnings("static-method") public class lispTest {
   final ArrayList<Integer> b = new ArrayList<>();
   ArrayList<Integer> a;
   ArrayList<Integer> c;
@@ -67,21 +67,21 @@ import il.org.spartan.*;
 
   @Test public void replace7() {
     anotherSetup();
-    final ArrayList<Integer> d = (ArrayList<Integer>) lisp.replaceLast(Utils.cantBeNull(b), Integer.valueOf(6));
+    final ArrayList<Integer> d = (ArrayList<Integer>) lisp.replaceLast(cantBeNull(b), Integer.valueOf(6));
     if (d != null)
       azzert.that(d.get(0), is(6));
   }
 
   @Test public void replace8() {
     anotherSetup();
-    final ArrayList<Integer> d = (ArrayList<Integer>) lisp.replaceLast(Utils.cantBeNull(b), Integer.valueOf(6));
+    final ArrayList<Integer> d = (ArrayList<Integer>) lisp.replaceLast(cantBeNull(b), Integer.valueOf(6));
     if (d != null)
       azzert.that(d.get(1), is(6));
   }
 
   @Test public void replace9() {
     anotherSetup();
-    final ArrayList<Integer> d = (ArrayList<Integer>) lisp.replaceLast(Utils.cantBeNull(b), Integer.valueOf(6));
+    final ArrayList<Integer> d = (ArrayList<Integer>) lisp.replaceLast(cantBeNull(b), Integer.valueOf(6));
     if (d != null)
       azzert.that(d.get(2), is(6));
   }

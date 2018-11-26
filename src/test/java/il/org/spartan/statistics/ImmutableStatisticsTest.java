@@ -8,14 +8,14 @@ import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class ImmutableStatisticsTest {
   @Test public void testFlipping() {
-    azzert.that((new ImmutableStatistics() {
+    azzert.that(new ImmutableStatistics() {
       static final long serialVersionUID = 1;
-    }).flipping(), is(Double.NaN));
+    }.flipping(), is(Double.NaN));
   }
 
   @Test public void testUnit() {
-    azzert.isNull((new ImmutableStatistics() {
+    azzert.isNull(new ImmutableStatistics() {
       static final long serialVersionUID = 1;
-    }).unit());
+    }.unit());
   }
 }

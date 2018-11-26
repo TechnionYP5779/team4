@@ -16,7 +16,7 @@ import fluent.ly.*;
  * begin with the name of the method they check.
  * @author Yossi Gil
  * @since 2014-05-31 */
-@SuppressWarnings("static-method") public class IterablesTest {
+@SuppressWarnings("static-method") public class iterablesTest {
   @Test public void containsDegenerate() {
     azzert.nay(contains("Hello"));
   }

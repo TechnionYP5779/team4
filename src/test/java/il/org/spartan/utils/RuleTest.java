@@ -9,7 +9,7 @@ import org.junit.*;
 import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class RuleTest {
-  static final LogHandler lh = (new RuleTest()).new LogHandler();
+  static final LogHandler lh = new RuleTest().new LogHandler();
 
   class LogHandler extends Handler {
     String msg;
@@ -18,7 +18,7 @@ import fluent.ly.*;
       return msg;
     }
 
-    @Override public void publish(LogRecord ¢) {
+    @Override public void publish(final LogRecord ¢) {
       msg = ¢.getMessage();
     }
 
@@ -30,22 +30,22 @@ import fluent.ly.*;
   }
 
   @Before public void setup() {
-    Logger globalLogger = Logger.getLogger("global");
-    Handler[] handlers = globalLogger.getHandlers();
-    for (Handler ¢ : handlers)
+    final Logger globalLogger = Logger.getLogger("global");
+    final Handler[] handlers = globalLogger.getHandlers();
+    for (final Handler ¢ : handlers)
       globalLogger.removeHandler(¢);
     globalLogger.addHandler(lh);
     System.setErr(new PrintStream(new ByteArrayOutputStream()));
   }
 
   @Test public void description1() {
-    assert ((new Rule<@Nullable Integer, Integer>() {
-      @Override public Integer apply(@Nullable Integer ¢) {
+    assert new Rule<@Nullable Integer, Integer>() {
+      @Override public Integer apply(@Nullable final Integer ¢) {
         // TODO Auto-generated method stub
-        return box.boxInteger(unbox.unboxInteger(¢) + 1);
+        return box.it(unbox.it(¢) + 1);
       }
 
-      @Override public boolean check(@Nullable Integer __) {
+      @Override public boolean check(@Nullable final Integer __) {
         // TODO Auto-generated method stub
         return false;
       }
@@ -53,6 +53,6 @@ import fluent.ly.*;
       @Override @Nullable public Integer current() {
         return null;
       }
-    }).description().contains("Rule"));
+    }.description().contains("Rule");
   }
 }

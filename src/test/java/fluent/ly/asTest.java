@@ -7,7 +7,7 @@ import java.util.*;
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
-@SuppressWarnings({ "static-method", "null" }) public class AsTest {
+@SuppressWarnings({ "static-method", "null" }) public class asTest {
   @Test public void asBitOfFalse() {
     azzert.that(as.bit(false), is(0));
   }
@@ -112,7 +112,7 @@ import org.junit.*;
   }
 
   @Test public void strings2() {
-    List<String> l = new ArrayList<>();
+    final List<String> l = new ArrayList<>();
     l.add(null);
     azzert.that(as.strings(l), is(new String[] {}));
   }

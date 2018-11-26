@@ -1,5 +1,7 @@
 package il.org.spartan;
 
+import static il.org.spartan.Utils.*;
+
 import static fluent.ly.___.*;
 
 import java.io.*;
@@ -30,7 +32,7 @@ import fluent.ly.*;
   public static String combine(final Class<?>[] cs) {
     final String @NotNull [] $ = new String[cs.length];
     for (int ¢ = 0; ¢ < $.length; ++¢)
-      $[¢] = cs[¢] == null ? null : Utils.cantBeNull(cs[¢].getName());
+      $[¢] = cs[¢] == null ? null : cantBeNull(cs[¢].getName());
     return combine($);
   }
 
@@ -155,7 +157,7 @@ import fluent.ly.*;
    * @return Unescaped string */
   public static String unescape(final @NotNull String s) {
     if (NULL.equals(s))
-      return null;
+      return "null";
     boolean esc = false;
     final int length = s.length();
     final @NotNull StringBuilder $ = new StringBuilder(length);

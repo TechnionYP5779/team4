@@ -332,15 +332,15 @@ public abstract class ___ {
   }
 
   public static String nprintf(final @NotNull String format, final double d, final Object o) {
-    return sprintf(format, boxDouble(d), o);
+    return sprintf(format, it(d), o);
   }
 
   @NotNull public static String nprintf(final @NotNull String format, final int n1, final int n2) {
-    return sprintf(format, boxInteger(n1), boxInteger(n2));
+    return sprintf(format, it(n1), it(n2));
   }
 
   public static String nprintf(final @NotNull String format, final int i, final Object o) {
-    return sprintf(format, boxInteger(i), o);
+    return sprintf(format, it(i), o);
   }
 
   @NotNull public static String nprintf(final String format, final Object... args) {

@@ -2,7 +2,7 @@ package fluent.ly;
 
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class ForgetTest {
+@SuppressWarnings("static-method") public class forgetTest {
   @Test public void forgetAll() {
     forget.all(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3));
     forget.all(Double.valueOf(1.4), Double.valueOf(2.5), Double.valueOf(3.6));

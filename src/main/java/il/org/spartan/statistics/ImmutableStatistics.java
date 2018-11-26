@@ -1,12 +1,12 @@
 package il.org.spartan.statistics;
 
+import static il.org.spartan.Utils.*;
 import static il.org.spartan.bench.Unit.*;
 
 import java.util.*;
 
 import org.jetbrains.annotations.*;
 
-import il.org.spartan.*;
 import il.org.spartan.bench.*;
 
 /** @author Yossi Gil
@@ -31,7 +31,7 @@ public abstract class ImmutableStatistics extends Statistics implements java.io.
   /** Generate a copy of the set of all recorded values
    * @return an array containing all recorded values */
   public final double @NotNull [] all() {
-    return Utils.cantBeNull(Arrays.copyOf(values, n));
+    return cantBeNull(Arrays.copyOf(values, n));
   }
 
   public double flipping() {
@@ -133,6 +133,6 @@ public abstract class ImmutableStatistics extends Statistics implements java.io.
   }
 
   @NotNull private StringBuilder appendError(final @NotNull StringBuilder b, final double d) {
-    return n() <= 1 ? b : Utils.cantBeNull(b.append('±' + RELATIVE.format(d)));
+    return n() <= 1 ? b : cantBeNull(b.append('±' + RELATIVE.format(d)));
   }
 }

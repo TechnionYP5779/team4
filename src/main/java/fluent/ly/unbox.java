@@ -1,5 +1,7 @@
 package fluent.ly;
 
+import static il.org.spartan.Utils.*;
+
 import java.util.*;
 
 import org.jetbrains.annotations.*;
@@ -39,12 +41,64 @@ public enum unbox {
     return unbox.unboxInteger(¢);
   }
 
+  public static long it(final Long ¢) {
+    return unbox.unboxLong(¢);
+  }
+
+  public static double it(final Double ¢) {
+    return unbox.unboxDouble(¢);
+  }
+
+  public static float it(final Float ¢) {
+    return unbox.unboxFloat(¢);
+  }
+
+  public static short it(final Short ¢) {
+    return unbox.unboxShort(¢);
+  }
+
+  public static byte it(final Byte ¢) {
+    return unbox.unboxByte(¢);
+  }
+
+  public static char it(final Character ¢) {
+    return unbox.unboxChar(¢);
+  }
+
+  public static boolean it(final Boolean ¢) {
+    return unbox.unboxBoolean(cantBeNull(¢));
+  }
+
   public static int[] it(final Integer[] ¢) {
     return unboxIntegerArray(¢);
   }
 
-  public static int[] it(final List<Integer> ¢) {
+  public static long[] it(final Long[] ¢) {
+    return unboxLongArray(¢);
+  }
+
+  public static short[] it(final Short[] ¢) {
+    return unboxShortArray(¢);
+  }
+
+  public static byte[] it(final Byte[] ¢) {
+    return unboxByteArray(¢);
+  }
+
+  public static char[] it(final Character[] ¢) {
+    return unboxCharArray(¢);
+  }
+
+  public static boolean[] it(final Boolean[] ¢) {
+    return unboxBooleanArray(¢);
+  }
+
+  public static int[] it(final Collection<Integer> ¢) {
     return it(¢.toArray(new Integer[¢.size()]));
+  }
+
+  public static short[] it(final List<Short> ¢) {
+    return unboxShortCollection(¢);
   }
 
   public static boolean unboxBoolean(final @NotNull Boolean ¢) {
@@ -95,7 +149,7 @@ public enum unbox {
    * <code><b>short</b></code>s.
    * @param ss a {@link Collection} of {@link Integer}s
    * @return an equivalent array of <code><b>short</b></code>s. */
-  public static short[] unboxShortCollection(final Collection<Short> ss) {
+  public static short[] unboxShortCollection(final List<Short> ss) {
     final short[] $ = new short[ss.size()];
     int i = 0;
     for (final Short v : ss)

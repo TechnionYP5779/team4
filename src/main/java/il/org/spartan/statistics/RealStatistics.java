@@ -1,11 +1,12 @@
 package il.org.spartan.statistics;
 
+import static il.org.spartan.Utils.*;
+
 import java.util.*;
 
 import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
-import il.org.spartan.*;
 
 /** A class to compute statistics, e.g., the minimal and maximal value, the mean
  * and the standard deviation, of a sequence of real numbers.
@@ -30,7 +31,7 @@ public class RealStatistics extends ImmutableStatistics {
   }
 
   @NotNull public Statistics record(final @Nullable Double v) {
-    return v == null ? recordMissing() : record(unbox.unboxDouble(v));
+    return v == null ? recordMissing() : record(unbox.it(v));
   }
 
   @NotNull public RealStatistics recordMissing() {
@@ -44,7 +45,7 @@ public class RealStatistics extends ImmutableStatistics {
       flips = 2;
     }
     if (n == values.length)
-      values = Utils.cantBeNull(increase(values));
+      values = cantBeNull(increase(values));
     values[n++] = v;
     flips += as.bit(min > v || max < v);
     min = Math.min(min, v);

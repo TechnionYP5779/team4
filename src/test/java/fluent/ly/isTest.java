@@ -4,7 +4,7 @@ import java.util.*;
 
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class IsTest {
+@SuppressWarnings("static-method") public class isTest {
   @Test public void inEmpty() {
     azzert.nay(is.in(Boolean.TRUE));
     azzert.nay(is.in(Boolean.FALSE));

@@ -269,8 +269,8 @@ import fluent.ly.*;
 
   @Test public void foundHandler() {
     final FoundHandleForT<Integer> fh = new Utils.FoundHandleForT<>(Integer.valueOf(1));
-    azzert.aye(fh.in(Utils.cantBeNull(Integer.valueOf(1)), Utils.cantBeNull(Integer.valueOf(2)), Utils.cantBeNull(Integer.valueOf(3))));
-    azzert.not(fh.in(Utils.cantBeNull(Integer.valueOf(2)), Utils.cantBeNull(Integer.valueOf(3))));
+    azzert.aye(fh.in(cantBeNull(Integer.valueOf(1)), cantBeNull(Integer.valueOf(2)), cantBeNull(Integer.valueOf(3))));
+    azzert.not(fh.in(cantBeNull(Integer.valueOf(2)), cantBeNull(Integer.valueOf(3))));
   }
 
   @Test public void foundHandlerInt() {

@@ -2,17 +2,15 @@ package fluent.ly;
 
 import static fluent.ly.azzert.*;
 
-import java.util.*;
-
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class CountTest {
+@SuppressWarnings("static-method") public class maybeTest {
   @Test public void usecase0() {
-    azzert.that(count.of(Arrays.asList("Hello", "World!", "How", "Are", "You")), is(5));
+    isNull(maybe.no().get());
   }
 
   @Test public void usecase1() {
-    azzert.that(count.of(new ArrayList<>()), is(0));
+    isNull(maybe.yes(null).get());
   }
 
   @Test public void usecase2() {

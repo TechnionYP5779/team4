@@ -1,13 +1,13 @@
 package fluent.ly;
 
+import static il.org.spartan.Utils.*;
+
 import static fluent.ly.___.*;
 
 import java.io.*;
 import java.util.*;
 
 import org.jetbrains.annotations.*;
-
-import il.org.spartan.*;
 
 /** A bunch of string functions.
  * @author Yossi Gil */
@@ -94,7 +94,7 @@ public enum string {
   @NotNull public static String expandLeadingTabs(final @NotNull String s) {
     nonnull(s);
     for (@NotNull String $ = s;;) {
-      final @NotNull String newValue = Utils.cantBeNull($.replaceAll("(?m)^([\t]*)\t", "$1    "));
+      final @NotNull String newValue = cantBeNull($.replaceAll("(?m)^([\t]*)\t", "$1    "));
       if ($.equals(newValue))
         return $;
       $ = newValue;
@@ -292,7 +292,11 @@ public enum string {
         final Object @NotNull [] $ = new Object[args.length - 1];
         for (int ¢ = 1; ¢ < args.length; ++¢)
           $[¢ - 1] = args[¢];
-        return new Formatter().format(args[0], $) + "";
+        try (Formatter f = new Formatter()) {
+          return f.format(args[0], $) + "";
+        } catch (final Exception ¢) {
+          throw ¢;
+        }
     }
   }
 

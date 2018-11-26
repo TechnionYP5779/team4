@@ -9,7 +9,7 @@ import org.junit.*;
 
 import fluent.ly.*;
 
-@SuppressWarnings("static-method") public class IterableTest {
+@SuppressWarnings("static-method") public class iterableTest {
   public static final int A_SIZE = 100;
   public static final int B_SIZE = 88;
 

@@ -19,12 +19,12 @@ import fluent.ly.*;
     this.renderer = renderer;
   }
 
-  @Override @Nullable public AbstractStringProperties clone() {
+  @Override @Nullable public AbstractStringProperties clone() throws CloneNotSupportedException {
     try {
       return (AbstractStringProperties) super.clone();
     } catch (final CloneNotSupportedException ¢) {
       ¢.printStackTrace();
-      return null;
+      throw ¢;
     }
   }
 

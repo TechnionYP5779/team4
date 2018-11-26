@@ -30,10 +30,11 @@ public final class CSVWriter {
     fileName = "";
   }
 
-  @SuppressWarnings("null") public CSVWriter(final @NotNull String fileName) {
+  public CSVWriter(final @NotNull String fileName) {
     this.fileName = fileName;
     file = new File(fileName);
-    inner = open(file);
+    @SuppressWarnings("resource") @Nullable final FileWriter fw = open(file);
+    inner = fw != null ? fw : new OutputStreamWriter(System.out);
   }
 
   public String close() {

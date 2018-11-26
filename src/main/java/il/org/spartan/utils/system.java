@@ -1,5 +1,6 @@
 package il.org.spartan.utils;
 
+import static il.org.spartan.Utils.*;
 import static java.lang.System.*;
 
 import java.io.*;
@@ -9,7 +10,6 @@ import java.util.*;
 import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
-import il.org.spartan.*;
 import il.org.spartan.etc.*;
 
 /** Not such a good name for a bunch of static functions
@@ -100,15 +100,15 @@ public interface system {
           $.push(box.it(¢));
           continue;
         case ')':
-          if ($.isEmpty() || unbox.unboxChar($.pop()) != '(')
+          if ($.isEmpty() || unbox.it($.pop()) != '(')
             return false;
           continue;
         case ']':
-          if ($.isEmpty() || unbox.unboxChar($.pop()) != '[')
+          if ($.isEmpty() || unbox.it($.pop()) != '[')
             return false;
           continue;
         case '}':
-          if ($.isEmpty() || unbox.unboxChar($.pop()) != '{')
+          if ($.isEmpty() || unbox.it($.pop()) != '{')
             return false;
           continue;
         default:
@@ -138,8 +138,8 @@ public interface system {
     final StackTraceElement[] $ = new Throwable().getStackTrace();
     for (int ¢ = 1; ¢ < $.length; ++¢)
       if (!$[¢].getClassName().equals($[0].getClassName()))
-        return Utils.cantBeNull($[¢].getClassName());
-    return Utils.cantBeNull(new Object().getClass().getEnclosingClass().getCanonicalName());
+        return cantBeNull($[¢].getClassName());
+    return cantBeNull(new Object().getClass().getEnclosingClass().getCanonicalName());
   }
 
   static String myShortClassName() {
@@ -181,7 +181,7 @@ public interface system {
   }
 
   static String userName() {
-    return English.upperFirstLetter(Utils.cantBeNull(getProperty("user.name", "User")));
+    return English.upperFirstLetter(cantBeNull(getProperty("user.name", "User")));
   }
 
   /** This function counts the number of words the given string contains. Words

@@ -1,14 +1,14 @@
 package fluent.ly;
 
+import static java.lang.String.*;
+
 import java.io.*;
 import java.util.logging.*;
 
-import static java.lang.String.*;
-
 import org.junit.*;
 
-@SuppressWarnings("static-method") public class NoteTest {
-  static final LogHandler lh = (new NoteTest()).new LogHandler();
+@SuppressWarnings("static-method") public class noteTest {
+  static final LogHandler lh = new noteTest().new LogHandler();
 
   class LogHandler extends Handler {
     String msg;
@@ -17,7 +17,7 @@ import org.junit.*;
       return msg;
     }
 
-    @Override public void publish(LogRecord ¢) {
+    @Override public void publish(final LogRecord ¢) {
       msg = ¢.getMessage();
     }
 
@@ -38,9 +38,9 @@ import org.junit.*;
   }
 
   @Before public void setup() {
-    Logger globalLogger = Logger.getLogger("global");
-    Handler[] handlers = globalLogger.getHandlers();
-    for (Handler ¢ : handlers)
+    final Logger globalLogger = Logger.getLogger("global");
+    final Handler[] handlers = globalLogger.getHandlers();
+    for (final Handler ¢ : handlers)
       globalLogger.removeHandler(¢);
     globalLogger.addHandler(lh);
     System.setErr(new PrintStream(new ByteArrayOutputStream()));
@@ -75,27 +75,27 @@ import org.junit.*;
 
   @Test public void cancelObjectException() {
     note.cancel(Integer.valueOf(5), new NullPointerException());
-    String l = lh.get() + "";
+    final String l = lh.get() + "";
     assert l.contains("NullPointerException") && l.contains("Integer");
   }
 
   @Test public void ignoreClassThrowable() {
     note.ignore(Integer.class, new IllegalStateException(//
         format("Works:", "", "", "")));
-    String l = lh.get() + "";
+    final String l = lh.get() + "";
     assert l.contains("Works") && l.contains("Integer");
   }
 
   @Test public void ignoreObjectThrowable() {
     note.ignore(Integer.valueOf(5), new IllegalStateException(//
         format("Works:", "", "", "")));
-    String l = lh.get() + "";
+    final String l = lh.get() + "";
     assert l.contains("Works") && l.contains("Integer");
   }
 
   @Test public void ioExceptionMessage() {
     note.io(new NullPointerException(), "Works");
-    String l = lh.get() + "";
+    final String l = lh.get() + "";
     assert l.contains("Works") && l.contains("NullPointerException");
   }
 
