@@ -3,13 +3,13 @@ package il.org.parknet;
 import java.util.*;
 
 public class User {
-
   private String id;
   private String name;
   private String phone;
   private String email;
   private List<ParkingLot> available;
   private List<ParkingLot> rented;
+  private List<ParkingLot> ordered;
 
   public User(String id, String name, String phone, String email) {
     this.id = id;
@@ -18,6 +18,7 @@ public class User {
     this.email = email;
     this.available = new ArrayList<>();
     this.rented = new ArrayList<>();
+    this.ordered = new ArrayList<>();
   }
 
   public String getId() {
@@ -55,12 +56,21 @@ public class User {
     return available.iterator();
   }
 
-  public User rentParkingLot(ParkingLot p) {
-    this.rented.add(p);
+  public User rentParkingLot(ParkingLot ¢) {
+    this.rented.add(¢);
     return this;
   }
 
   public Iterator<ParkingLot> rentedParkingLots() {
     return rented.iterator();
+  }
+
+  public User orderParkingLot(ParkingLot ¢) {
+    this.ordered.add(¢);
+    return this;
+  }
+
+  public Iterator<ParkingLot> orderedParkingLots() {
+    return ordered.iterator();
   }
 }
