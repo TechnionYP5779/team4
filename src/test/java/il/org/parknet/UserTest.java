@@ -6,9 +6,15 @@ import fluent.ly.*;
 import static fluent.ly.azzert.*;
 
 @SuppressWarnings("static-method") public class UserTest {
-  private static final User U2 = new User("123456789", "John Smith", "0522552322", "johns@campus.technion.ac.il");
-  private static final User U1 = new User("318211687", "Ameer Amer", "0548088095", "ameeramer@campus.technion.ac.il");
+  private static User U2;
+  private static User U1;
 
+  @Before
+  public void setup() {
+    U1 = new User("318211687", "Ameer Amer", "0548088094", "ameeramer@campus.technion.ac.il");
+    U2 = new User("123456789", "John Smith", "0522552322", "johns@campus.technion.ac.il");
+  }
+  
   @Test public void get_id1() {
     azzert.that(U1.getId(), is("318211687"));
   }
@@ -26,7 +32,7 @@ import static fluent.ly.azzert.*;
   }
   
   @Test public void get_phone1() {
-    azzert.that(U1.getPhone(), is("0548088095"));
+    azzert.that(U1.getPhone(), is("0548088094"));
   }
   
   @Test public void get_phone2() {
@@ -39,5 +45,9 @@ import static fluent.ly.azzert.*;
   
   @Test public void get_email2() {
     azzert.that(U2.getEmail(), is("johns@campus.technion.ac.il"));
+  }
+  
+  @Test public void update_phone() {
+    azzert.that(U1.updatePhone("0548088095").getPhone(), is("0548088095"));
   }
 }

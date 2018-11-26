@@ -29,4 +29,9 @@ public class User {
   public String getEmail() {
     return email;
   }
+
+  public User updatePhone(String newPhone) {
+    this.phone = newPhone;
+    return this;
+  }
 }
