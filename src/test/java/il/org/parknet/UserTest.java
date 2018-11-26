@@ -3,16 +3,20 @@ package il.org.parknet;
 import org.junit.*;
 
 import fluent.ly.*;
+import il.org.spartan.utils.*;
+
 import static fluent.ly.azzert.*;
 
 @SuppressWarnings("static-method") public class UserTest {
   private static User U2;
   private static User U1;
+  private static ParkingLot P;
 
   @Before
   public void setup() {
     U1 = new User("318211687", "Ameer Amer", "0548088094", "ameeramer@campus.technion.ac.il");
     U2 = new User("123456789", "John Smith", "0522552322", "johns@campus.technion.ac.il");
+    P =  new ParkingLot("1", new Pair<>(box.it(1), box.it(1)), new User("206", "yogi", "050", "r@walla"), new int[] { 10, 20, 30, 40, 30, 20, 10 });
   }
   
   @Test public void get_id1() {
@@ -53,5 +57,9 @@ import static fluent.ly.azzert.*;
   
   @Test public void update_email() {
     azzert.that(U2.updateEmail("johnny@campus.technion.ac.il").getEmail(), is("johnny@campus.technion.ac.il"));
+  }
+  
+  @Test public void add_new_available() {
+    azzert.that(U1.newAvailableParkingLot(P).availableParkingLots().next().getId(), is("1"));
   }
 }
