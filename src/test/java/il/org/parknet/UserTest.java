@@ -16,4 +16,12 @@ import static fluent.ly.azzert.*;
   @Test public void get_id2() {
     azzert.that(U2.getId(), is("123456789"));
   }
+  
+  @Test public void get_name1() {
+    azzert.that(U1.getName(), is("Ameer Amer"));
+  }
+  
+  @Test public void get_name2() {
+    azzert.that(U2.getName(), is("John Smith"));
+  }
 }
