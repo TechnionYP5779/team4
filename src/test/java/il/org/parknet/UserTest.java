@@ -3,6 +3,7 @@ package il.org.parknet;
 import org.junit.*;
 
 import fluent.ly.*;
+import il.org.parknet.ParkingLot.*;
 import il.org.spartan.utils.*;
 
 import static fluent.ly.azzert.*;
@@ -13,7 +14,7 @@ import static fluent.ly.azzert.*;
   private static User U3;
   private static ParkingLot P;
 
-  @Before public void setup() {
+  @Before public void setup() throws IllegalPriceParameter {
     U1 = new User("318211687", "Ameer Amer", "0548088094", "ameeramer@campus.technion.ac.il");
     U2 = new User("123456789", "John Smith", "0522552322", "johns@campus.technion.ac.il");
     U3 = new User("123456789", "John Smith", "0522552322", "johns@campus.technion.ac.il");
