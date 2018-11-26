@@ -6,12 +6,13 @@ public class User {
 
   private String id;
   private String name;
+  private String phone;
 
   public User(String id, String name, String phone, String email) {
     this.id = id;
     this.name = name;
+    this.phone = phone;
     forget.it(email);
-    forget.it(phone);
   }
 
   public String getId() {
@@ -20,5 +21,9 @@ public class User {
 
   public String getName() {
     return name;
+  }
+
+  public String getPhone() {
+    return phone;
   }
 }

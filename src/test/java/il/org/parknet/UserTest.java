@@ -24,4 +24,8 @@ import static fluent.ly.azzert.*;
   @Test public void get_name2() {
     azzert.that(U2.getName(), is("John Smith"));
   }
+  
+  @Test public void get_phone1() {
+    azzert.that(U1.getPhone(), is("0548088095"));
+  }
 }
