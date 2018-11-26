@@ -34,4 +34,9 @@ public class User {
     this.phone = newPhone;
     return this;
   }
+
+  public User updateEmail(String newEmail) {
+    this.email = newEmail;
+    return this;
+  }
 }

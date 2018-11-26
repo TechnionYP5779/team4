@@ -50,4 +50,8 @@ import static fluent.ly.azzert.*;
   @Test public void update_phone() {
     azzert.that(U1.updatePhone("0548088095").getPhone(), is("0548088095"));
   }
+  
+  @Test public void update_email() {
+    azzert.that(U2.updateEmail("johnny@campus.technion.ac.il").getEmail(), is("johnny@campus.technion.ac.il"));
+  }
 }
