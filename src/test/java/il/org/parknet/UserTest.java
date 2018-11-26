@@ -8,6 +8,8 @@ import il.org.spartan.utils.*;
 
 import static fluent.ly.azzert.*;
 
+import java.util.*;
+
 @SuppressWarnings("static-method") public class UserTest {
   private static User U1;
   private static User U2;
@@ -73,7 +75,27 @@ import static fluent.ly.azzert.*;
     azzert.that(U1.orderParkingLot(P).orderedParkingLots().next().getId(), is("1"));
   }
   
-  @Test public void equal() {
+  @Test public void equalsSameId() {
     assert U2.equals(U3);
+  }
+  
+  @Test public void equalsSameObj() {
+    assert U2.equals(U2);
+  }
+  
+  @Test public void equalsDifferentId() {
+    assert !U2.equals(U1);
+  }
+  
+  @Test public void equalsNull() {
+    assert !U2.equals(null);
+  }
+  
+  @Test public void equalsNotOfType() {
+    assert !U2.equals((Object)Integer.valueOf(5));
+  }
+  
+  @Test public void hash() {
+    U1.hashCode();
   }
 }
