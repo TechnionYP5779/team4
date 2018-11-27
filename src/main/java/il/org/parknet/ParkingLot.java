@@ -1,5 +1,7 @@
 package il.org.parknet;
 
+import java.util.*;
+
 import il.org.spartan.utils.*;
 
 public class ParkingLot {
@@ -17,6 +19,7 @@ public class ParkingLot {
   private Pair<Integer, Integer> coordinates;
   private User owner;
   private int[] pricesArr = new int[7];
+  private Map<Date, Reservation> reservations;
 
   public ParkingLot(String id, Pair<Integer, Integer> coordinates, User owner, int[] prices) throws IllegalPriceParameter {
     this.id =id;
@@ -26,6 +29,8 @@ public class ParkingLot {
       throw new ParkingLot.IllegalPriceParameter();
     for (int ¢=0; ¢<7;++¢)
       pricesArr[¢] = prices[¢];
+    
+    this.reservations = new HashMap<>();
   }
 
   public String getId() {
@@ -42,5 +47,15 @@ public class ParkingLot {
 
   public int[] getPricesArray() {
     return this.pricesArr;
+  }
+  
+  public void reserve(User guest, Date time) {
+    if (!reservations.containsKey(time))
+      reservations.put(time, new Reservation(guest, this, time));
+  }
+  
+  public void cancelReservation(Date time) {
+    if (reservations.containsKey(time))
+      reservations.remove(time);
   }
 }
