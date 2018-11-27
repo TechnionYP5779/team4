@@ -8,8 +8,6 @@ import il.org.spartan.utils.*;
 
 import static fluent.ly.azzert.*;
 
-import java.util.*;
-
 @SuppressWarnings("static-method") public class UserTest {
   private static User U1;
   private static User U2;

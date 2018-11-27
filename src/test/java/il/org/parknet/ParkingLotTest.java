@@ -35,7 +35,7 @@ import static fluent.ly.azzert.*;
   @Test
   public void getPricesArray1() {
     int[] a = { 10, 20, 30, 40, 30, 20, 10 };
-    for (int ¢=0; ¢<7;¢++)
+    for (int ¢=0; ¢<7;++¢)
       azzert.that(PARKING_LOT.getPricesArray()[¢], is(a[¢]));
     
   }

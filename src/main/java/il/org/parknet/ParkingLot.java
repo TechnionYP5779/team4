@@ -5,7 +5,12 @@ import il.org.spartan.utils.*;
 public class ParkingLot {
 
   public class IllegalPriceParameter extends Exception {
-    
+
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1;
+    /**/
   }
 
   private String id;
@@ -17,10 +22,9 @@ public class ParkingLot {
     this.id =id;
     this.coordinates= coordinates;
     this.owner = owner;
-    if(prices.length != 7) {
+    if(prices.length != 7)
       throw new ParkingLot.IllegalPriceParameter();
-    }
-    for (int ¢=0; ¢<7;¢++)
+    for (int ¢=0; ¢<7;++¢)
       pricesArr[¢] = prices[¢];
   }
 
